@@ -758,7 +758,162 @@
             "title": "hero-section",
             "icon": "sicon-store",
             "path": "home.hero-section",
-            "fields": []
+            "fields": [
+                {
+                    "id": "hero_slider",
+                    "key": "e9fc4da2-dfbe-477e-ab1d-8b5776b37c79",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "hero_slider",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "image",
+                            "key": "7bf78b7f-3d05-4c7f-a90d-0f0ace794810",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        },
+                        {
+                            "id": "title",
+                            "key": "f2a127c2-bc89-40c4-8b35-a6f95d001e58",
+                            "type": "string",
+                            "format": "text",
+                            "label": "title",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "subtitle",
+                            "key": "9d572a20-7a93-4b9e-9599-359ed0aa56ff",
+                            "type": "string",
+                            "format": "text",
+                            "label": "subtitle",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "url",
+                            "key": "29f150e7-53c5-4e9e-958a-7751b734c325",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "URL",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://salla.sa",
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30,
+                            "defaulted": true
+                        },
+                        {
+                            "id": "background_color_button",
+                            "key": "d6a2d9c8-875d-4e33-9f50-04567510313b",
+                            "type": "string",
+                            "format": "color",
+                            "inputType": "color",
+                            "label": "background_color_button",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-format-fill",
+                            "value": "#004956",
+                            "required": false
+                        },
+                        {
+                            "id": "text_color_button",
+                            "key": "6d1a3556-e2a3-42c3-9fff-fa64a9cfbae5",
+                            "type": "string",
+                            "format": "color",
+                            "inputType": "color",
+                            "label": "text_color_button",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-format-fill",
+                            "value": "#004956",
+                            "required": false
+                        },
+                        {
+                            "id": "button",
+                            "key": "1f809340-65af-4d42-852c-9bc01d491a25",
+                            "type": "string",
+                            "format": "text",
+                            "label": "button",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "content_direction",
+                            "key": "cab4b0de-f47d-42a4-b38c-b1b54e1e3c9b",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "content_direction",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [
+                                {
+                                    "label": "يسار",
+                                    "value": "end",
+                                    "key": "c270d794-a44b-446f-bb38-e86d4cb11b3a"
+                                },
+                                {
+                                    "label": "يمين",
+                                    "value": "start",
+                                    "key": "a033b14f-f301-42c6-8105-7f2b670f9d14"
+                                },
+                                {
+                                    "label": "فى المنتصف",
+                                    "value": "center",
+                                    "key": "24950540-b851-411e-bd76-f2013e01966c"
+                                }
+                            ],
+                            "source": "Manual",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
