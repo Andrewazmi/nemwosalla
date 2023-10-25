@@ -920,7 +920,79 @@
             "title": "elan-infnity",
             "icon": "sicon-store",
             "path": "home.elan-infnity",
-            "fields": []
+            "fields": [
+                {
+                    "id": "elan_button_close",
+                    "key": "e769e0e0-6aa1-45dc-bee3-1fb913dcae27",
+                    "type": "boolean",
+                    "format": "switch",
+                    "label": "elan_button_close",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-toggle-off",
+                    "value": true,
+                    "selected": false,
+                    "required": false
+                },
+                {
+                    "id": "elan_background_color",
+                    "key": "f5e62a42-91e0-49df-8701-c6aa977ad8db",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "elan_background_color",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#004956",
+                    "required": false
+                },
+                {
+                    "id": "elan_text_color",
+                    "key": "65b35aa8-a172-46fc-b02e-7033eb67bc51",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "elan_text_color",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#ffffff",
+                    "required": false
+                },
+                {
+                    "id": "elan_link",
+                    "key": "8e440cd4-885b-4cac-a518-7b121c345b03",
+                    "type": "string",
+                    "format": "url",
+                    "inputType": "url",
+                    "label": "elan_link",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://salla.sa",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "elan_title",
+                    "key": "3b3bfd03-8c1e-4b4b-8e22-193a4898273d",
+                    "type": "string",
+                    "format": "text",
+                    "label": "elan_title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
