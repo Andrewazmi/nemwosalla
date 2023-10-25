@@ -999,7 +999,53 @@
             "title": "اعلان ترويجى بجانب الصفحة",
             "icon": "sicon-store",
             "path": "home-elan-absolute",
-            "fields": []
+            "fields": [
+                {
+                    "id": "offer",
+                    "key": "c4be32e5-aae2-49bf-b8fa-d355f913fe42",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عرض الخصم",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "url",
+                    "key": "752c13d7-3f35-45dc-88c9-54c7377fa9f3",
+                    "type": "string",
+                    "format": "url",
+                    "inputType": "url",
+                    "label": "رابط الصورة",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://salla.sa",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "image",
+                    "key": "3f8514ad-eaab-4383-aff2-f044810479a7",
+                    "type": "string",
+                    "format": "image",
+                    "label": "الصورة",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
