@@ -998,7 +998,7 @@
             "key": "7c975df9-1d2d-4a26-92c3-4deeea9657b5",
             "title": "اعلان ترويجى بجانب الصفحة",
             "icon": "sicon-store",
-            "path": "home-elan-absolute",
+            "path": "home.elan-absolute",
             "fields": [
                 {
                     "id": "offer",
