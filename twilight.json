@@ -1141,6 +1141,13 @@
             "icon": "sicon-store",
             "path": "home.one-card-offer",
             "fields": []
+        },
+        {
+            "key": "3d6eb512-4409-4a52-99a7-ba371741cea2",
+            "title": "two-card-in-the-same-row",
+            "icon": "sicon-store",
+            "path": "home.two-card-offer",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
