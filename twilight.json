@@ -1140,7 +1140,39 @@
             "title": "one-card-offer",
             "icon": "sicon-store",
             "path": "home.one-card-offer",
-            "fields": []
+            "fields": [
+                {
+                    "id": "image",
+                    "key": "e392840c-aeba-4f10-9ccf-a9d6128172cd",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false,
+                    "defaulted": true
+                },
+                {
+                    "id": "url",
+                    "key": "f765421c-4078-4c59-9daf-8e907b43c9c9",
+                    "type": "string",
+                    "format": "url",
+                    "inputType": "url",
+                    "label": "URL",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://salla.sa",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30,
+                    "defaulted": true
+                }
+            ]
         },
         {
             "key": "3d6eb512-4409-4a52-99a7-ba371741cea2",
