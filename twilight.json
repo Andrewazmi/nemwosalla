@@ -1179,7 +1179,56 @@
             "title": "two-card-in-the-same-row",
             "icon": "sicon-store",
             "path": "home.two-card-offer",
-            "fields": []
+            "fields": [
+                {
+                    "id": "add_two_card",
+                    "key": "6844fc52-1edd-43ae-8744-84071a10fff6",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "add_two_card",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "image",
+                            "key": "966f7956-bd44-4778-afe4-b62f9c3529a4",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        },
+                        {
+                            "id": "url",
+                            "key": "e4ff82d9-d78a-4a6a-80a7-6875e0dadd0a",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "URL",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://salla.sa",
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30,
+                            "defaulted": true
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": "2",
+                    "maxLength": "2"
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
