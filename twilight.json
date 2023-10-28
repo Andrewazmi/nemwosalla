@@ -1134,6 +1134,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "ca73fbc5-a80b-4233-a817-6f72f72b7789",
+            "title": "one-card-offer",
+            "icon": "sicon-store",
+            "path": "home.one-card-offer",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
