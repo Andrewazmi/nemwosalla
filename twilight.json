@@ -1052,7 +1052,88 @@
             "title": "offers-slider",
             "icon": "sicon-store",
             "path": "home.offers-slider",
-            "fields": []
+            "fields": [
+                {
+                    "id": "offer_slider",
+                    "key": "c959e135-be84-45ac-a8d6-a6f8e014f96e",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "offer_slider",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "image",
+                            "key": "ecb4146b-af0c-4b9f-95d6-230861e11ea7",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        },
+                        {
+                            "id": "title",
+                            "key": "318d6d36-7024-42c3-add1-7f1d32b07346",
+                            "type": "string",
+                            "format": "text",
+                            "label": "title",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "url",
+                            "key": "90bbeec3-5fd4-421a-a3e5-1873f547fd7e",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "URL",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://salla.sa",
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30,
+                            "defaulted": true
+                        },
+                        {
+                            "id": "button",
+                            "key": "0b609d86-9f00-458b-a8e9-c46ab97b5cd8",
+                            "type": "string",
+                            "format": "text",
+                            "label": "button",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
