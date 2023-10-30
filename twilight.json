@@ -1438,7 +1438,7 @@
             "fields": [
                 {
                     "id": "about_us",
-                    "key": "b3a1b392-87bd-4687-99a9-3994c0c45e81",
+                    "key": "c3440fe5-b3e6-42e3-814e-afb9b01a6b3a",
                     "type": "collection",
                     "format": "collection",
                     "label": "about_us",
@@ -1449,7 +1449,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "c1f57c9d-968e-4820-8fff-d8c5d5af9b47",
+                            "key": "fcf71524-738f-4f68-aca7-ffc21e7406fb",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -1463,7 +1463,7 @@
                         },
                         {
                             "id": "number",
-                            "key": "95fa31f9-62cc-43e9-92e9-07bf1df1ecc7",
+                            "key": "b881fbb5-a468-4aa0-9011-8811eaef31e7",
                             "type": "string",
                             "format": "text",
                             "label": "number",
@@ -1474,12 +1474,12 @@
                             "value": null,
                             "multilanguage": false,
                             "required": false,
-                            "minLength": 6,
+                            "minLength": "1",
                             "maxLength": 30
                         },
                         {
                             "id": "title",
-                            "key": "4285a3e5-ef82-474e-ba3c-4a76801a58e3",
+                            "key": "72a8b671-ca3a-4612-9533-feda8f566cf7",
                             "type": "string",
                             "format": "text",
                             "label": "title",
@@ -1490,12 +1490,12 @@
                             "value": null,
                             "multilanguage": false,
                             "required": false,
-                            "minLength": 6,
+                            "minLength": "1",
                             "maxLength": 30
                         },
                         {
                             "id": "subtitle",
-                            "key": "68e2d2b4-7223-4a8b-ad61-3ca825beb1de",
+                            "key": "84005882-eb3e-430b-b37c-45d6c4e21d45",
                             "type": "string",
                             "format": "text",
                             "label": "subtitle",
@@ -1506,7 +1506,7 @@
                             "value": null,
                             "multilanguage": false,
                             "required": false,
-                            "minLength": 6,
+                            "minLength": "1",
                             "maxLength": 30
                         }
                     ],
