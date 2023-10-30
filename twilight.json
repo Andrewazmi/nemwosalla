@@ -1326,6 +1326,13 @@
                     "required": false
                 }
             ]
+        },
+        {
+            "key": "a09b7825-6bb0-441a-8211-6f4b58f85725",
+            "title": "store-features",
+            "icon": "sicon-store",
+            "path": "home.store-features",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
