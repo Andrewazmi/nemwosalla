@@ -1429,6 +1429,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "6187b188-1e76-455f-bab8-cba9ab018600",
+            "title": "about-us",
+            "icon": "sicon-store",
+            "path": "home.about-us",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
