@@ -1580,7 +1580,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "2ef6cd3c-a3e4-4895-aa92-01fc24ed9aea",
+                    "key": "254e928c-45c9-4158-9170-81e3bdd7bf1b",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -1595,16 +1595,33 @@
                     "maxLength": 30
                 },
                 {
-                    "id": "category_name",
-                    "key": "e52b9215-85eb-4e24-83b1-99620fddf189",
+                    "id": "category_star",
+                    "key": "75bb2988-9f3a-476d-8c68-d20a84163b60",
                     "type": "collection",
                     "format": "collection",
-                    "label": "category_name",
+                    "label": "category_star",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
                     "icon": "sicon-list-add",
-                    "fields": [],
+                    "fields": [
+                        {
+                            "id": "category_name",
+                            "key": "52ec23fb-712d-45da-8cc1-83c84268e207",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "category_name",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Categories",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
+                        }
+                    ],
                     "value": [],
                     "required": false,
                     "minLength": 1,
