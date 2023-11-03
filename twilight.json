@@ -1584,7 +1584,24 @@
             "title": "map",
             "icon": "sicon-store",
             "path": "home.map",
-            "fields": []
+            "fields": [
+                {
+                    "id": "map",
+                    "key": "bce003d8-0b99-4539-be22-3764bc739027",
+                    "type": "string",
+                    "format": "text",
+                    "label": "map",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
