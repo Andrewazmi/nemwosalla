@@ -1578,6 +1578,13 @@
             "icon": "sicon-store",
             "path": "home.category-star",
             "fields": []
+        },
+        {
+            "key": "7469fee9-498d-44b3-9cfa-d2eb8c46ea66",
+            "title": "map",
+            "icon": "sicon-store",
+            "path": "home.map",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
