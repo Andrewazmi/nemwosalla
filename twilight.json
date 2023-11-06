@@ -1707,7 +1707,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "c6e100f1-2ccd-4868-b3b9-c41674e4a678",
+                    "key": "0acfe41a-6c3d-462e-8324-a090812ff4b0",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -1723,7 +1723,7 @@
                 },
                 {
                     "id": "category_id",
-                    "key": "c4171056-a3fa-4307-bc39-2fc0d8ccde20",
+                    "key": "a710da20-f33c-4979-8b5f-d3cc4a43d223",
                     "type": "collection",
                     "format": "collection",
                     "label": "category_id",
@@ -1734,7 +1734,7 @@
                     "fields": [
                         {
                             "id": "category",
-                            "key": "0347e6aa-9085-48bc-8e1a-28fd2c748d2c",
+                            "key": "5c53e1ce-0d19-4686-ae26-ae9b768f7005",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "category",
@@ -1752,7 +1752,7 @@
                     "value": [],
                     "required": false,
                     "minLength": 1,
-                    "maxLength": 5
+                    "maxLength": "1"
                 }
             ]
         }
