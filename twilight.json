@@ -1707,7 +1707,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "6b5bf87a-4a41-4679-a59b-6cff3586f272",
+                    "key": "c6e100f1-2ccd-4868-b3b9-c41674e4a678",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -1722,20 +1722,37 @@
                     "maxLength": 30
                 },
                 {
-                    "id": "category",
-                    "key": "9b4fe18d-3ea1-4b09-a558-dc76a693e863",
-                    "type": "items",
-                    "format": "dropdown-list",
-                    "label": "category",
+                    "id": "category_id",
+                    "key": "c4171056-a3fa-4307-bc39-2fc0d8ccde20",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "category_id",
                     "description": null,
                     "labelHTML": null,
-                    "icon": "sicon-keyboard_arrow_down",
-                    "selected": [],
-                    "options": [],
-                    "source": "Categories",
-                    "multichoice": false,
-                    "searchable": false,
-                    "required": false
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "category",
+                            "key": "0347e6aa-9085-48bc-8e1a-28fd2c748d2c",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "category",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Categories",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5
                 }
             ]
         }
