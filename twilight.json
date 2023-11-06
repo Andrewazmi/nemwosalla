@@ -1580,7 +1580,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "254e928c-45c9-4158-9170-81e3bdd7bf1b",
+                    "key": "4e9a2800-a80a-4350-818b-6d071c1f583d",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -1596,7 +1596,7 @@
                 },
                 {
                     "id": "category_star",
-                    "key": "75bb2988-9f3a-476d-8c68-d20a84163b60",
+                    "key": "7db83592-648a-4687-94f3-d07ea58e7ce1",
                     "type": "collection",
                     "format": "collection",
                     "label": "category_star",
@@ -1606,8 +1606,22 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
+                            "id": "image",
+                            "key": "7dcd1053-21fb-43ee-86bd-18a2b8468dcd",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        },
+                        {
                             "id": "category_name",
-                            "key": "52ec23fb-712d-45da-8cc1-83c84268e207",
+                            "key": "15c3a064-e40a-4c6b-8b8d-4618dd7cf791",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "category_name",
