@@ -1755,6 +1755,13 @@
                     "maxLength": "1"
                 }
             ]
+        },
+        {
+            "key": "c030da8a-8c41-44eb-895f-62602cdf16b5",
+            "title": "category-star-2",
+            "icon": "sicon-store",
+            "path": "home.category-star-2",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
