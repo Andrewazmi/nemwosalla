@@ -1761,7 +1761,87 @@
             "title": "category-star-2",
             "icon": "sicon-store",
             "path": "home.category-star-2",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "key": "260acbf9-3f72-4dd4-a099-614806f8f5cd",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "subtitle",
+                    "key": "a71e930b-836a-4330-bfc0-55d680ec1873",
+                    "type": "string",
+                    "format": "text",
+                    "label": "subtitle",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "category_star_2",
+                    "key": "fd34fbb3-2c72-4f5a-8a79-bd096193e5e4",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "category_star_2",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "image",
+                            "key": "c72206a2-7c5b-41cc-9179-359eb3b86e1d",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        },
+                        {
+                            "id": "category_name",
+                            "key": "82b31a15-178f-443a-baf1-226ace26b910",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "category_name",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Categories",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": "5",
+                    "maxLength": "10"
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
