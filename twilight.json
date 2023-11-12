@@ -1848,7 +1848,100 @@
             "title": "category-with-header",
             "icon": "sicon-store",
             "path": "home.category-with-header",
-            "fields": []
+            "fields": [
+                {
+                    "id": "background_image",
+                    "key": "94ec9d1d-aaa5-4f41-af64-3e7c0006be2d",
+                    "type": "string",
+                    "format": "image",
+                    "label": "background_image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "title",
+                    "key": "09f076c5-3295-4644-8d41-00e6cc4808d8",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "description",
+                    "key": "8ef7a9c8-2a36-4917-843d-b92062aadee3",
+                    "type": "string",
+                    "format": "text",
+                    "label": "description",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "header_category",
+                    "key": "deb28142-56e1-4b28-ba6e-b24f6954efe4",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "header_category",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "category",
+                            "key": "611ffde8-fd88-4031-a998-b3ae48aefd36",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "category",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Categories",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
+                        },
+                        {
+                            "id": "image",
+                            "key": "a9becae9-6ac9-407e-9347-300510ef0688",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": "3",
+                    "maxLength": "3"
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
