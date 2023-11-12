@@ -1989,7 +1989,57 @@
             "title": "list-nav-category",
             "icon": "sicon-store",
             "path": "home.list-nav-category",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "key": "c74bc837-5998-4d51-a50a-5a115c0d6f55",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": "3",
+                    "maxLength": 30
+                },
+                {
+                    "id": "list_nav_category",
+                    "key": "a833edae-b347-4233-b0ac-7042d44c042f",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "list_nav_category",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "category",
+                            "key": "da367e16-7ed5-4fa2-ab63-84572a680e16",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "category",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Categories",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
