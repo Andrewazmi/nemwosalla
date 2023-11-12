@@ -1948,7 +1948,41 @@
             "title": "product-by-category-2",
             "icon": "sicon-store",
             "path": "home.product-by-category-2",
-            "fields": []
+            "fields": [
+                {
+                    "id": "categories",
+                    "key": "a258b673-36a6-4c42-98bf-ae9f2e8f973f",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "categories",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "category_id",
+                            "key": "2294dd8a-5132-40b3-8f38-8e1edd014c97",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "category_id",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Categories",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
