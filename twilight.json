@@ -1942,6 +1942,13 @@
                     "maxLength": "3"
                 }
             ]
+        },
+        {
+            "key": "9f553e56-7f3d-4686-b046-8ea957778c8c",
+            "title": "product-by-category-2",
+            "icon": "sicon-store",
+            "path": "home.product-by-category-2",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
