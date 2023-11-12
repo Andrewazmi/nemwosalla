@@ -1983,6 +1983,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "00c7b67f-1e49-4524-8c90-944c3e3b7972",
+            "title": "list-nav-category",
+            "icon": "sicon-store",
+            "path": "home.list-nav-category",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
