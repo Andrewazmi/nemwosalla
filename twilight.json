@@ -1988,7 +1988,39 @@
             "title": "banner-with-no-container",
             "icon": "sicon-store",
             "path": "home.banner-with-no-contaainer",
-            "fields": []
+            "fields": [
+                {
+                    "id": "image",
+                    "key": "06d5736d-7582-4fe9-a43d-d66d391061ba",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false,
+                    "defaulted": true
+                },
+                {
+                    "id": "url",
+                    "key": "f96f0411-7d27-4487-82ed-3f536c20490e",
+                    "type": "string",
+                    "format": "url",
+                    "inputType": "url",
+                    "label": "URL",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://salla.sa",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30,
+                    "defaulted": true
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
