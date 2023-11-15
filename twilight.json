@@ -2027,7 +2027,73 @@
             "title": "product-by-category-3",
             "icon": "sicon-store",
             "path": "home.product-by-category-3",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "key": "1f584fe2-9a7a-423c-91fd-6c633d843d25",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "subtitle",
+                    "key": "92331379-abf7-47b6-a40c-aaa46747f005",
+                    "type": "string",
+                    "format": "text",
+                    "label": "subtitle",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "category_id",
+                    "key": "4e3411aa-3119-4280-941d-d7d2e736fefc",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "category",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "dropdown_list",
+                            "key": "05144fcd-ca32-4fbd-8c61-9cb3241150e9",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "category_id",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Categories",
+                            "multichoice": true,
+                            "searchable": true,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": "1"
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
