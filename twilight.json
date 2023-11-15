@@ -2030,7 +2030,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "1f584fe2-9a7a-423c-91fd-6c633d843d25",
+                    "key": "b19e9a0f-4495-49ca-bd1a-d3fbc2aae962",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -2046,7 +2046,7 @@
                 },
                 {
                     "id": "subtitle",
-                    "key": "92331379-abf7-47b6-a40c-aaa46747f005",
+                    "key": "952470eb-2ad7-42cd-bd66-7f66dee48a57",
                     "type": "string",
                     "format": "text",
                     "label": "subtitle",
@@ -2062,7 +2062,7 @@
                 },
                 {
                     "id": "category_id",
-                    "key": "4e3411aa-3119-4280-941d-d7d2e736fefc",
+                    "key": "8a794c9d-c233-411c-ab8b-706c3130a951",
                     "type": "collection",
                     "format": "collection",
                     "label": "category",
@@ -2073,7 +2073,7 @@
                     "fields": [
                         {
                             "id": "dropdown_list",
-                            "key": "05144fcd-ca32-4fbd-8c61-9cb3241150e9",
+                            "key": "9660cdd1-7fcb-4ff9-9281-33764a319624",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "category_id",
@@ -2083,8 +2083,8 @@
                             "selected": [],
                             "options": [],
                             "source": "Categories",
-                            "multichoice": true,
-                            "searchable": true,
+                            "multichoice": false,
+                            "searchable": false,
                             "required": false
                         }
                     ],
