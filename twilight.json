@@ -2103,7 +2103,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "ed09a0b4-8905-425f-abd6-57827b0c3ebb",
+                    "key": "4bc7d2fb-9895-41d8-8838-3f31ca26f2be",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -2119,7 +2119,7 @@
                 },
                 {
                     "id": "banner_payment",
-                    "key": "dfa46626-e774-4c82-bfdc-a173a2e68e9c",
+                    "key": "17127e3e-1881-4eb9-84d0-b905f55a12de",
                     "type": "collection",
                     "format": "collection",
                     "label": "banner_payment",
@@ -2130,7 +2130,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "5cdb877c-e94b-41a5-ab64-51ff378ad904",
+                            "key": "1924544f-d833-4544-bc6b-5fe3c333bfd5",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -2146,7 +2146,7 @@
                     "value": [],
                     "required": false,
                     "minLength": 1,
-                    "maxLength": 5
+                    "maxLength": "10"
                 }
             ]
         }
