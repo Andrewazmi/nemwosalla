@@ -2102,8 +2102,24 @@
             "path": "home.banner-payment",
             "fields": [
                 {
+                    "id": "title",
+                    "key": "ed09a0b4-8905-425f-abd6-57827b0c3ebb",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
                     "id": "banner_payment",
-                    "key": "9a63b59f-4149-4f6c-a7a8-327878c4860e",
+                    "key": "dfa46626-e774-4c82-bfdc-a173a2e68e9c",
                     "type": "collection",
                     "format": "collection",
                     "label": "banner_payment",
@@ -2114,7 +2130,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "765a3231-5a05-4db4-b076-952261c401a4",
+                            "key": "5cdb877c-e94b-41a5-ab64-51ff378ad904",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
