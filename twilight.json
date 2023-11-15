@@ -761,7 +761,7 @@
             "fields": [
                 {
                     "id": "hero_slider",
-                    "key": "e9fc4da2-dfbe-477e-ab1d-8b5776b37c79",
+                    "key": "8a9dc8fd-999b-40f3-a79c-ae68394651b8",
                     "type": "collection",
                     "format": "collection",
                     "label": "hero_slider",
@@ -772,7 +772,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "7bf78b7f-3d05-4c7f-a90d-0f0ace794810",
+                            "key": "174f5958-7c15-438a-af97-6583fb1acfec",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -786,7 +786,7 @@
                         },
                         {
                             "id": "title",
-                            "key": "f2a127c2-bc89-40c4-8b35-a6f95d001e58",
+                            "key": "5fa1eba7-9bfe-4054-bc25-fff6edf4bf1d",
                             "type": "string",
                             "format": "text",
                             "label": "title",
@@ -795,14 +795,14 @@
                             "placeholder": "Placeholder text ..",
                             "icon": "sicon-format-text-alt",
                             "value": null,
-                            "multilanguage": false,
+                            "multilanguage": true,
                             "required": false,
                             "minLength": 6,
                             "maxLength": 30
                         },
                         {
                             "id": "subtitle",
-                            "key": "9d572a20-7a93-4b9e-9599-359ed0aa56ff",
+                            "key": "b90bd8b8-b5a7-4902-919d-7d0f96a2d897",
                             "type": "string",
                             "format": "text",
                             "label": "subtitle",
@@ -811,14 +811,14 @@
                             "placeholder": "Placeholder text ..",
                             "icon": "sicon-format-text-alt",
                             "value": null,
-                            "multilanguage": false,
+                            "multilanguage": true,
                             "required": false,
                             "minLength": 6,
                             "maxLength": 30
                         },
                         {
                             "id": "url",
-                            "key": "29f150e7-53c5-4e9e-958a-7751b734c325",
+                            "key": "0f27f6ba-908c-4a41-ad3b-264a254c02a7",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
@@ -835,7 +835,7 @@
                         },
                         {
                             "id": "background_color_button",
-                            "key": "d6a2d9c8-875d-4e33-9f50-04567510313b",
+                            "key": "0124cc14-31c5-49e0-9131-688231697ae8",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
@@ -848,7 +848,7 @@
                         },
                         {
                             "id": "text_color_button",
-                            "key": "6d1a3556-e2a3-42c3-9fff-fa64a9cfbae5",
+                            "key": "d6cc110a-043f-42a2-8266-9177d9d0e71d",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
@@ -861,7 +861,7 @@
                         },
                         {
                             "id": "button",
-                            "key": "1f809340-65af-4d42-852c-9bc01d491a25",
+                            "key": "6cd02a7a-bfd3-4717-8a92-887e1a34af2f",
                             "type": "string",
                             "format": "text",
                             "label": "button",
@@ -870,14 +870,14 @@
                             "placeholder": "Placeholder text ..",
                             "icon": "sicon-format-text-alt",
                             "value": null,
-                            "multilanguage": false,
+                            "multilanguage": true,
                             "required": false,
                             "minLength": 6,
                             "maxLength": 30
                         },
                         {
                             "id": "content_direction",
-                            "key": "cab4b0de-f47d-42a4-b38c-b1b54e1e3c9b",
+                            "key": "41a2dd38-9226-4e8f-aa28-643a4426eca0",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "content_direction",
