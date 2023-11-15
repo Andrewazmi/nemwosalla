@@ -2021,6 +2021,13 @@
                     "defaulted": true
                 }
             ]
+        },
+        {
+            "key": "f7157ebb-414a-4d0c-9167-08ba21d31123",
+            "title": "product-by-category-3",
+            "icon": "sicon-store",
+            "path": "home.product-by-category-3",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
