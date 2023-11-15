@@ -2172,7 +2172,39 @@
             "title": "mini-banner",
             "icon": "sicon-store",
             "path": "home.mini-banner",
-            "fields": []
+            "fields": [
+                {
+                    "id": "image",
+                    "key": "40e09689-cd41-4a7a-afc2-f992bcd44dec",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false,
+                    "defaulted": true
+                },
+                {
+                    "id": "url",
+                    "key": "fc33f9f5-3ad8-4e6f-ba06-c3b24fbde2fd",
+                    "type": "string",
+                    "format": "url",
+                    "inputType": "url",
+                    "label": "URL",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://salla.sa",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30,
+                    "defaulted": true
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
