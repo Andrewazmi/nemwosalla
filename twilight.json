@@ -2211,7 +2211,57 @@
             "title": "blogs",
             "icon": "sicon-store",
             "path": "home.blog",
-            "fields": []
+            "fields": [
+                {
+                    "id": "title",
+                    "key": "67107d75-3bf0-4bc1-820f-f29f0769c8ca",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": false,
+                    "minLength": "3",
+                    "maxLength": 30
+                },
+                {
+                    "id": "blogs",
+                    "key": "eea3555c-7579-4964-81af-b3b1f7b2dc80",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "blogs",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "blog_id",
+                            "key": "8195d70b-73e2-4d50-9398-cd6669548e22",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "blog_id",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Blog Articles",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
