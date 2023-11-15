@@ -2100,7 +2100,39 @@
             "title": "banner-payment",
             "icon": "sicon-store",
             "path": "home.banner-payment",
-            "fields": []
+            "fields": [
+                {
+                    "id": "banner_payment",
+                    "key": "9a63b59f-4149-4f6c-a7a8-327878c4860e",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "banner_payment",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "image",
+                            "key": "765a3231-5a05-4db4-b076-952261c401a4",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
