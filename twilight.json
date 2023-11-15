@@ -2214,7 +2214,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "b8c69823-9bf3-41e9-abf3-b784dfec6a0d",
+                    "key": "fb81e382-ca34-428c-b2ec-513d568262e9",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -2230,7 +2230,7 @@
                 },
                 {
                     "id": "blogs",
-                    "key": "3d7cfaae-7234-411b-aa4e-aa24ae24fa14",
+                    "key": "841cd097-079e-4763-a81a-ebc20f291d06",
                     "type": "collection",
                     "format": "collection",
                     "label": "blogs",
@@ -2241,7 +2241,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "38b60846-37f6-4b7a-9538-c62ad173c6a7",
+                            "key": "aebab884-0ef1-49b0-8a27-b1095a6447e8",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -2254,8 +2254,25 @@
                             "defaulted": true
                         },
                         {
+                            "id": "url",
+                            "key": "9e90dde5-e2f0-4aa9-a24e-8e80a691fa50",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "URL",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://salla.sa",
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30,
+                            "defaulted": true
+                        },
+                        {
                             "id": "p",
-                            "key": "94d153ad-7713-4ad0-907d-d8885d1a0d49",
+                            "key": "652aed21-bca2-4c9f-b486-ac9009ba2c1f",
                             "type": "string",
                             "format": "text",
                             "label": "p",
