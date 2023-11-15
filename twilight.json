@@ -2094,6 +2094,13 @@
                     "maxLength": "1"
                 }
             ]
+        },
+        {
+            "key": "6a202c4b-d15f-4d7a-835f-b09fe074daad",
+            "title": "banner-payment",
+            "icon": "sicon-store",
+            "path": "home.banner-payment",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
