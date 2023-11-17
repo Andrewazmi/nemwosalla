@@ -1,0 +1,14 @@
+<section class="container s-block s-block--features-products two-cols new-design-product">
+<div>
+{% for cat in component.categories %}
+    <span class="hidden category-value-new">{{ cat.category_id.value[0]|json_encode() }}</span>
+{% endfor %}
+</div>
+	
+<div class="inner" id="insert-product-here">
+</div>
+
+	
+</section>
+
+
