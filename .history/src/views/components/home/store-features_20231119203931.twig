@@ -1,0 +1,18 @@
+<section class="s-block">
+	<div class="container flex flex-col items-center justify-center store-features">
+		<h1 class="mb-3 text-xl font-black text-black lg:text-5xl lg:mb-10">
+			{{component.title}}</h1>
+		<p class="mt-2 mb-5 text-sm text-black lg:mb-24 lg:text-4xl subtitle-feaures">{{component.subtitle}}</p>
+		<div class="flex flex-col items-center justify-between lg:flex-row grid-feattures">
+			{% for link in component.card_store %}
+				<div class="flex flex-col items-center justify-center flex-1 h-40 p-1 bg-white border-2 rounded-lg w-60 lg:h-64 even:mx-3 lg:even:mx-7 border-slate-600 lg:w-96 card-store-features">
+					<div class="flex items-center justify-center p-1 mb-2 bg-gray-400 rounded-full w-7 h-7 lg:mb-5 lg:w-28 lg:h-28 image">
+						<img class="object-contain w-full h-full" src="{{link.image}}"/>
+					</div>
+					<h2 class="mb-1 text-lg font-black lg:text-2xl">{{ link.title_card }}</h2>
+					<p class="text-sm font-bold text-gray-700 lg:text-base">{{ link.subtitle_card }}</p>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
