@@ -1,0 +1,18 @@
+<section class ="s-block">
+    <div class="container flex flex-col justify-center items-center store-features " style="background-color : #F8F4F4 ; border-radius: 40px ; padding : 20px">
+        <h1> {{component.title}}</h1>
+		<div class="grid-feattures-about">
+			{% for link in component.banner_payment %}
+				<a href="{{link.url}}" class=" flex flex-col justify-center items-center">
+				   
+                        <img src="{{link.image}}" />
+                    
+					    
+			
+		           
+				</a>
+			{% endfor %}
+		</div>
+
+	</div>
+</section>

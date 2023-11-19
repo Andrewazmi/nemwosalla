@@ -1,0 +1,26 @@
+<section class="mt-10 s-block s-block--categories">
+	<div class="container px-4 category">
+		<div class="flex flex-col items-center justify-center mb-8 text-center">
+			<h1 class="mb-2 text-4xl font-extrabold text-gray-900 underline underline-offset-16">{{component.title}}</h1>
+			<div class="line"></div>
+		</div>
+		<div class="flex items-center justify-center w-full m-auto">
+			<div class="grid-feattures-category">
+				{% for link in component.category_star %}
+					<div class="swiper-slide slide--one-sixth cat-hight">
+						<span class="hidden category-value">{{ link.category_name.value[0]|json_encode() }}</span>
+						<a class="flex flex-col items-center justify-center api-set-category" data-emergence="hidden" href="">
+							<div class="flex items-center justify-center mb-2 rounded-full image" style="width:100px ; height:100px">
+								<img class="bg-cover rounded-full image-catetgory" src="{{link.image}}"/>
+							</div>
+
+
+							<h4 class="category-name"></h4>
+							<span class="all-category-belong-product"></span>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,15 @@
+<section class="s-block s-block--fixed-banner s-block--double-banner wide-placeholder double-banner double-banner--5">
+
+	<div class="container" style="width:90%">
+		<div class="grid grid-cols-2 gap-16">
+			{% for card in component.add_two_card %}
+				<a href="{{card.url}}" class="relative block h-full basis-3/6" aria-label="Banner">
+					<img width="100%" style="height:500px" src="{{card.image}}" data-src="https://cdn.salla.sa/form-builder/ZjHsdgzca46oJqIwV4vTDK60zkL9OZrz9wHZnWcz.png" loading="lazy" data-ll-status="loaded">
+					<div class="absolute flex items-center justify-start w-full px-10 bottom-10">
+						<button class="w-5/12 py-1 font-bold text-center bg-white rounded-lg text-stone-900">Buy Now</button>
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+</section>
