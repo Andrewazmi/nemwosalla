@@ -2713,9 +2713,9 @@
         },
         {
             "key": "fa95838b-4027-45b6-a81c-f30c0b814c69",
-            "title": "photo-slider",
+            "title": "photo-slider-2",
             "icon": "sicon-store",
-            "path": "home.photo-slider",
+            "path": "home.photo-slider-2",
             "fields": [
                 {
                     "id": "slider",
