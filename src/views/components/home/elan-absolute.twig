@@ -1,31 +1,24 @@
-<div id="animated-ads" class="flex animated-ads" style="height:400px ; overflow : hidden ;">
-	<div class="flex">
-		<div class="content">
-			<a href="{{component.url}}">
-				<img class="object-fill w-full h-full" src="{{component.image}}"/>
-			</a>
-		</div>
-		<div id="btn-open" class="flex items-center justify-center  py-0.5 text-white btn-open" style="background-color :#404553;">
-			<div class="flex flex-col-reverse items-center justify-between h-full py-1.5 px-0.5 w-fit rtl:flex-col">
-				<span class="block w-10 mb-3 text-base text-center -rotate-90 last:mb-0 h-fit"></span>
-				<span class="block w-10 mb-3 text-base text-center -rotate-90 last:mb-0 h-fit"></span>
-				<span class="block w-10 mb-3 text-base text-center -rotate-90 last:mb-0 h-fit"></span>
+<div id="animated-ads" class="animated-ads">
+	<div class="content">
+		<a href="{{component.url}}">
+			<img class="object-fill w-full h-full" src="{{component.image}}"/>
+		</a>
+	</div>
+	<div id="btn-open">
 
-				{% for word in component.offer|split(" ") %}
-					{% if word|length > 0 %}
-						<span class="block w-10 md:mb-1 mb-3 text-base text-center -rotate-90 lg:text-xl lg:font-bold last:mb-0 h-fit">{{word}}</span>
-					{% endif %}
-				{% endfor %}
-
-				<div id="open-ad-menu" class="flex items-center justify-center w-full rotate-90">
-					<svg style="fill:#fff !important" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="17px" height="13px" viewbox="0 0 24 24">
-						<path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path>
-					</svg>
-				</div>
-				<span class="block w-10 mt-3 text-base text-center -rotate-90 h-fit"></span>
-				<span class="block w-10 mt-3 text-base text-center -rotate-90 h-fit"></span>
-				<span class="block w-10 mt-3 text-base text-center -rotate-90 h-fit"></span>
-			</div>
+		<div class="arrow">
+			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewbox="0 0 59 52" fill="none">
+				<path d="M41.5105 42.5657L41.6191 9.51637C41.6224 8.52509 40.4485 7.96772 39.6438 8.57897L18.0646 25.0329C17.4469 25.5038 17.4439 26.4146 18.0585 26.8947L39.529 43.4901C40.3297 44.1066 41.5072 43.557 41.5105 42.5657Z" fill="white"/>
+			</svg>
 		</div>
+
+		<div class="text">
+			{% for word in component.offer|split(" ") %}
+				{% if word|length > 0 %}
+					<span>{{word}}</span>
+				{% endif %}
+			{% endfor %}
+		</div>
+
 	</div>
 </div>

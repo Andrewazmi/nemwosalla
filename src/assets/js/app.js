@@ -1,7 +1,7 @@
-import MobileMenu from 'mmenu-light';
-import Swal from 'sweetalert2';
-import Anime from './partials/anime';
-import initTootTip from './partials/tooltip';
+import MobileMenu from "mmenu-light";
+import Swal from "sweetalert2";
+import Anime from "./partials/anime";
+import initTootTip from "./partials/tooltip";
 import AppHelpers from "./app-helpers";
 
 class App extends AppHelpers {
@@ -22,7 +22,7 @@ class App extends AppHelpers {
     this.removeElan();
     this.initiateNotifier();
     this.initiateMobileMenu();
-    if(header_is_sticky){
+    if (header_is_sticky) {
       this.initiateStickyMenu();
     }
     this.initAddToCart();
@@ -35,9 +35,9 @@ class App extends AppHelpers {
 
     salla.comment.event.onAdded(() => window.location.reload());
 
-    this.status = 'ready';
-    document.dispatchEvent(new CustomEvent('theme::ready'));
-    this.log('Theme Loaded 🎉');
+    this.status = "ready";
+    document.dispatchEvent(new CustomEvent("theme::ready"));
+    this.log("Theme Loaded 🎉");
   }
 
   log(message) {
@@ -45,84 +45,70 @@ class App extends AppHelpers {
     return this;
   }
 
-
-
-
-  // nav link 
-  navLinks(){
+  // nav link
+  navLinks() {
     function getRandomIntInclusive(min, max) {
       min = Math.ceil(min);
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
     }
-    const linkDesign = document.getElementsByClassName("navlink-design")
+    const linkDesign = document.getElementsByClassName("navlink-design");
 
-    for(let i = 0 ; i< linkDesign.length ; i++){
+    for (let i = 0; i < linkDesign.length; i++) {
+      const id = getRandomIntInclusive(100000, 900000);
 
-      const id= getRandomIntInclusive(100000 , 900000)
+      const child = linkDesign[i].children[0].children;
 
-     const child =  linkDesign[i].children[0].children
-     
-      const any = child.length
-      for(let j=0 ; j < any ; j++){
-        child[j].className = `${id}-nav hidden`
+      const any = child.length;
+      for (let j = 0; j < any; j++) {
+        child[j].className = `${id}-nav hidden`;
       }
-      linkDesign[i].children[1].setAttribute("id" ,`${id}-category` )
-      linkDesign[i].children[2].setAttribute("id" , `${id}-product`)
-      
-      
-      const listProduct1 = document.getElementById(`${id}-product`)
-      const navLinks1 =document.getElementsByClassName(`${id}-nav`)
-      const listCategory1 = document.getElementById(`${id}-category`)
+      linkDesign[i].children[1].setAttribute("id", `${id}-category`);
+      linkDesign[i].children[2].setAttribute("id", `${id}-product`);
 
-      
+      const listProduct1 = document.getElementById(`${id}-product`);
+      const navLinks1 = document.getElementsByClassName(`${id}-nav`);
+      const listCategory1 = document.getElementById(`${id}-category`);
 
-              for( let i = 0 ; i< navLinks1.length ; i++ ){
-                const category  = navLinks1[i].innerText
-                
-                
-               if(category){
-                salla.product.categories(category).then((response) => {
-                  const data = `
+      for (let i = 0; i < navLinks1.length; i++) {
+        const category = navLinks1[i].innerText;
+
+        if (category) {
+          salla.product.categories(category).then((response) => {
+            const data = `
                   <div class="navLink-show cursor-pointer font-bold" onclick="getlistProduct(${category} , this , ${id})">
                     ${response.data.name}
                   </div>
-                  `
-                  listCategory1.innerHTML +=data
-  
-                });
-                const data = `<salla-products-slider
+                  `;
+            listCategory1.innerHTML += data;
+          });
+          const data = `<salla-products-slider
                 source="categories"
               source-value=[${navLinks1[0].innerText}]
-              </salla-product-slider>`
-        
-              listProduct1.innerHTML = data
+              </salla-product-slider>`;
 
-               }
-  
-                
-              }
-              
+          listProduct1.innerHTML = data;
+        }
+      }
     }
-    				    
   }
 
- async productBelongThree(){
-    const section = document.getElementsByClassName("category-three")
+  async productBelongThree() {
+    const section = document.getElementsByClassName("category-three");
 
     for (let i = 0; i < section.length; i++) {
-    const categoryId = section[i]?.children[1]?.innerText
-    const insert  = section[i]?.children[2]
-    const queryParams = {
-      source: "categories",
-      source_value: [categoryId],
-    };
+      const categoryId = section[i]?.children[1]?.innerText;
+      const insert = section[i]?.children[2];
+      const queryParams = {
+        source: "categories",
+        source_value: [categoryId],
+      };
 
-    await salla.product
-      .fetch(queryParams)
-      .then((response) => {
-        const products = response.data.slice(0, 5);
-        const data = `
+      await salla.product
+        .fetch(queryParams)
+        .then((response) => {
+          const products = response.data.slice(0, 5);
+          const data = `
         <div>
         <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
           <div id="product-${
@@ -142,12 +128,21 @@ class App extends AppHelpers {
               <div class="flex  flex-col  justify-center items-center mb-10">
   
                 <h1 class="  text-sm font-bold leading-6 text-black product-entry__title">
-                  <a  href="${products[0].url}" style=" color : black ; font-size : 22px">${products[0].name}</a>
+                  <a  href="${
+                    products[0].url
+                  }" style=" color : black ; font-size : 22px">${
+            products[0].name
+          }</a>
                 </h1>
                 <div >
                 ${
-                  products[0].sale_price ? `<h4>${this.getPriceFormat(products[0].sale_price)}</h4> <span>${this.getPriceFormat(this.product?.regular_price)}</span>`:`<h4>${this.getPriceFormat(products[0].price)}</h4> `
-
+                  products[0].sale_price
+                    ? `<h4>${this.getPriceFormat(
+                        products[0].sale_price
+                      )}</h4> <span>${this.getPriceFormat(
+                        this.product?.regular_price
+                      )}</span>`
+                    : `<h4>${this.getPriceFormat(products[0].price)}</h4> `
                 }
 
           
@@ -166,7 +161,9 @@ class App extends AppHelpers {
             </salla-button>
           </div>
           
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${products[1].id})" data-title="عرض سريع" data-product-id="${products[1].id}">
+                  <div class="quickview-btn eye-icon" onclick="clickModal(${
+                    products[1].id
+                  })" data-title="عرض سريع" data-product-id="${products[1].id}">
                       <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
@@ -210,7 +207,9 @@ class App extends AppHelpers {
             </salla-button>
           </div>
           
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${products[1].id})" data-title="عرض سريع" data-product-id="${products[1].id}">
+                  <div class="quickview-btn eye-icon" onclick="clickModal(${
+                    products[1].id
+                  })" data-title="عرض سريع" data-product-id="${products[1].id}">
                       <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
@@ -274,7 +273,9 @@ class App extends AppHelpers {
             </salla-button>
           </div>
           
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${products[2].id})" data-title="عرض سريع" data-product-id="${products[2].id}">
+                  <div class="quickview-btn eye-icon" onclick="clickModal(${
+                    products[2].id
+                  })" data-title="عرض سريع" data-product-id="${products[2].id}">
                       <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
@@ -338,7 +339,9 @@ class App extends AppHelpers {
             </salla-button>
           </div>
           
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${products[3].id})" data-title="عرض سريع" data-product-id="${products[3].id}">
+                  <div class="quickview-btn eye-icon" onclick="clickModal(${
+                    products[3].id
+                  })" data-title="عرض سريع" data-product-id="${products[3].id}">
                       <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
@@ -401,7 +404,9 @@ class App extends AppHelpers {
             </salla-button>
           </div>
           
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${products[4].id})" data-title="عرض سريع" data-product-id="${products[4].id}">
+                  <div class="quickview-btn eye-icon" onclick="clickModal(${
+                    products[4].id
+                  })" data-title="عرض سريع" data-product-id="${products[4].id}">
                       <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
@@ -446,57 +451,57 @@ class App extends AppHelpers {
         
       </div>
         
-        `
-        insert.innerHTML += data;
-      }).catch((error) => {
+        `;
+          insert.innerHTML += data;
+        })
+        .catch((error) => {
           console.error(error);
         });
-      
     }
-    
   }
 
+  // design 2 get all product belong to category
+  prodBelongToCat() {
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+    }
+    // const categories = document.getElementsByClassName("category-value-new");
+    const newDesignProduct =
+      document.getElementsByClassName("new-design-product");
+    for (let i = 0; i < newDesignProduct.length; i++) {
+      const id = getRandomIntInclusive(100000, 900000);
+      newDesignProduct[i].children[1].setAttribute("id", id);
+      const insert = document.getElementById(id);
+      const lop = newDesignProduct[i]?.children[0]?.children;
+      console.log(
+        newDesignProduct[i]?.children[0]?.children[0],
+        newDesignProduct[i]?.children[0]?.children[1]
+      );
 
-  // design 2 get all product belong to category 
- prodBelongToCat(){
-  function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
-  }
-  // const categories = document.getElementsByClassName("category-value-new");
-  const newDesignProduct = document.getElementsByClassName("new-design-product")
-for(let i = 0; i < newDesignProduct.length; i++){
+      for (let j = 0; j < 2; j++) {
+        const categoryId =
+          newDesignProduct[i]?.children[0]?.children[j]?.innerText;
 
-  const id= getRandomIntInclusive(100000 , 900000)
-  newDesignProduct[i].children[1].setAttribute("id" , id)
-  const insert = document.getElementById(id)
- const lop = newDesignProduct[i]?.children[0]?.children
- console.log(newDesignProduct[i]?.children[0]?.children[0] , newDesignProduct[i]?.children[0]?.children[1])
+        let name = "";
+        if (categoryId) {
+          salla.product.categories(categoryId).then((response) => {
+            name = response.data.name;
+          });
 
- for(let j = 0 ; j< 2 ; j++ ){
-    const categoryId = newDesignProduct[i]?.children[0]?.children[j]?.innerText;
-    
-    let name =""
-    if (categoryId){
-      salla.product
-      .categories(categoryId)
-      .then((response) => {
-        name= response.data.name;
-      });
+          const queryParams = {
+            source: "categories",
+            source_value: [categoryId],
+          };
 
-    const queryParams = {
-      source: "categories",
-      source_value: [categoryId],
-    };
+          // Call the fetch method
+          salla.product
+            .fetch(queryParams)
+            .then((response) => {
+              const products = response.data.slice(0, 3);
 
-    // Call the fetch method
-     salla.product
-      .fetch(queryParams)
-      .then((response) => {
-        const products = response.data.slice(0, 3);
-
-        const data = `
+              const data = `
         <div>
         <div class="mb-4">
           <div>
@@ -522,7 +527,9 @@ for(let i = 0; i < newDesignProduct.length; i++){
               <div class="flex items-baseline justify-center">
   
                 <h3 class="mb-2 text-sm font-bold leading-6 text-white product-entry__title">
-                  <a href="${products[0].url}" style="background-color : #404553 ; padding: 10px 15px; border-radius : 20px">تسوق الان</a>
+                  <a href="${
+                    products[0].url
+                  }" style="background-color : #404553 ; padding: 10px 15px; border-radius : 20px">تسوق الان</a>
                 </h3>
               </div>
             </div>
@@ -549,7 +556,9 @@ for(let i = 0; i < newDesignProduct.length; i++){
             </salla-button>
           </div>
           
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${products[1].id})" data-title="عرض سريع" data-product-id="${products[1].id}">
+                  <div class="quickview-btn eye-icon" onclick="clickModal(${
+                    products[1].id
+                  })" data-title="عرض سريع" data-product-id="${products[1].id}">
                       <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
@@ -608,7 +617,9 @@ for(let i = 0; i < newDesignProduct.length; i++){
           </salla-button>
         </div>
         
-        <div class="quickview-btn eye-icon" onclick="clickModal(${products[2].id})" data-title="عرض سريع" data-product-id="${products[2].id}">
+        <div class="quickview-btn eye-icon" onclick="clickModal(${
+          products[2].id
+        })" data-title="عرض سريع" data-product-id="${products[2].id}">
         <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
@@ -652,190 +663,182 @@ for(let i = 0; i < newDesignProduct.length; i++){
       </div>
       `;
 
-        insert.innerHTML += data;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-
+              insert.innerHTML += data;
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        }
+      }
     }
-   
   }
-
-}
-
-
-}
-
 
   //map
 
   getPriceFormat(price) {
     if (!price || price == 0) {
-      return salla.config.get('store.settings.product.show_price_as_dash')?'-':'';
+      return salla.config.get("store.settings.product.show_price_as_dash")
+        ? "-"
+        : "";
     }
 
     return salla.money(price);
   }
 
-
-  map(){
+  map() {
     const insertMap = document.getElementById("map-content");
-const map = document.getElementById("map-new");
-const encodedString = map?.innerText
+    const map = document.getElementById("map-new");
+    const encodedString = map?.innerText;
 
-const container = document.createElement('div');
-container.innerHTML = encodedString;
+    const container = document.createElement("div");
+    container.innerHTML = encodedString;
 
-const iframeElement = container.firstChild.textContent;
+    const iframeElement = container.firstChild.textContent;
 
-const data = `
+    const data = `
 ${iframeElement}
-`
-if(insertMap){
-  insertMap.innerHTML = data
-}
-
-
+`;
+    if (insertMap) {
+      insertMap.innerHTML = data;
+    }
   }
 
   // all product belong category
-async productCategory(){
-  const more = document.getElementsByClassName("category-1")
-  const categoryId = document.getElementById("category-id-product")?.innerText
-const insertElement = document.getElementById("all-pro-by-cat")
-for (let l = 0; l < more.length; l++) {
-  if(categoryId){
-    const url = await salla.product
-      .categories(categoryId)
-      .then((response) => {
-        return response.data.url;
-      });
-  more[l].children[2].setAttribute("href" , url)
-  
-}
-   if (categoryId){
-    salla.product.fetch({
-      source: "categories",
-      source_value: [categoryId],
-    }).then((response) => {
-
-      
-      const numberOfProductShow =  response.data.length > 8 ? response.data.length.slice(0,8) : response.data.length 
-        for(let i = 0 ; i< response.data.length ; i++){
-         const product = response.data[i]
-        // console.log({product})
-   const data =`
+  async productCategory() {
+    const more = document.getElementsByClassName("category-1");
+    const categoryId = document.getElementById(
+      "category-id-product"
+    )?.innerText;
+    const insertElement = document.getElementById("all-pro-by-cat");
+    for (let l = 0; l < more.length; l++) {
+      if (categoryId) {
+        const url = await salla.product
+          .categories(categoryId)
+          .then((response) => {
+            return response.data.url;
+          });
+        more[l].children[2].setAttribute("href", url);
+      }
+      if (categoryId) {
+        salla.product
+          .fetch({
+            source: "categories",
+            source_value: [categoryId],
+          })
+          .then((response) => {
+            const numberOfProductShow =
+              response.data.length > 8
+                ? response.data.length.slice(0, 8)
+                : response.data.length;
+            for (let i = 0; i < response.data.length; i++) {
+              const product = response.data[i];
+              // console.log({product})
+              const data = `
 
 						
-						<a class=" flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="${product.url}">
-                <img class=" rounded bg-cover"  src="${product.image.url}" alt="${product.image.alt}" style="width:200px ; height : 200px"/>
+						<a class=" flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="${
+              product.url
+            }">
+                <img class=" rounded bg-cover"  src="${
+                  product.image.url
+                }" alt="${
+                product.image.alt
+              }" style="width:200px ; height : 200px"/>
           
 						
 							<div class="flex flex-col items-center justify-center">
 							<p class="category-name opacity-80">${product.name}</p>
               <div class="flex justify-center items-center">
-              <h4 style="font-weight : 800" >${this.getPriceFormat(product.price)}</h4>
+              <h4 style="font-weight : 800" >${this.getPriceFormat(
+                product.price
+              )}</h4>
 							
 							
 							</div>
               </div>
 		</a>
-    `
-insertElement.innerHTML += data
-            
-        }
-        
-      });
-
+    `;
+              insertElement.innerHTML += data;
+            }
+          });
+      }
+    }
   }
-  
-   }
 
-    
-  
-}
-
-
-
-
-  // elan 
-   removeElan() {
+  // elan
+  removeElan() {
     const removeElanBtn = document.getElementById("remove-elan");
-    if(removeElanBtn){
-    removeElanBtn.addEventListener("click", () => {
-      document.getElementById("elan-bannle").remove()
-    })}
+    if (removeElanBtn) {
+      removeElanBtn.addEventListener("click", () => {
+        document.getElementById("elan-bannle").remove();
+      });
+    }
   }
-
 
   //fetch category
   getAllCategory() {
     const categories = document.getElementsByClassName("category-value");
     const names = document.getElementsByClassName("category-name");
     const anchors = document.getElementsByClassName("api-set-category");
-    const image = document.getElementsByClassName("image-catetgory")
-    if(categories){
-    for (let i = 0; i < categories.length; i++) {
-      const category = categories[i].innerText;
-      const name = names[i];
-      const anchor = anchors[i];
-      const img = image[i]
-      if(category){
-        console.log({category})
-        salla.product.categories(category).then((response) => {
-          console.log(response)
-          if(name) name.innerText = response.data.name;
-          anchor.href = response.data.url;
-          // img.setAttribute("src" , response.data.image)
-        });
+    const image = document.getElementsByClassName("image-catetgory");
+    if (categories) {
+      for (let i = 0; i < categories.length; i++) {
+        const category = categories[i].innerText;
+        const name = names[i];
+        const anchor = anchors[i];
+        const img = image[i];
+        if (category) {
+          console.log({ category });
+          salla.product.categories(category).then((response) => {
+            console.log(response);
+            if (name) name.innerText = response.data.name;
+            anchor.href = response.data.url;
+            // img.setAttribute("src" , response.data.image)
+          });
+        }
       }
-      
-    }
-   }
-
-  }
-
-
-  //elan slider 
-  elanSldier(){
-    const btnShow = document.getElementById("btn-open")
-    const showSlider = document.getElementById("animated-ads")
-    if(btnShow){
-      btnShow.addEventListener("click" , ()=>{
-        showSlider.classList.toggle("show")
-      })
     }
   }
 
-  loadModalImgOnclick(){
-    document.querySelectorAll('.load-img-onclick').forEach(link => {
-      link.addEventListener('click', (event)=> {
+  //elan slider
+  elanSldier() {
+    const btnShow = document.getElementById("btn-open");
+    const showSlider = document.getElementById("animated-ads");
+    if (btnShow) {
+      btnShow.addEventListener("click", () => {
+        showSlider.classList.toggle("open");
+      });
+    }
+  }
+
+  loadModalImgOnclick() {
+    document.querySelectorAll(".load-img-onclick").forEach((link) => {
+      link.addEventListener("click", (event) => {
         event.preventDefault();
-        let modal = document.querySelector('#' + link.dataset.modalId),
-            img = modal.querySelector('img'),
-            imgSrc = img.dataset.src;
+        let modal = document.querySelector("#" + link.dataset.modalId),
+          img = modal.querySelector("img"),
+          imgSrc = img.dataset.src;
         modal.open();
-        
-        if(img.classList.contains('loaded')) return;
+
+        if (img.classList.contains("loaded")) return;
 
         img.src = imgSrc;
-        img.classList.add('loaded');
-      })
-    })
+        img.classList.add("loaded");
+      });
+    });
   }
 
-  commonThings(){
-    this.cleanContentArticles('.content-entry');
+  commonThings() {
+    this.cleanContentArticles(".content-entry");
   }
 
-  cleanContentArticles(elementsSelector){
+  cleanContentArticles(elementsSelector) {
     let articleElements = document.querySelectorAll(elementsSelector);
 
     if (articleElements.length) {
-      articleElements.forEach(article => {
-        article.innerHTML = article.innerHTML.replace(/\&nbsp;/g, ' ')
-      })
+      articleElements.forEach((article) => {
+        article.innerHTML = article.innerHTML.replace(/\&nbsp;/g, " ");
+      });
     }
   }
 
@@ -848,33 +851,33 @@ insertElement.innerHTML += data
     aux.select();
     document.execCommand("copy");
     document.body.removeChild(aux);
-    this.toggleElementClassIf(btn, 'copied', 'code-to-copy', () => true);
+    this.toggleElementClassIf(btn, "copied", "code-to-copy", () => true);
     setTimeout(() => {
-      this.toggleElementClassIf(btn, 'code-to-copy', 'copied', () => true)
+      this.toggleElementClassIf(btn, "code-to-copy", "copied", () => true);
     }, 1000);
   }
 
   initiateNotifier() {
     salla.notify.setNotifier(function (message, type, data) {
-      if (typeof message == 'object') {
+      if (typeof message == "object") {
         return Swal.fire(message).then(type);
       }
 
       return Swal.mixin({
-        toast            : true,
-        position         : salla.config.get('theme.is_rtl') ? 'top-start' : 'top-end',
+        toast: true,
+        position: salla.config.get("theme.is_rtl") ? "top-start" : "top-end",
         showConfirmButton: false,
-        timer            : 3500,
-        didOpen          : (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
+        timer: 3500,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
       }).fire({
-        icon            : type,
-        title           : message,
-        showCloseButton : true,
-        timerProgressBar: true
-      })
+        icon: type,
+        title: message,
+        showCloseButton: true,
+        timerProgressBar: true,
+      });
     });
   }
 
@@ -884,43 +887,59 @@ insertElement.innerHTML += data
     if (!menu) {
       return;
     }
-    menu = new MobileMenu(menu, "(max-width: 1024px)", "( slidingSubmenus: false)");
+    menu = new MobileMenu(
+      menu,
+      "(max-width: 1024px)",
+      "( slidingSubmenus: false)"
+    );
     salla.lang.onLoaded(() => {
-      menu.navigation({title: salla.lang.get('blocks.header.main_menu')});
+      menu.navigation({ title: salla.lang.get("blocks.header.main_menu") });
     });
-    const drawer = menu.offcanvas({position: salla.config.get('theme.is_rtl') ? "right" : 'left'});
+    const drawer = menu.offcanvas({
+      position: salla.config.get("theme.is_rtl") ? "right" : "left",
+    });
 
-    this.onClick("a[href='#mobile-menu']", event => {
-      document.body.classList.add('menu-opened');
-      event.preventDefault() || drawer.close() || drawer.open()
+    this.onClick("a[href='#mobile-menu']", (event) => {
+      document.body.classList.add("menu-opened");
+      event.preventDefault() || drawer.close() || drawer.open();
     });
-    this.onClick(".close-mobile-menu", event => {
-      document.body.classList.remove('menu-opened');
-      event.preventDefault() || drawer.close()
+    this.onClick(".close-mobile-menu", (event) => {
+      document.body.classList.remove("menu-opened");
+      event.preventDefault() || drawer.close();
     });
   }
 
   initiateStickyMenu() {
-    let header = this.element('#mainnav'),
-      height = this.element('#mainnav .inner')?.clientHeight;
+    let header = this.element("#mainnav"),
+      height = this.element("#mainnav .inner")?.clientHeight;
     //when it's landing page, there is no header
     if (!header) {
       return;
     }
 
-    window.addEventListener('load', () => setTimeout(() => this.setHeaderHeight(), 500))
-    window.addEventListener('resize', () => this.setHeaderHeight())
+    window.addEventListener("load", () =>
+      setTimeout(() => this.setHeaderHeight(), 500)
+    );
+    window.addEventListener("resize", () => this.setHeaderHeight());
 
-    window.addEventListener('scroll', () => {
-      window.scrollY >= header.offsetTop + height ? header.classList.add('fixed-pinned', 'animated') : header.classList.remove('fixed-pinned');
-      window.scrollY >= 200 ? header.classList.add('fixed-header') : header.classList.remove('fixed-header', 'animated');
-    }, {passive: true});
+    window.addEventListener(
+      "scroll",
+      () => {
+        window.scrollY >= header.offsetTop + height
+          ? header.classList.add("fixed-pinned", "animated")
+          : header.classList.remove("fixed-pinned");
+        window.scrollY >= 200
+          ? header.classList.add("fixed-header")
+          : header.classList.remove("fixed-header", "animated");
+      },
+      { passive: true }
+    );
   }
 
   setHeaderHeight() {
-    let height = this.element('#mainnav .inner').clientHeight,
-      header = this.element('#mainnav');
-    header.style.height = height + 'px';
+    let height = this.element("#mainnav .inner").clientHeight,
+      header = this.element("#mainnav");
+    header.style.height = height + "px";
   }
 
   /**
@@ -934,94 +953,116 @@ insertElement.innerHTML += data
       return;
     }
 
-    if (!salla.storage.get('statusAd-' + ad.dataset.id)) {
-      ad.classList.remove('hidden');
+    if (!salla.storage.get("statusAd-" + ad.dataset.id)) {
+      ad.classList.remove("hidden");
     }
 
-    this.onClick('.ad-close', function (event) {
+    this.onClick(".ad-close", function (event) {
       event.preventDefault();
-      salla.storage.set('statusAd-' + ad.dataset.id, 'dismissed');
+      salla.storage.set("statusAd-" + ad.dataset.id, "dismissed");
 
       anime({
-        targets : '.salla-advertisement',
-        opacity : [1, 0],
+        targets: ".salla-advertisement",
+        opacity: [1, 0],
         duration: 300,
-        height  : [ad.clientHeight, 0],
-        easing  : 'easeInOutQuad',
+        height: [ad.clientHeight, 0],
+        easing: "easeInOutQuad",
       });
     });
   }
 
   initiateDropdowns() {
-    this.onClick('.dropdown__trigger', ({target: btn}) => {
-      btn.parentElement.classList.toggle('is-opened');
-      document.body.classList.toggle('dropdown--is-opened');
+    this.onClick(".dropdown__trigger", ({ target: btn }) => {
+      btn.parentElement.classList.toggle("is-opened");
+      document.body.classList.toggle("dropdown--is-opened");
       // Click Outside || Click on close btn
-      window.addEventListener('click', ({target: element}) => {
-        if (!element.closest('.dropdown__menu') && element !== btn || element.classList.contains('dropdown__close')) {
-          btn.parentElement.classList.remove('is-opened');
-          document.body.classList.remove('dropdown--is-opened');
+      window.addEventListener("click", ({ target: element }) => {
+        if (
+          (!element.closest(".dropdown__menu") && element !== btn) ||
+          element.classList.contains("dropdown__close")
+        ) {
+          btn.parentElement.classList.remove("is-opened");
+          document.body.classList.remove("dropdown--is-opened");
         }
       });
     });
   }
 
   initiateModals() {
-    this.onClick('[data-modal-trigger]', e => {
-      let id = '#' + e.target.dataset.modalTrigger;
-      this.removeClass(id, 'hidden');
+    this.onClick("[data-modal-trigger]", (e) => {
+      let id = "#" + e.target.dataset.modalTrigger;
+      this.removeClass(id, "hidden");
       setTimeout(() => this.toggleModal(id, true)); //small amont of time to running toggle After adding hidden
     });
-    salla.event.document.onClick("[data-close-modal]", e => this.toggleModal('#' + e.target.dataset.closeModal, false));
+    salla.event.document.onClick("[data-close-modal]", (e) =>
+      this.toggleModal("#" + e.target.dataset.closeModal, false)
+    );
   }
 
   toggleModal(id, isOpen) {
-    this.toggleClassIf(`${id} .s-salla-modal-overlay`, 'ease-out duration-300 opacity-100', 'opacity-0', () => isOpen)
-      .toggleClassIf(`${id} .s-salla-modal-body`,
-        'ease-out duration-300 opacity-100 translate-y-0 sm:scale-100', //add these classes
-        'opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95', //remove these classes
-        () => isOpen)
-      .toggleElementClassIf(document.body, 'modal-is-open', 'modal-is-closed', () => isOpen);
+    this.toggleClassIf(
+      `${id} .s-salla-modal-overlay`,
+      "ease-out duration-300 opacity-100",
+      "opacity-0",
+      () => isOpen
+    )
+      .toggleClassIf(
+        `${id} .s-salla-modal-body`,
+        "ease-out duration-300 opacity-100 translate-y-0 sm:scale-100", //add these classes
+        "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95", //remove these classes
+        () => isOpen
+      )
+      .toggleElementClassIf(
+        document.body,
+        "modal-is-open",
+        "modal-is-closed",
+        () => isOpen
+      );
     if (!isOpen) {
-      setTimeout(() => this.addClass(id, 'hidden'), 350);
+      setTimeout(() => this.addClass(id, "hidden"), 350);
     }
   }
 
   initiateCollapse() {
-    document.querySelectorAll('.btn--collapse')
-      .forEach((trigger) => {
-        const content = document.querySelector('#' + trigger.dataset.show);
-        const state = {isOpen: false}
+    document.querySelectorAll(".btn--collapse").forEach((trigger) => {
+      const content = document.querySelector("#" + trigger.dataset.show);
+      const state = { isOpen: false };
 
-        const onOpen = () => anime({
-          targets : content,
+      const onOpen = () =>
+        anime({
+          targets: content,
           duration: 225,
-          height  : content.scrollHeight,
-          opacity : [0, 1],
-          easing  : 'easeOutQuart',
+          height: content.scrollHeight,
+          opacity: [0, 1],
+          easing: "easeOutQuart",
         });
 
-        const onClose = () => anime({
-          targets : content,
+      const onClose = () =>
+        anime({
+          targets: content,
           duration: 225,
-          height  : 0,
-          opacity : [1, 0],
-          easing  : 'easeOutQuart',
-        })
+          height: 0,
+          opacity: [1, 0],
+          easing: "easeOutQuart",
+        });
 
-        const toggleState = (isOpen) => {
-          state.isOpen = !isOpen
-          this.toggleElementClassIf(content, 'is-closed', 'is-opened', () => isOpen);
-        }
+      const toggleState = (isOpen) => {
+        state.isOpen = !isOpen;
+        this.toggleElementClassIf(
+          content,
+          "is-closed",
+          "is-opened",
+          () => isOpen
+        );
+      };
 
-        trigger.addEventListener('click', () => {
-          const {isOpen} = state
-          toggleState(isOpen)
-          isOpen ? onClose() : onOpen();
-        })
+      trigger.addEventListener("click", () => {
+        const { isOpen } = state;
+        toggleState(isOpen);
+        isOpen ? onClose() : onOpen();
       });
+    });
   }
-
 
   /**
    * Workaround for seeking to simplify & clean, There are three ways to use this method:
@@ -1042,15 +1083,21 @@ insertElement.innerHTML += data
    * they can be from any page, especially when mega-menu is enabled
    */
   initAddToCart() {
-    salla.cart.event.onUpdated(summary => {
-      document.querySelectorAll('[data-cart-total]').forEach(el => el.innerText = salla.money(summary.total));
-      document.querySelectorAll('[data-cart-count]').forEach(el => el.innerText = salla.helpers.number(summary.count));
+    salla.cart.event.onUpdated((summary) => {
+      document
+        .querySelectorAll("[data-cart-total]")
+        .forEach((el) => (el.innerText = salla.money(summary.total)));
+      document
+        .querySelectorAll("[data-cart-count]")
+        .forEach((el) => (el.innerText = salla.helpers.number(summary.count)));
     });
 
     salla.cart.event.onItemAdded((response, prodId) => {
-      app.element('salla-cart-summary').animateToCart(app.element(`#product-${prodId} img`));
+      app
+        .element("salla-cart-summary")
+        .animateToCart(app.element(`#product-${prodId} img`));
     });
   }
 }
 
-salla.onReady(() => (new App).loadTheApp());
+salla.onReady(() => new App().loadTheApp());
