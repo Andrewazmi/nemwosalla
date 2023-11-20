@@ -1,7 +1,7 @@
-<section class=" mt-8 h-80 relative flex flex-col items-center justify-center text-white flex-nowrap" style="background: cover no-repeat url('{{component.image}}')">
+<section class=" mt-8 h-80  gap-3 flex flex-col items-center justify-center text-white " style="background: url('{{component.image}}') ; background-repeat:no-repeat  ;     background-size: cover;">
   
-        <h4>{{component.title}} </h4>
-        <h1>{{component.subtitle}}</h1>
-        <a href="{{component.url}}"> {{component.button}}</a>
+        <p class=" text-4xl">{{component.title}} </p>
+        <h1 class=" text-7xl">{{component.subtitle}}</h1>
+        <a class=" border-b-2 border-white text-4xl" href="{{component.url}}"> {{component.button}}</a>
   
 </section>
