@@ -21,6 +21,14 @@
 						</a>
 					</li>
                 {% endfor %}
+                {% for brand in component.brands %}
+                    <li style="animation-duration: 10000ms;">
+						<a href="{{brand.url}}">
+                                
+							<img  class=" w-[50px] h-[50px]" src="{{brand.image}}" />
+						</a>
+					</li>
+                {% endfor %}
 
 				</div>
 				<div aria-hidden="true" class="marquee__group">
@@ -33,6 +41,14 @@
 					</li>
                 {% endfor %}
                 {% for brand in component.brands %}
+                    <li style="animation-duration: 10000ms;">
+						<a href="{{brand.url}}">
+                                
+							<img  class=" w-[50px] h-[50px]" src="{{brand.image}}" />
+						</a>
+					</li>
+                {% endfor %}
+                 {% for brand in component.brands %}
                     <li style="animation-duration: 10000ms;">
 						<a href="{{brand.url}}">
                                 
