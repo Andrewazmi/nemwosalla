@@ -1252,7 +1252,7 @@
             "fields": [
                 {
                     "id": "add_two_card",
-                    "key": "6844fc52-1edd-43ae-8744-84071a10fff6",
+                    "key": "8789f608-4251-4764-9d13-0ca924cffddb",
                     "type": "collection",
                     "format": "collection",
                     "label": "add_two_card",
@@ -1263,7 +1263,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "966f7956-bd44-4778-afe4-b62f9c3529a4",
+                            "key": "e084d4e1-b7e5-4b96-a57a-46832bf17966",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -1277,7 +1277,7 @@
                         },
                         {
                             "id": "url",
-                            "key": "e4ff82d9-d78a-4a6a-80a7-6875e0dadd0a",
+                            "key": "d2b79390-47e0-4a9f-a364-00b731e279c1",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
@@ -1291,6 +1291,48 @@
                             "minLength": 6,
                             "maxLength": 30,
                             "defaulted": true
+                        },
+                        {
+                            "id": "background_button_color",
+                            "key": "17a10b69-f687-4b0c-9a1a-6e6c5a39e453",
+                            "type": "string",
+                            "format": "color",
+                            "inputType": "color",
+                            "label": "background_button_color",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-format-fill",
+                            "value": "#004956",
+                            "required": false
+                        },
+                        {
+                            "id": "text_color_button",
+                            "key": "d331741b-a15d-41be-8c02-2d566e794024",
+                            "type": "string",
+                            "format": "color",
+                            "inputType": "color",
+                            "label": "text_color_button",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-format-fill",
+                            "value": "#004956",
+                            "required": false
+                        },
+                        {
+                            "id": "button",
+                            "key": "16d6fab7-e145-421f-a4d8-b3ff1e325905",
+                            "type": "string",
+                            "format": "text",
+                            "label": "button",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
                         }
                     ],
                     "value": [],
