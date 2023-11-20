@@ -5741,6 +5741,13 @@ salla-search input {
 .animated-ads {
   right: -74%;
 }
+.offer-style {
+  width: 500px !important;
+  align-items: center !important;
+}
+.offer-style .img-box {
+  height: 600px;
+}
 /* responsive */
 @media (max-width: 1024px) {
   .menu-style {
@@ -5788,6 +5795,13 @@ salla-search input {
   }
   .mm-spn.mm-spn--navbar:after {
     border-bottom: 4px solid rgba(217, 217, 217, 0.5215686275) !important;
+  }
+  .offer-style {
+    width: 300px !important;
+    align-items: center !important;
+  }
+  .offer-style .img-box {
+    height: 500px;
   }
 }
 @media (max-width: 768px) {
@@ -5845,6 +5859,13 @@ salla-search input {
 @media (max-width: 1300px) {
   .animated-ads {
     right: -71%;
+  }
+  .offer-style {
+    width: 300px !important;
+    align-items: center !important;
+  }
+  .offer-style .img-box {
+    height: 400px;
   }
 }
 body.mm-ocd-opened,
