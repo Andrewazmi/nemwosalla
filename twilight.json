@@ -2686,6 +2686,30 @@
                     "defaulted": true
                 }
             ]
+        },
+        {
+            "key": "000217f7-ef9d-4d06-81c2-6d453a2f3933",
+            "title": "video",
+            "icon": "sicon-store",
+            "path": "home.video",
+            "fields": [
+                {
+                    "id": "video_banner",
+                    "key": "5bde05cb-559f-4613-a9d9-2574c933a01e",
+                    "type": "string",
+                    "format": "text",
+                    "label": "video_banner",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": "10000"
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
