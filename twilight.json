@@ -2695,7 +2695,7 @@
             "fields": [
                 {
                     "id": "video_banner",
-                    "key": "5b2605cf-f517-452c-a241-2605563d737a",
+                    "key": "5bde05cb-559f-4613-a9d9-2574c933a01e",
                     "type": "string",
                     "format": "text",
                     "label": "video_banner",
@@ -2707,7 +2707,7 @@
                     "multilanguage": false,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30
+                    "maxLength": "10000"
                 }
             ]
         }
