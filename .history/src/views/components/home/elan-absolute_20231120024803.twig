@@ -1,0 +1,31 @@
+<div id="animated-ads" class="flex animated-ads" style="height:400px ; overflow : hidden ;">
+	<div class="flex">
+		<div class="content">
+			<a href="{{component.url}}">
+				<img class="object-fill w-full h-full" src="{{component.image}}"/>
+			</a>
+		</div>
+		<div id="btn-open" class="flex items-center justify-center px-1 py-1 text-white lg:px-4 btn-open" style="background-color :#404553;">
+			<div class="flex flex-col-reverse items-center justify-between h-full py-1.5 px-0.5 w-fit rtl:flex-col">
+				<span class="block w-10 mb-3 text-base text-center -rotate-90 last:mb-0 h-fit"></span>
+				<span class="block w-10 mb-3 text-base text-center -rotate-90 last:mb-0 h-fit"></span>
+				<span class="block w-10 mb-3 text-base text-center -rotate-90 last:mb-0 h-fit"></span>
+
+				{% for word in component.offer|split(" ") %}
+					{% if word|length > 0 %}
+						<span class="block w-10 mb-3 text-base text-center -rotate-90 last:mb-0 h-fit">{{word}}</span>
+					{% endif %}
+				{% endfor %}
+
+				<div id="open-ad-menu" class="flex items-center justify-center w-full rotate-90">
+					<svg style="fill:#fff !important" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="17px" height="13px" viewbox="0 0 24 24">
+						<path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path>
+					</svg>
+				</div>
+				<span class="block w-10 text-base text-center -rotate-90 mb-t h-fit"></span>
+				<span class="block w-10 text-base text-center -rotate-90 mb-t h-fit"></span>
+				<span class="block w-10 text-base text-center -rotate-90 mb-t h-fit"></span>
+			</div>
+		</div>
+	</div>
+</div>

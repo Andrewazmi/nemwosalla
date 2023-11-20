@@ -1,0 +1,149 @@
+{#
+| Variable         | Type    | Description                     |
+|------------------|---------|---------------------------------|
+| cart             | object  |                                 |
+| cart.items_count | int     |                                 |
+| cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
+#}
+{% set important_links = theme.settings.get('important_links') %}
+<header
+	class="pt-3 store-header lg:pt-5">
+	{# Top Nav #}
+	<div class="top-navbar">
+		<div class="flex items-center justify-between w-full space-x-10">
+			<div class="flex items-center justify-center flex-1 px-5 space-x-10 lg:justify-start rtl:space-x-reverse lg:px-11">
+				{# Footer Menu #}
+				{# {% if important_links %} 
+								{% component 'footer.menu' with {is_header:true} %}
+								{% endif %} #}
+
+					<div
+					class="flex header-buttons second"> {# Language & Currency Component #}
+					{% if store.settings.is_multilingual or store.settings.currencies_enabled %}
+						<button type="button" onclick="salla.event.dispatch('localization::open')" class="flex items-center justify-center gap-2 bg-transparent">
+							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="1.7em" viewbox="0 0 55 54" fill="none">
+								<g clip-path="url(#clip0_177_5060)">
+									<path d="M27.6434 0.0859375C12.8718 0.0859375 0.910095 12.0744 0.910095 26.846C0.910095 41.6175 12.8718 53.606 27.6434 53.606C42.4417 53.606 54.4302 41.6175 54.4302 26.846C54.4302 12.0744 42.4417 0.0859375 27.6434 0.0859375ZM46.1881 16.142H38.2939C37.4564 12.8276 36.2162 9.62829 34.601 6.61539C39.4823 8.29593 43.5955 11.6777 46.1881 16.142ZM27.6701 5.54499C29.8912 8.75619 31.6306 12.3153 32.7813 16.142H22.559C23.7097 12.3153 25.4491 8.75619 27.6701 5.54499ZM6.95787 32.198C6.52971 30.4854 6.26211 28.6924 6.26211 26.846C6.26211 24.9995 6.52971 23.2066 6.95787 21.494H16.0028C15.7887 23.2601 15.6281 25.0263 15.6281 26.846C15.6281 28.6657 15.7887 30.4318 16.0028 32.198H6.95787ZM9.15219 37.55H17.0464C17.9027 40.895 19.1337 44.1062 20.7393 47.0766C15.8528 45.4052 11.7368 42.0211 9.15219 37.55ZM17.0464 16.142H9.15219C11.7368 11.6708 15.8528 8.28674 20.7393 6.61539C19.1241 9.62829 17.8839 12.8276 17.0464 16.142ZM27.6701 48.147C25.4491 44.9358 23.7097 41.3767 22.559 37.55H32.7813C31.6306 41.3767 29.8912 44.9358 27.6701 48.147ZM33.932 32.198H21.4083C21.1675 30.4318 20.9801 28.6657 20.9801 26.846C20.9801 25.0263 21.1675 23.2334 21.4083 21.494H33.932C34.1728 23.2334 34.3602 25.0263 34.3602 26.846C34.3602 28.6657 34.1728 30.4318 33.932 32.198ZM34.601 47.0766C36.2066 44.1062 37.4376 40.895 38.2939 37.55H46.1881C43.5955 42.0143 39.4823 45.396 34.601 47.0766ZM39.3375 32.198C39.5516 30.4318 39.7122 28.6657 39.7122 26.846C39.7122 25.0263 39.5516 23.2601 39.3375 21.494H48.3824C48.8106 23.2066 49.0782 24.9995 49.0782 26.846C49.0782 28.6924 48.8106 30.4854 48.3824 32.198H39.3375Z" fill="#334155"/>
+								</g>
+								<defs>
+									<clipPath id="clip0_177_5060">
+										<rect width="53.5201" height="53.5201" fill="white" transform="translate(0.910095 0.0859375)"/>
+									</clipPath>
+								</defs>
+							</svg>
+							<div class="flex items-center justify-start">
+								<h4 class="ml-3">{{user.language.name}}</h4>
+								<svg class="down-drop" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="17px" height="13px" viewbox="0 0 24 24"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"/></svg>
+							</div>
+							<div class="mx-2 " style=" width : 5px ; background-color : #334155 ; height : 100%"></div>
+
+							<svg xmlns="http://www.w3.org/2000/svg" height="1.1em" viewbox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M512 80c0 18-14.3 34.6-38.4 48c-29.1 16.1-72.5 27.5-122.3 30.9c-3.7-1.8-7.4-3.5-11.3-5C300.6 137.4 248.2 128 192 128c-8.3 0-16.4 .2-24.5 .6l-1.1-.6C142.3 114.6 128 98 128 80c0-44.2 86-80 192-80S512 35.8 512 80zM160.7 161.1c10.2-.7 20.7-1.1 31.3-1.1c62.2 0 117.4 12.3 152.5 31.4C369.3 204.9 384 221.7 384 240c0 4-.7 7.9-2.1 11.7c-4.6 13.2-17 25.3-35 35.5c0 0 0 0 0 0c-.1 .1-.3 .1-.4 .2l0 0 0 0c-.3 .2-.6 .3-.9 .5c-35 19.4-90.8 32-153.6 32c-59.6 0-112.9-11.3-148.2-29.1c-1.9-.9-3.7-1.9-5.5-2.9C14.3 274.6 0 258 0 240c0-34.8 53.4-64.5 128-75.4c10.5-1.5 21.4-2.7 32.7-3.5zM416 240c0-21.9-10.6-39.9-24.1-53.4c28.3-4.4 54.2-11.4 76.2-20.5c16.3-6.8 31.5-15.2 43.9-25.5V176c0 19.3-16.5 37.1-43.8 50.9c-14.6 7.4-32.4 13.7-52.4 18.5c.1-1.8 .2-3.5 .2-5.3zm-32 96c0 18-14.3 34.6-38.4 48c-1.8 1-3.6 1.9-5.5 2.9C304.9 404.7 251.6 416 192 416c-62.8 0-118.6-12.6-153.6-32C14.3 370.6 0 354 0 336V300.6c12.5 10.3 27.6 18.7 43.9 25.5C83.4 342.6 135.8 352 192 352s108.6-9.4 148.1-25.9c7.8-3.2 15.3-6.9 22.4-10.9c6.1-3.4 11.8-7.2 17.2-11.2c1.5-1.1 2.9-2.3 4.3-3.4V304v5.7V336zm32 0V304 278.1c19-4.2 36.5-9.5 52.1-16c16.3-6.8 31.5-15.2 43.9-25.5V272c0 10.5-5 21-14.9 30.9c-16.3 16.3-45 29.7-81.3 38.4c.1-1.7 .2-3.5 .2-5.3zM192 448c56.2 0 108.6-9.4 148.1-25.9c16.3-6.8 31.5-15.2 43.9-25.5V432c0 44.2-86 80-192 80S0 476.2 0 432V396.6c12.5 10.3 27.6 18.7 43.9 25.5C83.4 438.6 135.8 448 192 448z"/></svg>
+							<div class="flex items-center justify-start">
+								<h4 class="ml-3">{{ currency.name }}</h4>
+								<svg class="down-drop" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="17px" height="13px" viewbox="0 0 24 24"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"/></svg>
+								<div></button>
+								<salla-localization-modal></salla-localization-modal>
+							{% endif %}
+
+						</div>
+
+						{# Scopes | Branches #}
+						{% if store.scope %}
+							<button class="btn--rounded-gray" onclick="salla.event.dispatch('scopes::open', {'mode': 'default'})">
+								<i class="sicon-location rtl:ml-1 ltr:mr-1"></i>
+								{{ store.scope.name }}
+							</button>
+						{% endif %}
+
+						{# Search Component #}
+						{# <button onclick="salla.event.dispatch('search::open')" class="btn--circle-gray search-btn">
+																																																																		                <span class="sicon-search"></span>
+																																																																		                <span class="px-2 opacity-50 sm:hidden">{{ trans('blocks.header.searchProducts') }}</span>
+																																																																		              </button> #}
+						<div id="search-finish" class="flex flex-1 search-finish search-icon-header-1">
+
+							<div class="relative flex items-center justify-center w-full h-fit">
+								<salla-search inline oval height="50" class="w-full"></salla-search>
+								<div id="close-search" class="absolute left-3 top-3.75">
+									<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewbox="0 0 24 24">
+										<path d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"></path>
+									</svg>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			{# Main Nav #}
+			<div id="mainnav" class="bg-white main-nav-container shadow-default">
+				<div class="inner bg-inherit">
+					<div class="px-3 lg:px-11">
+						<div class="relative flex items-center justify-center py-3 overflow-hidden lg:justify-start">
+							<div class="flex items-center flex-1 lg:ml-7">
+								<a class="leading-none lg:hidden mburger mburger--collapse" href="#mobile-menu">
+									<i class="sicon-menu text-primary text-2xl rtl:ml-2.5 ltr:mr-2.5"></i>
+								</a>
+								<a
+									class="navbar-brand" href="{{ store.url }}">
+									{# <img fetchpriority="high" width="100%" height="100%" loading="eager" src="{{ store.logo }}" alt="{{ store.name }}">
+																																																																																																	                            {% if is_page('index') %}
+																																																																																																	                              <h1 class="sr-only">{{ store.name }}</h1>
+																																																																																																	                            {% else %}
+																																																																																																	                              <h2 class="sr-only">{{ store.name }}</h2>																																																																														                            {% endif %} #}
+									<p class="text-xl font-bold lg:text-3xl">ثيم نّمو</p>
+								</a>
+
+							</div>
+							<div class="flex items-center justify-center flex-1 w-full header-search">
+								<salla-search inline oval height="36"></salla-search>
+							</div>
+							<div class="flex items-center justify-start flex-1 mr-5 icons-header lg:ml-7">
+								<div class="flex items-center justify-center login-button">
+									{% if user.type=='user' %}
+										<salla-user-menu avatar-only show-header></salla-user-menu>
+									{% else %}
+										<button class="header-btn" onclick="salla.event.dispatch('login::open')">
+											<i class="header-btn__icon">
+												<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewbox="0 0 83 84" fill="none">
+													<path d="M41.5 45.5C32.2663 45.5 13.8333 50.19 13.8333 59.5V70H69.1667V59.5C69.1667 50.19 50.7338 45.5 41.5 45.5ZM62.5958 63.35H20.4042V59.5C20.4042 57.26 31.2288 52.15 41.5 52.15C51.7713 52.15 62.5958 57.26 62.5958 59.5V63.35ZM41.5 42C49.1429 42 55.3333 35.735 55.3333 28C55.3333 20.265 49.1429 14 41.5 14C33.8571 14 27.6667 20.265 27.6667 28C27.6667 35.735 33.8571 42 41.5 42ZM41.5 20.65C42.4537 20.65 43.3981 20.8401 44.2792 21.2095C45.1604 21.5789 45.961 22.1203 46.6354 22.8028C47.3098 23.4853 47.8447 24.2955 48.2097 25.1873C48.5747 26.079 48.7625 27.0348 48.7625 28C48.7625 28.9652 48.5747 29.921 48.2097 30.8127C47.8447 31.7045 47.3098 32.5147 46.6354 33.1972C45.961 33.8797 45.1604 34.4211 44.2792 34.7905C43.3981 35.1599 42.4537 35.35 41.5 35.35C39.5739 35.35 37.7266 34.5756 36.3646 33.1972C35.0027 31.8188 34.2375 29.9493 34.2375 28C34.2375 26.0507 35.0027 24.1812 36.3646 22.8028C37.7266 21.4244 39.5739 20.65 41.5 20.65Z" fill="#334155"/>
+												</svg>
+											</i>
+										</button>
+									{% endif %}
+								</div>
+
+								<div class="flex items-center justify-center mr-1 cart-header">
+									<salla-cart-summary class="ml-4 rtl:ml-[unset] rtl:mr-4">
+										<i slot="icon" class="header-btn__icon icon ">
+											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewbox="0 0 57 59" fill="none">
+												<g id="Group">
+													<g id="Group_2">
+														<path id="Vector" d="M28.0954 22.9955H33.5981V14.7069H41.8521V9.18117H33.5981V0.892578H28.0954V9.18117H19.8414V14.7069H28.0954V22.9955ZM17.0901 47.8612C14.0636 47.8612 11.6149 50.3478 11.6149 53.387C11.6149 56.4261 14.0636 58.9127 17.0901 58.9127C20.1165 58.9127 22.5927 56.4261 22.5927 53.387C22.5927 50.3478 20.1165 47.8612 17.0901 47.8612ZM44.6034 47.8612C41.577 47.8612 39.1283 50.3478 39.1283 53.387C39.1283 56.4261 41.577 58.9127 44.6034 58.9127C47.6299 58.9127 50.1061 56.4261 50.1061 53.387C50.1061 50.3478 47.6299 47.8612 44.6034 47.8612ZM20.1165 34.0469H40.614C42.6775 34.0469 44.4934 32.9142 45.4288 31.2012L56.049 11.8335L51.2617 9.18117L40.614 28.5212H21.2996L9.5789 3.65544H0.582031V9.18117H6.08471L15.9895 30.1513L12.2752 36.8927C10.2667 40.5949 12.908 45.0984 17.0901 45.0984H50.1061V39.5727H17.0901L20.1165 34.0469Z" fill="#334155"/>
+													</g>
+												</g>
+											</svg>
+										</i>
+									</salla-cart-summary>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</header>
+		{% if store.scope %}
+			<salla-scopes selection="{{ store.scope.display_as == 'popup' ? 'mandatory' : 'optional' }}"></salla-scopes>
+		{% endif %}
+		<div class="relative flex items-center justify-center h-14 menu-style lg:px-5" style=" background-color: #334155;">
+			<div class="h-full">
+				{% component 'header.menu' %}
+			</div>
+			<div id="header-menu-extra-elements" class="mr-2">
+				<svg style="fill:#fff !important" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="17px" height="13px" viewbox="0 0 24 24"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"/></svg>
+			</div>
+		</div>

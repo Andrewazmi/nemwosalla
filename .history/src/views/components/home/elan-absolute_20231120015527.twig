@@ -1,0 +1,23 @@
+<div id="animated-ads" class="flex animated-ads" style="height:400px ; overflow : hidden ;">
+	<div class="flex">
+		<div class="content">
+			<a href="{{component.url}}">
+				<img src="{{component.image}}"/>
+			</a>
+		</div>
+		<div id="btn-open" class="flex items-center justify-center px-1 py-1 text-white lg:px-4 btn-open" style="background-color :#404553;">
+			<div class="flex flex-col-reverse items-center justify-between h-full p-1 space-y-2 w-fit rtl:flex-col">
+
+				{% for word in component.offer|split(" ") %}
+					{% if word|length >= 0 %}
+						<span class="block text-base">{{word}}</span>
+					{% endif %}
+				{% endfor %}
+
+				<svg style="fill:#fff !important" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="17px" height="13px" viewbox="0 0 24 24">
+					<path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path>
+				</svg>
+			</div>
+		</div>
+	</div>
+</div>
