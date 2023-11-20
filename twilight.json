@@ -2437,6 +2437,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "c35782c9-0b97-4dcf-b84f-6b8c86b0fe14",
+            "title": "brand-infinity-slider",
+            "icon": "sicon-store",
+            "path": "home.brand-infinity-slider",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
