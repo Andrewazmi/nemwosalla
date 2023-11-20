@@ -182,7 +182,7 @@ class App extends AppHelpers {
           
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
             <div class="flex items-center justify-center" style="width: 70%;" >
-              <a class=" block sm:h-96 sm:w-64" href="${products[1].id}">
+              <a class="block sm:h-32 sm:w-24" href="${products[1].id}">
                 <img class=" w-full h-full lazy loaded" src="${products[1].image.url
             }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
@@ -241,7 +241,7 @@ class App extends AppHelpers {
           
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
             <div class="flex items-center justify-center" style=" width: 70%" >
-              <a class=" block sm:h-96 sm:w-64" href="${products[2].id}">
+              <a class="block sm:h-32 sm:w-24" href="${products[2].id}">
                 <img class=" w-full h-full lazy loaded" src="${products[2].image.url
             }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
@@ -300,7 +300,7 @@ class App extends AppHelpers {
           
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
             <div class="flex items-center justify-center" style=" width: 70%" >
-              <a class=" block sm:h-96 sm:w-64" href="${products[3].id}">
+              <a class="block sm:h-32 sm:w-24" href="${products[3].id}">
                 <img class=" w-full h-full lazy loaded" src="${products[3].image.url
             }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
@@ -358,7 +358,7 @@ class App extends AppHelpers {
           
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
             <div class="flex items-center justify-center" style="width: 70%;" >
-              <a class=" block sm:h-96 sm:w-64" href="${products[4].id}">
+              <a class="block sm:h-32 sm:w-24" href="${products[4].id}">
                 <img class=" w-full h-full lazy loaded" src="${products[4].image.url
             }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
@@ -496,7 +496,7 @@ class App extends AppHelpers {
           <div class="grid gap-4 sm:gap-8 relative  " style="padding : 2rem 1px ">
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
             <div class="flex items-center justify-center">
-              <a class=" block sm:h-96 sm:w-64" href="${products[1].id}">
+              <a class="block sm:h-32 sm:w-24" href="${products[1].id}">
                 <img class=" w-full h-full lazy loaded" src="${products[1].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
@@ -549,8 +549,8 @@ class App extends AppHelpers {
             </div>
           </div>
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-          <div class="flex items-center justify-center">
-            <a class=" block sm:h-96 sm:w-64" href="${products[2].id}">
+          <div class="flex items-center justify-center" style="  width: 70%" >
+            <a class="block sm:h-32 sm:w-24" href="${products[2].id}">
               <img class=" w-full h-full lazy loaded" src="${products[2].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
             </a>
