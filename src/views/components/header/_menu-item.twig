@@ -1,5 +1,5 @@
 {# MOBILE #}
-    <li class="text-sm font-bold lg:hidden" {{ menu.attrs }}>
+    <li class="lg:hidden text-sm font-bold" {{ menu.attrs }}>
         {% if not menu.has_children %}
             <a {{ menu.link_attrs|raw }} href="{{ menu.url }}" class="text-gray-500">{{ menu.title }}</a>
         {% else %}
@@ -8,13 +8,13 @@
                 <li class="text-sm font-bold"><a {{ menu.link_attrs|raw }} href="{{ menu.url }}" class="text-gray-500">{{ trans('blocks.home.display_all') }}</a></li>
                 {% for submenu in menu.children %}
                     {% include _self with {menu:submenu} %}
-                {% endfor %} 
+                {% endfor %}
             </ul>
         {% endif %}
     </li>
 
 {# DESKTOP #}
-    <li class=" text-white !hidden lg:!block {{ is_root_menu?'root-level lg:!inline-block':'relative' }}
+    <li class="!hidden lg:!block {{ is_root_menu?'root-level lg:!inline-block':'relative' }}
         {{ menu.products?' mega-menu': '' }}
         {{ menu.has_children?' has-children': '' }}"
         {{ menu.attrs|raw }}>
@@ -29,8 +29,8 @@
                     {% endfor %}
                 </ul>
                 {% if menu.products %}
-                    <div class="p-8 grow">
-                        <div class="grid grid-cols-4 gap-4">
+                    <div class="grow p-8">
+                        <div class="grid gap-4 grid-cols-4">
                             {% for product in menu.products|slice(0, 4) %}
                                 <salla-product-card shadow-on-hover product="{{product}}"></salla-product-card>
                                 {# <custom-salla-product-card shadow-on-hover product="{{product}}"></custom-salla-product-card> #}
@@ -41,4 +41,3 @@
             </div>
         {% endif %}
     </li>
- 

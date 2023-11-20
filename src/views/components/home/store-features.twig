@@ -1,18 +1,21 @@
-<section class="s-block">
-	<div class="container flex flex-col items-center justify-center store-features">
-		<h1 class="mb-3 font-black text-black text-inherit lg:text-5xl lg:mb-10">
-			{{component.title}}</h1>
-		<p class="mt-2 mb-5 text-sm text-black lg:mb-24 lg:text-4xl subtitle-feaures">{{component.subtitle}}</p>
-		<div class="flex flex-col items-center justify-between lg:flex-row grid-feattures">
+<section class ="s-block">
+    <div class="container flex flex-col justify-center items-center store-features">
+        
+         <h1> {{component.title}}</h1>
+            <p class=" subtitle-feaures mt-2">{{component.subtitle}}</p>
+		<div class="grid-feattures">
 			{% for link in component.card_store %}
-				<div class="flex flex-col items-center justify-center flex-1 h-40 p-1 bg-white border-2 rounded-lg sm:h-32 sm:w-44 w-60 lg:h-48 lg:w-56 xl:h-64 even:mx-3 lg:even:mx-7 border-slate-600 xl:w-96 card-store-features">
-					<div class="flex items-center justify-center p-1 mb-2 bg-gray-400 rounded-full sm:p-1 w-7 h-7 md:w-4 md:h-4 lg:mb-5 lg:w-28 lg:h-28 image">
-						<img class="object-contain w-full h-full" src="{{link.image}}"/>
-					</div>
-					<h2 class="mb-1 text-lg font-black lg:text-2xl">{{ link.title_card }}</h2>
-					<p class="text-sm font-bold text-gray-700 lg:text-base">{{ link.subtitle_card }}</p>
+				<div class="card-store-features flex flex-col justify-center items-center">
+				    <div class=" image flex justify-center items-center rounded-full ">
+                        <img src="{{link.image}}" />
+                    </div>
+					    
+					    <h2>{{ link.title_card }}</h2>
+                        <p>{{ link.subtitle_card }}</p>
+		           
 				</div>
 			{% endfor %}
 		</div>
+
 	</div>
 </section>

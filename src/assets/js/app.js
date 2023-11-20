@@ -22,8 +22,7 @@ class App extends AppHelpers {
     this.removeElan();
     this.initiateNotifier();
     this.initiateMobileMenu();
-    this.toggleHeaderMenuBtn();
-    if (header_is_sticky) {
+    if(header_is_sticky){
       this.initiateStickyMenu();
     }
     this.initAddToCart();
@@ -50,7 +49,7 @@ class App extends AppHelpers {
 
 
   // nav link 
-  navLinks() {
+  navLinks(){
     function getRandomIntInclusive(min, max) {
       min = Math.ceil(min);
       max = Math.floor(max);
@@ -58,78 +57,86 @@ class App extends AppHelpers {
     }
     const linkDesign = document.getElementsByClassName("navlink-design")
 
-    for (let i = 0; i < linkDesign.length; i++) {
+    for(let i = 0 ; i< linkDesign.length ; i++){
 
-      const id = getRandomIntInclusive(100000, 900000)
+      const id= getRandomIntInclusive(100000 , 900000)
 
-      const child = linkDesign[i].children[0].children
-
+     const child =  linkDesign[i].children[0].children
+     
       const any = child.length
-      for (let j = 0; j < any; j++) {
+      for(let j=0 ; j < any ; j++){
         child[j].className = `${id}-nav hidden`
       }
-      linkDesign[i].children[1].setAttribute("id", `${id}-category`)
-      linkDesign[i].children[2].setAttribute("id", `${id}-product`)
-
-
+      linkDesign[i].children[1].setAttribute("id" ,`${id}-category` )
+      linkDesign[i].children[2].setAttribute("id" , `${id}-product`)
+      
+      
       const listProduct1 = document.getElementById(`${id}-product`)
-      const navLinks1 = document.getElementsByClassName(`${id}-nav`)
+      const navLinks1 =document.getElementsByClassName(`${id}-nav`)
       const listCategory1 = document.getElementById(`${id}-category`)
 
+      
 
-
-      for (let i = 0; i < navLinks1.length; i++) {
-        const category = navLinks1[i].innerText
-
-
-
-
-        salla.product.categories(category).then((response) => {
-          const data = `
+              for( let i = 0 ; i< navLinks1.length ; i++ ){
+                const category  = navLinks1[i].innerText
+                
+                
+               if(category){
+                salla.product.categories(category).then((response) => {
+                  const data = `
                   <div class="navLink-show cursor-pointer font-bold" onclick="getlistProduct(${category} , this , ${id})">
                     ${response.data.name}
                   </div>
                   `
-          listCategory1.innerHTML += data
-
-        });
-      }
-      const data = `<salla-products-slider
+                  listCategory1.innerHTML +=data
+  
+                });
+                const data = `<salla-products-slider
                 source="categories"
               source-value=[${navLinks1[0].innerText}]
               </salla-product-slider>`
+        
+              listProduct1.innerHTML = data
 
-      listProduct1.innerHTML = data
+               }
+  
+                
+              }
+              
     }
-
+    				    
   }
 
-  async productBelongThree() {
+ async productBelongThree(){
     const section = document.getElementsByClassName("category-three")
 
     for (let i = 0; i < section.length; i++) {
-      const categoryId = section[i]?.children[1]?.innerText
-      const insert = section[i]?.children[2]
-      const queryParams = {
-        source: "categories",
-        source_value: [categoryId],
-      };
+    const categoryId = section[i]?.children[1]?.innerText
+    const insert  = section[i]?.children[2]
+    const queryParams = {
+      source: "categories",
+      source_value: [categoryId],
+    };
 
-      await salla.product
-        .fetch(queryParams)
-        .then((response) => {
-          const products = response.data.slice(0, 5);
-          const data = `
+    await salla.product
+      .fetch(queryParams)
+      .then((response) => {
+        const products = response.data.slice(0, 5);
+        const data = `
         <div>
-        <div class="px-3 lg:px-0 grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
-          <div id="product-${products[0].id
-            }" class="product-entry product-entry--full-image overflow-hidden" style="border-radius : 40px ; height : 580px">
-            <a href="${products[0].url
+        <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
+          <div id="product-${
+            products[0].id
+          }" class="product-entry product-entry--full-image overflow-hidden" style="border-radius : 40px ; height : 580px">
+            <a href="${
+              products[0].url
             }" class="relative w-full h-full overflow-hidden rounded-md hover:opacity-90" >
-              <img class=" w-full h-full lazy loaded" src="${products[0].image.url
-            }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
+              <img class=" w-full h-full lazy loaded" src="${
+                products[0].image.url
+              }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
             </a>
-            <a href="${products[0].url
+            <a href="${
+              products[0].url
             }" class="absolute top-0 bottom-0 left-0 right-0 transition-opacity duration-700  rounded-2xl" ></a>
             <div class="absolute  w-full h-full flex justify-center items-end ">
               <div class="flex  flex-col  justify-center items-center mb-10">
@@ -138,9 +145,10 @@ class App extends AppHelpers {
                   <a  href="${products[0].url}" style=" color : black ; font-size : 22px">${products[0].name}</a>
                 </h1>
                 <div >
-                ${products[0].sale_price ? `<h4>${this.getPriceFormat(products[0].sale_price)}</h4> <span>${this.getPriceFormat(this.product?.regular_price)}</span>` : `<h4>${this.getPriceFormat(products[0].price)}</h4> `
+                ${
+                  products[0].sale_price ? `<h4>${this.getPriceFormat(products[0].sale_price)}</h4> <span>${this.getPriceFormat(this.product?.regular_price)}</span>`:`<h4>${this.getPriceFormat(products[0].price)}</h4> `
 
-            }
+                }
 
           
                 
@@ -149,7 +157,8 @@ class App extends AppHelpers {
               <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
             
             <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${products[1].id
+            <salla-button onclick="salla.wishlist.toggle(${
+              products[1].id
             })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
               <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
               <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
@@ -167,8 +176,9 @@ class App extends AppHelpers {
                       </salla-button>
                   </div>
                 <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${products[1].id
-            }" product-status="sale" fill="outline" product-type="product">
+                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
+                    products[1].id
+                  }" product-status="sale" fill="outline" product-type="product">
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
                   <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
                 </svg>
@@ -181,16 +191,18 @@ class App extends AppHelpers {
           <div class="grid gap-4 sm:gap-8 relative  " style=" grid-template-columns: repeat(2, 1fr)  ">
           
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div class="flex items-center justify-center" style="width: 70%;" >
-              <a class=" block sm:h-96 sm:w-64" href="${products[1].id}">
-                <img class=" w-full h-full lazy loaded" src="${products[1].image.url
-            }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
+            <div style="height : 180px ; width: 70%" >
+              <a href="${products[1].id}">
+                <img class=" w-full h-full lazy loaded" src="${
+                  products[1].image.url
+                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
             </div>
             <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
             
             <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${products[1].id
+            <salla-button onclick="salla.wishlist.toggle(${
+              products[1].id
             })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
               <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
               <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
@@ -208,8 +220,9 @@ class App extends AppHelpers {
                       </salla-button>
                   </div>
                 <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${products[1].id
-            }" product-status="sale" fill="outline" product-type="product">
+                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
+                    products[1].id
+                  }" product-status="sale" fill="outline" product-type="product">
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
                   <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
                 </svg>
@@ -221,13 +234,15 @@ class App extends AppHelpers {
                 <a href="${products[1].id}">${products[1].name}</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
-                <h4 class="text-sm font-bold text-store-text-secondary ${products[1].discount_ends ? "text-red-400" : ""
-            }">${this.getPriceFormat(products[1].price)} </h4>
+                <h4 class="text-sm font-bold text-store-text-secondary ${
+                  products[1].discount_ends ? "text-red-400" : ""
+                }">${this.getPriceFormat(products[1].price)} </h4>
                 
-                  <span class="text-sm line-through text-store-text-secondary">${products[1].discount_ends
-              ? products[1].discount_ends + products[1].currency
-              : ""
-            }</span>
+                  <span class="text-sm line-through text-store-text-secondary">${
+                    products[1].discount_ends
+                      ? products[1].discount_ends + products[1].currency
+                      : ""
+                  }</span>
                   
               </div>
               
@@ -240,16 +255,18 @@ class App extends AppHelpers {
 
           
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div class="flex items-center justify-center" style=" width: 70%" >
-              <a class=" block sm:h-96 sm:w-64" href="${products[2].id}">
-                <img class=" w-full h-full lazy loaded" src="${products[2].image.url
-            }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
+            <div style="height : 180px ; width: 70%" >
+              <a href="${products[2].id}">
+                <img class=" w-full h-full lazy loaded" src="${
+                  products[2].image.url
+                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
             </div>
             <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
             
             <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${products[2].id
+            <salla-button onclick="salla.wishlist.toggle(${
+              products[2].id
             })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
               <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
               <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
@@ -267,8 +284,9 @@ class App extends AppHelpers {
                       </salla-button>
                   </div>
                 <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${products[2].id
-            }" product-status="sale" fill="outline" product-type="product">
+                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
+                    products[2].id
+                  }" product-status="sale" fill="outline" product-type="product">
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
                   <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
                 </svg>
@@ -280,13 +298,15 @@ class App extends AppHelpers {
                 <a href="${products[2].id}">${products[2].name}</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
-                <h4 class="text-sm font-bold text-store-text-secondary ${products[2].discount_ends ? "text-red-400" : ""
-            }">${this.getPriceFormat(products[2].price)} </h4>
+                <h4 class="text-sm font-bold text-store-text-secondary ${
+                  products[2].discount_ends ? "text-red-400" : ""
+                }">${this.getPriceFormat(products[2].price)} </h4>
                 
-                  <span class="text-sm line-through text-store-text-secondary">${products[2].discount_ends
-              ? products[2].discount_ends + products[2].currency
-              : ""
-            }</span>
+                  <span class="text-sm line-through text-store-text-secondary">${
+                    products[2].discount_ends
+                      ? products[2].discount_ends + products[2].currency
+                      : ""
+                  }</span>
                   
               </div>
               
@@ -299,16 +319,18 @@ class App extends AppHelpers {
 
           
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div class="flex items-center justify-center" style=" width: 70%" >
-              <a class=" block sm:h-96 sm:w-64" href="${products[3].id}">
-                <img class=" w-full h-full lazy loaded" src="${products[3].image.url
-            }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
+            <div style="height : 180px ; width: 70%" >
+              <a href="${products[3].id}">
+                <img class=" w-full h-full lazy loaded" src="${
+                  products[3].image.url
+                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
             </div>
             <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
             
             <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${products[3].id
+            <salla-button onclick="salla.wishlist.toggle(${
+              products[3].id
             })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
               <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
               <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
@@ -326,8 +348,9 @@ class App extends AppHelpers {
                       </salla-button>
                   </div>
                 <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${products[3].id
-            }" product-status="sale" fill="outline" product-type="product">
+                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
+                    products[3].id
+                  }" product-status="sale" fill="outline" product-type="product">
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
                   <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
                 </svg>
@@ -339,13 +362,15 @@ class App extends AppHelpers {
                 <a href="${products[3].id}">${products[3].name}</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
-                <h4 class="text-sm font-bold text-store-text-secondary ${products[3].discount_ends ? "text-red-400" : ""
-            }">${this.getPriceFormat(products[3].price)} </h4>
+                <h4 class="text-sm font-bold text-store-text-secondary ${
+                  products[3].discount_ends ? "text-red-400" : ""
+                }">${this.getPriceFormat(products[3].price)} </h4>
                 
-                  <span class="text-sm line-through text-store-text-secondary">${products[3].discount_ends
-              ? products[3].discount_ends + products[3].currency
-              : ""
-            }</span>
+                  <span class="text-sm line-through text-store-text-secondary">${
+                    products[3].discount_ends
+                      ? products[3].discount_ends + products[3].currency
+                      : ""
+                  }</span>
                   
               </div>
               
@@ -357,16 +382,18 @@ class App extends AppHelpers {
 
           
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div class="flex items-center justify-center" style="width: 70%;" >
-              <a class=" block sm:h-96 sm:w-64" href="${products[4].id}">
-                <img class=" w-full h-full lazy loaded" src="${products[4].image.url
-            }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
+            <div style="height : 180px ; width: 70%" >
+              <a href="${products[4].id}">
+                <img class=" w-full h-full lazy loaded" src="${
+                  products[4].image.url
+                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
             </div>
             <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
             
             <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${products[4].id
+            <salla-button onclick="salla.wishlist.toggle(${
+              products[4].id
             })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
               <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
               <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
@@ -384,8 +411,9 @@ class App extends AppHelpers {
                       </salla-button>
                   </div>
                 <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${products[4].id
-            }" product-status="sale" fill="outline" product-type="product">
+                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
+                    products[4].id
+                  }" product-status="sale" fill="outline" product-type="product">
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
                   <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
                 </svg>
@@ -397,13 +425,15 @@ class App extends AppHelpers {
                 <a href="${products[4].id}">${products[1].name}</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
-                <h4 class="text-sm font-bold text-store-text-secondary ${products[4].discount_ends ? "text-red-400" : ""
-            }">${this.getPriceFormat(products[4].price)} </h4>
+                <h4 class="text-sm font-bold text-store-text-secondary ${
+                  products[4].discount_ends ? "text-red-400" : ""
+                }">${this.getPriceFormat(products[4].price)} </h4>
                 
-                  <span class="text-sm line-through text-store-text-secondary">${products[4].discount_ends
-              ? products[4].discount_ends + products[4].currency
-              : ""
-            }</span>
+                  <span class="text-sm line-through text-store-text-secondary">${
+                    products[4].discount_ends
+                      ? products[4].discount_ends + products[4].currency
+                      : ""
+                  }</span>
                   
               </div>
               
@@ -417,55 +447,56 @@ class App extends AppHelpers {
       </div>
         
         `
-          insert.innerHTML += data;
-        }).catch((error) => {
+        insert.innerHTML += data;
+      }).catch((error) => {
           console.error(error);
         });
-
+      
     }
-
+    
   }
 
 
   // design 2 get all product belong to category 
-  prodBelongToCat() {
-    function getRandomIntInclusive(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
-    }
-    // const categories = document.getElementsByClassName("category-value-new");
-    const newDesignProduct = document.getElementsByClassName("new-design-product")
-    for (let i = 0; i < newDesignProduct.length; i++) {
+ prodBelongToCat(){
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+  }
+  // const categories = document.getElementsByClassName("category-value-new");
+  const newDesignProduct = document.getElementsByClassName("new-design-product")
+for(let i = 0; i < newDesignProduct.length; i++){
 
-      const id = getRandomIntInclusive(100000, 900000)
-      newDesignProduct[i].children[1].setAttribute("id", id)
-      const insert = document.getElementById(id)
-      const lop = newDesignProduct[i]?.children[0]?.children
-      console.log(newDesignProduct[i]?.children[0]?.children[0], newDesignProduct[i]?.children[0]?.children[1])
+  const id= getRandomIntInclusive(100000 , 900000)
+  newDesignProduct[i].children[1].setAttribute("id" , id)
+  const insert = document.getElementById(id)
+ const lop = newDesignProduct[i]?.children[0]?.children
+ console.log(newDesignProduct[i]?.children[0]?.children[0] , newDesignProduct[i]?.children[0]?.children[1])
 
-      for (let j = 0; j < 2; j++) {
-        const categoryId = newDesignProduct[i]?.children[0]?.children[j]?.innerText;
-        console.log({ categoryId }, { j })
-        let name = ""
-        salla.product
-          .categories(categoryId)
-          .then((response) => {
-            name = response.data.name;
-          });
+ for(let j = 0 ; j< 2 ; j++ ){
+    const categoryId = newDesignProduct[i]?.children[0]?.children[j]?.innerText;
+    
+    let name =""
+    if (categoryId){
+      salla.product
+      .categories(categoryId)
+      .then((response) => {
+        name= response.data.name;
+      });
 
-        const queryParams = {
-          source: "categories",
-          source_value: [categoryId],
-        };
+    const queryParams = {
+      source: "categories",
+      source_value: [categoryId],
+    };
 
-        // Call the fetch method
-        salla.product
-          .fetch(queryParams)
-          .then((response) => {
-            const products = response.data.slice(0, 3);
+    // Call the fetch method
+     salla.product
+      .fetch(queryParams)
+      .then((response) => {
+        const products = response.data.slice(0, 3);
 
-            const data = `
+        const data = `
         <div>
         <div class="mb-4">
           <div>
@@ -473,16 +504,20 @@ class App extends AppHelpers {
             
           </div>
         </div>
-        <div class="px-3 lg:px-0 grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
-          <div id="product-${products[0].id
-              }" class="product-entry product-entry--full-image overflow-hidden" style="border-radius : 40px">
-            <a href="${products[0].url
-              }" class="relative w-full h-full overflow-hidden rounded-md hover:opacity-90" >
-              <img class="object-cover w-full h-full lazy loaded" src="${products[0].image.url
+        <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
+          <div id="product-${
+            products[0].id
+          }" class="product-entry product-entry--full-image overflow-hidden" style="border-radius : 40px">
+            <a href="${
+              products[0].url
+            }" class="relative w-full h-full overflow-hidden rounded-md hover:opacity-90" >
+              <img class="object-cover w-full h-full lazy loaded" src="${
+                products[0].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
             </a>
-            <a href="${products[0].url
-              }" class="absolute top-0 bottom-0 left-0 right-0 transition-opacity duration-700  rounded-2xl" ></a>
+            <a href="${
+              products[0].url
+            }" class="absolute top-0 bottom-0 left-0 right-0 transition-opacity duration-700  rounded-2xl" ></a>
             <div class="absolute  w-full h-full flex justify-center items-center">
               <div class="flex items-baseline justify-center">
   
@@ -495,17 +530,19 @@ class App extends AppHelpers {
          
           <div class="grid gap-4 sm:gap-8 relative  " style="padding : 2rem 1px ">
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div class="flex items-center justify-center">
-              <a class=" block sm:h-96 sm:w-64" href="${products[1].id}">
-                <img class=" w-full h-full lazy loaded" src="${products[1].image.url
-              }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
+            <div style="height : 100px ; width: 70%" >
+              <a href="${products[1].id}">
+                <img class=" w-full h-full lazy loaded" src="${
+                  products[1].image.url
+                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
             </div>
             <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
             
             <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${products[1].id
-              })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
+            <salla-button onclick="salla.wishlist.toggle(${
+              products[1].id
+            })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
               <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
               <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
               </svg>
@@ -522,8 +559,9 @@ class App extends AppHelpers {
                       </salla-button>
                   </div>
                 <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${products[1].id
-              }" product-status="sale" fill="outline" product-type="product">
+                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
+                    products[1].id
+                  }" product-status="sale" fill="outline" product-type="product">
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
                   <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
                 </svg>
@@ -535,13 +573,15 @@ class App extends AppHelpers {
                 <a href="${products[1].id}">${products[1].name}</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
-                <h4 class="text-sm font-bold text-store-text-secondary ${products[1].discount_ends ? "text-red-400" : ""
-              }">${this.getPriceFormat(products[1].price)} </h4>
+                <h4 class="text-sm font-bold text-store-text-secondary ${
+                  products[1].discount_ends ? "text-red-400" : ""
+                }">${this.getPriceFormat(products[1].price)} </h4>
                 
-                  <span class="text-sm line-through text-store-text-secondary">${products[1].discount_ends
-                ? products[1].discount_ends + products[1].currency
-                : ""
-              }</span>
+                  <span class="text-sm line-through text-store-text-secondary">${
+                    products[1].discount_ends
+                      ? products[1].discount_ends + products[1].currency
+                      : ""
+                  }</span>
                   
               </div>
               
@@ -549,17 +589,19 @@ class App extends AppHelpers {
             </div>
           </div>
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-          <div class="flex items-center justify-center">
-            <a class=" block sm:h-96 sm:w-64" href="${products[2].id}">
-              <img class=" w-full h-full lazy loaded" src="${products[2].image.url
+          <div style="height : 100px ; width: 70%" >
+            <a href="${products[2].id}">
+              <img class=" w-full h-full lazy loaded" src="${
+                products[2].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
             </a>
           </div>
           <div class="flex flex-col items-center justify-center mt-auto absolute" style=" top: 18px ; right:7px">
           
           <div class="wishlist" data-title="إضافة للسلة">
-          <salla-button onclick="salla.wishlist.toggle(${products[2].id
-              })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
+          <salla-button onclick="salla.wishlist.toggle(${
+            products[2].id
+          })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
             <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
             <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
             </svg>
@@ -576,8 +618,9 @@ class App extends AppHelpers {
         </salla-button>
     </div>
               <div class="addToCart" data-title="إضافة للسلة">
-                <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${products[2].id
-              }" product-status="sale" fill="outline" product-type="product">
+                <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
+                  products[2].id
+                }" product-status="sale" fill="outline" product-type="product">
                 <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
                 <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
               </svg>
@@ -589,13 +632,15 @@ class App extends AppHelpers {
               <a href="${products[2].id}">${products[2].name}</a>
             </h3>
             <div class="w-full  flex justify-center items-center">
-              <h4 class="text-sm font-bold text-store-text-secondary ${products[2].discount_ends ? "text-red-400" : ""
+              <h4 class="text-sm font-bold text-store-text-secondary ${
+                products[2].discount_ends ? "text-red-400" : ""
               }">${this.getPriceFormat(products[2].price)} </h4>
               
-                <span class="text-sm line-through text-store-text-secondary">${products[2].discount_ends
-                ? products[2].discount_ends + products[2].currency
-                : ""
-              }</span>
+                <span class="text-sm line-through text-store-text-secondary">${
+                  products[2].discount_ends
+                    ? products[2].discount_ends + products[2].currency
+                    : ""
+                }</span>
                 
             </div>
             
@@ -607,76 +652,80 @@ class App extends AppHelpers {
       </div>
       `;
 
-            insert.innerHTML += data;
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-      }
+        insert.innerHTML += data;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 
     }
-
-
+   
   }
+
+}
+
+
+}
 
 
   //map
 
   getPriceFormat(price) {
     if (!price || price == 0) {
-      return salla.config.get('store.settings.product.show_price_as_dash') ? '-' : '';
+      return salla.config.get('store.settings.product.show_price_as_dash')?'-':'';
     }
 
     return salla.money(price);
   }
 
 
-  map() {
+  map(){
     const insertMap = document.getElementById("map-content");
-    const map = document.getElementById("map-new");
-    const encodedString = map?.innerText
+const map = document.getElementById("map-new");
+const encodedString = map?.innerText
 
-    const container = document.createElement('div');
-    container.innerHTML = encodedString;
+const container = document.createElement('div');
+container.innerHTML = encodedString;
 
-    const iframeElement = container.firstChild.textContent;
+const iframeElement = container.firstChild.textContent;
 
-    const data = `
+const data = `
 ${iframeElement}
 `
-    if (insertMap) {
-      insertMap.innerHTML = data
-    }
+if(insertMap){
+  insertMap.innerHTML = data
+}
 
 
   }
 
   // all product belong category
-  async productCategory() {
-    const more = document.getElementsByClassName("category-1")
-    const categoryId = document.getElementById("category-id-product")?.innerText
-    const insertElement = document.getElementById("all-pro-by-cat")
-    for (let l = 0; l < more.length; l++) {
-      const url = await salla.product
-        .categories(categoryId)
-        .then((response) => {
-          return response.data.url;
-        });
-      more[l].children[2].setAttribute("href", url)
+async productCategory(){
+  const more = document.getElementsByClassName("category-1")
+  const categoryId = document.getElementById("category-id-product")?.innerText
+const insertElement = document.getElementById("all-pro-by-cat")
+for (let l = 0; l < more.length; l++) {
+  if(categoryId){
+    const url = await salla.product
+      .categories(categoryId)
+      .then((response) => {
+        return response.data.url;
+      });
+  more[l].children[2].setAttribute("href" , url)
+  
+}
+   if (categoryId){
+    salla.product.fetch({
+      source: "categories",
+      source_value: [categoryId],
+    }).then((response) => {
 
-    }
-    if (categoryId) {
-      salla.product.fetch({
-        source: "categories",
-        source_value: [categoryId],
-      }).then((response) => {
-
-
-        const numberOfProductShow = response.data.length > 8 ? response.data.length.slice(0, 8) : response.data.length
-        for (let i = 0; i < response.data.length; i++) {
-          const product = response.data[i]
-          // console.log({product})
-          const data = `
+      
+      const numberOfProductShow =  response.data.length > 8 ? response.data.length.slice(0,8) : response.data.length 
+        for(let i = 0 ; i< response.data.length ; i++){
+         const product = response.data[i]
+        // console.log({product})
+   const data =`
 
 						
 						<a class=" flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="${product.url}">
@@ -693,28 +742,30 @@ ${iframeElement}
               </div>
 		</a>
     `
-          insertElement.innerHTML += data
-
+insertElement.innerHTML += data
+            
         }
-
+        
       });
-    }
-
-
 
   }
+  
+   }
+
+    
+  
+}
 
 
 
 
   // elan 
-  removeElan() {
+   removeElan() {
     const removeElanBtn = document.getElementById("remove-elan");
-    if (removeElanBtn) {
-      removeElanBtn.addEventListener("click", () => {
-        document.getElementById("elan-bannle").remove()
-      })
-    }
+    if(removeElanBtn){
+    removeElanBtn.addEventListener("click", () => {
+      document.getElementById("elan-bannle").remove()
+    })}
   }
 
 
@@ -724,45 +775,49 @@ ${iframeElement}
     const names = document.getElementsByClassName("category-name");
     const anchors = document.getElementsByClassName("api-set-category");
     const image = document.getElementsByClassName("image-catetgory")
-    if (categories) {
-      for (let i = 0; i < categories.length; i++) {
-        const category = categories[i].innerText;
-        const name = names[i];
-        const anchor = anchors[i];
-        const img = image[i]
+    if(categories){
+    for (let i = 0; i < categories.length; i++) {
+      const category = categories[i].innerText;
+      const name = names[i];
+      const anchor = anchors[i];
+      const img = image[i]
+      if(category){
+        console.log({category})
         salla.product.categories(category).then((response) => {
           console.log(response)
-          if (name) name.innerText = response.data.name;
+          if(name) name.innerText = response.data.name;
           anchor.href = response.data.url;
           // img.setAttribute("src" , response.data.image)
         });
       }
+      
     }
+   }
 
   }
 
 
   //elan slider 
-  elanSldier() {
+  elanSldier(){
     const btnShow = document.getElementById("btn-open")
     const showSlider = document.getElementById("animated-ads")
-    if (btnShow) {
-      btnShow.addEventListener("click", () => {
+    if(btnShow){
+      btnShow.addEventListener("click" , ()=>{
         showSlider.classList.toggle("show")
       })
     }
   }
 
-  loadModalImgOnclick() {
+  loadModalImgOnclick(){
     document.querySelectorAll('.load-img-onclick').forEach(link => {
-      link.addEventListener('click', (event) => {
+      link.addEventListener('click', (event)=> {
         event.preventDefault();
         let modal = document.querySelector('#' + link.dataset.modalId),
-          img = modal.querySelector('img'),
-          imgSrc = img.dataset.src;
+            img = modal.querySelector('img'),
+            imgSrc = img.dataset.src;
         modal.open();
-
-        if (img.classList.contains('loaded')) return;
+        
+        if(img.classList.contains('loaded')) return;
 
         img.src = imgSrc;
         img.classList.add('loaded');
@@ -770,11 +825,11 @@ ${iframeElement}
     })
   }
 
-  commonThings() {
+  commonThings(){
     this.cleanContentArticles('.content-entry');
   }
 
-  cleanContentArticles(elementsSelector) {
+  cleanContentArticles(elementsSelector){
     let articleElements = document.querySelectorAll(elementsSelector);
 
     if (articleElements.length) {
@@ -806,18 +861,18 @@ ${iframeElement}
       }
 
       return Swal.mixin({
-        toast: true,
-        position: salla.config.get('theme.is_rtl') ? 'top-start' : 'top-end',
+        toast            : true,
+        position         : salla.config.get('theme.is_rtl') ? 'top-start' : 'top-end',
         showConfirmButton: false,
-        timer: 3500,
-        didOpen: (toast) => {
+        timer            : 3500,
+        didOpen          : (toast) => {
           toast.addEventListener('mouseenter', Swal.stopTimer)
           toast.addEventListener('mouseleave', Swal.resumeTimer)
         }
       }).fire({
-        icon: type,
-        title: message,
-        showCloseButton: true,
+        icon            : type,
+        title           : message,
+        showCloseButton : true,
         timerProgressBar: true
       })
     });
@@ -831,9 +886,9 @@ ${iframeElement}
     }
     menu = new MobileMenu(menu, "(max-width: 1024px)", "( slidingSubmenus: false)");
     salla.lang.onLoaded(() => {
-      menu.navigation({ title: salla.lang.get('blocks.header.main_menu') });
+      menu.navigation({title: salla.lang.get('blocks.header.main_menu')});
     });
-    const drawer = menu.offcanvas({ position: salla.config.get('theme.is_rtl') ? "right" : 'left' });
+    const drawer = menu.offcanvas({position: salla.config.get('theme.is_rtl') ? "right" : 'left'});
 
     this.onClick("a[href='#mobile-menu']", event => {
       document.body.classList.add('menu-opened');
@@ -859,7 +914,7 @@ ${iframeElement}
     window.addEventListener('scroll', () => {
       window.scrollY >= header.offsetTop + height ? header.classList.add('fixed-pinned', 'animated') : header.classList.remove('fixed-pinned');
       window.scrollY >= 200 ? header.classList.add('fixed-header') : header.classList.remove('fixed-header', 'animated');
-    }, { passive: true });
+    }, {passive: true});
   }
 
   setHeaderHeight() {
@@ -888,21 +943,21 @@ ${iframeElement}
       salla.storage.set('statusAd-' + ad.dataset.id, 'dismissed');
 
       anime({
-        targets: '.salla-advertisement',
-        opacity: [1, 0],
+        targets : '.salla-advertisement',
+        opacity : [1, 0],
         duration: 300,
-        height: [ad.clientHeight, 0],
-        easing: 'easeInOutQuad',
+        height  : [ad.clientHeight, 0],
+        easing  : 'easeInOutQuad',
       });
     });
   }
 
   initiateDropdowns() {
-    this.onClick('.dropdown__trigger', ({ target: btn }) => {
+    this.onClick('.dropdown__trigger', ({target: btn}) => {
       btn.parentElement.classList.toggle('is-opened');
       document.body.classList.toggle('dropdown--is-opened');
       // Click Outside || Click on close btn
-      window.addEventListener('click', ({ target: element }) => {
+      window.addEventListener('click', ({target: element}) => {
         if (!element.closest('.dropdown__menu') && element !== btn || element.classList.contains('dropdown__close')) {
           btn.parentElement.classList.remove('is-opened');
           document.body.classList.remove('dropdown--is-opened');
@@ -936,22 +991,22 @@ ${iframeElement}
     document.querySelectorAll('.btn--collapse')
       .forEach((trigger) => {
         const content = document.querySelector('#' + trigger.dataset.show);
-        const state = { isOpen: false }
+        const state = {isOpen: false}
 
         const onOpen = () => anime({
-          targets: content,
+          targets : content,
           duration: 225,
-          height: content.scrollHeight,
-          opacity: [0, 1],
-          easing: 'easeOutQuart',
+          height  : content.scrollHeight,
+          opacity : [0, 1],
+          easing  : 'easeOutQuart',
         });
 
         const onClose = () => anime({
-          targets: content,
+          targets : content,
           duration: 225,
-          height: 0,
-          opacity: [1, 0],
-          easing: 'easeOutQuart',
+          height  : 0,
+          opacity : [1, 0],
+          easing  : 'easeOutQuart',
         })
 
         const toggleState = (isOpen) => {
@@ -960,7 +1015,7 @@ ${iframeElement}
         }
 
         trigger.addEventListener('click', () => {
-          const { isOpen } = state
+          const {isOpen} = state
           toggleState(isOpen)
           isOpen ? onClose() : onOpen();
         })
@@ -996,47 +1051,6 @@ ${iframeElement}
       app.element('salla-cart-summary').animateToCart(app.element(`#product-${prodId} img`));
     });
   }
-
-
-  toggleHeaderMenuBtn() {
-    // const menuComp = document.getElementById('mobile-menu').children[0];
-    // const headerBtn = document.getElementById('header-menu-extra-elements');
-    // const menuEls = document.getElementById('mobile-menu').children[0].children;
-
-    // let currentSize = window.innerWidth;
-    // let shownElementsNum = _getCurrentShowElements(currentSize);
-    // let shownEls = _sliceHeaderMenuElements(shownElementsNum, menuEls)
-
-    // if (shownEls[0]) {
-    //   menuComp.replaceChildren(shownEls[0])
-    // }
-  }
-
-
-  // _getCurrentShowElements(width = 1025) {
-  //   const WINDOW_ACTION_SIZES = {
-  //     x: { size: 1040, shownElements: 9 },
-  //     x2: { size: 1100, shownElements: 9 },
-  //     x3: { size: 1160, shownElements: 10 },
-  //     x4: { size: 1220, shownElements: 10 },
-  //     x5: { size: 1280, shownElements: 11 },
-  //     x6: { size: 1330, shownElements: 11 },
-  //     x7: { size: 1390, shownElements: 12 },
-  //   };
-
-  //   for (const sizeKey in WINDOW_ACTION_SIZES) {
-  //     const isWidthMatched = WINDOW_ACTION_SIZES[sizeKey].size === width;
-
-  //     if (isWidthMatched) return WINDOW_ACTION_SIZES[sizeKey].shownElements;
-  //   }
-
-  //   return 0;
-  // }
-
-  // _sliceHeaderMenuElements(size = 0, menuEls = []) {
-  //   return new Array.from(menuEls).slice(0, size);
-  // }
-
 }
 
 salla.onReady(() => (new App).loadTheApp());
