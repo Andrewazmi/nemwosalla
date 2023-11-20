@@ -2445,35 +2445,52 @@
             "path": "home.brand-infinity-slider",
             "fields": [
                 {
-                    "id": "image",
-                    "key": "e6292275-babf-4826-b40f-2b894cc1c884",
-                    "type": "string",
-                    "format": "image",
-                    "label": "Image",
+                    "id": "brands",
+                    "key": "613ea16c-0467-436a-8b3d-226bb9de2aca",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "brands",
                     "description": null,
                     "labelHTML": null,
-                    "placeholder": "e.g. https://hostname.com/image.png",
-                    "icon": "sicon-image",
-                    "value": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "image",
+                            "key": "07dd740f-0a96-4e14-982b-c06e75cbfc6f",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        },
+                        {
+                            "id": "url",
+                            "key": "058f68c5-f23b-45d3-944c-0279d69c551d",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "URL",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://salla.sa",
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30,
+                            "defaulted": true
+                        }
+                    ],
+                    "value": [],
                     "required": false,
-                    "defaulted": true
-                },
-                {
-                    "id": "url",
-                    "key": "a1a8c53d-c192-48d4-ad07-1698fd4e51bd",
-                    "type": "string",
-                    "format": "url",
-                    "inputType": "url",
-                    "label": "URL",
-                    "description": null,
-                    "labelHTML": null,
-                    "placeholder": "e.g. https://salla.sa",
-                    "icon": "sicon-link",
-                    "value": null,
-                    "required": false,
-                    "minLength": 6,
-                    "maxLength": 30,
-                    "defaulted": true
+                    "minLength": "7",
+                    "maxLength": "7"
                 }
             ]
         }
