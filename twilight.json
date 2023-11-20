@@ -993,7 +993,7 @@
             "fields": [
                 {
                     "id": "elan_button_close",
-                    "key": "e769e0e0-6aa1-45dc-bee3-1fb913dcae27",
+                    "key": "4763b773-94b9-4609-9d2a-e432469c76cd",
                     "type": "boolean",
                     "format": "switch",
                     "label": "elan_button_close",
@@ -1006,7 +1006,7 @@
                 },
                 {
                     "id": "elan_background_color",
-                    "key": "f5e62a42-91e0-49df-8701-c6aa977ad8db",
+                    "key": "86f87d8d-2544-4590-835b-62377cd650fd",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
@@ -1019,7 +1019,7 @@
                 },
                 {
                     "id": "elan_text_color",
-                    "key": "65b35aa8-a172-46fc-b02e-7033eb67bc51",
+                    "key": "76aa9570-83c3-4524-b292-bce582d8c80c",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
@@ -1032,7 +1032,7 @@
                 },
                 {
                     "id": "elan_link",
-                    "key": "8e440cd4-885b-4cac-a518-7b121c345b03",
+                    "key": "ab38d8e8-8b45-4303-a5b0-21603c594d6b",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
@@ -1047,8 +1047,34 @@
                     "maxLength": 30
                 },
                 {
+                    "id": "image_after_text",
+                    "key": "8431a9a5-0295-4975-a6c5-d6e3e5cf3577",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image_after_text",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "image_before_text",
+                    "key": "e5f82d43-57b2-4680-9882-f323c923de75",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image_before_text",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
                     "id": "elan_title",
-                    "key": "3b3bfd03-8c1e-4b4b-8e22-193a4898273d",
+                    "key": "dd264883-f6a7-473b-842b-c754d8329a6e",
                     "type": "string",
                     "format": "text",
                     "label": "elan_title",
@@ -2445,8 +2471,64 @@
             "path": "home.brand-infinity-slider",
             "fields": [
                 {
+                    "id": "brands",
+                    "key": "613ea16c-0467-436a-8b3d-226bb9de2aca",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "brands",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "image",
+                            "key": "07dd740f-0a96-4e14-982b-c06e75cbfc6f",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        },
+                        {
+                            "id": "url",
+                            "key": "058f68c5-f23b-45d3-944c-0279d69c551d",
+                            "type": "string",
+                            "format": "url",
+                            "inputType": "url",
+                            "label": "URL",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://salla.sa",
+                            "icon": "sicon-link",
+                            "value": null,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30,
+                            "defaulted": true
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": "7",
+                    "maxLength": "7"
+                }
+            ]
+        },
+        {
+            "key": "9ce48e69-f04a-4812-a3a2-a2efc75b7ffd",
+            "title": "banner-offer-2",
+            "icon": "sicon-store",
+            "path": "home.banner-offer-2",
+            "fields": [
+                {
                     "id": "image",
-                    "key": "e85c40b2-cc4e-4ec4-934b-7b236a6ea40b",
+                    "key": "5da7d3cb-e715-4467-87c2-91a175b49292",
                     "type": "string",
                     "format": "image",
                     "label": "Image",
@@ -2460,7 +2542,7 @@
                 },
                 {
                     "id": "title",
-                    "key": "b4f3c6b4-d92e-4c05-b175-22bc72a680be",
+                    "key": "0c5f7315-72c2-440d-aef7-fe75e43a3407",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -2476,7 +2558,7 @@
                 },
                 {
                     "id": "subtitle",
-                    "key": "5be8ac36-3a54-40b8-8c1b-3895baf64b72",
+                    "key": "c94e810e-1966-43f7-981b-7b493a8098cd",
                     "type": "string",
                     "format": "text",
                     "label": "subtitle",
@@ -2492,7 +2574,7 @@
                 },
                 {
                     "id": "button",
-                    "key": "c0372362-5dcb-4f64-8a88-55eb05f7e6b9",
+                    "key": "84143748-c560-452c-803e-6e7bc843c051",
                     "type": "string",
                     "format": "text",
                     "label": "button",
@@ -2508,7 +2590,7 @@
                 },
                 {
                     "id": "url",
-                    "key": "59c1dc9b-a260-452e-a0e1-e56c4410913d",
+                    "key": "38b91c08-7db2-4cea-9194-e0892b941159",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
