@@ -1,32 +1,31 @@
 <section class="s-block s-block--categories mt-10">
 	<div class="container px-4 category">
 		<div class="text-center mb-8 flex flex-col justify-center items-center">
-			<h1 class=" mb-2">{{component.title}}</h1>
+			<h1 class="mb-2">{{component.title}}</h1>
 			<div class="line"></div>
 		</div>
 		<div class="w-full flex items-center justify-center m-auto">
-			<div class="grid-feattures-category">
+			<div class="grid grid-cols-4 gap-14">
 
 				{% for link in component.category_star %}
-				
+
 					<div class="swiper-slide slide--one-sixth cat-hight">
 						<span class="hidden category-value">{{ link.category_name.value[0]|json_encode() }}</span>
-						<a class=" flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="">
-						<div class=" image flex justify-center items-center rounded-full mb-2 " style="width:100px ; height:100px">
-                        	<img class="image-catetgory rounded-full bg-cover"  src="{{link.image}}" />
-                    	</div>
-						
-							
+						<a class="flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="">
+							<div class=" image flex justify-center items-center rounded-full mb-2" style="width:120px ; height:120px">
+								<img class="image-catetgory rounded-full bg-cover" src="{{link.image}}"/>
+							</div>
+
+
 							<h4 class="category-name"></h4>
 							<span class="all-category-belong-product"></span>
 						</a>
 					</div>
-				
 
 
 				{% endfor %}
 			</div>
-</div>
+		</div>
 
 	</div>
 
