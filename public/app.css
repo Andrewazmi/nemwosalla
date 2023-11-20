@@ -6845,6 +6845,7 @@ button.swiper-pagination-bullet {
 .lg\:hidden{display:none}
 .lg\:min-h-\[500px\]{min-height:500px}
 .lg\:min-h-\[528px\]{min-height:528px}
+.lg\:w-10{width:2.5rem}
 .lg\:w-10\/12{width:83.333333%}
 .lg\:w-24{width:6rem}
 .lg\:w-5\/12{width:41.666667%}
@@ -6852,7 +6853,6 @@ button.swiper-pagination-bullet {
 .lg\:w-72{width:18rem}
 .lg\:w-96{width:24rem}
 .lg\:w-full{width:100%}
-.lg\:w-10{width:2.5rem}
 .lg\:max-w-none{max-width:none}
 .lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}

@@ -1252,7 +1252,7 @@
             "fields": [
                 {
                     "id": "add_two_card",
-                    "key": "6844fc52-1edd-43ae-8744-84071a10fff6",
+                    "key": "9011fe74-fd16-46aa-b038-5e0775b0eb22",
                     "type": "collection",
                     "format": "collection",
                     "label": "add_two_card",
@@ -1263,7 +1263,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "966f7956-bd44-4778-afe4-b62f9c3529a4",
+                            "key": "5b5804e5-cd10-4689-bfda-f939be527aeb",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -1277,7 +1277,7 @@
                         },
                         {
                             "id": "url",
-                            "key": "e4ff82d9-d78a-4a6a-80a7-6875e0dadd0a",
+                            "key": "c310fcd8-a283-462f-ab91-dedc9161d56d",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
@@ -1291,6 +1291,80 @@
                             "minLength": 6,
                             "maxLength": 30,
                             "defaulted": true
+                        },
+                        {
+                            "id": "background_button_color",
+                            "key": "b34253b8-fb1d-4dad-a2f2-6d065157ccc5",
+                            "type": "string",
+                            "format": "color",
+                            "inputType": "color",
+                            "label": "background_button_color",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-format-fill",
+                            "value": "#004956",
+                            "required": false
+                        },
+                        {
+                            "id": "text_color_button",
+                            "key": "6275c870-8322-4d45-9e23-7fe35e0f7782",
+                            "type": "string",
+                            "format": "color",
+                            "inputType": "color",
+                            "label": "text_color_button",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-format-fill",
+                            "value": "#004956",
+                            "required": false
+                        },
+                        {
+                            "id": "button",
+                            "key": "6b650732-ff88-4d40-a8df-a80d2350fa79",
+                            "type": "string",
+                            "format": "text",
+                            "label": "button",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": true,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "button_posistion",
+                            "key": "53696997-6642-4a33-b255-e7ebc37cc9d6",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "button_position",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [
+                                {
+                                    "label": "right",
+                                    "value": "start",
+                                    "key": "d9ab7516-7a81-47b6-aac1-56a4a357199e"
+                                },
+                                {
+                                    "label": "left",
+                                    "value": "end",
+                                    "key": "780ba7d8-a6c6-4d34-b3b0-beca4211b283"
+                                },
+                                {
+                                    "label": "center",
+                                    "value": "center",
+                                    "key": "18699bd0-ac71-4869-9eda-7cda7e84d194"
+                                }
+                            ],
+                            "source": "Manual",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
                         }
                     ],
                     "value": [],

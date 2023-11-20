@@ -5,11 +5,14 @@
 			{% for card in component.add_two_card %}
 				<a href="{{card.url}}" class="relative block h-full basis-3/6" aria-label="Banner">
 					<img width="100%" style="height:500px" src="{{card.image}}" data-src="https://cdn.salla.sa/form-builder/ZjHsdgzca46oJqIwV4vTDK60zkL9OZrz9wHZnWcz.png" loading="lazy" data-ll-status="loaded">
-					<div class="absolute flex items-center justify-start w-full px-3 bottom-3">
-						<button class="w-8/12 py-3 text-sm font-bold text-center bg-white rounded-lg lg:w-5/12 lg:text-lg text-stone-900">{{card.button}}</button>
+					<div class="absolute flex items-center w-full px-3 bottom-3" style="justify-content : {{card.button_posistion|json_encode()|split('"')[1]}}">
+						<button class="w-8/12 py-3 text-sm font-bold text-center rounded-lg lg:w-5/12 lg:text-lg " style="color:{{card.text_color_button}} ; background-color : {{card.background_button_color}}">{{card.button}}</button>
 					</div>
 				</a>
+				
 			{% endfor %}
+			
 		</div>
 	</div>
+	
 </section>
