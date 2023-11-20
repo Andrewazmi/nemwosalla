@@ -1252,7 +1252,7 @@
             "fields": [
                 {
                     "id": "add_two_card",
-                    "key": "8789f608-4251-4764-9d13-0ca924cffddb",
+                    "key": "9011fe74-fd16-46aa-b038-5e0775b0eb22",
                     "type": "collection",
                     "format": "collection",
                     "label": "add_two_card",
@@ -1263,7 +1263,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "e084d4e1-b7e5-4b96-a57a-46832bf17966",
+                            "key": "5b5804e5-cd10-4689-bfda-f939be527aeb",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -1277,7 +1277,7 @@
                         },
                         {
                             "id": "url",
-                            "key": "d2b79390-47e0-4a9f-a364-00b731e279c1",
+                            "key": "c310fcd8-a283-462f-ab91-dedc9161d56d",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
@@ -1294,7 +1294,7 @@
                         },
                         {
                             "id": "background_button_color",
-                            "key": "17a10b69-f687-4b0c-9a1a-6e6c5a39e453",
+                            "key": "b34253b8-fb1d-4dad-a2f2-6d065157ccc5",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
@@ -1307,7 +1307,7 @@
                         },
                         {
                             "id": "text_color_button",
-                            "key": "d331741b-a15d-41be-8c02-2d566e794024",
+                            "key": "6275c870-8322-4d45-9e23-7fe35e0f7782",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
@@ -1320,7 +1320,7 @@
                         },
                         {
                             "id": "button",
-                            "key": "16d6fab7-e145-421f-a4d8-b3ff1e325905",
+                            "key": "6b650732-ff88-4d40-a8df-a80d2350fa79",
                             "type": "string",
                             "format": "text",
                             "label": "button",
@@ -1333,6 +1333,38 @@
                             "required": false,
                             "minLength": 6,
                             "maxLength": 30
+                        },
+                        {
+                            "id": "button_posistion",
+                            "key": "53696997-6642-4a33-b255-e7ebc37cc9d6",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "button_position",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [
+                                {
+                                    "label": "right",
+                                    "value": "start",
+                                    "key": "d9ab7516-7a81-47b6-aac1-56a4a357199e"
+                                },
+                                {
+                                    "label": "left",
+                                    "value": "end",
+                                    "key": "780ba7d8-a6c6-4d34-b3b0-beca4211b283"
+                                },
+                                {
+                                    "label": "center",
+                                    "value": "center",
+                                    "key": "18699bd0-ac71-4869-9eda-7cda7e84d194"
+                                }
+                            ],
+                            "source": "Manual",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
                         }
                     ],
                     "value": [],
