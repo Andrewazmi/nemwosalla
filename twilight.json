@@ -993,7 +993,7 @@
             "fields": [
                 {
                     "id": "elan_button_close",
-                    "key": "13d54e17-76a0-400c-937a-4a365f60c96e",
+                    "key": "4763b773-94b9-4609-9d2a-e432469c76cd",
                     "type": "boolean",
                     "format": "switch",
                     "label": "elan_button_close",
@@ -1006,7 +1006,7 @@
                 },
                 {
                     "id": "elan_background_color",
-                    "key": "f78ee72c-f94f-46f5-860f-924885a163c3",
+                    "key": "86f87d8d-2544-4590-835b-62377cd650fd",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
@@ -1019,7 +1019,7 @@
                 },
                 {
                     "id": "elan_text_color",
-                    "key": "65c985c5-2f21-44ae-9b7d-33343cba7c82",
+                    "key": "76aa9570-83c3-4524-b292-bce582d8c80c",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
@@ -1032,7 +1032,7 @@
                 },
                 {
                     "id": "elan_link",
-                    "key": "829813a9-5939-49a0-81c6-03440bc6d834",
+                    "key": "ab38d8e8-8b45-4303-a5b0-21603c594d6b",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
@@ -1047,22 +1047,34 @@
                     "maxLength": 30
                 },
                 {
-                    "id": "image",
-                    "key": "89e56ac7-ed71-4ef6-8650-0e5814431399",
+                    "id": "image_after_text",
+                    "key": "8431a9a5-0295-4975-a6c5-d6e3e5cf3577",
                     "type": "string",
                     "format": "image",
-                    "label": "Image",
+                    "label": "Image_after_text",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "e.g. https://hostname.com/image.png",
                     "icon": "sicon-image",
                     "value": null,
-                    "required": false,
-                    "defaulted": true
+                    "required": false
+                },
+                {
+                    "id": "image_before_text",
+                    "key": "e5f82d43-57b2-4680-9882-f323c923de75",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image_before_text",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
                 },
                 {
                     "id": "elan_title",
-                    "key": "0aa4f726-d67d-485e-9ea7-6466f07ecb21",
+                    "key": "dd264883-f6a7-473b-842b-c754d8329a6e",
                     "type": "string",
                     "format": "text",
                     "label": "elan_title",
