@@ -1,0 +1,18 @@
+<section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider photo-slider-hero mb-5">
+	  <salla-slider type="carousel" controls-outer show-controls="false">
+        <div slot="items">
+        {% for item in component.items %}
+            
+        
+        <a class="w-full max-h-[640px] relative" href="{{item.url}}">
+            <img src="{{ item.image }}" class="w-full"/>
+            <div class="absolute flex items-center w-full px-3 bottom-3" style="justify-content : {{item.button_position|json_encode()|split('"')[1]}}">
+                <button class="py-3 lg:py-6 px-3 text-sm text-white bg-white font-bold text-center rounded-none w-fit lg:w-62 lg:text-lg" style="color:{{item.text_color_button}} ; background-color : {{item.background_button_color}}">
+                {{item.button}}
+                </button>
+            </div>
+        </a>
+        {% endfor %}
+        </div>
+    </salla-slider>
+</section>
