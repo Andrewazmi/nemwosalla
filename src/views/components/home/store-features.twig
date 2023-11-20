@@ -1,21 +1,17 @@
 <section class ="s-block">
     <div class="container flex flex-col justify-center items-center store-features">
-        
-         <h1> {{component.title}}</h1>
-            <p class=" subtitle-feaures mt-2">{{component.subtitle}}</p>
-		<div class="grid-feattures">
-			{% for link in component.card_store %}
-				<div class="card-store-features flex flex-col justify-center items-center">
-				    <div class=" image flex justify-center items-center rounded-full ">
-                        <img src="{{link.image}}" />
-                    </div>
-					    
-					    <h2>{{ link.title_card }}</h2>
-                        <p>{{ link.subtitle_card }}</p>
-		           
-				</div>
-			{% endfor %}
+			<h1> {{component.title}}</h1>
+			<p class="subtitle-feaures mt-2">{{component.subtitle}}</p>
+			<div class="grid-feattures">
+				{% for link in component.card_store %}
+					<div class="card-store-features flex flex-col justify-center items-center">
+							<div class="image flex justify-center items-center rounded-full">
+									<img src="{{link.image}}" />
+							</div>
+							<h2>{{ link.title_card }}</h2>
+							<p>{{ link.subtitle_card }}</p>
+					</div>
+				{% endfor %}
+			</div>
 		</div>
-
-	</div>
 </section>
