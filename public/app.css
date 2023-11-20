@@ -6932,6 +6932,7 @@ button.swiper-pagination-bullet {
 .lg\:flex{display:flex}
 .lg\:hidden{display:none}
 .lg\:max-h-\[700px\]{max-height:700px}
+.lg\:min-h-\[500px\]{min-height:500px}
 .lg\:min-h-\[528px\]{min-height:528px}
 .lg\:w-10{width:2.5rem}
 .lg\:w-10\/12{width:83.333333%}
