@@ -2710,6 +2710,13 @@
                     "maxLength": "10000"
                 }
             ]
+        },
+        {
+            "key": "fa95838b-4027-45b6-a81c-f30c0b814c69",
+            "title": "photo-slider",
+            "icon": "sicon-store",
+            "path": "home.photo-slider",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
