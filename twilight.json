@@ -2692,7 +2692,24 @@
             "title": "video",
             "icon": "sicon-store",
             "path": "home.video",
-            "fields": []
+            "fields": [
+                {
+                    "id": "video_banner",
+                    "key": "5b2605cf-f517-452c-a241-2605563d737a",
+                    "type": "string",
+                    "format": "text",
+                    "label": "video_banner",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
