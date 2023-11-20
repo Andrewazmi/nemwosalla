@@ -590,6 +590,9 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .max-h-8{max-height:2rem}
 .max-h-\[300px\]{max-height:300px}
 .max-h-full{max-height:100%}
+.max-h-100{max-height:28rem}
+.max-h-\[620px\]{max-height:620px}
+.max-h-\[640px\]{max-height:640px}
 .min-h-\[120px\]{min-height:120px}
 .min-h-\[250px\]{min-height:250px}
 .min-h-\[300px\]{min-height:300px}
