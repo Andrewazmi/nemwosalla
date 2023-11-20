@@ -476,6 +476,17 @@ salla-search input{
   min-width: 50px;
 }
 
+.s-search-inline {
+  min-width: 20px;
+}
+
+.animated-ads {
+  right:-74%
+}
+
+
+
+
 
 
 
@@ -496,7 +507,7 @@ salla-search input{
 
   }
   .animated-ads {
-    right:-77%
+    right:-76%
   }
   .mm-ocd__content {
     border-top-left-radius: 10px;
@@ -550,7 +561,7 @@ salla-search input{
     grid-template-columns: repeat(3, 1fr) !important;
   }
   .animated-ads {
-    right:-76%
+    right:-73%
   }
   
 }
@@ -576,19 +587,25 @@ salla-search input{
     margin-right : .5rem !important ;
   }
   .animated-ads {
-    right:-73%
+    right:-71%
   }
   
 }
 
 @media (max-width:400px) {
   .animated-ads {
-    right:-71%
-  }
+    right: -66%;
+}
 .category-star-2 img{
   height: 160px !important;
 }
   .grid-feattures , .grid-feattures-about   {
     grid-template-columns: repeat(1, 1fr) !important;
   }
+}
+
+@media (max-width: 1300px){
+  .animated-ads {
+    right: -71%;
+}
 }
