@@ -2710,6 +2710,119 @@
                     "maxLength": "10000"
                 }
             ]
+        },
+        {
+            "key": "fa95838b-4027-45b6-a81c-f30c0b814c69",
+            "title": "photo-slider-2",
+            "icon": "sicon-store",
+            "path": "home.photo-slider-2",
+            "fields": [
+                {
+                    "id": "slider",
+                    "key": "6dbe91db-d3da-48b2-a0d1-e285a96b78e0",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "items",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "image",
+                            "key": "0df50ab1-4166-478c-8fa7-47b9ebaa1352",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false,
+                            "defaulted": true
+                        },
+                        {
+                            "id": "background_button_color",
+                            "key": "3c1e0bc9-1228-4edd-8a41-e134e205eae2",
+                            "type": "string",
+                            "format": "color",
+                            "inputType": "color",
+                            "label": "background_button_color",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-format-fill",
+                            "value": "#004956",
+                            "required": false
+                        },
+                        {
+                            "id": "text_color_button",
+                            "key": "8ad79c87-adf2-4b4e-ba77-81a1f0fe4f49",
+                            "type": "string",
+                            "format": "color",
+                            "inputType": "color",
+                            "label": "text_color_button",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-format-fill",
+                            "value": "#004956",
+                            "required": false
+                        },
+                        {
+                            "id": "button_position",
+                            "key": "13321777-1e49-4793-8e32-b77099ed48fb",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "button_position",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [
+                                {
+                                    "label": "right",
+                                    "value": "start",
+                                    "key": "a56f9d15-9aae-4d87-86c0-9c7ca6bf7a66"
+                                },
+                                {
+                                    "label": "left",
+                                    "value": "end",
+                                    "key": "7a43a6b2-014d-493a-8d63-686df5954144"
+                                },
+                                {
+                                    "label": "center",
+                                    "value": "center",
+                                    "key": "dd3083cd-74d3-41eb-8a9c-9b06b888301b"
+                                }
+                            ],
+                            "source": "Manual",
+                            "multichoice": true,
+                            "searchable": false,
+                            "required": false
+                        },
+                        {
+                            "id": "button",
+                            "key": "7dcb4ba3-a8cc-4e23-97b6-c03d93bd73b6",
+                            "type": "string",
+                            "format": "text",
+                            "label": "button",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
