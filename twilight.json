@@ -2502,7 +2502,7 @@
             "fields": [
                 {
                     "id": "image",
-                    "key": "bbfae36d-5a21-4edf-af83-01669d83a770",
+                    "key": "5da7d3cb-e715-4467-87c2-91a175b49292",
                     "type": "string",
                     "format": "image",
                     "label": "Image",
@@ -2516,7 +2516,7 @@
                 },
                 {
                     "id": "title",
-                    "key": "d4ad8eef-fa2e-451d-bc9d-60863d129d81",
+                    "key": "0c5f7315-72c2-440d-aef7-fe75e43a3407",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -2532,7 +2532,7 @@
                 },
                 {
                     "id": "subtitle",
-                    "key": "51b1a38b-cb7c-4e85-967a-1ff2a92340c8",
+                    "key": "c94e810e-1966-43f7-981b-7b493a8098cd",
                     "type": "string",
                     "format": "text",
                     "label": "subtitle",
@@ -2548,7 +2548,7 @@
                 },
                 {
                     "id": "button",
-                    "key": "ce4d65ce-4037-4e22-aeb2-c5a69ff4a77a",
+                    "key": "84143748-c560-452c-803e-6e7bc843c051",
                     "type": "string",
                     "format": "text",
                     "label": "button",
@@ -2564,7 +2564,7 @@
                 },
                 {
                     "id": "url",
-                    "key": "3f6588a0-a80a-411b-b953-dfbe616de88b",
+                    "key": "38b91c08-7db2-4cea-9194-e0892b941159",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
