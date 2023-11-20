@@ -2719,7 +2719,7 @@
             "fields": [
                 {
                     "id": "slider",
-                    "key": "6dbe91db-d3da-48b2-a0d1-e285a96b78e0",
+                    "key": "ee114518-69be-4ac1-a292-2d77cee47a38",
                     "type": "collection",
                     "format": "collection",
                     "label": "items",
@@ -2730,7 +2730,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "0df50ab1-4166-478c-8fa7-47b9ebaa1352",
+                            "key": "700f95c9-513b-438b-8c6c-87bb30282191",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -2744,7 +2744,7 @@
                         },
                         {
                             "id": "background_button_color",
-                            "key": "3c1e0bc9-1228-4edd-8a41-e134e205eae2",
+                            "key": "f2f6ae88-71b6-46aa-a661-367187c4df7d",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
@@ -2757,7 +2757,7 @@
                         },
                         {
                             "id": "text_color_button",
-                            "key": "8ad79c87-adf2-4b4e-ba77-81a1f0fe4f49",
+                            "key": "dae7e71a-df3f-4114-9843-ed9e970d8080",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
@@ -2770,7 +2770,7 @@
                         },
                         {
                             "id": "button_position",
-                            "key": "13321777-1e49-4793-8e32-b77099ed48fb",
+                            "key": "97081bac-ac97-48dd-babe-37419944d913",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "button_position",
@@ -2796,13 +2796,13 @@
                                 }
                             ],
                             "source": "Manual",
-                            "multichoice": true,
+                            "multichoice": false,
                             "searchable": false,
                             "required": false
                         },
                         {
                             "id": "button",
-                            "key": "7dcb4ba3-a8cc-4e23-97b6-c03d93bd73b6",
+                            "key": "78aefe49-c38e-4d76-9d4a-e196dd8b1486",
                             "type": "string",
                             "format": "text",
                             "label": "button",
