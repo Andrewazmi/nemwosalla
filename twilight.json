@@ -2686,6 +2686,13 @@
                     "defaulted": true
                 }
             ]
+        },
+        {
+            "key": "000217f7-ef9d-4d06-81c2-6d453a2f3933",
+            "title": "video",
+            "icon": "sicon-store",
+            "path": "home.video",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
