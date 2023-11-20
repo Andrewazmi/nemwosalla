@@ -5,15 +5,15 @@
 			<div class="line"></div>
 		</div>
 		<div class="w-full flex items-center justify-center m-auto">
-			<div class="grid grid-cols-4 gap-14">
+			<div class="grid-feattures-category">
 
 				{% for link in component.category_star %}
 
 					<div class="swiper-slide slide--one-sixth cat-hight">
 						<span class="hidden category-value">{{ link.category_name.value[0]|json_encode() }}</span>
 						<a class="flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="">
-							<div class=" image flex justify-center items-center rounded-full mb-2" style="width:120px ; height:120px">
-								<img class="image-catetgory rounded-full bg-cover" src="{{link.image}}"/>
+							<div class="image flex justify-center items-center rounded-full mb-2 overflow-hidden">
+								<img class="w-full h-full" src="{{link.image}}"/>
 							</div>
 
 

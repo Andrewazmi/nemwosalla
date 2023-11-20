@@ -234,13 +234,20 @@ svg {
   padding-bottom: 10px;
   height: auto;
 }
+
+
+.grid-feattures-category .image {
+  width: 200px;
+  height: 200px;
+}
+
 .grid-feattures-about,
 .grid-feattures-pro {
   grid-template-columns: repeat(4, 1fr) !important;
 }
 
 .grid-feattures-category {
-  grid-template-columns: repeat(5, 1fr) !important;
+  grid-template-columns: repeat(4, 1fr) !important;
 }
 
 .card-store-features {
@@ -489,7 +496,7 @@ salla-search input {
     grid-template-columns: repeat(3, 1fr) !important;
   }
   .grid-feattures-category {
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
   }
   .mm-ocd__content {
     border-top-left-radius: 10px;
@@ -550,6 +557,10 @@ salla-search input {
   .grid-feattures-category {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+  .grid-feattures-category .image {
+    width: 130px;
+    height: 130px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -571,6 +582,10 @@ salla-search input {
   .grid-feattures-category,
   .grid-feattures-pro {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .grid-feattures-category .image {
+    width: 120px;
+    height: 120px;
   }
   .icons-header {
     margin-right: 0.5rem !important ;
@@ -601,6 +616,10 @@ salla-search input {
   .grid-feattures,
   .grid-feattures-about {
     grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .grid-feattures-category .image {
+    width: 100px;
+    height: 100px;
   }
 }
 
