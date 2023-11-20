@@ -663,6 +663,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .justify-center{justify-content:center}
 .justify-between{justify-content:space-between}
 .justify-around{justify-content:space-around}
+.gap-0{gap:0px}
 .gap-1{gap:0.25rem}
 .gap-2{gap:0.5rem}
 .gap-2\.5{gap:0.625rem}
@@ -6754,6 +6755,7 @@ button.swiper-pagination-bullet {
 .sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .sm\:items-start{align-items:flex-start}
+.sm\:gap-2{gap:0.5rem}
 .sm\:gap-4{gap:1rem}
 .sm\:gap-8{gap:2rem}
 .sm\:space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * (1 - 0));margin-top:calc(1.25rem * (1 - var(--tw-space-y-reverse)));margin-top:calc(1.25rem * calc(1 - 0));margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * 0);margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}
@@ -6854,6 +6856,7 @@ button.swiper-pagination-bullet {
 .lg\:w-72{width:18rem}
 .lg\:w-96{width:24rem}
 .lg\:w-full{width:100%}
+.lg\:w-10{width:2.5rem}
 .lg\:max-w-none{max-width:none}
 .lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}
@@ -6868,6 +6871,7 @@ button.swiper-pagination-bullet {
 .lg\:space-y-16 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(4rem * (1 - 0));margin-top:calc(4rem * (1 - var(--tw-space-y-reverse)));margin-top:calc(4rem * calc(1 - 0));margin-top:calc(4rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(4rem * 0);margin-bottom:calc(4rem * var(--tw-space-y-reverse))}
 .lg\:overflow-hidden{overflow:hidden}
 .lg\:bg-white{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity))}
+.lg\:object-cover{-o-object-fit:cover;object-fit:cover}
 .lg\:p-8{padding:2rem}
 .lg\:px-0{padding-left:0px;padding-right:0px}
 .lg\:pb-11{padding-bottom:2.75rem}
