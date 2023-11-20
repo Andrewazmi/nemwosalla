@@ -594,6 +594,13 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .max-h-0{max-height:0px}
 .max-h-8{max-height:2rem}
 .max-h-\[300px\]{max-height:300px}
+<<<<<<< HEAD
+=======
+.max-h-full{max-height:100%}
+.max-h-100{max-height:28rem}
+.max-h-\[620px\]{max-height:620px}
+.max-h-\[640px\]{max-height:640px}
+>>>>>>> 523dc6e286da9feef64f7b06f61bf9ff8cdcefda
 .max-h-\[350px\]{max-height:350px}
 .max-h-full{max-height:100%}
 .min-h-\[120px\]{min-height:120px}
