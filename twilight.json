@@ -993,7 +993,7 @@
             "fields": [
                 {
                     "id": "elan_button_close",
-                    "key": "e769e0e0-6aa1-45dc-bee3-1fb913dcae27",
+                    "key": "13d54e17-76a0-400c-937a-4a365f60c96e",
                     "type": "boolean",
                     "format": "switch",
                     "label": "elan_button_close",
@@ -1006,7 +1006,7 @@
                 },
                 {
                     "id": "elan_background_color",
-                    "key": "f5e62a42-91e0-49df-8701-c6aa977ad8db",
+                    "key": "f78ee72c-f94f-46f5-860f-924885a163c3",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
@@ -1019,7 +1019,7 @@
                 },
                 {
                     "id": "elan_text_color",
-                    "key": "65b35aa8-a172-46fc-b02e-7033eb67bc51",
+                    "key": "65c985c5-2f21-44ae-9b7d-33343cba7c82",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
@@ -1032,7 +1032,7 @@
                 },
                 {
                     "id": "elan_link",
-                    "key": "8e440cd4-885b-4cac-a518-7b121c345b03",
+                    "key": "829813a9-5939-49a0-81c6-03440bc6d834",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
@@ -1047,8 +1047,22 @@
                     "maxLength": 30
                 },
                 {
+                    "id": "image",
+                    "key": "89e56ac7-ed71-4ef6-8650-0e5814431399",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false,
+                    "defaulted": true
+                },
+                {
                     "id": "elan_title",
-                    "key": "3b3bfd03-8c1e-4b4b-8e22-193a4898273d",
+                    "key": "0aa4f726-d67d-485e-9ea7-6466f07ecb21",
                     "type": "string",
                     "format": "text",
                     "label": "elan_title",
