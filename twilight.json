@@ -1408,7 +1408,7 @@
             "fields": [
                 {
                     "id": "image",
-                    "key": "2501dbe1-f29c-4cab-a18f-5880fbf06286",
+                    "key": "2bed02f8-cc26-42fb-983a-b316ad3ca6fe",
                     "type": "string",
                     "format": "image",
                     "label": "Image",
@@ -1422,7 +1422,7 @@
                 },
                 {
                     "id": "url",
-                    "key": "fc5037ea-05fc-436e-86b3-89b121382092",
+                    "key": "a06ad265-bd38-47b2-834e-2165a65ec410",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
@@ -1439,14 +1439,20 @@
                 },
                 {
                     "id": "button_position",
-                    "key": "4ebab5c0-e89d-4a9d-9a4d-c9b349a178a6",
+                    "key": "f3f40b0f-cc80-41da-b33f-f6523a8908a5",
                     "type": "items",
                     "format": "dropdown-list",
                     "label": "button_position",
                     "description": null,
                     "labelHTML": null,
                     "icon": "sicon-keyboard_arrow_down",
-                    "selected": [],
+                    "selected": [
+                        {
+                            "label": "center",
+                            "value": "center",
+                            "key": "fbc1200c-e389-4bfe-8a7d-378f6282db66"
+                        }
+                    ],
                     "options": [
                         {
                             "label": "right",
@@ -1468,6 +1474,48 @@
                     "multichoice": false,
                     "searchable": false,
                     "required": false
+                },
+                {
+                    "id": "text_color_button",
+                    "key": "4af987ab-a0d6-4172-a57d-3e865149a5af",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "text_color_button",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#004956",
+                    "required": false
+                },
+                {
+                    "id": "background_button_color",
+                    "key": "78b603ba-1f0e-44bc-8b9c-2e5d67e0999d",
+                    "type": "string",
+                    "format": "color",
+                    "inputType": "color",
+                    "label": "background_button_color",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-format-fill",
+                    "value": "#004956",
+                    "required": false
+                },
+                {
+                    "id": "button",
+                    "key": "e859e38d-0099-4f0b-9910-123f3de5e0ce",
+                    "type": "string",
+                    "format": "text",
+                    "label": "button",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
                 }
             ]
         },
