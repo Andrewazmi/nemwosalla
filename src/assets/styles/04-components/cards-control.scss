@@ -1,8 +1,3 @@
-html {
-  scroll-behavior: smooth;
-  transition: all 0.5s ease-in-out;
-}
-
 .s-cart-summary-total {
   display: none !important;
 }
@@ -445,13 +440,6 @@ salla-add-product-button
   border-top-right-radius: 1rem;
 }
 
-.footer-social-links {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 1rem;
-}
-
 .store-footer .footer-social-links a {
   margin: 0;
 }
@@ -461,12 +449,6 @@ salla-add-product-button
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-}
-
-.platform {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .footer-list {
@@ -488,27 +470,6 @@ salla-search input {
 
 .offer-style .img-box {
   height: 600px;
-}
-
-#scrollToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  height: 50px;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  background-color: #fff;
-  color: #000;
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-#scrollToTopBtn:hover {
-  background-color: rgba(217, 217, 217, 0.93);
 }
 
 /* responsive */

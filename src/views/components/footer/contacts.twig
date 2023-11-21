@@ -11,21 +11,21 @@
 {% if is_header %}
     <div class="hidden lg:flex items-center">
         {% for contact in contacts|filter(contact => contact.type in ['email', 'phone']) %}
-          <a href="{{ contact.url }}"
-              class="topnav-link-item">
-              {% if contact.type == 'email' %}
-                  {{ contact.value }}
-              {% else %}
-                  <span>{{ trans('blocks.footer.social') }}: </span>
-                  <span class="unicode">{{ contact.value }}</span>
-              {% endif %}
-          </a> 
+            <a href="{{ contact.url }}"
+                class="topnav-link-item">
+                {% if contact.type == 'email' %}
+                    {{ contact.value }}
+                {% else %}
+                    <span>{{ trans('blocks.footer.social') }}: </span>
+                    <span class="unicode">{{ contact.value }}</span>
+                {% endif %}
+            </a> 
         {% endfor %}
     </div> 
 {% else %}
     <div>
         <h3>{{ trans('blocks.footer.social') }}</h3>
-        <div class="footer-social-links">
+        <div class="footer-social-links flex flex-col items-start md:flex-row md:justify-start md:items-center gap-4">
         {% for contact in contacts %}
             <a href="{{ contact.url }}" class="mb-4 last:mb-0 flex items-center text-sm leading-none">
                 <i class="rtl:ml-2.5 ltr:mr-2.5 border rounded-full w-8 h-8 justify-center flex items-center shrink-0 {{ contact.icon }}"></i>

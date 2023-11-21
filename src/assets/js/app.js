@@ -11,6 +11,7 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
+    this.scrollToTop();
     this.timeStamp();
     this.productBelongThree();
     this.navLinks();
@@ -44,6 +45,25 @@ class App extends AppHelpers {
   log(message) {
     salla.log(`ThemeApp(Raed)::${message}`);
     return this;
+  }
+
+  // Scroll to top function
+  scrollToTop() {
+    let calcScrollValue = () => {
+      let scrollProgress = document.getElementById("scrollToTopBtn");
+      let pos = window.scrollY;
+      if (pos > 100) {
+        scrollProgress.style.display = "flex";
+      } else {
+        scrollProgress.style.display = "none";
+      }
+      scrollProgress.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    };
+
+    window.onload = calcScrollValue;
+    window.onscroll = calcScrollValue;
   }
 
   // nav link
