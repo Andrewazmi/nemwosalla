@@ -776,21 +776,16 @@ ${iframeElement}
     }
   }
 
-
-  //time stamp 
-  timeStamp(){
-    const timeStamps = document.getElementsByClassName("time-stamp")
-    const inserts = document.getElementsByClassName("insert-time")
-    console.log(timeStamps)
+  //time stamp
+  timeStamp() {
+    const timeStamps = document.getElementsByClassName("time-stamp");
+    const inserts = document.getElementsByClassName("insert-time");
     for (let i = 0; i < timeStamps.length; i++) {
-
       const timeStamp = timeStamps[i].innerText;
-      const insert = inserts[i]
-      insert.innerText =new Date(parseInt(timeStamp)) 
+      const insert = inserts[i];
+      insert.innerText = new Date(parseInt(timeStamp)).toLocaleDateString();
     }
-    
   }
-
 
   //fetch category
   getAllCategory() {
