@@ -11,6 +11,7 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
+    this.timeStamp();
     this.productBelongThree();
     this.navLinks();
     this.prodBelongToCat();
@@ -774,6 +775,22 @@ ${iframeElement}
       });
     }
   }
+
+
+  //time stamp 
+  timeStamp(){
+    const timeStamps = document.getElementsByClassName("time-stamp")
+    const inserts = document.getElementsByClassName("insert-time")
+    console.log(timeStamps)
+    for (let i = 0; i < timeStamps.length; i++) {
+
+      const timeStamp = timeStamps[i].innerText;
+      const insert = inserts[i]
+      insert.innerText =new Date(parseInt(timeStamp)) 
+    }
+    
+  }
+
 
   //fetch category
   getAllCategory() {
