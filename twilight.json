@@ -2911,6 +2911,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "263dfe9b-0ac3-48d8-ac5b-f0725c24f78d",
+            "title": "limited-offer-product",
+            "icon": "sicon-store",
+            "path": "home.limited-offer-product",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
