@@ -2823,6 +2823,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "45fbaaf6-b4fe-43e0-91f0-04ae853ec27b",
+            "title": "rating",
+            "icon": "sicon-store",
+            "path": "home.rating",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
