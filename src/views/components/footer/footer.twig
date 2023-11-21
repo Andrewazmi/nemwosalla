@@ -1,5 +1,5 @@
 <footer class="store-footer">
-  <div aria-label="footer" class="store-footer__inner">
+  <div aria-label="footer" class="store-footer__inner !border-none">
   <div class="container">
     <div class="grid grid-col-1 lg:grid-cols-6 gap-8 lg:gap-6">
         <div class="lg:col-span-2 rtl:lg:pl-20 ltr:lg:pr-20">
@@ -51,18 +51,23 @@
     </div>
     {% component 'footer.contacts' %}
 
-    <div class="hidden lg:block ">
+    <div class="hidden lg:block">
         {% component 'footer.social' %}
         {# <img src="{{ 'images/placeholder.png' | asset }}"/> #}
     </div>
   </div>
-
   </div>
 
-  <div class="md:flex items-center justify-between py-4 container text-center">
-    <span class="text-sm opacity-75">{% hook copyright %}</span>
-    {% component 'footer.payment-methods' %}
+  <div class="py-8 bg-[#505256]">
+    <div class="container">
+      <div class="flex justify-between items-center">
+        <span class="text-xl">{% hook copyright %}</span>
+        {% component 'footer.payment-methods' %}
+        {# <div class="flex justify-center items-center">
+          
+        </div> #}
+        <span class="hidden bottom-2 rtl:pl-24 ltr:pr-24 md:grid-cols-3"></span>
+      </div>
+    </div>
   </div>
-
-  <span class="hidden bottom-2 rtl:pl-24 ltr:pr-24 md:grid-cols-3"></span>
 </footer>
