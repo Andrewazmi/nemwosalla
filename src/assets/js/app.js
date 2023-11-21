@@ -11,7 +11,6 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
-    this.handleDropdown();
     this.scrollToTop();
     this.timeStamp();
     this.productBelongThree();
@@ -801,6 +800,36 @@ ${iframeElement}
         document.getElementById("elan-bannle").remove();
       });
     }
+  }
+
+  // limited time product 
+  async getProductsWithLimitedOffers() {
+    const productsIDs = Array.from(document.getElementsByClassName('limited')).map(v => +v.innerHTML.trim());
+
+    const products = [];
+
+    for (const id of productsIDs) {
+      const item = await salla.product.getDetails(id, ["images", "sold_quantity", "category"]);
+
+      products.push(item);
+    }
+
+    const limitedOfferProducts = products.map((item) => {
+      return {
+        image: item.image,
+        name: item.name,
+        discount: Math.floor(item.price / item.regular_price * 100),
+        priceAfterDiscount: item.price,
+        price: item.regular_price,
+        id: item.id,
+      }
+    });
+
+
+    console.log({
+      limitedOfferProducts,
+    })
+
   }
 
   //time stamp
