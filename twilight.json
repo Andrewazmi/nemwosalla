@@ -2832,7 +2832,7 @@
             "fields": [
                 {
                     "id": "rates",
-                    "key": "ca25dbca-a606-4c0d-8268-5a1715dd3970",
+                    "key": "0ddb724b-a6c1-4291-9f92-60157a5195e2",
                     "type": "collection",
                     "format": "collection",
                     "label": "rates",
@@ -2843,7 +2843,7 @@
                     "fields": [
                         {
                             "id": "title",
-                            "key": "e4cf5a69-76ba-4c09-8d18-1deed76b6652",
+                            "key": "d2d798d3-79f3-41d7-99f4-89c7fb696d9f",
                             "type": "string",
                             "format": "text",
                             "label": "title",
@@ -2859,7 +2859,7 @@
                         },
                         {
                             "id": "name",
-                            "key": "62c4ab71-6c8e-49ee-87a5-c4a745fa15c4",
+                            "key": "4ac6fde2-cad7-4eeb-9f8b-8c4088ca81b9",
                             "type": "string",
                             "format": "text",
                             "label": "name",
@@ -2874,24 +2874,25 @@
                             "maxLength": 30
                         },
                         {
-                            "id": "stars",
-                            "key": "a85e2696-4677-4db4-9a56-9bf498246fad",
+                            "id": "star",
+                            "key": "a2af87fe-23d7-42dc-8631-e93e30320835",
                             "type": "number",
-                            "format": "integer",
+                            "format": "float",
                             "inputType": "number",
                             "label": "stars",
                             "description": null,
                             "labelHTML": null,
-                            "placeholder": "Input an integer number between 5 and 50.",
+                            "placeholder": "Input a number between -10.10 and 100.",
                             "icon": "sicon-hashtag",
                             "value": null,
                             "required": false,
+                            "step": "1",
                             "minimum": "1",
                             "maximum": "5"
                         },
                         {
                             "id": "date",
-                            "key": "f87bc0ef-d5c2-450d-9b36-91a2825152c3",
+                            "key": "439b9587-b47d-4de5-aa73-7187005b4a49",
                             "type": "string",
                             "format": "date",
                             "inputType": "date",
