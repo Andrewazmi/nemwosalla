@@ -2829,7 +2829,87 @@
             "title": "rating",
             "icon": "sicon-store",
             "path": "home.rating",
-            "fields": []
+            "fields": [
+                {
+                    "id": "rates",
+                    "key": "fe0dae01-ffa3-4596-afad-64b2395fe45b",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "rates",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "title",
+                            "key": "ef49655f-f6f7-41c6-914a-e1bb36077d7d",
+                            "type": "string",
+                            "format": "text",
+                            "label": "title",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "name",
+                            "key": "ee17b1bb-f2b0-4f78-aa91-cc9b263f6dbf",
+                            "type": "string",
+                            "format": "text",
+                            "label": "name",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": null,
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": 6,
+                            "maxLength": 30
+                        },
+                        {
+                            "id": "stars",
+                            "key": "51e9b669-5458-42f6-b28c-2da6102533b7",
+                            "type": "number",
+                            "format": "integer",
+                            "inputType": "number",
+                            "label": "stars",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Input an integer number between 5 and 50.",
+                            "icon": "sicon-hashtag",
+                            "value": null,
+                            "required": false,
+                            "minimum": "1",
+                            "maximum": "5"
+                        },
+                        {
+                            "id": "date",
+                            "key": "6690546c-c161-430c-9e3c-7157b2ea5dc7",
+                            "type": "string",
+                            "format": "date",
+                            "inputType": "date",
+                            "label": "Date",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-calendar-date",
+                            "value": "2020-10-01",
+                            "required": false,
+                            "defaulted": true
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
