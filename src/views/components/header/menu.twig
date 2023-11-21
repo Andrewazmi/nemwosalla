@@ -11,16 +11,20 @@
 | menus[].products     | ?Product[] *Collection | List of selected products or null                  |
 #}
 
-<nav id="mobile-menu" class="mobile-menu">
+<nav id="mobile-menu" class="mobile-menu flex justify-start items-center gap-8">
 	<ul class="main-menu flex justify-start item-center gap-4 !mx-0">
-		{% for menu_id, menu in menus %}
+		{% for menu_id, menu in menus|slice (0, 10) %}
 			{% include 'components.header._menu-item' with {is_root_menu:true} %}
 		{% endfor %}
 		<div class=" lg:hidden block">
 			{% component 'footer.menu' %}
 		</div>
-
 	</ul>
+	<div id="dropdown-btn">
+		<svg style="fill:#fff !important" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="17px" height="13px" viewbox="0 0 24 24">
+			<path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z">
+		</svg>
+	</div>
 	<button class="btn--close close-mobile-menu sicon-cancel lg:hidden"></button>
 </nav>
 <button class="btn--close-sm close-mobile-menu sicon-cancel hidden"></button>
