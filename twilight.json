@@ -2832,7 +2832,7 @@
             "fields": [
                 {
                     "id": "rates",
-                    "key": "fe0dae01-ffa3-4596-afad-64b2395fe45b",
+                    "key": "ca25dbca-a606-4c0d-8268-5a1715dd3970",
                     "type": "collection",
                     "format": "collection",
                     "label": "rates",
@@ -2843,7 +2843,7 @@
                     "fields": [
                         {
                             "id": "title",
-                            "key": "ef49655f-f6f7-41c6-914a-e1bb36077d7d",
+                            "key": "e4cf5a69-76ba-4c09-8d18-1deed76b6652",
                             "type": "string",
                             "format": "text",
                             "label": "title",
@@ -2855,11 +2855,11 @@
                             "multilanguage": false,
                             "required": false,
                             "minLength": 6,
-                            "maxLength": 30
+                            "maxLength": "1000"
                         },
                         {
                             "id": "name",
-                            "key": "ee17b1bb-f2b0-4f78-aa91-cc9b263f6dbf",
+                            "key": "62c4ab71-6c8e-49ee-87a5-c4a745fa15c4",
                             "type": "string",
                             "format": "text",
                             "label": "name",
@@ -2875,7 +2875,7 @@
                         },
                         {
                             "id": "stars",
-                            "key": "51e9b669-5458-42f6-b28c-2da6102533b7",
+                            "key": "a85e2696-4677-4db4-9a56-9bf498246fad",
                             "type": "number",
                             "format": "integer",
                             "inputType": "number",
@@ -2891,7 +2891,7 @@
                         },
                         {
                             "id": "date",
-                            "key": "6690546c-c161-430c-9e3c-7157b2ea5dc7",
+                            "key": "f87bc0ef-d5c2-450d-9b36-91a2825152c3",
                             "type": "string",
                             "format": "date",
                             "inputType": "date",
