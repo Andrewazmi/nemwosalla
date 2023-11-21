@@ -2917,7 +2917,72 @@
             "title": "limited-offer-product",
             "icon": "sicon-store",
             "path": "home.limited-offer-product",
-            "fields": []
+            "fields": [
+                {
+                    "id": "string",
+                    "key": "7c4fe292-f9bc-4dbd-985e-11f0a07f5fef",
+                    "type": "string",
+                    "format": "text",
+                    "label": "String",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30,
+                    "defaulted": true
+                },
+                {
+                    "id": "time",
+                    "key": "63add97b-e67e-4e34-881c-9937ac3b9086",
+                    "type": "string",
+                    "format": "time",
+                    "inputType": "time",
+                    "label": "Time",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-time",
+                    "value": "01:00",
+                    "required": false,
+                    "defaulted": true
+                },
+                {
+                    "id": "prodcuts",
+                    "key": "8fddca9c-6afd-4beb-92b1-06eb78d73c64",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "prodcuts",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "product_id",
+                            "key": "a5ed172a-252e-4ef9-acf3-602951adde3e",
+                            "type": "items",
+                            "format": "dropdown-list",
+                            "label": "product_id",
+                            "description": null,
+                            "labelHTML": null,
+                            "icon": "sicon-keyboard_arrow_down",
+                            "selected": [],
+                            "options": [],
+                            "source": "Products",
+                            "multichoice": false,
+                            "searchable": false,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "required": false,
+                    "minLength": 1,
+                    "maxLength": "20"
+                }
+            ]
         }
     ],
     "support_url": "https://salla.dev",
