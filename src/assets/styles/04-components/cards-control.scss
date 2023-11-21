@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+  transition: all 0.5s ease-in-out;
+}
+
 .s-cart-summary-total {
   display: none !important;
 }
@@ -484,6 +489,27 @@ salla-search input {
 
 .offer-style .img-box {
   height: 600px;
+}
+
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#scrollToTopBtn:hover {
+  background-color: rgba(217, 217, 217, 0.93);
 }
 
 /* responsive */

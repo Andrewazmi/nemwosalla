@@ -11,7 +11,6 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
-    this.timeStamp();
     this.productBelongThree();
     this.navLinks();
     this.prodBelongToCat();
@@ -39,6 +38,24 @@ class App extends AppHelpers {
     this.status = "ready";
     document.dispatchEvent(new CustomEvent("theme::ready"));
     this.log("Theme Loaded 🎉");
+  }
+
+  // Scroll to Top Button
+  scrollToTopn() {
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    window.addEventListener("scroll", function () {
+      if (document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "flex";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    });
+
+    scrollToTopBtn.addEventListener("click", function () {
+      // Scroll to the top of the document
+      document.documentElement.scrollTop = 0;
+    });
   }
 
   log(message) {
