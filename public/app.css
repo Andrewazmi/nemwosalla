@@ -594,21 +594,17 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-full{height:100%}
 .h-lg-banner{height:428px}
 .h-px{height:1px}
-.h-\[800px\]{height:800px}
-.\!h-\[800px\]{height:800px !important}
 .max-h-0{max-height:0px}
 .max-h-100{max-height:28rem}
 .max-h-8{max-height:2rem}
 .max-h-80{max-height:20rem}
-.max-h-\[1080px\]{max-height:1080px}
 .max-h-\[120px\]{max-height:120px}
 .max-h-\[300px\]{max-height:300px}
 .max-h-\[350px\]{max-height:350px}
 .max-h-\[620px\]{max-height:620px}
 .max-h-\[640px\]{max-height:640px}
-.max-h-full{max-height:100%}
 .max-h-\[800px\]{max-height:800px}
-.\!max-h-\[800px\]{max-height:800px !important}
+.max-h-full{max-height:100%}
 .min-h-\[120px\]{min-height:120px}
 .min-h-\[250px\]{min-height:250px}
 .min-h-\[300px\]{min-height:300px}
@@ -7019,7 +7015,6 @@ button.swiper-pagination-bullet {
 .lg\:hidden{display:none}
 .lg\:\!h-\[800px\]{height:800px !important}
 .lg\:max-h-\[700px\]{max-height:700px}
-.lg\:max-h-\[800px\]{max-height:800px}
 .lg\:min-h-\[528px\]{min-height:528px}
 .lg\:w-10{width:2.5rem}
 .lg\:w-10\/12{width:83.333333%}
