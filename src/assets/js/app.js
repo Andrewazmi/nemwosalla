@@ -11,7 +11,6 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
-    this.getProductsWithLimitedOffers();
     this.scrollToTop();
     this.timeStamp();
     this.productBelongThree();
@@ -46,6 +45,12 @@ class App extends AppHelpers {
   log(message) {
     salla.log(`ThemeApp(Raed)::${message}`);
     return this;
+  }
+
+  handleDropdown() {
+    const navbarItem = document.getElementById("category-menu");
+    const dropdownButton = document.getElementById("dropdown-btn");
+    console.log({ height: navbarItem.clientHeight });
   }
 
   // Scroll to top function
