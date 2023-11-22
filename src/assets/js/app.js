@@ -146,11 +146,11 @@ class App extends AppHelpers {
         <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
           <div id="product-${
             products[0].id
-          }" class="product-entry product-entry--full-image overflow-hidden" style="border-radius : 40px ; height : 580px">
+          }" class="product-entry product-entry--full-image overflow-hidden !justify-center" style="border-radius:40px;height:600px;background-color:#EAE9E9;padding: 1rem 1rem;">
             <a href="${
               products[0].url
-            }" class="relative w-full h-full overflow-hidden rounded-md hover:opacity-90" >
-              <img class=" w-full h-full lazy loaded" src="${
+            }" class="relative w-full h-[80%] overflow-hidden rounded-md hover:opacity-90 block">
+              <img class="object-contain w-full h-full lazy loaded" src="${
                 products[0].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
             </a>
@@ -160,7 +160,7 @@ class App extends AppHelpers {
             <div class="absolute  w-full h-full flex justify-center items-end ">
               <div class="flex  flex-col  justify-center items-center mb-10">
   
-                <h1 class="  text-sm font-bold leading-6 text-black product-entry__title">
+                <h1 class="text-sm font-bold leading-6 text-black product-entry__title">
                   <a  href="${
                     products[0].url
                   }" style=" color : black ; font-size : 22px">${
@@ -218,12 +218,12 @@ class App extends AppHelpers {
             </div>
           </div>
 
-          <div class="grid gap-4 sm:gap-8 relative  " style=" grid-template-columns: repeat(2, 1fr)  ">
+          <div class="grid gap-4 sm:gap-8 relative" style="grid-template-columns:repeat(2, 1fr);">
           
-          <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div style="height : 180px ; width: 70%" >
+          <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4 py-6" style=" border-radius : 40px ; background-color : #EAE9E9">
+            <div style="height:150px;width:90%">
               <a href="${products[1].id}">
-                <img class=" w-full h-full lazy loaded" src="${
+                <img class="object-cover w-full h-full lazy loaded" src="${
                   products[1].image.url
                 }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
@@ -282,14 +282,10 @@ class App extends AppHelpers {
             </div>
           </div>
 
-
-
-
-          
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div style="height : 180px ; width: 70%" >
+            <div style="height:150px;width:90%">
               <a href="${products[2].id}">
-                <img class=" w-full h-full lazy loaded" src="${
+                <img class="object-contain w-full h-full lazy loaded" src="${
                   products[2].image.url
                 }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
@@ -353,9 +349,9 @@ class App extends AppHelpers {
 
           
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div style="height : 180px ; width: 70%" >
+            <div style="height:150px;width:90%">
               <a href="${products[3].id}">
-                <img class=" w-full h-full lazy loaded" src="${
+                <img class="object-contain w-full h-full lazy loaded" src="${
                   products[3].image.url
                 }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
@@ -407,22 +403,18 @@ class App extends AppHelpers {
                       ? products[3].discount_ends + products[3].currency
                       : ""
                   }</span>
-                  
               </div>
-              
-              
             </div>
           </div>
 
-
-
-          
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div style="height : 180px ; width: 70%" >
+            <div style="height:150px;width:90%">
               <a href="${products[4].id}">
-                <img class=" w-full h-full lazy loaded" src="${
+                <img class="object-contain w-full h-full lazy loaded" src="${
                   products[4].image.url
-                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
+                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="${
+            products[4].name
+          }" loading="lazy" data-ll-status="loaded">
               </a>
             </div>
             <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
@@ -549,7 +541,7 @@ class App extends AppHelpers {
             <a href="${
               products[0].url
             }" class="relative w-full h-full overflow-hidden rounded-md hover:opacity-90" >
-              <img class="object-cover w-full h-full lazy loaded" src="${
+              <img class="object-contain w-full h-full lazy loaded" src="${
                 products[0].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
             </a>
@@ -772,17 +764,15 @@ ${iframeElement}
 						<a class=" flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="${
               product.url
             }">
-                <img class=" rounded bg-cover"  src="${
+              <div class="w-full h-[150px] sm:h-[200px] bg-[#D9D9D980] rounded-xl !p-4">
+                <img class="rounded bg-cover object-contain w-full h-full"  src="${
                   product.image.url
-                }" alt="${
-                product.image.alt
-              }" style="width:200px ; height : 200px"/>
-          
-						
+                }" alt="${product.image.alt}" />
+              </div>
 							<div class="flex flex-col items-center justify-center">
-							<p class="category-name opacity-80">${product.name}</p>
+							<p class="category-name text-xl mt-4">${product.name}</p>
               <div class="flex justify-center items-center">
-              <h4 style="font-weight : 800" >${this.getPriceFormat(
+              <h4 class="text-lg font-extrabold">${this.getPriceFormat(
                 product.price
               )}</h4>
 							
