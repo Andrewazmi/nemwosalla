@@ -14,9 +14,6 @@
     "development": "webpack --mode development",
     "watch": "webpack --mode development --watch"
   },
-  "engines": {
-    "node": "20.9.0"
-  },
   "author": "Salla",
   "dependencies": {
     "@salla.sa/twilight": "^2.12.45",

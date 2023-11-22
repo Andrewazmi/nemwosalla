@@ -783,7 +783,7 @@ ${iframeElement}
         price: product.price,
         id: product.id,
       });
-    }; 
+    };
 
 
     const dep = `

@@ -1,14 +1,9 @@
 <section class="container s-block">
-	{% for item in component.prodcuts %}
+{% for item in component.prodcuts %}
 		<span class="hidden limited">
 			{{item.product_id.value[0]|json_encode()}}
 		</span>
-	{% endfor %}
-
-	<span id="offer-date" class="hidden">
-		{{component.date}}
-	</span>
-
+{% endfor %}
 	<div class="flex items-center justify-between mb-5">
 		<h1 class="lg:text-5xl">{{component.string}}</h1>
 		<div class="flex items-center justify-end">
@@ -22,5 +17,7 @@
 			</div>
 		</div>
 	</div>
-	<div id="offers" class="w-full"></div>
+	<div id="offers" class="w-full">
+		
+	</div>
 </section>

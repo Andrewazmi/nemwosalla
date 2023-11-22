@@ -765,7 +765,6 @@ ${iframeElement}
 
     console.log({
       offerDate,
-      offerDateText: offerDate.innerText?.trim(),
     });
 
     this._makeCountDown(new Date(offerDate.innerText?.trim()));
@@ -783,7 +782,7 @@ ${iframeElement}
         price: product.price,
         id: product.id,
       });
-    }; 
+    };
 
 
     const dep = `

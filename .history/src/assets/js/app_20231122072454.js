@@ -763,11 +763,6 @@ ${iframeElement}
 
     const offerDate = document.getElementById('offer-date');
 
-    console.log({
-      offerDate,
-      offerDateText: offerDate.innerText?.trim(),
-    });
-
     this._makeCountDown(new Date(offerDate.innerText?.trim()));
 
     for (let i = 0; i < productsIDs.length; i++) {
@@ -783,7 +778,7 @@ ${iframeElement}
         price: product.price,
         id: product.id,
       });
-    }; 
+    };
 
 
     const dep = `
@@ -828,9 +823,7 @@ ${iframeElement}
 
 
 
-  _makeCountDown(futureDate = DateTime.now().plus({
-    hours: 20,
-  }).toJSDate()) {
+  _makeCountDown(futureDate = new Date()) {
 
     const secEl = document.getElementById('offer-sec');
     const minEl = document.getElementById('offer-min');

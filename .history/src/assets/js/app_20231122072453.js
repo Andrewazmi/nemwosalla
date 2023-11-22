@@ -760,32 +760,27 @@ ${iframeElement}
     const productsIDs = Array.from(document.getElementsByClassName("limited")).map((v) => +v.innerHTML.trim());
 
     const products = [];
-
+    
     const offerDate = document.getElementById('offer-date');
-
-    console.log({
-      offerDate,
-      offerDateText: offerDate.innerText?.trim(),
-    });
-
+    
     this._makeCountDown(new Date(offerDate.innerText?.trim()));
 
-    for (let i = 0; i < productsIDs.length; i++) {
-      const response = await salla.product.getDetails(productsIDs[i], ["images", "sold_quantity", "category"])
-
-      const product = response.data
-
-      products.push({
-        image: product.image.url,
-        name: product.name,
-        discount: product.sale_price < product.regular_price ? Math.floor((product.price / product.regular_price) * 100) : "",
-        priceDiscount: product.sale_price < product.regular_price ? product.regular_price : '',
-        price: product.price,
-        id: product.id,
-      });
-    }; 
-
-
+    for( let i = 0 ;  i< productsIDs.length ; i++){
+   const response =   await salla.product.getDetails(productsIDs[i], ["images", "sold_quantity", "category"])
+      
+        const product = response.data
+          
+        products.push({
+          image: product.image.url,
+          name: product.name,
+          discount:product.sale_price < product.regular_price ? Math.floor((product.price / product.regular_price) * 100) :"",
+          priceDiscount:product.sale_price < product.regular_price ? product.regular_price : '',
+          price: product.price,
+          id: product.id,
+        });
+    };
+    
+    
     const dep = `
     <salla-slider show-controls="false" loop="true">
     <div slot="items">
@@ -793,10 +788,10 @@ ${iframeElement}
     </div>
   </salla-slider>
     `
-    let allData = ``
-    for (let i = 0; i < products.length; i++) {
-      console.log({ i })
-      const data = `
+     let allData = ``
+for(let i = 0 ; i < products.length ; i++){
+ console.log({i})
+   const data = `
    <div class="relative flex flex-col items-start justify-start w-full ml-16" style="width: 11rem;">
    <div class="absolute top-0 right-0 p-2 w-16 h-32 bg-[#FCDB3D] flex flex-col items-center justify-between">
      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="38" viewbox="0 0 42 38" fill="none">
@@ -820,17 +815,15 @@ ${iframeElement}
    </div>
  </div>
    `
-      allData += data.trim();
-    }
-    console.log({ allData })
-    insert.innerHTML = dep
+    allData += data.trim();
+}
+console.log({allData})
+  insert.innerHTML = dep 
   }
 
 
 
-  _makeCountDown(futureDate = DateTime.now().plus({
-    hours: 20,
-  }).toJSDate()) {
+  _makeCountDown(futureDate = new Date()) {
 
     const secEl = document.getElementById('offer-sec');
     const minEl = document.getElementById('offer-min');
@@ -853,10 +846,10 @@ ${iframeElement}
         seconds: 1,
       });
 
-
+    
 
     }, 1000);
-
+   
   }
 
   //time stamp
