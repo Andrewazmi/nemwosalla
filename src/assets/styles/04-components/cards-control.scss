@@ -477,15 +477,15 @@ salla-search input {
 }
 
 #dropdownMenu {
-  opacity:0;
+  opacity: 0;
   height: 0;
   padding: 0 8px;
   overflow: hidden;
-  transition: all .3s ease .15s;
+  transition: all 0.3s ease 0.15s;
 }
 
 #dropdownMenu.show {
-  opacity:1;
+  opacity: 1;
   height: auto;
 }
 
