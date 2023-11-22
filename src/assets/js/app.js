@@ -838,6 +838,7 @@ ${iframeElement}
     let allData = ``;
 
     for (let i = 0; i < products.length; i++) {
+      console.log({i})
       const data = `<div class="relative flex flex-col items-start justify-start ml-16" style="width:12rem;">
                       <div class="absolute top-0 right-0  w-14 h-19 bg-[#FCDB3D] flex flex-col items-start justify-between">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewbox="0 0 42 38" fill="none">
@@ -872,7 +873,7 @@ ${iframeElement}
     }
 
     const dep = `
-    <salla-slider show-controls="false" loop="true">
+    <salla-slider show-controls="false" >
     <div slot="items">
       ${allData}
     </div>
