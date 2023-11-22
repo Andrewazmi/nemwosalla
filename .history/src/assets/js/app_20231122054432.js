@@ -765,8 +765,16 @@ ${iframeElement}
     this._makeCountDown();
 
     for (const id of productsIDs) {
+<<<<<<< HEAD
       const item = await salla.product.getDetails(id, ["images", "sold_quantity", "category"]);
+=======
+      const item = await salla.product.getDetails(id, [
+        "images",
+        "sold_quantity",
+        "category",
+      ]);
 
+>>>>>>> bf44f4ed02623002f87ca98184a7f882533dbc68
       products.push(item);
     }
 
@@ -781,6 +789,7 @@ ${iframeElement}
       };
     });
 
+<<<<<<< HEAD
 
     const elements = limitedOfferProducts.map((item) => {
       const els = ``;
@@ -815,9 +824,11 @@ ${iframeElement}
       console.log({ second: dueDate.second });
 
     }, 1000);
+=======
     console.log({
       limitedOfferProducts,
     });
+>>>>>>> bf44f4ed02623002f87ca98184a7f882533dbc68
   }
 
   //time stamp

@@ -2920,7 +2920,7 @@
             "fields": [
                 {
                     "id": "string",
-                    "key": "b8849b92-db61-4b11-990f-58775915b034",
+                    "key": "f96e0347-0b5e-408f-93dc-f4a874b282d3",
                     "type": "string",
                     "format": "text",
                     "label": "String",
@@ -2936,22 +2936,22 @@
                     "defaulted": true
                 },
                 {
-                    "id": "date_time",
-                    "key": "fbc31706-be51-45cf-b7a4-26b2334e730f",
+                    "id": "date",
+                    "key": "94813bea-2d7f-4e25-9cd3-26d9a18764e8",
                     "type": "string",
-                    "format": "datetime",
-                    "inputType": "datetime-local",
-                    "label": "Date Time",
+                    "format": "date",
+                    "inputType": "date",
+                    "label": "Date",
                     "description": null,
                     "labelHTML": null,
-                    "icon": "sicon-calendar-time",
-                    "value": "2021-10-01T15:23",
+                    "icon": "sicon-calendar-date",
+                    "value": "2020-10-01",
                     "required": false,
                     "defaulted": true
                 },
                 {
                     "id": "prodcuts",
-                    "key": "fa5ea039-8ab2-419f-b285-9102ff958ef5",
+                    "key": "6dae7477-4274-457e-93a1-48b57f3abc34",
                     "type": "collection",
                     "format": "collection",
                     "label": "prodcuts",
@@ -2962,7 +2962,7 @@
                     "fields": [
                         {
                             "id": "product_id",
-                            "key": "a714c3cf-572e-4ecf-863c-0eae1a4bb168",
+                            "key": "dda811b5-4d7c-4cb7-9608-793480a6ed4b",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "product_id",
