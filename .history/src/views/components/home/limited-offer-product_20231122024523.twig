@@ -1,0 +1,5 @@
+{% for item in component.prodcuts %}
+		<span class="hidden limited">
+			{{item.product_id.value[0]|json_encode()}}
+		</span>
+{% endfor %}

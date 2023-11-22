@@ -756,6 +756,7 @@ ${iframeElement}
 
     for (const id of productsIDs) {
       const item = await salla.product.getDetails(id, ["images", "sold_quantity", "category"]);
+
       products.push(item);
     }
 
@@ -771,9 +772,10 @@ ${iframeElement}
     });
 
 
-    const elements = limitedOfferProducts.map((item) => {
-      const els = ``;
+    console.log({
+      limitedOfferProducts,
     })
+
   }
 
   //time stamp
