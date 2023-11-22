@@ -838,6 +838,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .text-end{text-align:right}
 .align-middle{vertical-align:middle}
 .\!text-2xl{font-size:1.5rem !important;line-height:2rem !important}
+.\!text-3xl{font-size:1.875rem !important;line-height:2.25rem !important}
 .text-2xl{font-size:1.5rem;line-height:2rem}
 .text-3xl{font-size:1.875rem;line-height:2.25rem}
 .text-5xl{font-size:3rem;line-height:1}
@@ -850,6 +851,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .text-sm{font-size:0.875rem;line-height:1.25rem}
 .text-xl{font-size:1.25rem;line-height:1.75rem}
 .text-xs{font-size:0.75rem;line-height:1rem}
+.\!font-extrabold{font-weight:800 !important}
 .font-bold{font-weight:700}
 .font-extrabold{font-weight:800}
 .font-medium{font-weight:500}
@@ -6795,10 +6797,15 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 .after\:absolute::after{content:var(--tw-content);position:absolute}
+.after\:-bottom-4::after{content:var(--tw-content);bottom:-1rem}
 .after\:bottom-0::after{content:var(--tw-content);bottom:0px}
 .after\:left-0::after{content:var(--tw-content);left:0px}
+.after\:right-0::after{content:var(--tw-content);right:0px}
+.after\:h-\[10px\]::after{content:var(--tw-content);height:10px}
 .after\:h-\[2px\]::after{content:var(--tw-content);height:2px}
 .after\:w-full::after{content:var(--tw-content);width:100%}
+.after\:rounded-lg::after{content:var(--tw-content);border-radius:0.5rem}
+.after\:bg-\[\#404553\]::after{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgba(64, 69, 83, 1);background-color:rgba(64, 69, 83, var(--tw-bg-opacity))}
 .after\:bg-white::after{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity))}
 .first\:rounded-t-md:first-child{border-top-left-radius:0.375rem;border-top-right-radius:0.375rem}
 .first\:pt-16:first-child{padding-top:4rem}
