@@ -2983,6 +2983,13 @@
                     "maxLength": "20"
                 }
             ]
+        },
+        {
+            "key": "7d9f0381-2ec9-4ae5-be42-754fa36fed90",
+            "title": "feature-slider-product",
+            "icon": "sicon-store",
+            "path": "home.feature-slider-product",
+            "fields": []
         }
     ],
     "support_url": "https://salla.dev",
