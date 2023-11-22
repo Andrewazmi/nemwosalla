@@ -11,7 +11,14 @@
               {{ store.description|raw }}
             </p>
           {% endif %}
-
+          {# custom vat #}
+          <div class="flex justify-start items-center gap-1">
+            <div class="w-16 h-16">
+              <img src="{{ 'images/img-payment/pic-vat.png' | asset }}" class="w-full" />
+            </div>
+            <p class="text-lg font-bold">الرقم الضريبي</p>
+            <p class="text-lg font-bold">6675348891235078</p>
+          </div>
           {# vat #}
           {% if store.settings.tax.number %}
             <div class="flex rtl:space-x-reverse space-x-2 items-end">
