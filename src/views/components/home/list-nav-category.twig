@@ -1,4 +1,4 @@
-<section class="s-block s-block--categories mt-10 navlink-design bg-red ">
+<section class="s-block s-block--categories mt-10 navlink-design">
 	<div>
 		{% for navlink in component.list_nav_category %}
 			<div class="nav-links hidden">{{navlink.category.value[0]|json_encode()}}</div>
@@ -22,7 +22,6 @@ const data = `<salla-products-slider
   source="categories"
  source-value=[${event}]
 </salla-product-slider>`
-console.log({any: data})
 listProduct.innerHTML = data
 
 

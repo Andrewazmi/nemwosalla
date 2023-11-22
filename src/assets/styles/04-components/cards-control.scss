@@ -349,6 +349,10 @@ svg {
   overflow-y: auto;
 }
 
+.navlink-design salla-slider img {
+  object-fit: contain !important;
+}
+
 .navlink-design .navLink-show {
   width: 100px;
   height: 40px;

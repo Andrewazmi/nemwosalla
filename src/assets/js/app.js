@@ -530,17 +530,16 @@ class App extends AppHelpers {
         <div>
         <div class="mb-4">
           <div>
-            <h2 class=" mb-10 text-base font-bold leading-tight text-center text-store-text-primary lg:text-xl">أحدث ${name}</h2>
-            
+            <h2 class="w-fit mb-8 !text-3xl !font-extrabold relative pb-2 after:absolute after:-bottom-4 after:right-0 after:w-full after:h-[10px] after:rounded-lg after:bg-[#404553]">أحدث ${name}</h2>
           </div>
         </div>
         <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
           <div id="product-${
             products[0].id
-          }" class="product-entry product-entry--full-image overflow-hidden" style="border-radius : 40px">
+          }" class="product-entry product-entry--full-image overflow-hidden !bg-[#EAE9E9] lg:!h-[600px]" style="border-radius:40px;">
             <a href="${
               products[0].url
-            }" class="relative w-full h-full overflow-hidden rounded-md hover:opacity-90" >
+            }" class="relative w-full h-full overflow-hidden rounded-md hover:opacity-90">
               <img class="object-contain w-full h-full lazy loaded" src="${
                 products[0].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
@@ -560,11 +559,11 @@ class App extends AppHelpers {
             </div>
           </div>
          
-          <div class="grid gap-4 sm:gap-8 relative  " style="padding : 2rem 1px ">
+          <div class="grid gap-4 sm:gap-8 relative" style="padding:2rem 1px">
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div style="height : 100px ; width: 70%" >
+            <div style="height:100px;width:85%">
               <a href="${products[1].id}">
-                <img class=" w-full h-full lazy loaded" src="${
+                <img class="object-contain w-full h-full lazy loaded" src="${
                   products[1].image.url
                 }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
               </a>
@@ -623,9 +622,9 @@ class App extends AppHelpers {
             </div>
           </div>
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-          <div style="height : 100px ; width: 70%" >
+          <div style="height:100px;width:85%">
             <a href="${products[2].id}">
-              <img class=" w-full h-full lazy loaded" src="${
+              <img class="object-contain w-full h-full lazy loaded" src="${
                 products[2].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
             </a>
