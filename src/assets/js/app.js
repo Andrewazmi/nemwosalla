@@ -756,35 +756,67 @@ ${iframeElement}
 
   // limited time product
   async getProductsWithLimitedOffers() {
-    const productsIDs = Array.from(
-      document.getElementsByClassName("limited")
-    ).map((v) => +v.innerHTML.trim());
+    const insert = document.getElementById("offers")
+    const productsIDs = Array.from(document.getElementsByClassName("limited")).map((v) => +v.innerHTML.trim());
 
     const products = [];
-
+    
     this._makeCountDown();
 
-    for (const id of productsIDs) {
-      const item = await salla.product.getDetails(id, ["images", "sold_quantity", "category"]);
-
-      products.push(item);
-    }
-
-    const limitedOfferProducts = products.map((item) => {
-      return {
-        image: item.image,
-        name: item.name,
-        discount: Math.floor((item.price / item.regular_price) * 100),
-        priceAfterDiscount: item.price,
-        price: item.regular_price,
-        id: item.id,
-      };
-    });
-
-
-    const elements = limitedOfferProducts.map((item) => {
-      const els = ``;
-    })
+    for( let i = 0 ;  i< productsIDs.length ; i++){
+   const response =   await salla.product.getDetails(productsIDs[i], ["images", "sold_quantity", "category"])
+      
+        const product = response.data
+          
+        products.push({
+          image: product.image.url,
+          name: product.name,
+          discount:product.sale_price < product.regular_price ? Math.floor((product.price / product.regular_price) * 100) :"",
+          priceDiscount:product.sale_price < product.regular_price ? product.regular_price : '',
+          price: product.price,
+          id: product.id,
+        });
+    };
+    
+    
+    const dep = `
+    <salla-slider show-controls="false" loop="true">
+    <div slot="items">
+      ${allData}
+    </div>
+  </salla-slider>
+    `
+     let allData = ``
+for(let i = 0 ; i < products.length ; i++){
+ console.log({i})
+   const data = `
+   <div class="relative flex flex-col items-start justify-start w-full ml-16" style="width: 11rem;">
+   <div class="absolute top-0 right-0 p-2 w-16 h-32 bg-[#FCDB3D] flex flex-col items-center justify-between">
+     <svg xmlns="http://www.w3.org/2000/svg" width="42" height="38" viewbox="0 0 42 38" fill="none">
+       <g clip-path="url(#clip0_177_18631)">
+         <path d="M7.96631 4.56543V24.3266H13.6494V40.4949L26.9099 18.9372H19.3324L25.0155 4.56543H7.96631Z" fill="#212121"/>
+       </g>
+       <defs>
+         <clipPath id="clip0_177_18631">
+           <rect width="41" height="38" fill="white" transform="translate(0.939941)"/>
+         </clipPath>
+       </defs>
+     </svg>
+     <h3 class="w-full text-2xl font-bold text-center">-${products[i].discount && products[i].discount}</h3>
+   </div>
+   <div class="w-full">
+     <div class="w-full  h-72">
+       <img class="object-fill w-full h-full " src="${products[i].image}"/>
+     </div>
+     <p class="w-full mt-1.5 text-3xl font-bold text-center text-black">${products[i].price}</p>
+     <p class="w-full mt-1 text-xl font-bold text-center text-black text-gray-500">${products[i].priceDiscount}</p>
+   </div>
+ </div>
+   `
+    allData += data.trim();
+}
+console.log({allData})
+  insert.innerHTML = dep 
   }
 
 
@@ -812,12 +844,10 @@ ${iframeElement}
         seconds: 1,
       });
 
-      console.log({ second: dueDate.second });
+    
 
     }, 1000);
-    console.log({
-      limitedOfferProducts,
-    });
+   
   }
 
   //time stamp
