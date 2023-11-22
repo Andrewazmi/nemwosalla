@@ -2920,7 +2920,7 @@
             "fields": [
                 {
                     "id": "string",
-                    "key": "f96e0347-0b5e-408f-93dc-f4a874b282d3",
+                    "key": "395ea3e2-8482-4b70-bef4-c966f20f8752",
                     "type": "string",
                     "format": "text",
                     "label": "String",
@@ -2937,7 +2937,7 @@
                 },
                 {
                     "id": "date",
-                    "key": "94813bea-2d7f-4e25-9cd3-26d9a18764e8",
+                    "key": "bff34350-cf92-4e9e-a1fc-8a21e20b7067",
                     "type": "string",
                     "format": "date",
                     "inputType": "date",
@@ -2945,13 +2945,13 @@
                     "description": null,
                     "labelHTML": null,
                     "icon": "sicon-calendar-date",
-                    "value": "2020-10-01",
+                    "value": "2023-12-11",
                     "required": false,
                     "defaulted": true
                 },
                 {
                     "id": "prodcuts",
-                    "key": "6dae7477-4274-457e-93a1-48b57f3abc34",
+                    "key": "69109cff-93b2-41fa-80f1-afd2cb1fd1b1",
                     "type": "collection",
                     "format": "collection",
                     "label": "prodcuts",
@@ -2962,7 +2962,7 @@
                     "fields": [
                         {
                             "id": "product_id",
-                            "key": "dda811b5-4d7c-4cb7-9608-793480a6ed4b",
+                            "key": "ecc8227d-cbe1-428e-be1d-b376bd97e0fa",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "product_id",
