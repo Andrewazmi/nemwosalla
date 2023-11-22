@@ -756,55 +756,47 @@ ${iframeElement}
 
   // limited time product
   async getProductsWithLimitedOffers() {
-    const insert = document.getElementById("offers")
+    const insert = document.getElementById("offers-limit")
     const productsIDs = Array.from(document.getElementsByClassName("limited")).map((v) => +v.innerHTML.trim());
 
     const products = [];
-
     const offerDate = document.getElementById('offer-date');
+    this._makeCountDown(DateTime.fromFormat(offerDate.innerText?.trim(), 'yyyy-LL-dd').toJSDate());
 
-    this._makeCountDown(DateTime.fromFormat(offerDate.innerText?.trim(), 'yyyy-LL-dd'));
-
-    for (let i = 0; i < productsIDs.length; i++) {
-      const response = await salla.product.getDetails(productsIDs[i], ["images", "sold_quantity", "category"])
-
-      const product = response.data
-
-      products.push({
-        image: product.image.url,
-        name: product.name,
-        discount: product.sale_price < product.regular_price ? Math.floor((product.price / product.regular_price) * 100) : "",
-        priceDiscount: product.sale_price < product.regular_price ? product.regular_price : '',
-        price: product.price,
-        id: product.id,
-      });
+    for( let i = 0 ;  i< productsIDs.length ; i++){
+   const response =   await salla.product.getDetails(productsIDs[i], ["images", "sold_quantity", "category"])
+      
+        const product = response.data
+          
+        products.push({
+          image: product.image.url,
+          name: product.name,
+          discount:product.sale_price < product.regular_price ? Math.floor((product.price / product.regular_price) * 100) :"",
+          priceDiscount:product.sale_price < product.regular_price ? product.regular_price : '',
+          price: product.price,
+          id: product.id,
+        });
     };
+    
+    
+    
+     let allData = ``
 
-
-    const dep = `
-    <salla-slider show-controls="false" loop="true">
-    <div slot="items">
-      ${allData}
-    </div>
-  </salla-slider>
-    `
-    let allData = ``
-    for (let i = 0; i < products.length; i++) {
-      console.log({ i })
-      const data = `
-   <div class="relative flex flex-col items-start justify-start w-full ml-16" style="width: 11rem;">
-   <div class="absolute top-0 right-0 p-2 w-16 h-32 bg-[#FCDB3D] flex flex-col items-center justify-between">
-     <svg xmlns="http://www.w3.org/2000/svg" width="42" height="38" viewbox="0 0 42 38" fill="none">
+for(let i = 0 ; i < products.length ; i++){
+ 
+   const data = `<div class="relative flex flex-col items-start justify-start  ml-16" style="width: 12rem;">
+   <div class="absolute top-0 right-0  w-14 h-19 bg-[#FCDB3D] flex flex-col items-start justify-between">
+     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewbox="0 0 42 38" fill="none">
        <g clip-path="url(#clip0_177_18631)">
          <path d="M7.96631 4.56543V24.3266H13.6494V40.4949L26.9099 18.9372H19.3324L25.0155 4.56543H7.96631Z" fill="#212121"/>
        </g>
        <defs>
          <clipPath id="clip0_177_18631">
-           <rect width="41" height="38" fill="white" transform="translate(0.939941)"/>
+           <rect width="38" height="40" fill="white" transform="translate(0.939941)"/>
          </clipPath>
        </defs>
      </svg>
-     <h3 class="w-full text-2xl font-bold text-center">-${products[i].discount && products[i].discount}</h3>
+     <h3 class="w-full text-sm font-bold text-center py-2">% ${products[i].discount && products[i].discount}- </h3>
    </div>
    <div class="w-full">
      <div class="w-full  h-72">
@@ -815,46 +807,47 @@ ${iframeElement}
    </div>
  </div>
    `
-      allData += data.trim();
-    }
-    console.log({ allData })
-    insert.innerHTML = dep
+    allData += data;
+}
+
+
+const dep = `
+    <salla-slider show-controls="false" loop="true">
+    <div slot="items">
+      ${allData}
+    </div>
+  </salla-slider>
+    `
+
+  insert.innerHTML += dep 
   }
 
 
 
-  _makeCountDown(futureDate = DateTime.now().plus({
-    hours: 20,
-  })) {
 
+
+
+  _makeCountDown(futureDate = new Date()) {
     const secEl = document.getElementById('offer-sec');
     const minEl = document.getElementById('offer-min');
     const hrsEl = document.getElementById('offer-hrs');
-
-    const currentDate = DateTime.now();
-    let dueDate = DateTime.fromMillis(futureDate.toMillis());
-
-    console.log({
-      dueDate: dueDate.toObject(),
-      currentDate: currentDate.toObject(),
-    })
-
+  
+    const dueDate = DateTime.fromJSDate(futureDate);
+  
     const id = setInterval(() => {
-      if (currentDate.toMillis() >= dueDate.toMillis()) {
+      const currentDate = DateTime.now();
+      if (currentDate >= dueDate) {
         clearInterval(id);
+        return;
       }
-
-      secEl.innerText = dueDate.second;
-      minEl.innerText = dueDate.minute;
-      hrsEl.innerText = dueDate.hour;
-
-      dueDate = dueDate.minus({
-        seconds: 1,
-      });
-
+  
+      const remainingTime = dueDate.diff(currentDate, ['hours', 'minutes', 'seconds']);
+      secEl.innerText = remainingTime.seconds.toFixed(0).toString().padStart(2, '0');
+      minEl.innerText = remainingTime.minutes.toString().padStart(2, '0');
+      hrsEl.innerText = remainingTime.hours.toString().padStart(2, '0');
     }, 1000);
-
   }
+  
 
   //time stamp
   timeStamp() {
