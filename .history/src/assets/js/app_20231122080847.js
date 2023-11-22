@@ -835,8 +835,8 @@ ${iframeElement}
     });
 
     console.log({
-      dueDate: dueDate.toObject(),
       currentDate: currentDate.toObject(),
+      dueDate: dueDate.toObject(),
     })
 
     const id = setInterval(() => {

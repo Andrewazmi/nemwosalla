@@ -763,7 +763,13 @@ ${iframeElement}
 
     const offerDate = document.getElementById('offer-date');
 
-    this._makeCountDown(DateTime.fromFormat(offerDate.innerText?.trim(), 'yyyy-LL-dd').toJSDate());
+    console.log({
+      offerDate,
+      offerDateText: offerDate.innerText?.trim(),
+      DateTime: DateTime.fromFormat(offerDate.innerText?.trim(), 'yyyy-ll-dd').toObject(),
+    });
+
+    this._makeCountDown(DateTime.fromFormat(offerDate.innerText?.trim(), 'yyyy-ll-dd').toJSDate());
 
     for (let i = 0; i < productsIDs.length; i++) {
       const response = await salla.product.getDetails(productsIDs[i], ["images", "sold_quantity", "category"])
@@ -823,21 +829,17 @@ ${iframeElement}
 
 
 
-  _makeCountDown(futureDate) {
+  _makeCountDown(futureDate = DateTime.now().plus({
+    hours: 20,
+  }).toJSDate()) {
 
     const secEl = document.getElementById('offer-sec');
     const minEl = document.getElementById('offer-min');
     const hrsEl = document.getElementById('offer-hrs');
 
-    const currentDate = DateTime.now().setZone('utc +2');
-    let dueDate = DateTime.fromJSDate(futureDate, {
-      zone: 'utc +2'
-    });
+    const currentDate = DateTime.now();
+    let dueDate = DateTime.fromJSDate(futureDate);
 
-    console.log({
-      dueDate: dueDate.toObject(),
-      currentDate: currentDate.toObject(),
-    })
 
     const id = setInterval(() => {
       if (currentDate.toMillis() >= dueDate.toMillis()) {
@@ -851,6 +853,8 @@ ${iframeElement}
       dueDate = dueDate.minus({
         seconds: 1,
       });
+
+
 
     }, 1000);
 

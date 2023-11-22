@@ -834,10 +834,6 @@ ${iframeElement}
       zone: 'utc +2'
     });
 
-    console.log({
-      dueDate: dueDate.toObject(),
-      currentDate: currentDate.toObject(),
-    })
 
     const id = setInterval(() => {
       if (currentDate.toMillis() >= dueDate.toMillis()) {
@@ -851,6 +847,8 @@ ${iframeElement}
       dueDate = dueDate.minus({
         seconds: 1,
       });
+
+
 
     }, 1000);
 

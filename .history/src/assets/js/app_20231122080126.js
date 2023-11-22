@@ -823,21 +823,17 @@ ${iframeElement}
 
 
 
-  _makeCountDown(futureDate) {
+  _makeCountDown(futureDate = DateTime.now().plus({
+    hours: 20,
+  }).toJSDate()) {
 
     const secEl = document.getElementById('offer-sec');
     const minEl = document.getElementById('offer-min');
     const hrsEl = document.getElementById('offer-hrs');
 
-    const currentDate = DateTime.now().setZone('utc +2');
-    let dueDate = DateTime.fromJSDate(futureDate, {
-      zone: 'utc +2'
-    });
+    const currentDate = DateTime.now();
+    let dueDate = DateTime.fromJSDate(futureDate);
 
-    console.log({
-      dueDate: dueDate.toObject(),
-      currentDate: currentDate.toObject(),
-    })
 
     const id = setInterval(() => {
       if (currentDate.toMillis() >= dueDate.toMillis()) {
@@ -851,6 +847,8 @@ ${iframeElement}
       dueDate = dueDate.minus({
         seconds: 1,
       });
+
+
 
     }, 1000);
 
