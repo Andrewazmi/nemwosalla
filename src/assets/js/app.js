@@ -4,6 +4,8 @@ import Anime from "./partials/anime";
 import initTootTip from "./partials/tooltip";
 import AppHelpers from "./app-helpers";
 
+import { DateTime } from "luxon";
+
 class App extends AppHelpers {
   constructor() {
     super();
@@ -24,6 +26,7 @@ class App extends AppHelpers {
     this.removeElan();
     this.initiateNotifier();
     this.initiateMobileMenu();
+    this.getProductsWithLimitedOffers();
     if (header_is_sticky) {
       this.initiateStickyMenu();
     }
@@ -754,6 +757,8 @@ ${iframeElement}
 
     const products = [];
 
+    this._makeCountDown();
+
     for (const id of productsIDs) {
       const item = await salla.product.getDetails(id, ["images", "sold_quantity", "category"]);
       products.push(item);
@@ -774,6 +779,36 @@ ${iframeElement}
     const elements = limitedOfferProducts.map((item) => {
       const els = ``;
     })
+  }
+
+
+
+  _makeCountDown(futureDate = new Date()) {
+
+    const secEl = document.getElementById('offer-sec');
+    const minEl = document.getElementById('offer-min');
+    const hrsEl = document.getElementById('offer-hrs');
+
+    const currentDate = DateTime.now();
+    let dueDate = DateTime.fromJSDate(futureDate);
+
+
+    const id = setInterval(() => {
+      if (currentDate.toMillis() >= dueDate.toMillis()) {
+        clearInterval(id);
+      }
+
+      secEl.innerText = dueDate.second;
+      minEl.innerText = dueDate.minute;
+      hrsEl.innerText = dueDate.hour;
+
+      dueDate = dueDate.minus({
+        seconds: 1,
+      });
+
+      console.log({ second: dueDate.second });
+
+    }, 1000);
   }
 
   //time stamp
