@@ -1,4 +1,7 @@
 <section>
+{% for item in component.slider %}
+    <span class=" hidden feature-product-slider">{{item.product_id}} </span>
+{% endfor %}
   <div class="container mx-auto px-4">
     <div
       class="flex flex-col items-center w-[250px] bg-[#F1EBEB] rounded-xl p-4 relative"
