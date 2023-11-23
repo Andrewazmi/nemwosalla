@@ -60,9 +60,9 @@ class App extends AppHelpers {
     });
   }
 
-  //// feature product slider 
- async featureProductSlider(){
-  const insert = document.getElementById("slider-feature-product")
+  //// feature product slider
+  async featureProductSlider() {
+    const insert = document.getElementById("slider-feature-product");
     const productsIDs = Array.from(
       document.getElementsByClassName("feature-product-slider")
     ).map((v) => +v.innerHTML.trim());
@@ -75,7 +75,7 @@ class App extends AppHelpers {
       ]);
 
       const product = response.data;
-      const images = product.images.map(img => img.url)
+      const images = product.images.map((img) => img.url);
       products.push({
         images,
         name: product.name,
@@ -89,39 +89,35 @@ class App extends AppHelpers {
             : "",
         price: product.price,
         id: product.id,
-        des:product.description,
-        url: product.url
-      })
-
+        des: product.description,
+        url: product.url,
+      });
     }
 
-    let datas = ``
+    let datas = ``;
     for (let i = 0; i < products.length; i++) {
       const product = products[i];
-      let images = ``
+      let images = ``;
 
-      let thumbs = ``
-      product.images.map(e=>{ 
-        
-    const dataImage =  `<div style="height: 200px">
+      let thumbs = ``;
+      product.images.map((e) => {
+        const dataImage = `<div style="height: 200px">
       <img
         class="object-contain w-full h-full"
         src="${e}"
         alt="product"
-      /></div>`
-      const div = `
+      /></div>`;
+        const div = `
       <div class=" rounded-full" style="background-color: #334155 ; height : 20px"></div>
-      `
-      thumbs += div
-    images += dataImage
-    })
-    
-    console.log({thumbs})
+      `;
+        thumbs += div;
+        images += dataImage;
+      });
+
       const data = `
       <div  class="flex flex-col items-center  bg-[#F1EBEB] rounded-xl p-4 relative mx-5" style="width : 250px">
             
-      <div class="absolute top-4 right-4 flex flex-col gap-1">
-       
+      <div class="absolute top-4 right-4 flex flex-col gap-1 z-10">
       <div class="wishlist" data-title="إضافة للسلة">
       <salla-button onclick="salla.wishlist.toggle(${
         product.id
@@ -143,8 +139,8 @@ class App extends AppHelpers {
         </salla-button>
     </div>
       </div>
-      <div >
-          <salla-slider  show-controls="false" type="thumbs">
+      <div>
+          <salla-slider show-controls="false" show-thumbs-controls="false" type="thumbs">
             <div slot="items">
             ${images}
             </div>
@@ -154,43 +150,60 @@ class App extends AppHelpers {
           </salla-slider>
           </div>
           <div>
-
-          <p>${product.des}</p>
-          <div class="flex justify-between items-center w-full h-fit">
-            <div class="prices flex flex-col items-start w-full mt-4">
-              <span class="after-sale text-center text-sm font-bold text-[#FFAC0D]">${this.getPriceFormat( product.price )}</span>
+          <div class="overflow-hidden h-14 mt-2">
+            <p class="text-lg">${product.des}</p>
+          </div>
+          <div class="flex justify-between items-center w-full h-12">
+            <div class="prices flex flex-col items-start w-full mt-2">
+              <span class="after-sale text-center text-sm font-bold text-[#FFAC0D]">${this.getPriceFormat(
+                product.price
+              )}</span>
               <span class="before-sale text-center text-sm font-bold text-[#999999]">
-              ${this.getPriceFormat( product.priceDiscount)}</span>
+              ${this.getPriceFormat(product.priceDiscount)}</span>
             </div>
-            ${product.discount && `<div class="w-[50px] h-[40px] bg-[#FFAC0D] text-white rounded-full flex justify-center items-center">
-            <span>${product.discount}%</span>
-          </div>` }
+            ${
+              product.discount &&
+              `<div class="w-[50px] h-[40px] bg-[#FFAC0D] text-white rounded-full flex justify-center items-center">
+                <span>${product.discount}%</span>
+              </div>`
+            }
             
           </div>
           
-          <div class="addToCart" data-title="إضافة للسلة">
-          <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${product.id}" product-status="sale" fill="outline" product-type="product">
-          <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
-          <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
-        </svg>
+          <div class="addToCart mt-3" data-title="إضافة للسلة">
+          <salla-add-product-button shape="icon" class="flex justify-center items-center gap-4 rounded text-white py-1 px-4 w-full addToCart__btn hydrated" product-id="${
+            product.id
+          }" product-status="sale" fill="outline" product-type="product">
+          <svg
+          class="!w-8 !h-8"
+              xmlns="http://www.w3.org/2000/svg"
+              width="60"
+              height="48"
+              viewBox="0 0 48 33"
+              fill="none"
+              >
+              <path
+              d="M25.1683 16.0466H27.3683V13.3833H30.6685V11.6077H27.3683V8.94434H25.1683V11.6077H21.8681V13.3833H25.1683V16.0466ZM20.7681 24.0367C19.558 24.0367 18.579 24.8358 18.579 25.8123C18.579 26.7889 19.558 27.5879 20.7681 27.5879C21.9781 27.5879 22.9682 26.7889 22.9682 25.8123C22.9682 24.8358 21.9781 24.0367 20.7681 24.0367ZM31.7685 24.0367C30.5585 24.0367 29.5794 24.8358 29.5794 25.8123C29.5794 26.7889 30.5585 27.5879 31.7685 27.5879C32.9785 27.5879 33.9686 26.7889 33.9686 25.8123C33.9686 24.8358 32.9785 24.0367 31.7685 24.0367ZM21.9781 19.5978H30.1734C30.9985 19.5978 31.7245 19.2338 32.0985 18.6834L36.3447 12.46L34.4306 11.6077L30.1734 17.8222H22.4512L17.765 9.83212H14.1678V11.6077H16.3679L20.3281 18.346L18.843 20.5122C18.04 21.7019 19.096 23.149 20.7681 23.149H33.9686V21.3734H20.7681L21.9781 19.5978Z"
+              fill="white"
+              />
+            </svg>
+        <span>اضف للسلة</span>
           </salla-add-product-button>
         </div>
         </div>
     </div>
   
-      `
-      datas += data
+      `;
+      datas += data;
     }
 
-
-let slider = `
+    let slider = `
 <salla-slider  show-controls="false" type="default">
         <div slot="items">
             ${datas}
         </div>
-  </salla-slider>`
-insert.innerHTML +=slider
-
+  </salla-slider>`;
+    insert.innerHTML += slider;
   }
 
   // Scroll to top function
@@ -280,10 +293,10 @@ insert.innerHTML +=slider
         <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
           <div id="product-${
             products[0].id
-          }" class="product-entry product-entry--full-image overflow-hidden !justify-center" style="border-radius:40px;height:600px;background-color:#EAE9E9;padding: 1rem 1rem;">
+          }" class="product-entry product-entry--full-image overflow-hidden !justify-center !p-4" style="border-radius:40px;height:600px;background-color:#EAE9E9;">
             <a href="${
               products[0].url
-            }" class="relative w-full h-[80%] overflow-hidden rounded-md hover:opacity-90 block">
+            }" class="relative w-full h-[80%] overflow-hidden rounded-md hover:opacity-90 block mt-6">
               <img class="object-contain w-full h-full lazy loaded" src="${
                 products[0].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
@@ -291,7 +304,7 @@ insert.innerHTML +=slider
             <a href="${
               products[0].url
             }" class="absolute top-0 bottom-0 left-0 right-0 transition-opacity duration-700  rounded-2xl" ></a>
-            <div class="absolute  w-full h-full flex justify-center items-end ">
+            <div class="absolute w-full h-full flex justify-center items-end ">
               <div class="flex  flex-col  justify-center items-center mb-10">
   
                 <h1 class="text-sm font-bold leading-6 text-black product-entry__title">
@@ -301,7 +314,7 @@ insert.innerHTML +=slider
             products[0].name
           }</a>
                 </h1>
-                <div >
+                <div>
                 ${
                   products[0].sale_price
                     ? `<h4>${this.getPriceFormat(
@@ -316,11 +329,22 @@ insert.innerHTML +=slider
                 
               </div>
               </div>
-              <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
+
+${
+  products[0].sale_price < products[0].regular_price &&
+  `<div class="absolute top-0 lg:top-12 left-0 py-1 px-6" style="background-color:#334155">
+<p class="text-white">خصم علي هذا المنتج ${Math.floor(
+    (products[0].price / products[0].regular_price) * 100
+  )}%</p>
+</div>`
+}
+            
+
+          <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
             
             <div class="wishlist" data-title="إضافة للسلة">
             <salla-button onclick="salla.wishlist.toggle(${
-              products[1].id
+              products[0].id
             })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
               <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
               <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
@@ -329,8 +353,8 @@ insert.innerHTML +=slider
           </div>
           
                   <div class="quickview-btn eye-icon" onclick="clickModal(${
-                    products[1].id
-                  })" data-title="عرض سريع" data-product-id="${products[1].id}">
+                    products[0].id
+                  })" data-title="عرض سريع" data-product-id="${products[0].id}">
                       <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
                       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
@@ -341,7 +365,7 @@ insert.innerHTML +=slider
                   </div>
                 <div class="addToCart" data-title="إضافة للسلة">
                   <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
-                    products[1].id
+                    products[0].id
                   }" product-status="sale" fill="outline" product-type="product">
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
                   <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
@@ -966,15 +990,17 @@ ${iframeElement}
             : "",
         price: product.price,
         id: product.id,
-        url:product.url
+        url: product.url,
       });
     }
 
     let allData = ``;
 
     for (let i = 0; i < products.length; i++) {
-      console.log({i})
-      const data = `<a href="${products[i].url}" class="relative flex flex-col items-start justify-start ml-16" style="width:12rem;">
+      console.log({ i });
+      const data = `<a href="${
+        products[i].url
+      }" class="relative flex flex-col items-start justify-start ml-16" style="width:12rem;">
                       <div class="absolute top-0 right-0  w-14 h-19 bg-[#FCDB3D] flex flex-col items-start justify-between">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewbox="0 0 42 38" fill="none">
                           <g clip-path="url(#clip0_177_18631)">
@@ -991,19 +1017,17 @@ ${iframeElement}
                         }- </h3>
                       </div>
                       <div class="w-full">
-                        <div class="w-full h-72">
-                          <img class="object-cover w-full h-full" src="${
+                        <div class="w-full h-40 md:h-72">
+                          <img class="object-contain w-full h-full" src="${
                             products[i].image
                           }"/>
                         </div>
-                        <p class="w-full mt-1.5 text-3xl font-bold text-center text-black">${
-                          
-                          this.getPriceFormat(products[i].price)
-                        }</p>
-                        <p class="w-full mt-1 text-xl font-bold text-center text-black text-gray-500">${
-                         this.getPriceFormat(products[i].priceDiscount)
-                          
-                        }</p>
+                        <p class="w-full mt-1.5 text-3xl font-bold text-center text-black">${this.getPriceFormat(
+                          products[i].price
+                        )}</p>
+                        <p class="w-full mt-1 text-xl font-bold text-center text-black text-gray-500">${this.getPriceFormat(
+                          products[i].priceDiscount
+                        )}</p>
                       </div>
                     </a>`;
       allData += data;
