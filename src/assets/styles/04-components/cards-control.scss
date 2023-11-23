@@ -437,7 +437,7 @@ salla-add-product-button
 }
 
 #map-content iframe {
-  width: 90%;
+  width: 100%;
   border-radius: 15px;
 }
 
@@ -635,6 +635,9 @@ salla-search input {
   .animated-ads #btn-open svg {
     width: 24px;
     height: 24px;
+  }
+  #map-content iframe {
+    height: 325px;
   }
 }
 

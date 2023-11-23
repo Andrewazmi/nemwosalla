@@ -694,7 +694,7 @@ ${
         <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
           <div id="product-${
             products[0].id
-          }" class="product-entry product-entry--full-image overflow-hidden !bg-[#EAE9E9] lg:!h-[600px]" style="border-radius:40px;">
+          }" class="product-entry product-entry--full-image overflow-hidden !bg-[#EAE9E9] !h-[400px] lg:!h-[600px]" style="border-radius:40px;">
             <a href="${
               products[0].url
             }" class="relative w-full h-full overflow-hidden rounded-md hover:opacity-90">
@@ -717,7 +717,7 @@ ${
             </div>
           </div>
          
-          <div class="grid gap-4 sm:gap-8 relative" style="padding:2rem 1px">
+          <div class="grid grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-8 relative" style="padding:2rem 1px">
           <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
             <div style="height:100px;width:85%">
               <a href="${products[1].id}">
