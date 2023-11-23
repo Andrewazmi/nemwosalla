@@ -2695,7 +2695,7 @@
             "fields": [
                 {
                     "id": "video_banner",
-                    "key": "5bde05cb-559f-4613-a9d9-2574c933a01e",
+                    "key": "82a9f4ae-2dec-43de-8195-f4bdffd0191e",
                     "type": "string",
                     "format": "text",
                     "label": "video_banner",
@@ -2708,6 +2708,22 @@
                     "required": false,
                     "minLength": 6,
                     "maxLength": "10000"
+                },
+                {
+                    "id": "title",
+                    "key": "064c73dd-424e-4ce0-be8e-a60b30fc8d47",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
                 }
             ]
         },
