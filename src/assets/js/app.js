@@ -120,7 +120,7 @@ class App extends AppHelpers {
     
     console.log({images})
       const data = `
-      <a href="${product.url}" class="flex flex-col items-center  bg-[#F1EBEB] rounded-xl p-4 relative mx-5" style="width : 250px">
+      <div  class="flex flex-col items-center  bg-[#F1EBEB] rounded-xl p-4 relative mx-5" style="width : 250px">
             
       <div class="absolute top-4 right-4 flex flex-col gap-1">
        
@@ -162,9 +162,10 @@ class App extends AppHelpers {
               <span class="before-sale text-center text-sm font-bold text-[#999999]">
               ${this.getPriceFormat( product.priceDiscount)}</span>
             </div>
-            <div class="w-[50px] h-[40px] bg-[#FFAC0D] text-white rounded-full flex justify-center items-center">
-              <span>${product.discount}%</span>
-            </div>
+            ${product.discount && `<div class="w-[50px] h-[40px] bg-[#FFAC0D] text-white rounded-full flex justify-center items-center">
+            <span>${product.discount}%</span>
+          </div>`}
+            
           </div>
           
           <div class="addToCart" data-title="إضافة للسلة">
@@ -175,7 +176,7 @@ class App extends AppHelpers {
           </salla-add-product-button>
         </div>
         </div>
-    </a>
+    </div>
   
       `
       datas += data
