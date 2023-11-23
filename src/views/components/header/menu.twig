@@ -12,7 +12,20 @@
 #}
 
 <nav id="mobile-menu" class="mobile-menu flex justify-start items-center gap-8">
+	
 	<ul class="main-menu flex justify-start item-center gap-4 !mx-0">
+	<div class="w-full mb-4 lg:hidden brand-nav">
+		<div class="w-full text-end mb-4">أفضل الماركات</div>
+<div class=" w-full grid grid-cols-3 gap-4">
+		{% for item in theme.settings.get("barands_slider") %}
+			<a class=" flex items-center justify-center" style="width:100% ; height:100%" href="{{item.url}}">
+				<img class="object-fit w-full h-full" src="{{item.image}}" />
+			</a>
+			
+			
+		{% endfor %}
+		</div>
+	</div>
 		{% for menu_id, menu in menus|slice(0, 12) %}
 			{% include 'components.header._menu-item' with {is_root_menu:true} %}
 		{% endfor %}

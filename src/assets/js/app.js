@@ -110,15 +110,13 @@ class App extends AppHelpers {
         alt="product"
       /></div>`
       const div = `
-      <div class=" h-4 w-4 rounded-full bg-[#334155] ">
-        
-      </div>
+      <div class=" rounded-full" style="background-color: #334155 ; height : 20px"></div>
       `
       thumbs += div
     images += dataImage
     })
     
-    console.log({images})
+    console.log({thumbs})
       const data = `
       <div  class="flex flex-col items-center  bg-[#F1EBEB] rounded-xl p-4 relative mx-5" style="width : 250px">
             
@@ -133,9 +131,9 @@ class App extends AppHelpers {
         </svg>
       </salla-button>
     </div>
-    <div class="quickview-btn eye-icon" onclick="clickModal(${
+    <div class="quickview-btn eye-icon flex justify-center items-center" onclick="clickModal(${
       product.id
-    })" data-title="عرض سريع" data-product-id="${products[1].id}">
+    })" data-title="عرض سريع" data-product-id="${product.id}">
         <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
         <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
@@ -145,14 +143,16 @@ class App extends AppHelpers {
         </salla-button>
     </div>
       </div>
+      <div >
           <salla-slider  show-controls="false" type="thumbs">
             <div slot="items">
             ${images}
             </div>
             <div slot="thumbs">
-            ${thumbs}
+              ${thumbs}
             </div>
           </salla-slider>
+          </div>
           <div>
 
           <p>${product.des}</p>
