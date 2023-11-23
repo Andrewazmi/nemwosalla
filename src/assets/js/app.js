@@ -13,6 +13,7 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
+    this.featureProductSlider();
     this.handleDropdown();
     this.scrollToTop();
     this.timeStamp();
@@ -57,6 +58,139 @@ class App extends AppHelpers {
     dropdownButton.addEventListener("click", () => {
       dropdownMenu.classList.toggle("show");
     });
+  }
+
+  //// feature product slider 
+ async featureProductSlider(){
+  const insert = document.getElementById("slider-feature-product")
+    const productsIDs = Array.from(
+      document.getElementsByClassName("feature-product-slider")
+    ).map((v) => +v.innerHTML.trim());
+    const products = [];
+    for (let i = 0; i < productsIDs.length; i++) {
+      const response = await salla.product.getDetails(productsIDs[i], [
+        "images",
+        "sold_quantity",
+        "category",
+      ]);
+
+      const product = response.data;
+      const images = product.images.map(img => img.url)
+      products.push({
+        images,
+        name: product.name,
+        discount:
+          product.sale_price < product.regular_price
+            ? Math.floor((product.price / product.regular_price) * 100)
+            : "",
+        priceDiscount:
+          product.sale_price < product.regular_price
+            ? product.regular_price
+            : "",
+        price: product.price,
+        id: product.id,
+        des:product.description,
+        url: product.url
+      })
+
+    }
+
+    let datas = ``
+    for (let i = 0; i < products.length; i++) {
+      const product = products[i];
+      let images = ``
+
+      let thumbs = ``
+      product.images.map(e=>{ 
+        
+    const dataImage =  `<div style="height: 200px">
+      <img
+        class="object-contain w-full h-full"
+        src="${e}"
+        alt="product"
+      /></div>`
+      const div = `
+      <div class=" rounded-full" style="background-color: #334155 ; height : 20px"></div>
+      `
+      thumbs += div
+    images += dataImage
+    })
+    
+    console.log({thumbs})
+      const data = `
+      <div  class="flex flex-col items-center  bg-[#F1EBEB] rounded-xl p-4 relative mx-5" style="width : 250px">
+            
+      <div class="absolute top-4 right-4 flex flex-col gap-1">
+       
+      <div class="wishlist" data-title="إضافة للسلة">
+      <salla-button onclick="salla.wishlist.toggle(${
+        product.id
+      })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
+        <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
+        <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
+        </svg>
+      </salla-button>
+    </div>
+    <div class="quickview-btn eye-icon flex justify-center items-center" onclick="clickModal(${
+      product.id
+    })" data-title="عرض سريع" data-product-id="${product.id}">
+        <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
+        <path d="M21.6507 8.90039C12.6924 8.90039 5.04197 14.6021 1.94238 22.6504C5.04197 30.6987 12.6924 36.4004 21.6507 36.4004C30.6091 36.4004 38.2595 30.6987 41.3591 22.6504C38.2595 14.6021 30.6091 8.90039 21.6507 8.90039ZM21.6507 31.8171C16.7057 31.8171 12.6924 27.7104 12.6924 22.6504C12.6924 17.5904 16.7057 13.4837 21.6507 13.4837C26.5957 13.4837 30.6091 17.5904 30.6091 22.6504C30.6091 27.7104 26.5957 31.8171 21.6507 31.8171ZM21.6507 17.1504C18.6765 17.1504 16.2757 19.6071 16.2757 22.6504C16.2757 25.6937 18.6765 28.1504 21.6507 28.1504C24.6249 28.1504 27.0257 25.6937 27.0257 22.6504C27.0257 19.6071 24.6249 17.1504 21.6507 17.1504Z" fill="#212121"/>
+        </svg>
+
+        </salla-button>
+    </div>
+      </div>
+      <div >
+          <salla-slider  show-controls="false" type="thumbs">
+            <div slot="items">
+            ${images}
+            </div>
+            <div slot="thumbs">
+              ${thumbs}
+            </div>
+          </salla-slider>
+          </div>
+          <div>
+
+          <p>${product.des}</p>
+          <div class="flex justify-between items-center w-full h-fit">
+            <div class="prices flex flex-col items-start w-full mt-4">
+              <span class="after-sale text-center text-sm font-bold text-[#FFAC0D]">${this.getPriceFormat( product.price )}</span>
+              <span class="before-sale text-center text-sm font-bold text-[#999999]">
+              ${this.getPriceFormat( product.priceDiscount)}</span>
+            </div>
+            ${product.discount && `<div class="w-[50px] h-[40px] bg-[#FFAC0D] text-white rounded-full flex justify-center items-center">
+            <span>${product.discount}%</span>
+          </div>` }
+            
+          </div>
+          
+          <div class="addToCart" data-title="إضافة للسلة">
+          <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${product.id}" product-status="sale" fill="outline" product-type="product">
+          <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
+          <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
+        </svg>
+          </salla-add-product-button>
+        </div>
+        </div>
+    </div>
+  
+      `
+      datas += data
+    }
+
+
+let slider = `
+<salla-slider  show-controls="false" type="default">
+        <div slot="items">
+            ${datas}
+        </div>
+  </salla-slider>`
+insert.innerHTML +=slider
+
   }
 
   // Scroll to top function
@@ -832,6 +966,7 @@ ${iframeElement}
             : "",
         price: product.price,
         id: product.id,
+        url:product.url
       });
     }
 
@@ -839,7 +974,7 @@ ${iframeElement}
 
     for (let i = 0; i < products.length; i++) {
       console.log({i})
-      const data = `<div class="relative flex flex-col items-start justify-start ml-16" style="width:12rem;">
+      const data = `<a href="${products[i].url}" class="relative flex flex-col items-start justify-start ml-16" style="width:12rem;">
                       <div class="absolute top-0 right-0  w-14 h-19 bg-[#FCDB3D] flex flex-col items-start justify-between">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewbox="0 0 42 38" fill="none">
                           <g clip-path="url(#clip0_177_18631)">
@@ -862,13 +997,15 @@ ${iframeElement}
                           }"/>
                         </div>
                         <p class="w-full mt-1.5 text-3xl font-bold text-center text-black">${
-                          products[i].price
+                          
+                          this.getPriceFormat(products[i].price)
                         }</p>
                         <p class="w-full mt-1 text-xl font-bold text-center text-black text-gray-500">${
-                          products[i].priceDiscount
+                         this.getPriceFormat(products[i].priceDiscount)
+                          
                         }</p>
                       </div>
-                    </div>`;
+                    </a>`;
       allData += data;
     }
 
