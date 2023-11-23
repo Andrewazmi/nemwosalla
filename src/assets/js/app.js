@@ -164,7 +164,7 @@ class App extends AppHelpers {
             </div>
             ${product.discount && `<div class="w-[50px] h-[40px] bg-[#FFAC0D] text-white rounded-full flex justify-center items-center">
             <span>${product.discount}%</span>
-          </div>`}
+          </div>` }
             
           </div>
           
@@ -997,10 +997,12 @@ ${iframeElement}
                           }"/>
                         </div>
                         <p class="w-full mt-1.5 text-3xl font-bold text-center text-black">${
-                          products[i].price
+                          
+                          this.getPriceFormat(products[i].price)
                         }</p>
                         <p class="w-full mt-1 text-xl font-bold text-center text-black text-gray-500">${
-                          products[i].priceDiscount
+                         this.getPriceFormat(products[i].priceDiscount)
+                          
                         }</p>
                       </div>
                     </a>`;
