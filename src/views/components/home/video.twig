@@ -1,4 +1,12 @@
-<section class="s-block s-block--video ">
+da<section class="s-block s-block--video ">
         <video class="object-cover object-center w-full h-full min-h-[250px] max-h-[350px] lg:max-h-[700px]" playsinline loop="loop" src="{{component.video_banner}}" autoplay="autoplay" muted="muted"></video>
+       
+       <div class="absolute flex items-center w-full px-3 bottom-[50%]" style="justify-content : center">
+                <h1>{{component.title}}</h1>
+	</div>
+
+        <a href="{{component.url}}" class="absolute flex items-center w-full px-3 bottom-3" style="justify-content : {{component.button_posistion|json_encode()|split('"')[1]}}">
+		<button class="w-1/2 text-xs py-3 font-bold text-center rounded-lg lg:w-5/12 lg:text-lg " style="color:{{component.text_color_button}} ; background-color : {{component.background_button_color}}">{{component.button}}</button>
+	</a>
 </section>
 
