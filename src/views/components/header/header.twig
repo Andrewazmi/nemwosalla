@@ -83,15 +83,14 @@
 
 			</div>
 		</div>
-
 		{# Main Nav #}
 		<div id="mainnav" class="main-nav-container shadow-default bg-white">
 			<div class="inner bg-inherit">
 				<div class="container py-1">
 					<div class="flex items-center justify-between relative">
 						<div class="flex items-center">
-							<a class="lg:hidden mburger mburger--collapse leading-none" href="#mobile-menu">
-								<i class="sicon-menu text-primary text-2xl rtl:ml-2.5 ltr:mr-2.5"></i>
+							<a class="block lg:hidden mburger mburger--collapse leading-none" href="#mobile-menu">
+								<i class="{{theme.settings.get("sidebar_icon")}} text-primary text-2xl rtl:ml-2.5 ltr:mr-2.5"></i>
 							</a>
 							<a
 								class="navbar-brand" href="{{ store.url }}">
