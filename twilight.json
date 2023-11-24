@@ -2695,7 +2695,7 @@
             "fields": [
                 {
                     "id": "video_banner",
-                    "key": "3afe1391-2211-4f17-bc4e-4341075eccd1",
+                    "key": "e609efc0-1d20-4b4a-9f22-8ac0e041dca3",
                     "type": "string",
                     "format": "text",
                     "label": "video_banner",
@@ -2711,7 +2711,7 @@
                 },
                 {
                     "id": "title",
-                    "key": "aa26385c-eec8-440a-8cfb-bdfe21b18635",
+                    "key": "b59d4fe5-d5a2-4cf5-a9f6-fb93dae9c360",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -2727,7 +2727,7 @@
                 },
                 {
                     "id": "button_posistion",
-                    "key": "006bd7b6-138e-4842-8936-e70d85dc1e34",
+                    "key": "efc3e16e-bd40-4fbb-b1c2-84ebdd783b42",
                     "type": "items",
                     "format": "dropdown-list",
                     "label": "button_posistion",
@@ -2753,13 +2753,13 @@
                         }
                     ],
                     "source": "Manual",
-                    "multichoice": true,
-                    "searchable": true,
+                    "multichoice": false,
+                    "searchable": false,
                     "required": false
                 },
                 {
                     "id": "text_color_button",
-                    "key": "b54c9558-25eb-4dbe-93d1-f5519daec069",
+                    "key": "b310de99-ce6d-44f6-86f9-465b967bda36",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
@@ -2772,7 +2772,7 @@
                 },
                 {
                     "id": "background_button_color",
-                    "key": "82eab7ed-f1a0-4148-9bee-df9fbd8f512a",
+                    "key": "2c58cbbf-cdc0-4005-8b95-eee87a1319bd",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
@@ -2785,7 +2785,7 @@
                 },
                 {
                     "id": "button",
-                    "key": "a6bcd738-0370-4429-ab68-ca2fc6f977e0",
+                    "key": "6cb817ac-2af0-471a-8a8e-1df5b4d1bad5",
                     "type": "string",
                     "format": "text",
                     "label": "button",
@@ -2801,7 +2801,7 @@
                 },
                 {
                     "id": "url",
-                    "key": "7edbe24a-89ed-4135-a1b9-db737506b745",
+                    "key": "23ea33c2-3a89-43ca-a9e3-97ea4a35eec9",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
