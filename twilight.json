@@ -241,6 +241,17 @@
             "value": true,
             "selected": false,
             "required": false
+        },
+        {
+            "id": "sidebar_icon",
+            "type": "string",
+            "format": "icon",
+            "label": "sidebar_icon",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-user-circle",
+            "value": "sicon-arrow-left",
+            "required": false
         }
     ],
     "components": [
