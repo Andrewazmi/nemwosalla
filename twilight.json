@@ -1843,7 +1843,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "0228f2ca-4f5b-41d4-af1b-4b17a23be081",
+                    "key": "16c28e03-ff6a-4a5b-b162-c269a7d8d454",
                     "type": "string",
                     "format": "text",
                     "label": "title",
@@ -1855,11 +1855,11 @@
                     "multilanguage": false,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30
+                    "maxLength": "300"
                 },
                 {
                     "id": "subtitle",
-                    "key": "40f457fa-d3a1-46dd-b7e7-948d5f24c86f",
+                    "key": "af2e5954-4abb-41b2-8636-b431596bcffe",
                     "type": "string",
                     "format": "text",
                     "label": "subtitle",
@@ -1871,11 +1871,11 @@
                     "multilanguage": false,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30
+                    "maxLength": "3000"
                 },
                 {
                     "id": "map",
-                    "key": "1ba8921d-ebde-4e15-9fac-971476fff2b1",
+                    "key": "0219a7a9-a5b9-4e45-931a-a3a58b0e614d",
                     "type": "string",
                     "format": "text",
                     "label": "map",
