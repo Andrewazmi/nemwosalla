@@ -2590,10 +2590,10 @@
             "fields": [
                 {
                     "id": "brands",
-                    "key": "f6758b66-3e6f-4367-ab59-dac9b1b79ac6",
+                    "key": "93b2195d-bc50-41b2-8488-f770ac9d964a",
                     "type": "collection",
                     "format": "collection",
-                    "label": "brands",
+                    "label": "علامات تجارية",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -2601,7 +2601,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "28125e90-c57d-4c37-8010-2cad04971553",
+                            "key": "d75c69e4-7a04-4229-b2f9-2ea3fffa469e",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -2610,12 +2610,12 @@
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false,
+                            "required": true,
                             "defaulted": true
                         },
                         {
                             "id": "url",
-                            "key": "6c22224e-4337-4f75-a7ef-3f374e8f88aa",
+                            "key": "86f2af9c-6efe-4032-a7fe-a8b53e309d9a",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
@@ -2625,7 +2625,7 @@
                             "placeholder": "e.g. https://salla.sa",
                             "icon": "sicon-link",
                             "value": null,
-                            "required": false,
+                            "required": true,
                             "minLength": 6,
                             "maxLength": 30,
                             "defaulted": true
