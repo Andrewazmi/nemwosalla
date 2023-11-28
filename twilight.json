@@ -3038,7 +3038,7 @@
             "fields": [
                 {
                     "id": "string",
-                    "key": "395ea3e2-8482-4b70-bef4-c966f20f8752",
+                    "key": "003c721d-eef5-48e3-b2bd-a19a0569b0f7",
                     "type": "string",
                     "format": "text",
                     "label": "String",
@@ -3054,22 +3054,8 @@
                     "defaulted": true
                 },
                 {
-                    "id": "date",
-                    "key": "bff34350-cf92-4e9e-a1fc-8a21e20b7067",
-                    "type": "string",
-                    "format": "date",
-                    "inputType": "date",
-                    "label": "Date",
-                    "description": null,
-                    "labelHTML": null,
-                    "icon": "sicon-calendar-date",
-                    "value": "2023-12-11",
-                    "required": false,
-                    "defaulted": true
-                },
-                {
                     "id": "prodcuts",
-                    "key": "69109cff-93b2-41fa-80f1-afd2cb1fd1b1",
+                    "key": "2135f75b-dc3f-4d3c-a1fa-382e60336455",
                     "type": "collection",
                     "format": "collection",
                     "label": "prodcuts",
@@ -3080,7 +3066,7 @@
                     "fields": [
                         {
                             "id": "product_id",
-                            "key": "ecc8227d-cbe1-428e-be1d-b376bd97e0fa",
+                            "key": "3fd2308e-0754-45fa-8341-2d72aabba1ad",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "product_id",
@@ -3099,6 +3085,19 @@
                     "required": false,
                     "minLength": 1,
                     "maxLength": "20"
+                },
+                {
+                    "id": "date",
+                    "key": "7ec480f6-cead-4f34-b5a0-2d580ef908ff",
+                    "type": "string",
+                    "format": "datetime",
+                    "inputType": "datetime-local",
+                    "label": "date",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-calendar-time",
+                    "value": "2021-10-01T15:23",
+                    "required": false
                 }
             ]
         },
