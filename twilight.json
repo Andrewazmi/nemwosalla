@@ -1804,16 +1804,16 @@
         },
         {
             "key": "15b66838-ba58-46fd-a58f-7f6969617fc7",
-            "title": "get-category",
+            "title": "الأقسام",
             "icon": "sicon-store",
             "path": "home.category-star",
             "fields": [
                 {
                     "id": "title",
-                    "key": "4e9a2800-a80a-4350-818b-6d071c1f583d",
+                    "key": "c988cabc-1b4e-4570-9fd0-9fd81cc13327",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "اسم العنصر",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -1826,35 +1826,34 @@
                 },
                 {
                     "id": "category_star",
-                    "key": "7db83592-648a-4687-94f3-d07ea58e7ce1",
+                    "key": "d0d5bb77-ab8e-4d5d-89e7-51afab393ad1",
                     "type": "collection",
                     "format": "collection",
-                    "label": "category_star",
+                    "label": "التصنيفات",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "image",
-                            "key": "7dcd1053-21fb-43ee-86bd-18a2b8468dcd",
+                            "id": "alsort",
+                            "key": "58f6dbb2-88b8-412b-9f63-3b5cba2988a7",
                             "type": "string",
                             "format": "image",
-                            "label": "Image",
+                            "label": "الصورة",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false,
-                            "defaulted": true
+                            "required": false
                         },
                         {
                             "id": "category_name",
-                            "key": "15c3a064-e40a-4c6b-8b8d-4618dd7cf791",
+                            "key": "09c921b1-df9f-493d-a60e-11e25027ba9a",
                             "type": "items",
                             "format": "dropdown-list",
-                            "label": "category_name",
+                            "label": "اختار التصنيف",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-keyboard_arrow_down",
@@ -1869,7 +1868,7 @@
                     "value": [],
                     "required": false,
                     "minLength": 1,
-                    "maxLength": 5
+                    "maxLength": "8"
                 }
             ]
         },
@@ -2590,10 +2589,10 @@
             "fields": [
                 {
                     "id": "brands",
-                    "key": "613ea16c-0467-436a-8b3d-226bb9de2aca",
+                    "key": "93b2195d-bc50-41b2-8488-f770ac9d964a",
                     "type": "collection",
                     "format": "collection",
-                    "label": "brands",
+                    "label": "علامات تجارية",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -2601,7 +2600,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "07dd740f-0a96-4e14-982b-c06e75cbfc6f",
+                            "key": "d75c69e4-7a04-4229-b2f9-2ea3fffa469e",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -2610,12 +2609,12 @@
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false,
+                            "required": true,
                             "defaulted": true
                         },
                         {
                             "id": "url",
-                            "key": "058f68c5-f23b-45d3-944c-0279d69c551d",
+                            "key": "86f2af9c-6efe-4032-a7fe-a8b53e309d9a",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
@@ -2625,7 +2624,7 @@
                             "placeholder": "e.g. https://salla.sa",
                             "icon": "sicon-link",
                             "value": null,
-                            "required": false,
+                            "required": true,
                             "minLength": 6,
                             "maxLength": 30,
                             "defaulted": true
@@ -2634,7 +2633,7 @@
                     "value": [],
                     "required": false,
                     "minLength": "7",
-                    "maxLength": "7"
+                    "maxLength": "10"
                 }
             ]
         },
