@@ -252,6 +252,33 @@
             "icon": "sicon-user-circle",
             "value": "sicon-arrow-left",
             "required": false
+        },
+        {
+            "id": "offer_nav_bottom",
+            "type": "boolean",
+            "format": "switch",
+            "label": "offer_nav_bottom",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-toggle-off",
+            "value": true,
+            "selected": false,
+            "required": false
+        },
+        {
+            "id": "url_nav_bottom",
+            "type": "string",
+            "format": "url",
+            "inputType": "url",
+            "label": "url_nav_bottom",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "e.g. https://salla.sa",
+            "icon": "sicon-link",
+            "value": null,
+            "required": false,
+            "minLength": 6,
+            "maxLength": 30
         }
     ],
     "components": [
