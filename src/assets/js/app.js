@@ -295,7 +295,7 @@ class App extends AppHelpers {
           <div id="product-${
             products[0].id
           }" class="product-entry product-entry--full-image overflow-hidden !justify-center !p-4" style="border-radius:40px;height:600px;background-color:#EAE9E9;">
-            <a href="${
+            <a class=" block" href="${
               products[0].url
             }" class="relative w-full h-[80%] overflow-hidden rounded-md hover:opacity-90 block mt-6">
               <img class="object-contain w-full h-full lazy loaded" src="${
