@@ -430,6 +430,10 @@ salla-add-product-button
 .product-entry--full-image .product-entry__title a {
   overflow: visible;
 }
+.product-entry__title a{
+  font-size: 1rem;
+  font-weight: 700;
+}
 
 #map-content {
   display: flex;

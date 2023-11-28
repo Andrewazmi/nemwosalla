@@ -75,6 +75,7 @@ class App extends AppHelpers {
       ]);
 
       const product = response.data;
+      console.log({ productTest: product });
       const images = product.images.map((img) => img.url);
       products.push({
         images,
@@ -89,7 +90,7 @@ class App extends AppHelpers {
             : "",
         price: product.price,
         id: product.id,
-        des: product.description,
+        name: product.name,
         url: product.url,
       });
     }
@@ -116,7 +117,12 @@ class App extends AppHelpers {
 
       const data = `
       <div  class="flex flex-col items-center  bg-[#F1EBEB] rounded-xl p-4 relative mx-5" style="width : 250px">
-            
+      ${
+        product.discount &&
+        `<div class="absolute top-4 left-4 z-10 w-[50px] h-[50px] bg-[#FFAC0D] text-white rounded-full flex justify-center items-center">
+          <span>${product.discount}%</span>
+        </div>`
+      }
       <div class="absolute top-4 right-4 flex flex-col gap-1 z-10">
       <div class="wishlist" data-title="إضافة للسلة">
       <salla-button onclick="salla.wishlist.toggle(${
@@ -139,7 +145,7 @@ class App extends AppHelpers {
         </salla-button>
     </div>
       </div>
-      <div>
+      <a href="${product.url}" class=" block">
           <salla-slider show-controls="false" show-thumbs-controls="false" type="thumbs">
             <div slot="items">
             ${images}
@@ -148,25 +154,20 @@ class App extends AppHelpers {
               ${thumbs}
             </div>
           </salla-slider>
-          </div>
+          </a>
           <div>
-          <div class="overflow-hidden h-14 mt-2">
-            <p class="text-lg">${product.des}</p>
+          <div class="overflow-hidden h-8 mt-2 text-center">
+            <p class="text-lg font-bold">${product.name}</p>
           </div>
-          <div class="flex justify-between items-center w-full h-12">
-            <div class="prices flex flex-col items-start w-full mt-2">
+          <div class="flex justify-center items-center w-full h-12">
+            <div class="prices flex flex-col items-center w-full mt-2">
               <span class="after-sale text-center text-sm font-bold text-[#FFAC0D]">${this.getPriceFormat(
                 product.price
               )}</span>
-              <span class="before-sale text-center text-sm font-bold text-[#999999]">
+              <span class="before-sale text-center text-sm font-bold text-[#999999] line-through">
               ${this.getPriceFormat(product.priceDiscount)}</span>
             </div>
-            ${
-              product.discount &&
-              `<div class="w-[50px] h-[40px] bg-[#FFAC0D] text-white rounded-full flex justify-center items-center">
-                <span>${product.discount}%</span>
-              </div>`
-            }
+            
             
           </div>
           
@@ -314,16 +315,10 @@ class App extends AppHelpers {
             products[0].name
           }</a>
                 </h1>
-                <div>
-                ${
-                  products[0].sale_price
-                    ? `<h4>${this.getPriceFormat(
-                        products[0].sale_price
-                      )}</h4> <span>${this.getPriceFormat(
-                        this.product?.regular_price
-                      )}</span>`
-                    : `<h4>${this.getPriceFormat(products[0].price)}</h4> `
-                }
+                <div class=" flex text-2xl justify-center items-center gap-2" >
+               <h4>${this.getPriceFormat(products[0].price)}</h4>
+                <span class="before-sale text-center font-bold line-through text-[#404553]">
+              ${this.getPriceFormat(products[0].regular_price)}</span>
 
           
                 
@@ -421,7 +416,9 @@ ${
               </div>
             <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
               <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-                <a href="${products[1].id}">${products[1].name}</a>
+                <a href="${products[1].id}" class=" text-4xl">${
+            products[1].name
+          }</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
                 <h4 class="text-sm font-bold text-store-text-secondary ${
@@ -483,7 +480,9 @@ ${
               </div>
             <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
               <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-                <a href="${products[2].id}">${products[2].name}</a>
+                <a href="${products[2].id}" class=" text-4xl">${
+            products[2].name
+          }</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
                 <h4 class="text-sm font-bold text-store-text-secondary ${
@@ -549,7 +548,9 @@ ${
               </div>
             <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
               <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-                <a href="${products[3].id}">${products[3].name}</a>
+                <a href="${products[3].id}" class=" text-4xl">${
+            products[3].name
+          }</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
                 <h4 class="text-sm font-bold text-store-text-secondary ${
@@ -610,7 +611,9 @@ ${
               </div>
             <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
               <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-                <a href="${products[4].id}">${products[1].name}</a>
+                <a href="${products[4].id}" class=" text-4xl">${
+            products[1].name
+          }</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
                 <h4 class="text-sm font-bold text-store-text-secondary ${
@@ -761,7 +764,9 @@ ${
               </div>
             <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
               <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-                <a href="${products[1].id}">${products[1].name}</a>
+                <a href="${products[1].id}" class=" font-bold text-2xl">${
+                products[1].name
+              }</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
                 <h4 class="text-sm font-bold text-store-text-secondary ${
@@ -822,7 +827,9 @@ ${
             </div>
           <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
             <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-              <a href="${products[2].id}">${products[2].name}</a>
+              <a href="${products[2].id}" class=" font-extrabold text-2xl">${
+                products[2].name
+              }</a>
             </h3>
             <div class="w-full  flex justify-center items-center">
               <h4 class="text-sm font-bold text-store-text-secondary ${
@@ -1001,7 +1008,10 @@ ${iframeElement}
       const data = `<a href="${
         products[i].url
       }" class="relative flex flex-col items-start justify-start ml-16" style="width:12rem;">
-                      <div class="absolute top-0 right-0  w-14 h-19 bg-[#FCDB3D] flex flex-col items-start justify-between">
+                  ${
+                    products[i].discount &&
+                    `
+                        <div class="absolute top-0 right-0  w-14 h-19 bg-[#FCDB3D] flex flex-col items-start justify-between">
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewbox="0 0 42 38" fill="none">
                           <g clip-path="url(#clip0_177_18631)">
                             <path d="M7.96631 4.56543V24.3266H13.6494V40.4949L26.9099 18.9372H19.3324L25.0155 4.56543H7.96631Z" fill="#212121"/>
@@ -1012,10 +1022,11 @@ ${iframeElement}
                             </clipPath>
                           </defs>
                         </svg>
-                        <h3 class="w-full text-sm font-bold text-center py-2">% ${
-                          products[i].discount && products[i].discount
-                        }- </h3>
+                        <h3 class="w-full text-sm font-bold text-center py-2">% ${products[i].discount}- </h3>
                       </div>
+                        `
+                  }
+                      
                       <div class="w-full">
                         <div class="w-full h-40 md:h-72">
                           <img class="object-contain w-full h-full" src="${
@@ -1025,7 +1036,7 @@ ${iframeElement}
                         <p class="w-full mt-1.5 text-3xl font-bold text-center text-black">${this.getPriceFormat(
                           products[i].price
                         )}</p>
-                        <p class="w-full mt-1 text-xl font-bold text-center text-black text-gray-500">${this.getPriceFormat(
+                        <p class="w-full mt-1 text-xl font-bold text-center text-black text-gray-500 line-through">${this.getPriceFormat(
                           products[i].priceDiscount
                         )}</p>
                       </div>

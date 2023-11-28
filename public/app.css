@@ -488,6 +488,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .left-0{left:0px}
 .left-1\/2{left:50%}
 .left-10{left:2.5rem}
+.left-4{left:1rem}
 .left-5{left:1.25rem}
 .right-0{right:0px}
 .right-4{right:1rem}
@@ -602,7 +603,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-\[150px\]{height:150px}
 .h-\[300px\]{height:300px}
 .h-\[34px\]{height:34px}
-.h-\[40px\]{height:40px}
 .h-\[50px\]{height:50px}
 .h-\[80\%\]{height:80%}
 .h-auto{height:auto}
@@ -867,7 +867,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .text-6xl{font-size:3.75rem;line-height:1}
 .text-7xl{font-size:4.5rem;line-height:1}
 .text-\[16px\]{font-size:16px}
-.text-\[25px\]{font-size:25px}
 .text-base{font-size:1rem;line-height:1.5rem}
 .text-lg{font-size:1.125rem;line-height:1.75rem}
 .text-sm{font-size:0.875rem;line-height:1.25rem}
@@ -892,6 +891,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .tracking-wider{letter-spacing:0.05em}
 .\!text-primary{color:#414042 !important;color:var(--color-primary) !important}
 .\!text-white{--tw-text-opacity:1 !important;color:rgba(255, 255, 255, 1) !important;color:rgba(255, 255, 255, var(--tw-text-opacity)) !important}
+.text-\[\#404553\]{--tw-text-opacity:1;color:rgba(64, 69, 83, 1);color:rgba(64, 69, 83, var(--tw-text-opacity))}
 .text-\[\#707070\]{--tw-text-opacity:1;color:rgba(112, 112, 112, 1);color:rgba(112, 112, 112, var(--tw-text-opacity))}
 .text-\[\#999999\]{--tw-text-opacity:1;color:rgba(153, 153, 153, 1);color:rgba(153, 153, 153, var(--tw-text-opacity))}
 .text-\[\#FFAC0D\]{--tw-text-opacity:1;color:rgba(255, 172, 13, 1);color:rgba(255, 172, 13, var(--tw-text-opacity))}
@@ -6438,6 +6438,10 @@ salla-add-product-button .s-button-text:not(.new-design-product .s-button-text):
 .product-entry--full-image .product-entry__title a {
   overflow: visible;
 }
+.product-entry__title a {
+  font-size: 1rem;
+  font-weight: 700;
+}
 #map-content {
   display: flex;
   justify-content: center;
@@ -7612,6 +7616,7 @@ button.swiper-pagination-bullet {
 .md\:h-24{height:6rem}
 .md\:h-72{height:18rem}
 .md\:h-\[400px\]{height:400px}
+.md\:max-h-\[180px\]{max-height:180px}
 .md\:\!w-2\/4{width:50% !important}
 .md\:w-2\/4{width:50%}
 .md\:w-24{width:6rem}
@@ -7624,6 +7629,7 @@ button.swiper-pagination-bullet {
 .md\:w-\[60\%\]{width:60%}
 .md\:w-\[95\%\]{width:95%}
 .md\:w-auto{width:auto}
+.md\:max-w-\[270px\]{max-width:270px}
 .md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
 .md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}
@@ -7724,6 +7730,7 @@ button.swiper-pagination-bullet {
 .lg\:text-7xl{font-size:4.5rem;line-height:1}
 .lg\:text-lg{font-size:1.125rem;line-height:1.75rem}
 .lg\:text-title-size{font-size:42px}
+.lg\:text-xl{font-size:1.25rem;line-height:1.75rem}
 .lg\:shadow-default{--tw-shadow:5px 10px 30px #2B2D340D;;--tw-shadow-colored:5px 10px 30px var(--tw-shadow-color);box-shadow:0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 5px 10px 30px #2B2D340D;;box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow)}
 [dir="ltr"] .ltr\:lg\:ml-8{margin-left:2rem}
 [dir="ltr"] .ltr\:lg\:mr-8{margin-right:2rem}
