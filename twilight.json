@@ -1810,7 +1810,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "b4aaa243-d61c-4841-b46b-0bbb20d109ea",
+                    "key": "c988cabc-1b4e-4570-9fd0-9fd81cc13327",
                     "type": "string",
                     "format": "text",
                     "label": "اسم العنصر",
@@ -1826,7 +1826,7 @@
                 },
                 {
                     "id": "category_star",
-                    "key": "9e837ac6-cdc1-4af7-aa2c-5f8438c5d6ac",
+                    "key": "d0d5bb77-ab8e-4d5d-89e7-51afab393ad1",
                     "type": "collection",
                     "format": "collection",
                     "label": "التصنيفات",
@@ -1837,7 +1837,7 @@
                     "fields": [
                         {
                             "id": "alsort",
-                            "key": "61cb2858-8bc4-4204-aceb-f9bf76b54509",
+                            "key": "58f6dbb2-88b8-412b-9f63-3b5cba2988a7",
                             "type": "string",
                             "format": "image",
                             "label": "الصورة",
@@ -1850,7 +1850,7 @@
                         },
                         {
                             "id": "category_name",
-                            "key": "deded8da-0d1b-4a2f-b232-d43847f6719b",
+                            "key": "09c921b1-df9f-493d-a60e-11e25027ba9a",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "اختار التصنيف",
@@ -1868,7 +1868,7 @@
                     "value": [],
                     "required": false,
                     "minLength": 1,
-                    "maxLength": 5
+                    "maxLength": "8"
                 }
             ]
         },
