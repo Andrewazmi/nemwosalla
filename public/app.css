@@ -4661,7 +4661,7 @@ input[type=radio].sr-only:checked ~ div.main-menu .sub-menu {
   [dir="ltr"] .mm-spn.mm-spn--navbar:after{padding-left:3rem}
   [dir="rtl"] .mm-spn.mm-spn--navbar:after{padding-right:3rem}
   [dir="ltr"] .mm-spn.mm-spn--navbar.mm-spn--main:after{padding-left:0.75rem}
-  [dir="rtl"] .mm-spn.mm-spn--navbar.mm-spn--main:after{padding-right:0.75rem;text-align:center;}
+  [dir="rtl"] .mm-spn.mm-spn--navbar.mm-spn--main:after{padding-right:0.75rem}
   [dir=rtl] .mm-spn.mm-spn--navbar:before {
     transform: rotate(135deg) translateY(77%);
     right: 20px;
@@ -6221,7 +6221,7 @@ svg {
 }
 .animated-ads {
   width: 70vw;
-  height: 400px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6245,8 +6245,9 @@ svg {
   background-color: #404553;
   writing-mode: vertical-rl;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
   font-size: 28px;
   font-weight: bold;
   color: white;

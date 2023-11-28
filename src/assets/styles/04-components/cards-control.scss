@@ -183,7 +183,7 @@ svg {
 
 .animated-ads {
   width: 70vw;
-  height: 400px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -210,8 +210,9 @@ svg {
   background-color: #404553;
   writing-mode: vertical-rl;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
   font-size: 28px;
   font-weight: bold;
   color: white;
