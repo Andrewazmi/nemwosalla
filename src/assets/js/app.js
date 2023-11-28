@@ -244,8 +244,8 @@ class App extends AppHelpers {
       for (let j = 0; j < any; j++) {
         child[j].className = `${id}-nav hidden`;
       }
-      linkDesign[i].children[1].setAttribute("id", `${id}-category`);
-      linkDesign[i].children[2].setAttribute("id", `${id}-product`);
+      linkDesign[i].children[2].setAttribute("id", `${id}-category`);
+      linkDesign[i].children[3].setAttribute("id", `${id}-product`);
 
       const listProduct1 = document.getElementById(`${id}-product`);
       const navLinks1 = document.getElementsByClassName(`${id}-nav`);
@@ -971,6 +971,7 @@ ${iframeElement}
 
     const products = [];
     const offerDate = document.getElementById("offer-date");
+    console.log({ offerDate: offerDate.innerText });
     this._makeCountDown(
       DateTime.fromFormat(offerDate.innerText?.trim(), "yyyy-LL-dd").toJSDate()
     );
@@ -1054,13 +1055,17 @@ ${iframeElement}
 
     insert.innerHTML += dep;
   }
-
   _makeCountDown(futureDate = new Date()) {
     const secEl = document.getElementById("offer-sec");
     const minEl = document.getElementById("offer-min");
     const hrsEl = document.getElementById("offer-hrs");
 
     const dueDate = DateTime.fromJSDate(futureDate);
+
+    if (!dueDate.isValid) {
+      console.error("Invalid date. Please check the format of the offerDate.");
+      return;
+    }
 
     const id = setInterval(() => {
       const currentDate = DateTime.now();
@@ -1074,12 +1079,12 @@ ${iframeElement}
         "minutes",
         "seconds",
       ]);
-      secEl.innerText = remainingTime.seconds
+      secEl.innerText = +remainingTime.seconds
         .toFixed(0)
         .toString()
         .padStart(2, "0");
-      minEl.innerText = remainingTime.minutes.toString().padStart(2, "0");
-      hrsEl.innerText = remainingTime.hours.toString().padStart(2, "0");
+      minEl.innerText = +remainingTime.minutes.toString().padStart(2, "0");
+      hrsEl.innerText = +remainingTime.hours.toString().padStart(2, "0");
     }, 1000);
   }
 
