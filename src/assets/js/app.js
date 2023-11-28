@@ -13,6 +13,7 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
+    this.doneSubscribe();
     this.featureProductSlider();
     this.handleDropdown();
     this.scrollToTop();
@@ -50,6 +51,17 @@ class App extends AppHelpers {
   log(message) {
     salla.log(`ThemeApp(Raed)::${message}`);
     return this;
+  }
+
+  doneSubscribe() {
+    const subscribeBtn = document.getElementById("subscribe-btn");
+    const subscribeAlert = document.getElementById("subscribe-alert");
+    subscribeBtn.addEventListener("click", () => {
+      subscribeAlert.classList.add("done");
+      setTimeout(() => {
+        subscribeAlert.classList.remove("done");
+      }, 5000);
+    });
   }
 
   handleDropdown() {
@@ -294,19 +306,19 @@ class App extends AppHelpers {
         <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
           <div id="product-${
             products[0].id
-          }" class="product-entry product-entry--full-image overflow-hidden !justify-center !p-4" style="border-radius:40px;height:600px;background-color:#EAE9E9;">
-            <a class=" block" href="${
+          }" class="product-entry product-entry--full-image overflow-hidden !justify-center !p-4 flex-col justify-center align-center" style="border-radius:40px;height:600px;background-color:#EAE9E9;">
+            <a href="${
               products[0].url
             }" class="relative w-full h-[80%] overflow-hidden rounded-md hover:opacity-90 block mt-6">
               <img class="object-contain w-full h-full lazy loaded" src="${
                 products[0].image.url
               }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
             </a>
-            <a href="${
+            <a class="block" href="${
               products[0].url
             }" class="absolute top-0 bottom-0 left-0 right-0 transition-opacity duration-700  rounded-2xl" ></a>
-            <div class="absolute w-full h-full flex justify-center items-end ">
-              <div class="flex  flex-col  justify-center items-center mb-10">
+            <div class="flex justify-center items-end">
+              <div class="flex flex-col justify-center items-center mb-10">
   
                 <h1 class="text-sm font-bold leading-6 text-black product-entry__title">
                   <a  href="${

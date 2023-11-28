@@ -182,14 +182,14 @@ svg {
 }
 
 .animated-ads {
-  width: 70vw;
-  height: 500px;
+  width: 59vw;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   top: 50%;
-  right: calc(-70vw + 50px);
+  right: calc(-59vw + 50px);
   transform: translateY(-50%);
   z-index: 11;
   transition: all ease 0.7s;
@@ -200,7 +200,7 @@ svg {
 }
 
 .animated-ads .content {
-  width: calc(70vw - 50px);
+  width: calc(59vw - 50px);
   height: 100%;
 }
 
@@ -498,6 +498,10 @@ salla-search input {
   height: auto;
 }
 
+#slider-feature-product .swiper-wrapper {
+  width: 100px !important;
+}
+
 .s-slider-horizontal .s-slider-thumbs {
   display: flex;
   justify-content: center;
@@ -512,12 +516,22 @@ salla-search input {
   --tw-ring-color: none;
 }
 
-.rounded-full.swiper-slide.swiper-slide-visible {
+.s-slider-thumbs .s-slider-thumbs-container .swiper-slide {
   width: 15px !important;
   height: 15px !important;
   background-color: rgba(65,71,84,0.5) !important;
   margin-left: 0 !important;
   margin-right: 8px !important;
+}
+
+.subscribe-alert {
+  left: 1rem;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.subscribe-alert.done {
+  opacity: 1;
 }
 
 /* responsive */
@@ -575,6 +589,9 @@ salla-search input {
   }
 }
 @media (max-width: 768px) {
+  body {
+    padding-bottom: 64px;
+  }
   .cat-with-head {
     justify-content: center;
     width: 100%;
