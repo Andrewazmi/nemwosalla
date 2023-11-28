@@ -279,6 +279,21 @@
             "required": false,
             "minLength": 6,
             "maxLength": 30
+        },
+        {
+            "id": "mailchimp",
+            "type": "string",
+            "format": "text",
+            "label": "mailchimp",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "Placeholder text ..",
+            "icon": "sicon-format-text-alt",
+            "value": null,
+            "multilanguage": false,
+            "required": false,
+            "minLength": 6,
+            "maxLength": "1000"
         }
     ],
     "components": [
