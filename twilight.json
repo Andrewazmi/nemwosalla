@@ -2590,7 +2590,7 @@
             "fields": [
                 {
                     "id": "brands",
-                    "key": "613ea16c-0467-436a-8b3d-226bb9de2aca",
+                    "key": "fabd8e1c-c561-4c43-b92c-04bf2595c260",
                     "type": "collection",
                     "format": "collection",
                     "label": "brands",
@@ -2601,7 +2601,7 @@
                     "fields": [
                         {
                             "id": "image",
-                            "key": "07dd740f-0a96-4e14-982b-c06e75cbfc6f",
+                            "key": "e338cf3f-c4a0-4425-b3b1-47042ff0a204",
                             "type": "string",
                             "format": "image",
                             "label": "Image",
@@ -2615,7 +2615,7 @@
                         },
                         {
                             "id": "url",
-                            "key": "058f68c5-f23b-45d3-944c-0279d69c551d",
+                            "key": "44fa1646-06cc-4809-af8b-1574c68c5919",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
@@ -2634,7 +2634,7 @@
                     "value": [],
                     "required": false,
                     "minLength": "7",
-                    "maxLength": "7"
+                    "maxLength": "10"
                 }
             ]
         },
