@@ -197,18 +197,20 @@
         <span class="text-sm">الأقسام</span>
       </button>
     </a>
-    <a href="{{ store.url }}">
-      <button
-        type="button"
-        class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group"
-      >
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-					<path d="M12.4998 21.0361H8.57381C7.8572 21.0361 7.16429 20.7796 6.62043 20.3129C6.07658 19.8463 5.71773 19.2004 5.60881 18.4921L4.35381 10.3401C4.30997 10.0551 4.32829 9.76399 4.40751 9.48672C4.48673 9.20944 4.62497 8.95258 4.81275 8.73374C5.00054 8.51489 5.23342 8.33924 5.49545 8.21883C5.75747 8.09842 6.04244 8.0361 6.33081 8.03613H17.6698C17.9582 8.0361 18.2431 8.09842 18.5052 8.21883C18.7672 8.33924 19.0001 8.51489 19.1879 8.73374C19.3756 8.95258 19.5139 9.20944 19.5931 9.48672C19.6723 9.76399 19.6906 10.0551 19.6468 10.3401L19.2308 13.0401" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					<path d="M9 11.0361V6.03613C9 5.24048 9.31607 4.47742 9.87868 3.91481C10.4413 3.3522 11.2044 3.03613 12 3.03613C12.7956 3.03613 13.5587 3.3522 14.1213 3.91481C14.6839 4.47742 15 5.24048 15 6.03613V11.0361M16 21.0361L21 16.0361M21 21.0361V21.0461M16 16.0361V16.0461" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-        <span class="text-sm">خصومات</span>
-      </button>
-    </a>
+		{% if theme.settings.get("url_nav_bottom") %}
+			<a href="{{ theme.settings.get("offer_nav_bottom") }}">
+				<button
+					type="button"
+					class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+						<path d="M12.4998 21.0361H8.57381C7.8572 21.0361 7.16429 20.7796 6.62043 20.3129C6.07658 19.8463 5.71773 19.2004 5.60881 18.4921L4.35381 10.3401C4.30997 10.0551 4.32829 9.76399 4.40751 9.48672C4.48673 9.20944 4.62497 8.95258 4.81275 8.73374C5.00054 8.51489 5.23342 8.33924 5.49545 8.21883C5.75747 8.09842 6.04244 8.0361 6.33081 8.03613H17.6698C17.9582 8.0361 18.2431 8.09842 18.5052 8.21883C18.7672 8.33924 19.0001 8.51489 19.1879 8.73374C19.3756 8.95258 19.5139 9.20944 19.5931 9.48672C19.6723 9.76399 19.6906 10.0551 19.6468 10.3401L19.2308 13.0401" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M9 11.0361V6.03613C9 5.24048 9.31607 4.47742 9.87868 3.91481C10.4413 3.3522 11.2044 3.03613 12 3.03613C12.7956 3.03613 13.5587 3.3522 14.1213 3.91481C14.6839 4.47742 15 5.24048 15 6.03613V11.0361M16 21.0361L21 16.0361M21 21.0361V21.0461M16 16.0361V16.0461" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<span class="text-sm">خصومات</span>
+				</button>
+			</a>
+		{% endif %}
     <button
       type="button"
       class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group"
