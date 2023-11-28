@@ -616,6 +616,7 @@ salla-search input {
   .grid-feattures-category,
   .grid-feattures-pro {
     grid-template-columns: repeat(2, 1fr) !important;
+    padding-top: 35px;
   }
   .grid-feattures-category .image {
     width: 120px;

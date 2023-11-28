@@ -6607,6 +6607,12 @@ salla-search input {
   .grid-feattures-pro {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+  .grid-feattures,
+  .grid-feattures-about,
+  .grid-feattures-category,
+  .grid-feattures-pro {
+    padding-top: 35px;
+  }
   .grid-feattures-category .image {
     width: 120px;
     height: 120px;
