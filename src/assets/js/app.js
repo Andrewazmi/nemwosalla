@@ -972,9 +972,7 @@ ${iframeElement}
     const products = [];
     const offerDate = document.getElementById("offer-date");
     console.log({ offerDate: offerDate.innerText });
-    this._makeCountDown(
-      DateTime.fromFormat(offerDate.innerText?.trim(), "yyyy-LL-dd").toJSDate()
-    );
+    this._makeCountDown(offerDate.innerText);
 
     for (let i = 0; i < productsIDs.length; i++) {
       const response = await salla.product.getDetails(productsIDs[i], [
@@ -1055,37 +1053,33 @@ ${iframeElement}
 
     insert.innerHTML += dep;
   }
-  _makeCountDown(futureDate = new Date()) {
-    const secEl = document.getElementById("offer-sec");
-    const minEl = document.getElementById("offer-min");
-    const hrsEl = document.getElementById("offer-hrs");
+  _makeCountDown(inputDateTimeStr) {
+    let timerId = setInterval(() => {
+      const secEl = document.getElementById("offer-sec");
+      const minEl = document.getElementById("offer-min");
+      const hrsEl = document.getElementById("offer-hrs");
 
-    const dueDate = DateTime.fromJSDate(futureDate);
+      let inputDateTime = new Date(inputDateTimeStr);
+      let currentDateTime = new Date();
+      let timeDifference = +inputDateTime - +currentDateTime;
+      let secondsDifference = +timeDifference / 1000;
 
-    if (!dueDate.isValid) {
-      console.error("Invalid date. Please check the format of the offerDate.");
-      return;
-    }
+      if (secondsDifference < 0) {
+        clearInterval(timerId);
+        secEl.innerText = "00";
+        minEl.innerText = "00";
+        hrsEl.innerText = "00";
+      } else {
+        let hours = Math.floor(secondsDifference / 3600);
+        let remainingSeconds = secondsDifference % 3600;
+        let minutes = Math.floor(remainingSeconds / 60);
+        let seconds = Math.floor(remainingSeconds % 60);
 
-    const id = setInterval(() => {
-      const currentDate = DateTime.now();
-      if (currentDate >= dueDate) {
-        clearInterval(id);
-        return;
+        hrsEl.innerText = hours < 10 ? `0${hours}` : hours;
+        minEl.innerText = minutes < 10 ? `0${minutes}` : minutes;
+        secEl.innerText = seconds < 10 ? `0${seconds}` : seconds;
       }
-
-      const remainingTime = dueDate.diff(currentDate, [
-        "hours",
-        "minutes",
-        "seconds",
-      ]);
-      secEl.innerText = +remainingTime.seconds
-        .toFixed(0)
-        .toString()
-        .padStart(2, "0");
-      minEl.innerText = +remainingTime.minutes.toString().padStart(2, "0");
-      hrsEl.innerText = +remainingTime.hours.toString().padStart(2, "0");
-    }, 1000);
+    }, 900);
   }
 
   //time stamp
