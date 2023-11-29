@@ -14,7 +14,10 @@
 {% extends "layouts.master" %}
 
 {% block content %}
-    <div class=" container mb-8 sm:mb-24">
+    <div class="container mb-8 sm:mb-24">
+        {% if theme.settings.get("blog_img_main") %}
+            <img src="{{theme.settings.get("blog_img_main")}}" />
+        {% endif %}
       <div class="center-between">
 
         {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
@@ -53,8 +56,8 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-8 gap-8">
-            <nav aria-label="Sidebar" class="hidden lg:block lg:sticky shrink-0 top-24 col-span-2" id="filters-menu">
+        <div class="grid grid-cols-1 gap-8">
+            {# <nav aria-label="Sidebar" class="hidden lg:block lg:sticky shrink-0 top-24 col-span-2" id="filters-menu">
                 <h2 class="font-bold mb-3">{{ trans('pages.blog_categories.categories') }}</h2>
                 <ul>
                     {% for category in categories %}
@@ -65,7 +68,7 @@
                         </li>
                     {% endfor %}
                 </ul>
-            </nav>
+            </nav> #}
 
             <div class="main-content lg:col-span-6">
                 {% if slides|length %}
@@ -78,11 +81,11 @@
                       pagination
                       class="blog-slider block rounded overflow-hidden mb-2.5 lg:mb-8">
                         <div slot="items">
-                            {% for article in slides %}
-                                <div class="swiper-slide has-overlay blog-slider__slide h-[300px] md:h-[400px] relative bg-border-color flex justify-center {{ article.has_image ? '' : 'no-thumb' }}">
+                            {% for article in slides %} {# has-overlay #}
+                                <div class="swiper-slide blog-slider__slide h-[300px] md:h-[400px] relative bg-border-color flex justify-center {{ article.has_image ? '' : 'no-thumb' }}">
                                     <img class="{{ article.image.url|is_placeholder?'sm:h-full w-20 object-contain opacity-50':'object-cover h-full w-full' }}"
                                          src="{{ article.image.url }}" alt="{{ article.image.alt }}">
-                                    <div class="absolute z-10 bottom-0 rtl:right-0 ltr:left-0 p-4 pb-10 rtl:lg:pr-10 ltr:lg:pl-10 lg:pb-20">
+                                    {# <div class="absolute z-10 bottom-0 rtl:right-0 ltr:left-0 p-4 pb-10 rtl:lg:pr-10 ltr:lg:pl-10 lg:pb-20">
                                         <div class="blog-slider__content relative">
                                             <div class="z-20 w-full md:w-5/6 lg:w-6/12 text-white">
                                                 <div data-swiper-parallax="-500"  class="block-slide-anime">
@@ -104,13 +107,13 @@
                                                 <p data-swiper-parallax="-300"  class="line-clamp-2 block-slide-anime description">{{ article.summary }}</p>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> #}
                                 </div>
                             {% endfor %}
                         </div>
                     </salla-slider>
                 {% else %}
-                    <div class="sr-only lg:not-sr-only ">
+                    <div class="sr-only lg:not-sr-only">
                         <h1 class="blog-category__title font-bold text-lg mb-8">{{ page.title }}</h1>
                     </div>
                 {% endif %}
@@ -119,7 +122,7 @@
 
                     <salla-infinite-scroll class="grid md:grid-cols-2 gap-2.5 md:gap-8" next-page="{{ articles.next_page }}" autoload>
                         {% for article in articles %}
-                            <div class='list-block post-entry relative h-full transition-shadow duration-500 bg-white hover:shadow-default rounded-lg justify-around overflow-hidden flex flex-col'>
+                            <div class='list-block post-entry relative h-full transition-shadow duration-500 bg-white hover:shadow-default rounded-lg justify-around overflow-hidden flex flex-col p-4 pb-2 bg-[#D9D9D9]'>
                                 <a href="{{ article.url }}"
                                    class='post-entry__image relative overflow-hidden hover:opacity-90 w-full h-56 bg-border-color flex items-center justify-center'>
                                     <img class="{{ article.image.url|is_placeholder?'sm:h-full w-20 object-contain opacity-60':'h-full w-full object-cover' }}"
@@ -127,33 +130,37 @@
                                          alt="{{ article.image.alt }}">
                                 </a>
 
-                                <div class="flex-1 px-5 pt-5 pb-7">
+                                <div class="flex-1 px-5 pt-5 pb-0">
                                     <div class="mb-2.5 text-gray-500 rounded-md inline-flex text-sm rtl:space-x-reverse space-x-5">
                                         <div class="flex items-center">
-                                            <i class="sicon-calendar-date rtl:ml-1 ltr:mr-1"></i>
-                                            <span class="">{{ article.created_at|date }}</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" viewBox="0 0 70 65" fill="none" class="text-black">
+                                                <path d="M57.918 8.12565H55.043V2.70898H49.293V8.12565H20.543V2.70898H14.793V8.12565H11.918C8.75547 8.12565 6.16797 10.5632 6.16797 13.5423V56.8757C6.16797 59.8548 8.75547 62.2923 11.918 62.2923H57.918C61.0805 62.2923 63.668 59.8548 63.668 56.8757V13.5423C63.668 10.5632 61.0805 8.12565 57.918 8.12565ZM57.918 56.8757H11.918V27.084H57.918V56.8757ZM57.918 21.6673H11.918V13.5423H57.918V21.6673Z" fill="#212121"/>
+                                            </svg>
+                                            <span class="text-xl font-black text-black">{{ article.created_at|date }}</span>
                                         </div>
                                         <a href="{{ article.author.url }}" class="flex items-center hover:text-dark">
-                                            <i class="sicon-user rtl:ml-1 ltr:mr-1"></i>
-                                            <span class="">{{ article.author.name }}</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="45" viewBox="0 0 88 83" fill="none" class="text-black">
+                                                <path d="M43.7148 14.1079C44.7145 14.1079 45.7044 14.2958 46.628 14.6608C47.5516 15.0257 48.3908 15.5607 49.0977 16.2351C49.8046 16.9095 50.3653 17.7101 50.7479 18.5912C51.1304 19.4723 51.3273 20.4167 51.3273 21.3704C51.3273 22.3242 51.1304 23.2686 50.7479 24.1497C50.3653 25.0308 49.8046 25.8314 49.0977 26.5058C48.3908 27.1802 47.5516 27.7151 46.628 28.0801C45.7044 28.4451 44.7145 28.6329 43.7148 28.6329C41.6959 28.6329 39.7596 27.8678 38.332 26.5058C36.9044 25.1438 36.1023 23.2966 36.1023 21.3704C36.1023 19.4443 36.9044 17.5971 38.332 16.2351C39.7596 14.8731 41.6959 14.1079 43.7148 14.1079ZM43.7148 45.2329C54.4811 45.2329 65.8273 50.2821 65.8273 52.4954V56.2996H21.6023V52.4954C21.6023 50.2821 32.9486 45.2329 43.7148 45.2329ZM43.7148 7.53711C35.7036 7.53711 29.2148 13.7275 29.2148 21.3704C29.2148 29.0134 35.7036 35.2038 43.7148 35.2038C51.7261 35.2038 58.2148 29.0134 58.2148 21.3704C58.2148 13.7275 51.7261 7.53711 43.7148 7.53711ZM43.7148 38.6621C34.0361 38.6621 14.7148 43.2963 14.7148 52.4954V62.8704H72.7148V52.4954C72.7148 43.2963 53.3936 38.6621 43.7148 38.6621Z" fill="#212121"/>
+                                            </svg>
+                                            <span class="text-xl font-black text-black">{{ article.author.name }}</span>
                                         </a>
                                     </div>
 
-                                    <h3 class="post-entry__title  text-sm font-bold text-gray-800 leading-6 mb-2.5">
+                                    <h3 class="post-entry__title text-lg font-normal leading-6">
                                         <a href="{{ article.url }}">{{ article.title }}</a>
                                     </h3>
-                                    <p class="text-sm text-gray-500 leading-6 mb-2.5">
+                                    {# <p class="text-sm text-gray-500 leading-6 mb-2.5">
                                         {{ article.summary }}
-                                    </p>
+                                    </p> #}
                                 </div>
 
                                 {% if article.tags|length %}
-                                    <div class="p-4 flex flex-wrap items-center border-t border-gray-200">
+                                    <div class="px-4 py-0 flex flex-wrap items-center">
                                         {% for tag in article.tags %}
                                             <a href="{{ tag.url }}"
                                                class="py-2 px-4 rounded-large inline-flex items-center text-gray-500 hover:text-dark justify-center text-sm">
-                                                <i class="font-medium sicon-tag rtl:ml-1.5 ltr:mr-1.5"></i>
-                                                <span class="fix-align whitespace-nowrap">{{ tag.name }}</span>
+                                                <i class="font-medium sicon-tag rtl:ml-1.5 ltr:mr-1.5 text-xl"></i>
+                                                <span class="fix-align whitespace-nowrap text-xl font-extrabold text-black">{{ tag.name }}</span>
                                             </a>
                                         {% endfor %}
                                     </div>
