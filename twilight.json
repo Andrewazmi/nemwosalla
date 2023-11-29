@@ -294,6 +294,18 @@
             "required": false,
             "minLength": 6,
             "maxLength": "1000"
+        },
+        {
+            "id": "image_secodary_pages",
+            "type": "string",
+            "format": "image",
+            "label": "image _secodary_pages",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "e.g. https://hostname.com/image.png",
+            "icon": "sicon-image",
+            "value": null,
+            "required": false
         }
     ],
     "components": [
