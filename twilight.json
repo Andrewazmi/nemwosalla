@@ -306,6 +306,18 @@
             "icon": "sicon-image",
             "value": null,
             "required": false
+        },
+        {
+            "id": "blog_img_main",
+            "type": "string",
+            "format": "image",
+            "label": "blog_img_main",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "e.g. https://hostname.com/image.png",
+            "icon": "sicon-image",
+            "value": null,
+            "required": false
         }
     ],
     "components": [
