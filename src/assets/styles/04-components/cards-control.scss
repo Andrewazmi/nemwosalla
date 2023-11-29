@@ -534,6 +534,25 @@ salla-search input {
   opacity: 1;
 }
 
+.sub-menu {
+  background-color: #334155 !important;
+  border: none;
+  padding: 0.5rem;
+}
+
+.sub-menu li {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sub-menu ul li a {
+  padding: 0.5rem 1rem !important;
+}
+
+.sub-menu ul li a:hover {
+  background-color: #435570 !important;
+}
+
 /* responsive */
 @media (max-width: 1024px) {
   .menu-style {
