@@ -15,14 +15,34 @@
 
 {% block content %}
     <div class="container mb-8 sm:mb-24">
-        {% if theme.settings.get("blog_img_main") %}
-            <img src="{{theme.settings.get("blog_img_main")}}" />
-        {% endif %}
-      <div class="center-between">
+        <div class="relative">
+            <div class="absolute z-20">
+                {% component 'footer.menu' %}
+            </div>
+            {% if theme.settings.get("blog_img_main") %}
+                <div class="relative">
+                    <div class="absolute w-full h-full top-0 left-0 bg-black opacity-25"></div>
+                    <img src="{{theme.settings.get("blog_img_main")}}" />
+                </div>
+            {% endif %}
+        </div>
+    <div class="center-between">
 
         {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
         <nav class="breadcrumbs w-full py-5">
             {% component 'header.breadcrumbs' %}
+            <div class="flex justify-start items-center gap-4 mt-6">
+                <h2 class="font-bold">{{ trans('pages.blog_categories.categories') }}</h2>
+                <ul>
+                    {% for category in categories %}
+                        <li {{ category.is_current ? ' class="text-primary "' : '' }}>
+                            <a class="block font-bold text-xl hover:text-primary" href="{{ category.url }}">
+                                ({{ category.name }})
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </nav>
 
         {# Categories filter dropdown #}
@@ -120,9 +140,9 @@
                 {% if articles|length %}
                     {% hook 'blog:index.items.start' %}
 
-                    <salla-infinite-scroll class="grid md:grid-cols-2 gap-2.5 md:gap-8" next-page="{{ articles.next_page }}" autoload>
+                    <salla-infinite-scroll class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-8" next-page="{{ articles.next_page }}" autoload>
                         {% for article in articles %}
-                            <div class='list-block post-entry relative h-full transition-shadow duration-500 bg-white hover:shadow-default rounded-lg justify-around overflow-hidden flex flex-col p-4 pb-2 bg-[#D9D9D9]'>
+                            <div class='list-block post-entry relative h-full transition-shadow duration-500 hover:shadow-default rounded-lg justify-around overflow-hidden flex flex-col p-4 pb-2 bg-[#D9D9D9]'>
                                 <a href="{{ article.url }}"
                                    class='post-entry__image relative overflow-hidden hover:opacity-90 w-full h-56 bg-border-color flex items-center justify-center'>
                                     <img class="{{ article.image.url|is_placeholder?'sm:h-full w-20 object-contain opacity-60':'h-full w-full object-cover' }}"

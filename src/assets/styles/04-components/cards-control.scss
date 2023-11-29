@@ -45,6 +45,31 @@ body {
   background-color: #fff;
 }
 
+.blog-index .swiper-pagination-bullet {
+  width: 65px;
+  height: 8px;
+}
+
+.blog-index .absolute .footer-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 5rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.blog-index .absolute .footer-list a {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.blog-index .absolute h3 {
+  display: none;
+}
+
 @media (max-width: 1025px) {
   .icons-header {
     display: hidden;
