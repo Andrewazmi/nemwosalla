@@ -236,11 +236,9 @@ class ProductCard extends HTMLElement {
     <div class=" flex justify-center items-center">
         <a href="${this.product?.url}">
           <img class="s-product-card-image-${
-            salla.url.is_placeholder(this.product?.image?.url)
-              ? "contain"
-              : this.fitImageHeight
-              ? this.fitImageHeight
-              : "cover"
+          
+               "contain"
+              
           } lazy "
             src=${this.placeholder}
             alt=${this.product?.image?.alt}
