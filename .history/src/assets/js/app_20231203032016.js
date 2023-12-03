@@ -29,7 +29,6 @@ class App extends AppHelpers {
     this.removeElan();
     this.initiateNotifier();
     this.initiateMobileMenu();
-    this.toggleProductFilterMenu();
     this.getProductsWithLimitedOffers();
     if (header_is_sticky) {
       this.initiateStickyMenu();
@@ -1290,8 +1289,7 @@ ${iframeElement}
   toggleProductFilterMenu() {
     const buttonEl = document.getElementById('product-filter');
     const menuEl = document.getElementById('popup-filter');
-    const closeBtnEl = document.getElementById('popup-filter-close-btn');
-
+    
     let isMenuOpen = false;
 
     const onOpen = () => {
@@ -1304,8 +1302,7 @@ ${iframeElement}
       isMenuOpen = false;
     }
 
-    buttonEl.onclick = onOpen;
-    closeBtnEl.onclick = onClose;
+
   }
 
   initiateCollapse() {

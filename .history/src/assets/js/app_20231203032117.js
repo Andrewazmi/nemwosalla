@@ -1290,7 +1290,6 @@ ${iframeElement}
   toggleProductFilterMenu() {
     const buttonEl = document.getElementById('product-filter');
     const menuEl = document.getElementById('popup-filter');
-    const closeBtnEl = document.getElementById('popup-filter-close-btn');
 
     let isMenuOpen = false;
 
@@ -1304,8 +1303,13 @@ ${iframeElement}
       isMenuOpen = false;
     }
 
-    buttonEl.onclick = onOpen;
-    closeBtnEl.onclick = onClose;
+    buttonEl.onclick = () => {
+      if (isMenuOpen) {
+        onClose();
+      } else {
+        onOpen();
+      }
+    }
   }
 
   initiateCollapse() {
