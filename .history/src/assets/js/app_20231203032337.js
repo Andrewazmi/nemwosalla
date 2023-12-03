@@ -1305,7 +1305,7 @@ ${iframeElement}
     }
 
     buttonEl.onclick = onOpen;
-    closeBtnEl.onclick = onClose;
+    closeBtnEl = onClose;
   }
 
   initiateCollapse() {
