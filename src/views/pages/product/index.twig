@@ -119,10 +119,9 @@
 {% if theme.settings.get("list_nav_category") %}
 
 <section class="s-block s-block--categories mt-10 navlink-design-category">
-	
 	<div>
 		{% for navlink in theme.settings.get("list_nav_category") %}
-			<div class="nav-links-category hidden">{{navlink.category.value[0]|json_encode()}}</div>
+			<div class="nav-links hidden">{{navlink.category[0].value|json_encode()}}</div>
 		{% endfor %}
 
 		

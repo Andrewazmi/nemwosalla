@@ -314,7 +314,7 @@ class App extends AppHelpers {
         if (category) {
           salla.product.categories(category).then((response) => {
             const data = `
-                  <div class="navLink-show cursor-pointer font-bold" onclick="getlistProductCategory(${category} , this , ${id})">
+                  <div class="navLink-show py-2 px-3 rounded-2xl cursor-pointer font-bold" onclick="getlistProductCategory(${category} , this , ${id})">
                     ${response.data.name}
                   </div>
                   `;
