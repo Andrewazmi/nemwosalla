@@ -116,12 +116,12 @@
 	</style>
 	{# tracking services, custom css feature. #}
 	{% hook 'head:end' %}
-</head>
+</head> 
 <body id="app" class="overflow-x-hidden w-screen {% hook 'body:classes' %} bg-gray-50
-								  {{ theme.settings.get('footer_is_dark') ? ' footer-is-dark' : ' footer-is-light' }}
-								  {{ theme.settings.get('topnav_is_dark') ? ' topnav-is-dark' : '' }}
-								  {{ theme.settings.get('sticky_add_to_cart') ? ' is-sticky-product-bar' : '' }}
-								  ">
+						  {{ theme.settings.get('footer_is_dark') ? ' footer-is-dark' : ' footer-is-light' }}
+						  {{ theme.settings.get('topnav_is_dark') ? ' topnav-is-dark' : '' }}
+						  {{ theme.settings.get('sticky_add_to_cart') ? ' is-sticky-product-bar' : '' }}
+						  ">
 	<noscript>
 		To get full functionality of this site you need to enable JavaScript. Here is how
 		<a href="https://www.enable-javascript.com/" rel="noreferrer" target="_blank">To enable JavaScript on webpage</a>.
@@ -136,7 +136,7 @@
 	<script defer src="{{ 'app.js' | asset }}"></script>
 
 	{# Twilight Components #}
-	<salla-offer-modal></salla-offer-modal>
+	<salla-offer-modal></salla-offer-modal> 
 	<salla-search></salla-search>
 
 	{% if user.type=='guest' %}
@@ -149,17 +149,14 @@
 </body>
 <script>
 	const modal = document.getElementById("productModal")
-
-function clickModal(event) {
-const modalContent = document.getElementById("modalProduct")
-salla.product.getDetails(event).then((response) => {
-console.log({data: response.data})
-const product = response.data
-
-console.log({productImages: product.images});
-
-modalContent.innerHTML = `
-		<div class="quickview__content circle">
+	
+	function clickModal(event) {
+	const modalContent = document.getElementById("modalProduct")
+	salla.product.getDetails(event).then((response) => {
+	console.log({data: response.data})
+	const product = response.data
+	modalContent.innerHTML = `
+<div class="quickview__content circle">
 	<div class="relative quickview__content circle">
 		<button type="button" onclick="closeModal()" class="flex items-center justify-center w-16 h-16 mb-8 text-xl quickview__btn-close">x</button>
 		<div class="flex flex-col items-start justify-start w-full space-y-3">
@@ -185,7 +182,8 @@ modalContent.innerHTML = `
 						<div class="w-full quickview-single-info">
 							<div class="w-full content_product_detail">
 								<a href="${product.url}" class="hover:text-primary text-store-text-primary">
-									<h2 class="product-quickview_title ">${product.name}</h2>
+									<h2 class="product-quickview_title ">
+										${product.name}</h2>
 								</a>
 								<small class="product-quickview__taxable text-store-text-secondary">${product.is_taxable ? 'السعر شامل الضريبة' : 'السعر غير شامل الضريبة'}</small>
 								<div class="product-quickview__price">
@@ -298,10 +296,10 @@ modalContent.innerHTML = `
 				</div>
 				<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
 					<div class="relative w-full h-60">
-						<img class="top-0 left-0 object-fill w-full h-full absoulte" src="${product.images?.[0]?.url}"/>
+						<img class="top-0 left-0 object-fill w-full h-full absoulte"/>
 					</div>
 					<div class="relative w-full h-60">
-						<img class="top-0 left-0 object-fill w-full h-full absoulte" src="${product.images?.[1]?.url}"/>
+						<img class="top-0 left-0 object-fill w-full h-full absoulte"/>
 					</div>
 				</div>
 				<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
@@ -328,14 +326,17 @@ modalContent.innerHTML = `
 		</div>
 	</div>
 </div>
+
 	`
-});
-modal.classList.replace('hidden', 'flex');
-
-}
-
-function closeModal() {
-modal.classList.replace('flex', 'hidden');
-
-}
-</script></html>
+	});
+		modal.classList.replace('hidden', 'flex');		
+				
+				}
+				
+	function closeModal() {
+		modal.classList.replace('flex', 'hidden');		
+		
+	}
+		
+	</script>
+		</html>

@@ -155,9 +155,6 @@ const modalContent = document.getElementById("modalProduct")
 salla.product.getDetails(event).then((response) => {
 console.log({data: response.data})
 const product = response.data
-
-console.log({productImages: product.images});
-
 modalContent.innerHTML = `
 		<div class="quickview__content circle">
 	<div class="relative quickview__content circle">

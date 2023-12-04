@@ -155,9 +155,6 @@ const modalContent = document.getElementById("modalProduct")
 salla.product.getDetails(event).then((response) => {
 console.log({data: response.data})
 const product = response.data
-
-console.log({productImages: product.images});
-
 modalContent.innerHTML = `
 		<div class="quickview__content circle">
 	<div class="relative quickview__content circle">
@@ -298,10 +295,10 @@ modalContent.innerHTML = `
 				</div>
 				<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
 					<div class="relative w-full h-60">
-						<img class="top-0 left-0 object-fill w-full h-full absoulte" src="${product.images?.[0]?.url}"/>
+						<img class="top-0 left-0 object-fill w-full h-full absoulte" src="${product.images[0].url}"/>
 					</div>
 					<div class="relative w-full h-60">
-						<img class="top-0 left-0 object-fill w-full h-full absoulte" src="${product.images?.[1]?.url}"/>
+						<img class="top-0 left-0 object-fill w-full h-full absoulte" src="${product.images[1].url}"/>
 					</div>
 				</div>
 				<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
