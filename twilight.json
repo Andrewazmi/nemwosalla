@@ -318,6 +318,34 @@
             "icon": "sicon-image",
             "value": null,
             "required": false
+        },
+        {
+            "id": "category_slider",
+            "type": "collection",
+            "format": "collection",
+            "label": "category_slider",
+            "description": null,
+            "labelHTML": null,
+            "item_label": null,
+            "icon": "sicon-list-add",
+            "fields": [
+                {
+                    "id": "category_slider.image_1",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image 1",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                }
+            ],
+            "value": [],
+            "required": false,
+            "minLength": 1,
+            "maxLength": 5
         }
     ],
     "components": [
