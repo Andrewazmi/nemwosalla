@@ -385,6 +385,43 @@
                     "required": false,
                     "minLength": 6,
                     "maxLength": 30
+                },
+                {
+                    "id": "slider_banner_category.content_direction",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "content_direction",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [
+                        {
+                            "label": "right",
+                            "value": "start",
+                            "key": "74a87505-dde3-4128-a5ee-850283fdca14"
+                        }
+                    ],
+                    "options": [
+                        {
+                            "label": "right",
+                            "value": "start",
+                            "key": "74a87505-dde3-4128-a5ee-850283fdca14"
+                        },
+                        {
+                            "label": "left",
+                            "value": "end",
+                            "key": "1dab3879-3097-401d-8879-107b989919c0"
+                        },
+                        {
+                            "label": "center",
+                            "value": "center",
+                            "key": "84307622-adb1-4deb-884c-1f7ab09ceda0"
+                        }
+                    ],
+                    "source": "Manual",
+                    "multichoice": true,
+                    "searchable": true,
+                    "required": false
                 }
             ],
             "value": [],
