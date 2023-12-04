@@ -422,6 +422,18 @@
             "required": false,
             "minLength": 1,
             "maxLength": 5
+        },
+        {
+            "id": "gif_image",
+            "type": "string",
+            "format": "image",
+            "label": "gif_image",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "e.g. https://hostname.com/image.png",
+            "icon": "sicon-image",
+            "value": null,
+            "required": false
         }
     ],
     "components": [
