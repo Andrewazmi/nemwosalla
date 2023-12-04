@@ -340,6 +340,82 @@
                     "icon": "sicon-image",
                     "value": null,
                     "required": false
+                },
+                {
+                    "id": "category_slider.url_1",
+                    "type": "string",
+                    "format": "url",
+                    "inputType": "url",
+                    "label": "URL 1",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://salla.sa",
+                    "icon": "sicon-link",
+                    "value": null,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "category_slider.title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "category_slider.subttile",
+                    "type": "string",
+                    "format": "text",
+                    "label": "subttile",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "category_slider.content_direction",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "content_direction",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [
+                        {
+                            "label": "right",
+                            "value": "start",
+                            "key": "11a92b7c-cc16-463e-a664-06e5bf89c9d5"
+                        },
+                        {
+                            "label": "left",
+                            "value": "end",
+                            "key": "21026c9f-38cb-47b8-9677-e75e60210cea"
+                        },
+                        {
+                            "label": "center",
+                            "value": "center",
+                            "key": "d3092f23-ba3a-4ab1-8211-5717be6197dc"
+                        }
+                    ],
+                    "source": "Manual",
+                    "multichoice": true,
+                    "searchable": true,
+                    "required": false
                 }
             ],
             "value": [],
