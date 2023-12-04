@@ -105,7 +105,7 @@
 				</div>
 
 				{% hook 'product:index.items.start' %}
-				<div class="flex min-h-screen">
+				<div class="flex ">
 					<salla-products-list class="flex-1 min-w-0 overflow-auto " source="{{ page.slug }}" source-value="{{ page.id }}" {{ filters?'filters-Results':'' }}></salla-products-list>
 				</div>
 				{% hook 'product:index.items.end' %}
