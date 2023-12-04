@@ -149,17 +149,6 @@
 </body>
 <script>
 	const modal = document.getElementById("productModal")
-	const biggerViewImage = document.getElementById('bigger-view-image');
-
-	function onViewImage() {
-		biggerViewImage.classList.replace('hidden', 'block');
-		console.log({biggerViewImage});
-	}
-
-	function onCloseViewImage() {
-		biggerViewImage.classList.replace('block', 'hidden');
-	}
-
 
 function clickModal(event) {
 const modalContent = document.getElementById("modalProduct")
@@ -172,35 +161,35 @@ console.log({data: response.data})
 const product = response.data
 
 modalContent.innerHTML = `
-<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
-	<button type="button" onclick="closeModal()" class="flex items-center justify-center w-16 h-16 mb-8 text-5xl font-black h-[10%]">x</button>
-	<div class="grid w-full grid-cols-2 gap-5 px-5 py-2 h-[90%]">
-		<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
-			<div class="flex-[4] bg-[#F1EBEB] w-full h-96 flex flex-col space-y-4 items-center justify-start px-7 py-5">
-				<div  class="h-64 w-96">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.image?.url}"/>
+<div class="flex flex-col items-start justify-start space-y-5">
+	<button type="button" onclick="closeModal()" class="flex items-center justify-center w-16 h-16 mb-8 text-xl font-black">x</button>
+	<div class="grid w-full grid-cols-2 gap-5 px-5 py-2">
+		<div class="flex flex-col items-start justify-start w-full space-y-5">
+			<div class="bg-[#F1EBEB] w-full flex flex-col items-center justify-start px-7 pb-5">
+				<div class="w-full h-36">
+					<img class="object-cover w-full h-full"/>
 				</div>
-				<div class="flex flex-row-reverse items-center justify-center flex-1 w-full space-x-3">
+				<div class="flex items-center justify-center w-full space-x-3">
 					<button class="w-4 h-4 rounded-full bg-[#D9D9D9] focus:bg-[#334155]"></button>
 					<button class="w-4 h-4 rounded-full bg-[#D9D9D9] focus:bg-[#334155]"></button>
 					<button class="w-4 h-4 rounded-full bg-[#D9D9D9] focus:bg-[#334155]"></button>
 				</div>
-				<div class="flex items-center justify-start flex-1 w-full ">
-					<div class="bg-[#334155] rounded-md p-0.5 flex items-center justify-start">
+				<div class="flex items-center justify-start">
+					<div class="rounded-md p-0.5 flex items-center justify-start">
 						<p class="text-sm text-white">رؤية منتج مشابهة</p>
 					</div>
 				</div>
 			</div>
-			<div class="flex-[2] grid justify-start w-full grid-cols-4 gap-5">
-				<div class="w-full h-36">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[0]?.url}" />
+			<div class="grid justify-start w-full grid-cols-4 gap-4">
+				<div class="w-20 h-20">
+					<img class="object-cover w-full h-full"/>
 				</div>
-				<div  class="w-full h-36">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[1]?.url}" />
+				<div class="w-20 h-20">
+					<img class="object-cover w-full h-full"/>
 				</div>
 			</div>
 		</div>
-		<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
+		<div class="flex flex-col items-start justify-start w-full space-y-5">
 			<div class="flex items-center justify-between w-full">
 				<p class="text-[#707070] text-2xl text-right">السعر شامل الضريبة</p>
 				<div class="flex items-center justify-end space-x-2">
@@ -253,6 +242,19 @@ modalContent.innerHTML = `
 			</div>
 			<div class="flex items-center justify-start w-full space-x-2">
 				<svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<g clip-path="url(#clip0_1072_446)">
+						<path d="M53.3991 72.3887C62.8984 72.3887 72.0086 68.6584 78.7256 62.0184C85.4426 55.3785 89.2162 46.3727 89.2162 36.9824C89.2162 27.5921 85.4426 18.5864 78.7256 11.9464C72.0086 5.30646 62.8984 1.57617 53.3991 1.57617C43.8998 1.57617 34.7896 5.30646 28.0726 11.9464C21.3556 18.5864 17.582 27.5921 17.582 36.9824C17.582 46.3727 21.3556 55.3785 28.0726 62.0184C34.7896 68.6584 43.8998 72.3887 53.3991 72.3887ZM68.4709 30.6376L52.3532 46.5704C52.0205 46.9002 51.6253 47.1618 51.1902 47.3403C50.755 47.5187 50.2885 47.6106 49.8174 47.6106C49.3463 47.6106 48.8798 47.5187 48.4446 47.3403C48.0095 47.1618 47.6143 46.9002 47.2815 46.5704L40.1181 39.4892C39.4456 38.8244 39.0678 37.9226 39.0678 36.9824C39.0678 36.0422 39.4456 35.1405 40.1181 34.4757C40.7907 33.8108 41.7029 33.4373 42.654 33.4373C43.6051 33.4373 44.5173 33.8108 45.1898 34.4757L49.8174 39.0572L63.3992 25.6241C63.7322 25.2949 64.1276 25.0338 64.5627 24.8556C64.9978 24.6775 65.4641 24.5858 65.9351 24.5858C66.406 24.5858 66.8724 24.6775 67.3075 24.8556C67.7426 25.0338 68.1379 25.2949 68.4709 25.6241C68.8039 25.9533 69.0681 26.3441 69.2483 26.7742C69.4286 27.2043 69.5213 27.6653 69.5213 28.1309C69.5213 28.5964 69.4286 29.0574 69.2483 29.4875C69.0681 29.9176 68.8039 30.3084 68.4709 30.6376Z" fill="#0FA958"/>
+					</g>
+					<defs>
+						<clipPath id="clip0_1072_446">
+							<rect width="15" height="15" fill="white"/>
+						</clipPath>
+					</defs>
+				</svg>
+				<p class="text-base">متوفر</p>
+			</div>
+			<div class="flex items-center justify-start w-full space-x-2">
+				<svg width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M4.05556 64.8889C4.05556 69.35 7.70556 73 12.1667 73H44.6111C49.0722 73 52.7222 69.35 52.7222 64.8889V16.2222H4.05556V64.8889ZM12.1667 24.3333H44.6111V64.8889H12.1667V24.3333ZM42.5833 4.05556L38.5278 0H18.25L14.1944 4.05556H0V12.1667H56.7778V4.05556H42.5833Z" fill="#334155"/>
 				</svg>
 				<p class="text-base">المتبقي 20
@@ -270,12 +272,7 @@ modalContent.innerHTML = `
 			</div>
 		</div>
 	</div>
-
-    <div id="bigger-view-image" class="hidden fixed z-[2000] w-96 h-96 inset-0">
-        <img class="object-cover w-full h-full" />
-    </div>
 </div>
-
 `
 });
 modal.classList.replace('hidden', 'flex');

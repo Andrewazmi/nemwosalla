@@ -192,12 +192,13 @@ modalContent.innerHTML = `
 				</div>
 			</div>
 			<div class="flex-[2] grid justify-start w-full grid-cols-4 gap-5">
-				<div class="w-full h-36">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[0]?.url}" />
-				</div>
-				<div  class="w-full h-36">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[1]?.url}" />
-				</div>
+				${product?.images?.map(v => {
+					return (
+						<div  class="w-full h-36">
+							<img onclick="onViewImage()" class="object-cover w-full h-full" src="${v.url}"/>
+						</div>
+					)
+				})}
 			</div>
 		</div>
 		<div class="flex flex-col items-start justify-start w-full h-full space-y-5">

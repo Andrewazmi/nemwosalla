@@ -118,10 +118,10 @@
 	{% hook 'head:end' %}
 </head>
 <body id="app" class="overflow-x-hidden w-screen {% hook 'body:classes' %} bg-gray-50
-								  {{ theme.settings.get('footer_is_dark') ? ' footer-is-dark' : ' footer-is-light' }}
-								  {{ theme.settings.get('topnav_is_dark') ? ' topnav-is-dark' : '' }}
-								  {{ theme.settings.get('sticky_add_to_cart') ? ' is-sticky-product-bar' : '' }}
-								  ">
+										  {{ theme.settings.get('footer_is_dark') ? ' footer-is-dark' : ' footer-is-light' }}
+										  {{ theme.settings.get('topnav_is_dark') ? ' topnav-is-dark' : '' }}
+										  {{ theme.settings.get('sticky_add_to_cart') ? ' is-sticky-product-bar' : '' }}
+										  ">
 	<noscript>
 		To get full functionality of this site you need to enable JavaScript. Here is how
 		<a href="https://www.enable-javascript.com/" rel="noreferrer" target="_blank">To enable JavaScript on webpage</a>.
@@ -149,25 +149,10 @@
 </body>
 <script>
 	const modal = document.getElementById("productModal")
-	const biggerViewImage = document.getElementById('bigger-view-image');
-
-	function onViewImage() {
-		biggerViewImage.classList.replace('hidden', 'block');
-		console.log({biggerViewImage});
-	}
-
-	function onCloseViewImage() {
-		biggerViewImage.classList.replace('block', 'hidden');
-	}
-
 
 function clickModal(event) {
 const modalContent = document.getElementById("modalProduct")
-salla.product.getDetails(event, [
-        "images",
-        "sold_quantity",
-        "category",
-      ]).then((response) => {
+salla.product.getDetails(event, ["images", "sold_quantity", "category",]).then((response) => {
 console.log({data: response.data})
 const product = response.data
 
@@ -177,8 +162,8 @@ modalContent.innerHTML = `
 	<div class="grid w-full grid-cols-2 gap-5 px-5 py-2 h-[90%]">
 		<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
 			<div class="flex-[4] bg-[#F1EBEB] w-full h-96 flex flex-col space-y-4 items-center justify-start px-7 py-5">
-				<div  class="h-64 w-96">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.image?.url}"/>
+				<div class="w-72 flex-[10]">
+					<img class="object-cover w-full h-full"/>
 				</div>
 				<div class="flex flex-row-reverse items-center justify-center flex-1 w-full space-x-3">
 					<button class="w-4 h-4 rounded-full bg-[#D9D9D9] focus:bg-[#334155]"></button>
@@ -193,10 +178,10 @@ modalContent.innerHTML = `
 			</div>
 			<div class="flex-[2] grid justify-start w-full grid-cols-4 gap-5">
 				<div class="w-full h-36">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[0]?.url}" />
+					<img class="object-cover w-full h-full"/>
 				</div>
-				<div  class="w-full h-36">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[1]?.url}" />
+				<div class="w-full h-36">
+					<img class="object-cover w-full h-full"/>
 				</div>
 			</div>
 		</div>
@@ -204,10 +189,20 @@ modalContent.innerHTML = `
 			<div class="flex items-center justify-between w-full">
 				<p class="text-[#707070] text-2xl text-right">السعر شامل الضريبة</p>
 				<div class="flex items-center justify-end space-x-2">
-					<salla-button class="btn--wishlist s-button-wrap hydrated" id="popup-wishlist-btn-${product.id}" data-id="${product.id}" onclick="salla.wishlist.toggle(${product.id})" shape="icon" fill="outline" loader-position="center" color="light" size="medium" width="normal">
+					<salla-button class="btn--wishlist s-button-wrap hydrated" id="popup-wishlist-btn-${
+product.id
+}" data-id="${
+product.id
+}" onclick="salla.wishlist.toggle(${
+product.id
+})" shape="icon" fill="outline" loader-position="center" color="light" size="medium" width="normal">
 						<i class="sicon-heart"></i>
 					</salla-button>
-					<salla-social-share url="${product.url}" url-name="${product.name}" platforms="facebook,twitter,whatsapp,email,copy_link"></salla-social-share>
+					<salla-social-share url="${
+product.url
+}" url-name="${
+product.name
+}" platforms="facebook,twitter,whatsapp,email,copy_link"></salla-social-share>
 				</div>
 			</div>
 			<div class="flex items-center justify-start w-full space-x-4">
@@ -263,18 +258,17 @@ modalContent.innerHTML = `
 				<salla-quantity-input max="28" value="1" name="quantity" class="flex justify-end border-gray-200 s-quantity-input hydrated"></salla-quantity-input>
 			</div>
 			<div class="w-full rounded-md bg-[#334155] flex items-center justify-center">
-				<salla-add-product-button quick-buy="" class="btn--add-to-cart hydrated" fill="outline" width="wide" type="submit" product-id="${product.id}" product-status="sale" product-type="product">
+				<salla-add-product-button quick-buy="" class="btn--add-to-cart hydrated" fill="outline" width="wide" type="submit" product-id="${
+product.id
+}" product-status="sale" product-type="product">
 					<i class="text-[16px] sicon-shopping"></i>
 					أضف إلي عربة التسوق بنجاح
 				</salla-add-product-button>
 			</div>
 		</div>
 	</div>
-
-    <div id="bigger-view-image" class="hidden fixed z-[2000] w-96 h-96 inset-0">
-        <img class="object-cover w-full h-full" />
-    </div>
 </div>
+
 
 `
 });

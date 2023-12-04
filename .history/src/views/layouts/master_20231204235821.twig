@@ -153,7 +153,6 @@
 
 	function onViewImage() {
 		biggerViewImage.classList.replace('hidden', 'block');
-		console.log({biggerViewImage});
 	}
 
 	function onCloseViewImage() {
@@ -177,8 +176,8 @@ modalContent.innerHTML = `
 	<div class="grid w-full grid-cols-2 gap-5 px-5 py-2 h-[90%]">
 		<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
 			<div class="flex-[4] bg-[#F1EBEB] w-full h-96 flex flex-col space-y-4 items-center justify-start px-7 py-5">
-				<div  class="h-64 w-96">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.image?.url}"/>
+				<div onclick="onViewImage()" class="w-72 flex-[10]">
+					<img class="object-cover w-full h-full"/>
 				</div>
 				<div class="flex flex-row-reverse items-center justify-center flex-1 w-full space-x-3">
 					<button class="w-4 h-4 rounded-full bg-[#D9D9D9] focus:bg-[#334155]"></button>
@@ -192,11 +191,11 @@ modalContent.innerHTML = `
 				</div>
 			</div>
 			<div class="flex-[2] grid justify-start w-full grid-cols-4 gap-5">
-				<div class="w-full h-36">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[0]?.url}" />
+				<div onclick="onViewImage()" class="w-full h-36">
+					<img class="object-cover w-full h-full"/>
 				</div>
-				<div  class="w-full h-36">
-					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[1]?.url}" />
+				<div onclick="onViewImage()" class="w-full h-36">
+					<img class="object-cover w-full h-full"/>
 				</div>
 			</div>
 		</div>
@@ -275,7 +274,6 @@ modalContent.innerHTML = `
         <img class="object-cover w-full h-full" />
     </div>
 </div>
-
 `
 });
 modal.classList.replace('hidden', 'flex');
