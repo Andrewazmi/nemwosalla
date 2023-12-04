@@ -30,7 +30,8 @@
 				<button class="hidden btn--close-sm close-filters sicon-cancel"></button>
 				<salla-filters class="flex-none md:w-72" id="filters-menu"></salla-filters>
 			{% endif %}
-		
+				hello
+				{{ theme.settings.get("category_slider_banner")|json_encode() }}
 			 {% if theme.settings.get("category_slider_banner") %}
        			hello
         	 {% endif %}
