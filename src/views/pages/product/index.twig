@@ -111,14 +111,64 @@
 				{% hook 'product:index.items.end' %}
 			</div>
 		</div>
+
+
 	</section>
+
+
+{% if theme.settings.get("list_nav_category") %}
+
+<section class="s-block s-block--categories mt-10 navlink-design-category">
+	
+	<div>
+		{% for navlink in theme.settings.get("list_nav_category") %}
+			<div class="nav-links-category hidden">{{navlink.category.value[0]|json_encode()}}</div>
+		{% endfor %}
+
+		
+	</div>
+	<div class="text-center mb-2 flex flex-col justify-center items-center">
+		<h1 class="mb-2">{{theme.settings.get("title_category_nav")}}</h1>
+	</div>
+	
+	<div id="list-cattegory" class="flex justify-center items-center gap-4 w-full mb-3"></div>
+	<div id="list-product" class="container"></div>
+
+</section>
+	
+{% endif %}
+			
 
 
 	{% if store.settings.category.testimonial_enabled %}
 		{% component 'home.testimonials' %}
 	{% endif %}
+	
 {% endblock %}
+
 
 {% block scripts %}
 	<script defer src="{{ 'product.js' | asset }}"></script>
+	<script>
+
+	
+function getlistProductCategory(event, element , id) {
+	const listProduct = document.getElementById(`${id}-product`)
+const activelinks = document.getElementsByClassName("navLink-show")
+const data = `
+<div class="flex min-h-screen">
+	<salla-products-list class="flex-1 min-w-0 overflow-auto " source="categories" source-value=" ${event} "></salla-products-list>
+</div>
+
+`
+listProduct.innerHTML = data
+
+
+for (let i = 0; i < activelinks.length; i++) {
+activelinks[i].classList.remove("active-design")
+}
+element.classList.add("active-design");
+}
+</script>
 {% endblock %}
+
