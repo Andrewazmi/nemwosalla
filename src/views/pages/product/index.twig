@@ -26,7 +26,7 @@
 		</nav>
 
 		{% if theme.settings.get("category_slider") %}
-			      <section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider -mx-6 mb-4"> 
+			      <section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider  md:-mx-0 -mx-6 my-4"> 
     <salla-slider 
       id="main-slider-{{ position }}" 
       class="home-slider main-slider" 
@@ -55,7 +55,9 @@
 </section> 
 		{% endif %}
 		{% if theme.settings.get("gif_image") %}
-			<img src="{{ theme.settings.get("gif_image") }}" />
+		
+			<img class="s-block my-4  w-full h-[180px] rounded " src="{{ theme.settings.get("gif_image") }}" />
+		
 		{% endif %}
 
 		<div class="flex flex-col items-start md:flex-row">
@@ -109,7 +111,7 @@
 				{% hook 'product:index.items.end' %}
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 	{% if store.settings.category.testimonial_enabled %}
