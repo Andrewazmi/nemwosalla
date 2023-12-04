@@ -30,7 +30,37 @@
 				<button class="hidden btn--close-sm close-filters sicon-cancel"></button>
 				<salla-filters class="flex-none md:w-72" id="filters-menu"></salla-filters>
 			{% endif %}
-			<div class="main-content flex-1 w-full {{ filters ? 'ltr:lg:ml-8 rtl:lg:mr-8' : '' }}">
+				
+		{% if theme.settings.get("category_slider") %}
+			      <section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider -mx-6"> 
+    <salla-slider 
+      id="main-slider-{{ position }}" 
+      class="home-slider main-slider" 
+      auto-play 
+      show-controls="false"
+      loop
+      type="fullwidth">
+        <div slot="items">
+            {% for slide in theme.settings.get("category_slider") %}
+            
+                <a href="{{slide.url_1}}" class="swiper-lazy-wrap w-full min-h-[300px] lg:min-h-[500px] bg-dark">
+                    <div data-background="{{ slide.image_1 }}" class="swiper-lazy"></div>
+                    <div class="flex items-center container pb-16 sm:pb-0 home-slider__content relative h-full w-full"  style="justify-content : {{slide.content_direction[0].value|json_encode()|split('"')[1]}}" >
+                        <div class=" w-4/6 md:w-7/12 lg:w-5/12 text-white hero-content" style="text-align : {{slide.content_direction[0].value|json_encode()|split('"')[1]}}">
+                            <h3 data-swiper-parallax="-500"
+                                class="lg:text-title-size font-bold leading-tight mb-4">{{ slide.title }}</h3>
+                
+                            <p data-swiper-parallax="-300" class="line-clamp-2 description">{{ slide.subtitle }} </p>
+                           
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </salla-slider>
+</section> 
+		{% endif %}
+			 <div class="main-content flex-1 w-full {{ filters ? 'ltr:lg:ml-8 rtl:lg:mr-8' : '' }}">
 				<div class="flex items-center justify-between mb-4 sm:mb-6">
 					<h1 class="text-xl font-bold rtl:pl-3 ltr:pr-3" id="page-main-title">{{ page.title|raw }}</h1>
 					<div class="flex items-center space-x-2 rtl:space-x-reverse">
@@ -40,14 +70,16 @@
 							</a>
 						{% endif %}
                         {% if sort_options|length and products|length %}
-                            <div class="flex items-center">
+                            <div class="flex items-center category-select">
                                 <label class="hidden sm:block rtl:ml-3 ltr:mr-3 whitespace-nowrap"
                                        for="product-filter">{{ trans('pages.categories.sorting') }}</label>
                                 <select id="product-filter" class="form-input pt-0 pb-1 rtl:md:pl-10 ltr:md:pr-10">
                                     {% for sort in sort_options %}
                                         <option value="{{ sort.id }}" {{ sort.is_selected?'selected':'' }}>{{ sort.name }}</option>
+
                                     {% endfor %}
                                 </select>
+                              
 
                             </div>
                         {% endif %}
