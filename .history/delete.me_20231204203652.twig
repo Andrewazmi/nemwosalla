@@ -118,12 +118,12 @@
 												</div>
 											</div>
 										</section>
-										<div class="flex flex-col items-start justify-start w-full space-y-2">
-											<div class="flex flex-col items-start">
+										<div class="flex flex-col items-start justify-start space-y-2">
+											<div class="flex items-start flex-col rtl:mr-[10px] ltr:ml-[10px]">
 												<input type="hidden" name="id" value="${product.id}">
 												<salla-quantity-input max="28" value="1" name="quantity" class="flex justify-end border-gray-200 s-quantity-input hydrated"></salla-quantity-input>
 											</div>
-											<div>
+											<div class="w-full">
 												<salla-add-product-button quick-buy="" class="btn--add-to-cart hydrated" fill="outline" width="wide" type="submit" product-id="${product.id}" product-status="sale" product-type="product">
 													<i class="text-[16px] sicon-shopping"></i>
 													إضافة للسلة

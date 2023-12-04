@@ -1,6 +1,6 @@
 <div class="quickview__content circle">
 	<div class="relative quickview__content circle">
-		<button type="button" onclick="closeModal()" class="flex items-center justify-center w-16 h-16 mb-8 text-xl quickview__btn-close">x</button>
+		<button type="button" onclick="closeModal()" class="mb-8 quickview__btn-close">x</button>
 		<div class="flex flex-col items-start justify-start w-full space-y-3">
 			<div class="flex justify-between w-full quickview__header">
 				<div class="flex items-center justify-end space-x-3 quickview-actions rtl:mr-auto ltr:ml-auto">
@@ -21,8 +21,8 @@
 				</div>
 				<div class="w-full product-quickview">
 					<div class="flex flex-col w-full lg:flex-row">
-						<div class="w-full quickview-single-info">
-							<div class="w-full content_product_detail">
+						<div class="quickview-single-info">
+							<div class="content_product_detail">
 								<a href="${product.url}" class="hover:text-primary text-store-text-primary">
 									<h2 class="product-quickview_title ">
 										${product.name}</h2>
@@ -118,12 +118,12 @@
 												</div>
 											</div>
 										</section>
-										<div class="flex flex-col items-start justify-start w-full space-y-2">
-											<div class="flex flex-col items-start">
+										<div class="flex items-start justify-start space-y-2 flex-cols md:flex-row ">
+											<div class="flex items-start flex-col rtl:mr-[10px] ltr:ml-[10px]">
 												<input type="hidden" name="id" value="${product.id}">
 												<salla-quantity-input max="28" value="1" name="quantity" class="flex justify-end border-gray-200 s-quantity-input hydrated"></salla-quantity-input>
 											</div>
-											<div>
+											<div class="w-full">
 												<salla-add-product-button quick-buy="" class="btn--add-to-cart hydrated" fill="outline" width="wide" type="submit" product-id="${product.id}" product-status="sale" product-type="product">
 													<i class="text-[16px] sicon-shopping"></i>
 													إضافة للسلة

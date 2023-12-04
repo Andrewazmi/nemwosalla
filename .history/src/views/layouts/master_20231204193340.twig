@@ -143,8 +143,8 @@
 		<salla-login-modal></salla-login-modal>
 	{% endif %}
 	{% block scripts %}{% endblock %}
-	<div id="productModal" class="hidden bg-[rgba(0, 0, 0, 0.5)] fixed top-0 left-0 z-[200] h-screen w-screen items-center justify-center">
-		<div class="w-[90%] h-[90%] bg-white rounded-sm" id="modalProduct"></div>
+	<div id="productModal" class="modal">
+		<div class="modal-content" id="modalProduct"></div>
 	</div>
 </body>
 <script>
@@ -156,31 +156,30 @@
 	console.log({data: response.data})
 	const product = response.data
 	modalContent.innerHTML = `
-<div class="quickview__content circle">
+	<div class="quickview__content circle">
 	<div class="relative quickview__content circle">
-		<button type="button" onclick="closeModal()" class="flex items-center justify-center w-16 h-16 mb-8 text-xl quickview__btn-close">x</button>
-		<div class="flex flex-col items-start justify-start w-full space-y-3">
-			<div class="flex justify-between w-full quickview__header">
-				<div class="flex items-center justify-end space-x-3 quickview-actions rtl:mr-auto ltr:ml-auto">
-					<salla-button class="btn--wishlist s-button-wrap hydrated" id="popup-wishlist-btn-${product.id}" data-id="${product.id}" onclick="salla.wishlist.toggle(${product.id})" shape="icon" fill="outline" loader-position="center" color="light" size="medium" width="normal">
-						<i class="sicon-heart"></i>
-					</salla-button>
-					<salla-social-share url="${product.url}" url-name="${product.name}" platforms="facebook,twitter,whatsapp,email,copy_link"></salla-social-share>
-				</div>
-			</div>
-
-			<div class="grid w-full grid-cols-4 gap-3">
-				<div class="img-quickview">
-					<div class="product-quickview__images">
-						<div class="quickview-images">
-							<img src="${product.image.url}">
-						</div>
-					</div>
-				</div>
+		<button type="button" onclick="closeModal()" class="mb-8 quickview__btn-close">x</button>
+		<div class="">
+			<div class="grid w-full grid-cols-3 gap-3">
 				<div class="w-full product-quickview">
 					<div class="flex flex-col w-full lg:flex-row">
-						<div class="w-full quickview-single-info">
-							<div class="w-full content_product_detail">
+						<div class="img-quickview">
+							<div class="product-quickview__images">
+								<div class="quickview-images">
+									<img src="${product.image.url}">
+								</div>
+							</div>
+						</div>
+						<div class="quickview-single-info">
+							<div class="content_product_detail">
+								<div class="flex justify-between quickview__header">
+									<div class="quickview-actions rtl:mr-auto ltr:ml-auto">
+										<salla-button class="btn--wishlist s-button-wrap hydrated" id="popup-wishlist-btn-${product.id}" data-id="${product.id}" onclick="salla.wishlist.toggle(${product.id})" shape="icon" fill="outline" loader-position="center" color="light" size="medium" width="normal">
+											<i class="sicon-heart"></i>
+										</salla-button>
+										<salla-social-share url="${product.url}" url-name="${product.name}" platforms="facebook,twitter,whatsapp,email,copy_link"></salla-social-share>
+									</div>
+								</div>
 								<a href="${product.url}" class="hover:text-primary text-store-text-primary">
 									<h2 class="product-quickview_title ">
 										${product.name}</h2>
@@ -221,7 +220,7 @@
 												<salla-product-options product-id="${product.id}" options="[]" class="hydrated"></salla-product-options>
 											</div>
 										</div>
-										<section class="flex items-start justify-start space-y-2 attachments flex-cols">
+										<section class="attachments">
 											<div>
 												<label class="form-label">
 													<b class="block">
@@ -229,7 +228,7 @@
 													</b>
 												</label>
 												<div class="mt-4 text-end">
-													<div class="flex flex-col items-start justify-start space-y-3 rtl:space-x-reverse">
+													<div class="flex space-x-3 rtl:space-x-reverse">
 														<button class="btn-tab btn btn--collapse" type="button" data-show="note_${product.id}">
 															<i class="font-medium sicon-chat-conversation-alt rtl:ml-1 ltr:mr-1.5 "></i>
 															<span>إضافة ملاحظة
@@ -276,12 +275,12 @@
 												</div>
 											</div>
 										</section>
-										<div class="flex flex-col items-start justify-start w-full space-y-2">
-											<div class="flex flex-col items-start">
+										<div class="flex flex-col items-start md:flex-row ">
+											<div class="flex items-start flex-col rtl:mr-[10px] ltr:ml-[10px]">
 												<input type="hidden" name="id" value="${product.id}">
 												<salla-quantity-input max="28" value="1" name="quantity" class="flex justify-end border-gray-200 s-quantity-input hydrated"></salla-quantity-input>
 											</div>
-											<div>
+											<div class="w-full">
 												<salla-add-product-button quick-buy="" class="btn--add-to-cart hydrated" fill="outline" width="wide" type="submit" product-id="${product.id}" product-status="sale" product-type="product">
 													<i class="text-[16px] sicon-shopping"></i>
 													إضافة للسلة
@@ -305,7 +304,7 @@
 				<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
 					<div class="flex items-center justify-start w-full">
 						<div class="relative w-20 h-20">
-							<img class="top-0 left-0 object-fill w-full h-full aboslute" src="/images/truck-icon.svg"/>
+							<img class="top-0 left-0 object-fill w-full h-full aboslute" src="/images/truck-icon.svg" />
 						</div>
 						<div class="flex flex-col items-start justify-start space-y-3">
 							<p class="w-full text-lg font-bold text-black">شحن مجاني</p>
@@ -314,7 +313,7 @@
 					</div>
 					<div class="flex items-center justify-start w-full">
 						<div class="relative w-20 h-20">
-							<img class="top-0 left-0 object-fill w-full h-full aboslute" src="/images/safe-payment.svg"/>
+							<img class="top-0 left-0 object-fill w-full h-full aboslute" src="/images/safe-payment.svg" />
 						</div>
 						<div class="flex flex-col items-start justify-start space-y-3">
 							<p class="w-full text-lg font-bold text-black">دفع آمن</p>
@@ -330,13 +329,10 @@
 
 	`
 	});
-		modal.classList.replace('hidden', 'flex');		
-				
+				modal.style.display = "block";
 				}
-				
 	function closeModal() {
-		modal.classList.replace('flex', 'hidden');		
-		
+		modal.style.display = "none";
 	}
 		
 	</script>
