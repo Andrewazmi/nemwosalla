@@ -13,6 +13,7 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
+    this.navLinksCategory();
     this.doneSubscribe();
     this.featureProductSlider();
     this.handleDropdown();
@@ -276,6 +277,55 @@ class App extends AppHelpers {
                 source="categories"
               source-value=[${navLinks1[0].innerText}]
               </salla-product-slider>`;
+
+          listProduct1.innerHTML = data;
+        }
+      }
+    }
+  }
+
+  navLinksCategory() {
+    function getRandomIntInclusive(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+    }
+    const linkDesign = document.getElementsByClassName("navlink-design-category");
+
+    for (let i = 0; i < linkDesign.length; i++) {
+      const id = getRandomIntInclusive(100000, 900000);
+
+      const child = linkDesign[i].children[0].children;
+
+      const any = child.length;
+      for (let j = 0; j < any; j++) {
+        child[j].className = `${id}-nav hidden`;
+      }
+      linkDesign[i].children[2].setAttribute("id", `${id}-category`);
+      linkDesign[i].children[3].setAttribute("id", `${id}-product`);
+
+      const listProduct1 = document.getElementById(`${id}-product`);
+      const navLinks1 = document.getElementsByClassName(`${id}-nav`);
+      const listCategory1 = document.getElementById(`${id}-category`);
+
+      for (let i = 0; i < navLinks1.length; i++) {
+        const category = navLinks1[i].innerText;
+
+        if (category) {
+          salla.product.categories(category).then((response) => {
+            const data = `
+                  <div class="navLink-show py-2 px-3 rounded-2xl cursor-pointer font-bold" onclick="getlistProductCategory(${category} , this , ${id})">
+                    ${response.data.name}
+                  </div>
+                  `;
+            listCategory1.innerHTML += data;
+          });
+          const data = `
+              <div class="flex min-h-screen">
+	<salla-products-list class="flex-1 min-w-0 overflow-auto " source="categories" source-value=" ${navLinks1[0].innerText}"></salla-products-list>
+</div>
+              
+              `;
 
           listProduct1.innerHTML = data;
         }

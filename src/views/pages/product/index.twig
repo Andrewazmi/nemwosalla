@@ -26,7 +26,7 @@
 		</nav>
 
 		{% if theme.settings.get("category_slider") %}
-			      <section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider -mx-6 mb-4"> 
+			      <section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider  md:-mx-0 -mx-6 my-4"> 
     <salla-slider 
       id="main-slider-{{ position }}" 
       class="home-slider main-slider" 
@@ -55,7 +55,9 @@
 </section> 
 		{% endif %}
 		{% if theme.settings.get("gif_image") %}
-			<img src="{{ theme.settings.get("gif_image") }}" />
+		
+			<img class="s-block my-4  w-full h-[180px] rounded " src="{{ theme.settings.get("gif_image") }}" />
+		
 		{% endif %}
 
 		<div class="flex flex-col items-start md:flex-row">
@@ -103,20 +105,69 @@
 				</div>
 
 				{% hook 'product:index.items.start' %}
-				<div class="flex min-h-screen">
+				<div class="flex ">
 					<salla-products-list class="flex-1 min-w-0 overflow-auto " source="{{ page.slug }}" source-value="{{ page.id }}" {{ filters?'filters-Results':'' }}></salla-products-list>
 				</div>
 				{% hook 'product:index.items.end' %}
 			</div>
 		</div>
+
+
+	</section>
+
+
+{% if theme.settings.get("list_nav_category") %}
+
+<section class="s-block s-block--categories mt-10 navlink-design-category">
+	<div>
+		{% for navlink in theme.settings.get("list_nav_category") %}
+			<div class="nav-links hidden">{{navlink.category[0].value|json_encode()}}</div>
+		{% endfor %}
+
+		
 	</div>
+	<div class="text-center mb-2 flex flex-col justify-center items-center">
+		<h1 class="mb-2">{{theme.settings.get("title_category_nav")}}</h1>
+	</div>
+	
+	<div id="list-cattegory" class="flex justify-center items-center gap-4 w-full mb-3"></div>
+	<div id="list-product" class="container"></div>
+
+</section>
+	
+{% endif %}
+			
 
 
 	{% if store.settings.category.testimonial_enabled %}
 		{% component 'home.testimonials' %}
 	{% endif %}
+	
 {% endblock %}
+
 
 {% block scripts %}
 	<script defer src="{{ 'product.js' | asset }}"></script>
+	<script>
+
+	
+function getlistProductCategory(event, element , id) {
+	const listProduct = document.getElementById(`${id}-product`)
+const activelinks = document.getElementsByClassName("navLink-show")
+const data = `
+<div class="flex min-h-screen">
+	<salla-products-list class="flex-1 min-w-0 overflow-auto " source="categories" source-value=" ${event} "></salla-products-list>
+</div>
+
+`
+listProduct.innerHTML = data
+
+
+for (let i = 0; i < activelinks.length; i++) {
+activelinks[i].classList.remove("active-design")
+}
+element.classList.add("active-design");
+}
+</script>
 {% endblock %}
+
