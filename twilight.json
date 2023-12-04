@@ -434,6 +434,53 @@
             "icon": "sicon-image",
             "value": null,
             "required": false
+        },
+        {
+            "id": "title_category_nav",
+            "type": "string",
+            "format": "text",
+            "label": "title_category_nav",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "Placeholder text ..",
+            "icon": "sicon-format-text-alt",
+            "value": null,
+            "multilanguage": false,
+            "required": false,
+            "minLength": 6,
+            "maxLength": 30
+        },
+        {
+            "id": "list_nav_category",
+            "type": "collection",
+            "format": "collection",
+            "label": "list_nav_category",
+            "description": null,
+            "labelHTML": null,
+            "item_label": null,
+            "icon": "sicon-list-add",
+            "fields": [
+                {
+                    "id": "list_nav_category.category",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "category",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [],
+                    "source": "Categories",
+                    "multichoice": false,
+                    "searchable": false,
+                    "required": false,
+                    "value": []
+                }
+            ],
+            "value": [],
+            "required": false,
+            "minLength": 1,
+            "maxLength": 5
         }
     ],
     "components": [
