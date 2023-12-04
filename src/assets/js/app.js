@@ -29,7 +29,7 @@ class App extends AppHelpers {
     this.removeElan();
     this.initiateNotifier();
     this.initiateMobileMenu();
-    this.toggleProductFilterMenu();
+    // this.toggleProductFilterMenu();
     this.getProductsWithLimitedOffers();
     if (header_is_sticky) {
       this.initiateStickyMenu();
@@ -1287,26 +1287,26 @@ ${iframeElement}
     }
   }
 
-  toggleProductFilterMenu() {
-    const buttonEl = document.getElementById('product-filter');
-    const menuEl = document.getElementById('popup-filter');
-    const closeBtnEl = document.getElementById('popup-filter-close-btn');
+//  toggleProductFilterMenu () {
+//     const buttonEl = document.getElementById('product-filter');
+//     const menuEl = document.getElementById('popup-filter');
+//     const closeBtnEl = document.getElementById('popup-filter-close-btn');
 
-    let isMenuOpen = false;
+//     let isMenuOpen = false;
 
-    const onOpen = () => {
-      menuEl.classList.remove('hidden');
-      isMenuOpen = true;
-    }
+//     const onOpen = () => {
+//       menuEl.classList.remove('hidden');
+//       isMenuOpen = true;
+//     }
 
-    const onClose = () => {
-      menuEl.classList.add('hidden');
-      isMenuOpen = false;
-    }
+//     const onClose = () => {
+//       menuEl.classList.add('hidden');
+//       isMenuOpen = false;
+//     }
 
-    buttonEl.onclick = onOpen;
-    closeBtnEl.onclick = onClose;
-  }
+//     buttonEl.onclick = onOpen;
+//     closeBtnEl.onclick = onClose;
+//   }
 
   initiateCollapse() {
     document.querySelectorAll(".btn--collapse").forEach((trigger) => {
