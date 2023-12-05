@@ -322,7 +322,7 @@ class App extends AppHelpers {
             listCategory1.innerHTML += data;
           });
           const data = `
-              <div class="flex min-h-screen">
+              <div class="flex">
 	<salla-products-list class="flex-1 min-w-0 overflow-auto " source="categories" source-value=" ${navLinks1[0].innerText}"></salla-products-list>
 </div>
               
