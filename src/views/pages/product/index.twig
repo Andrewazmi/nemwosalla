@@ -145,7 +145,7 @@
 		{% endfor %}
 	</div>
 	<div class="container px-4 category-1 flex flex-col justify-center items-center">
-	
+
 		<div class="text-center mb-2 flex flex-col justify-center items-center">
 			<h1 class="mb-3">{{theme.settings.get("category_choose_product_title")}}</h1>
 			<div class="line"></div>
@@ -182,7 +182,7 @@ function getlistProductCategory(event, element , id) {
 	const listProduct = document.getElementById(`${id}-product`)
 const activelinks = document.getElementsByClassName("navLink-show")
 const data = `
-<div class="flex min-h-screen">
+<div class="flex ">
 	<salla-products-list class="flex-1 min-w-0 overflow-auto " source="categories" source-value=" ${event} "></salla-products-list>
 </div>
 
