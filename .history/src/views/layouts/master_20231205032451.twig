@@ -183,7 +183,9 @@ modalContent.innerHTML = `
 				<div slot="items">	
 					${product?.images?.map(img => {
 						return `
-								<img onclick="onViewImage()" class="object-contain" style="height:30rem" src="${img?.url}"/>
+							<div class="w-72 h-96">
+								<img onclick="onViewImage()" class="object-contain" src="${img?.url}"/>
+							</div>
 						`
 					})}
  	 			</div>
