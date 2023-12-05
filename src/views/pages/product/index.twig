@@ -19,14 +19,14 @@
 {% extends "layouts.master" %}
 {% block content %}
 	<div
-		class="container px-2.5 ms:px-5 mb-10">
+		class="container flex flex-col items-center px-2.5 ms:px-5 mb-10">
 		{# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
 		<nav class="w-full py-5 breadcrumbs">
 			{% component 'header.breadcrumbs' %}
 		</nav>
 
-		{% if theme.settings.get("category_slider") %}
-			      <section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider  md:-mx-0 -mx-6 my-4"> 
+		{% if theme.settings.get("active_slider_category") %}
+			      <section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider  md:-mx-0  my-4"> 
     <salla-slider 
       id="main-slider-{{ position }}" 
       class="home-slider main-slider" 
@@ -56,11 +56,11 @@
 		{% endif %}
 		{% if theme.settings.get("gif_image") %}
 		
-			<img class="s-block my-4  w-full h-[180px] rounded " src="{{ theme.settings.get("gif_image") }}" />
+			<img class="s-block my-8 mb-16  w-[80%] h-[120px] rounded " src="{{ theme.settings.get("gif_image") }}" />
 		
 		{% endif %}
 
-		<div class="flex flex-col items-start md:flex-row">
+		<div class="flex flex-col w-full items-center md:flex-row">
 		
 			{% if filters %}
 				<button class="hidden btn--close-sm close-filters sicon-cancel"></button>
@@ -118,7 +118,7 @@
 
 {% if theme.settings.get("list_nav_category") %}
 
-<section class="s-block s-block--categories mt-10 navlink-design-category">
+<section class="s-block s-block--categories mt-10 navlink-design-category w-full">
 	<div>
 		{% for navlink in theme.settings.get("list_nav_category") %}
 			<div class="nav-links hidden">{{navlink.category[0].value|json_encode()}}</div>
@@ -144,7 +144,7 @@
 			<div class="nav-product hidden">{{navlink.product[0].value|json_encode()}}</div>
 		{% endfor %}
 	</div>
-	<div class="container px-4 category-1 flex flex-col justify-center items-center">
+	<div class="container  category-1 flex flex-col justify-center items-center">
 
 		<div class="text-center mb-2 flex flex-col justify-center items-center">
 			<h1 class="mb-3">{{theme.settings.get("category_choose_product_title")}}</h1>

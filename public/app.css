@@ -525,6 +525,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mx-5{margin-left:1.25rem;margin-right:1.25rem}
 .mx-auto{margin-left:auto;margin-right:auto}
 .my-4{margin-top:1rem;margin-bottom:1rem}
+.my-8{margin-top:2rem;margin-bottom:2rem}
+.my-10{margin-top:2.5rem;margin-bottom:2.5rem}
 .\!mb-20{margin-bottom:5rem !important}
 .\!mt-3{margin-top:0.75rem !important}
 .-mb-52{margin-bottom:-13rem}
@@ -569,6 +571,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mt-6{margin-top:1.5rem}
 .mt-8{margin-top:2rem}
 .mt-auto{margin-top:auto}
+.mb-16{margin-bottom:4rem}
 .line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}
 .line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .block{display:block}
@@ -606,8 +609,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-9{height:2.25rem}
 .h-96{height:24rem}
 .h-\[10\%\]{height:10%}
+.h-\[120px\]{height:120px}
 .h-\[150px\]{height:150px}
-.h-\[180px\]{height:180px}
 .h-\[300px\]{height:300px}
 .h-\[34px\]{height:34px}
 .h-\[50px\]{height:50px}
@@ -660,6 +663,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .w-96{width:24rem}
 .w-\[50px\]{width:50px}
 .w-\[60\%\]{width:60%}
+.w-\[80\%\]{width:80%}
 .w-\[89\%\]{width:89%}
 .w-\[90\%\]{width:90%}
 .w-fit{width:-moz-fit-content;width:fit-content}
@@ -797,6 +801,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .bg-red-400{--tw-bg-opacity:1;background-color:rgba(248, 113, 113, 1);background-color:rgba(248, 113, 113, var(--tw-bg-opacity))}
 .bg-transparent{background-color:transparent}
 .bg-white{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity))}
+.bg-\[\#EFEFEF\]{--tw-bg-opacity:1;background-color:rgba(239, 239, 239, 1);background-color:rgba(239, 239, 239, var(--tw-bg-opacity))}
 .bg-cover{background-size:cover}
 .bg-center{background-position:center}
 .bg-no-repeat{background-repeat:no-repeat}
@@ -7477,6 +7482,9 @@ salla-search input {
 }
 .sub-menu ul li a:hover {
   background-color: #435570 !important;
+}
+.main-nav-container.fixed-pinned .inner {
+  z-index: 99;
 }
 /* responsive */
 @media (max-width: 1024px) {

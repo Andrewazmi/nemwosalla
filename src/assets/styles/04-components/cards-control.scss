@@ -578,6 +578,9 @@ salla-search input {
   background-color: #435570 !important;
 }
 
+.main-nav-container.fixed-pinned .inner{
+  z-index: 99;
+}
 
 
 
