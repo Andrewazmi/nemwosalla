@@ -13,6 +13,7 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
+    this.productCategoryPage();
     this.navLinksCategory();
     this.doneSubscribe();
     this.featureProductSlider();
@@ -948,6 +949,45 @@ ${iframeElement}
             }
           });
       }
+    }
+  }
+
+  async productCategoryPage(){
+    const productsIDs = Array.from(
+      document.getElementsByClassName("nav-product")
+    ).map((v) => +v.innerHTML.trim());
+   const insertData = document.getElementById("all-pro-by-cat-page")
+   
+    for (let i = 0; i < productsIDs.length; i++) {
+      const response = await salla.product.getDetails(productsIDs[i], [
+        "images",
+        "sold_quantity",
+        "category",
+      ]);
+      const product = response.data
+      const data = `
+						<a class=" flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="${product.url
+                }">
+              <div class="w-full h-[150px] sm:h-[200px] bg-[#D9D9D980] rounded-xl !p-4">
+                <img class="rounded bg-cover object-contain w-full h-full"  src="${product.image.url
+                }" alt="${product.image.alt}" />
+              </div>
+							<div class="flex w-full flex-col items-center justify-center">
+							<p class="category-name text-xl mt-4">${product.name}</p>
+              <div class="flex w-[60%] justify-between items-center">
+              <h4 class="text-lg font-extrabold">${this.getPriceFormat(
+                  product.price
+                )}</h4>
+                <h4 class="text-lg font-extrabold line-through opacity-80">${this.getPriceFormat(
+                  product.regular_price
+                )}</h4>
+							
+							</div>
+              </div>
+		</a>
+    `;
+              insertData.innerHTML += data;
+      
     }
   }
 

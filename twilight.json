@@ -481,6 +481,53 @@
             "required": false,
             "minLength": 1,
             "maxLength": 5
+        },
+        {
+            "id": "category_choose_product_title",
+            "type": "string",
+            "format": "text",
+            "label": "category_choose_product_title",
+            "description": null,
+            "labelHTML": null,
+            "placeholder": "Placeholder text ..",
+            "icon": "sicon-format-text-alt",
+            "value": null,
+            "multilanguage": false,
+            "required": false,
+            "minLength": 6,
+            "maxLength": 30
+        },
+        {
+            "id": "category_choose_product",
+            "type": "collection",
+            "format": "collection",
+            "label": "category_choose_product",
+            "description": null,
+            "labelHTML": null,
+            "item_label": null,
+            "icon": "sicon-list-add",
+            "fields": [
+                {
+                    "id": "category_choose_product.product",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "product",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [],
+                    "source": "Products",
+                    "multichoice": false,
+                    "searchable": false,
+                    "required": false,
+                    "value": []
+                }
+            ],
+            "value": [],
+            "required": false,
+            "minLength": 1,
+            "maxLength": 5
         }
     ],
     "components": [
