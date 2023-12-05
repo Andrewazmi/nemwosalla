@@ -148,7 +148,16 @@
 	</div>
 </body>
 <script>
-	const modal = document.getElementById("productModal")
+
+
+//swiper-slide-active
+
+ 
+	
+
+
+
+const modal = document.getElementById("productModal")
 
 function getPriceFormat(price) {
     if (!price || price == 0) {
@@ -161,6 +170,7 @@ function getPriceFormat(price) {
   }
 
 function clickModal(event) {
+
 const modalContent = document.getElementById("modalProduct")
 salla.product.getDetails(event, [
         "images",
@@ -181,15 +191,22 @@ modalContent.innerHTML = `
 	</button>
 	<div class="grid w-full grid-cols-1 lg:grid-cols-2 gap-5 px-2 py-0.5 lg:px-5 lg:py-2 h-[90%]">
 		<div class="flex flex-col items-start justify-start w-full h-full">
-			<div class="w-full  md:h-[500px] flex flex-col space-y-2 lg:space-y-4 items-center justify-start px-3 py-2 lg:px-7 lg:py-5">
+			<div class="relative w-full  md:h-[500px] flex flex-col space-y-2 lg:space-y-4 items-center justify-start px-3 py-2 lg:px-7 lg:py-5">
+				<div id="img-2" class="absolute "></div>
+				
 				<salla-slider id="thumbs" show-controls="false" type="thumbs" show-thumbs-controls="false">
 				<div slot="items">	
 					${product?.images?.map(img => {
 						return `
+					
 								<img  class="object-contain" style="height:15rem" src="${img?.url}"/>
+						
+						
 						`
 					})}
+
  	 			</div>
+				
  				 <div slot="thumbs">
 				 	${product?.images?.map(img => {
 						return `

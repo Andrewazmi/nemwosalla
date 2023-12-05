@@ -874,7 +874,9 @@ ${products[0].sale_price < products[0].regular_price &&
     }
   }
 
-  //map
+  
+
+
 
   getPriceFormat(price) {
     if (!price || price == 0) {
