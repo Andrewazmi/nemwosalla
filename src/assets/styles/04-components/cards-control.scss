@@ -527,21 +527,21 @@ salla-search input {
   width: 100px !important;
 }
 
-.s-slider-horizontal .s-slider-thumbs {
+#slider-feature-product .s-slider-horizontal .s-slider-thumbs {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.s-slider-thumbs .s-slider-thumbs-container .swiper-slide.swiper-slide-thumb-active {
+#slider-feature-product .s-slider-thumbs .s-slider-thumbs-container .swiper-slide.swiper-slide-thumb-active {
   background: #404553 !important;
 }
 
-.s-slider-thumbs .s-slider-thumbs-container .swiper-slide.swiper-slide-thumb-active:after {
+#slider-feature-product .s-slider-thumbs .s-slider-thumbs-container .swiper-slide.swiper-slide-thumb-active:after {
   --tw-ring-color: none;
 }
 
-.s-slider-thumbs .s-slider-thumbs-container .swiper-slide {
+#slider-feature-product .s-slider-thumbs .s-slider-thumbs-container .swiper-slide {
   width: 15px !important;
   height: 15px !important;
   background-color: rgba(65,71,84,0.5) !important;
