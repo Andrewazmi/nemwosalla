@@ -177,24 +177,32 @@ modalContent.innerHTML = `
 <div class="flex flex-col items-start justify-start w-full h-full space-y-5">
 	<button type="button" onclick="closeModal()" class="flex items-center justify-center w-16 h-16 mb-8 text-5xl font-black h-[10%]">x</button>
 	<div class="grid w-full grid-cols-2 gap-5 px-5 py-2 h-[90%]">
-		<div class="flex flex-col items-start justify-start w-full h-full">
-			<div class="bg-[#F1EBEB] w-full h-full flex flex-col space-y-4 items-center justify-start px-7 py-5">
+		<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
+			<div class="flex-[4] bg-[#F1EBEB] w-full h-96 flex flex-col space-y-4 items-center justify-start px-7 py-5">
 				<salla-slider id="thumbs" show-controls="true" type="thumbs">
 				<div slot="items">	
 					${product?.images?.map(img => {
 						return `
-								<img onclick="onViewImage()" class="object-contain" style="height:30rem" src="${img?.url}"/>
+							<img onclick="onViewImage()" class="object-cover w-72 h-96" src="${img?.url}"/>
 						`
 					})}
  	 			</div>
  				 <div slot="thumbs">
 				 	${product?.images?.map(img => {
 						return `
-						 <img onclick="onViewImage()" class="object-contain w-72 h-96" src="${img?.url}"/>
+						 <img onclick="onViewImage()" class="object-cover w-72 h-96" src="${img?.url}"/>
 						 `
 					})}
   				</div>
 				</salla-slider>
+			</div>
+			<div class="flex-[2] grid justify-start w-full grid-cols-4 gap-5">
+				<div class="w-full h-36">
+					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[0]?.url}" />
+				</div>
+				<div  class="w-full h-36">
+					<img onclick="onViewImage()" class="object-contain w-full h-full" src="${product?.images?.[1]?.url}" />
+				</div>
 			</div>
 		</div>
 		<div class="flex flex-col items-start justify-start w-full h-full space-y-5">
