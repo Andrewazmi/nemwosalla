@@ -483,6 +483,18 @@
             "maxLength": 5
         },
         {
+            "id": "active_slider_category",
+            "type": "boolean",
+            "format": "switch",
+            "label": "active_slider_category",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-toggle-off",
+            "value": true,
+            "selected": false,
+            "required": false
+        },
+        {
             "id": "category_choose_product_title",
             "type": "string",
             "format": "text",
