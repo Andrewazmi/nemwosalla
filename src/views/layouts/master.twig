@@ -150,7 +150,15 @@
 <script>
 	const modal = document.getElementById("productModal")
 
+function getPriceFormat(price) {
+    if (!price || price == 0) {
+      return salla.config.get("store.settings.product.show_price_as_dash")
+        ? "-"
+        : "";
+    }
 
+    return salla.money(price);
+  }
 
 function clickModal(event) {
 const modalContent = document.getElementById("modalProduct")
@@ -166,7 +174,11 @@ console.log({productImages: product});
 
 modalContent.innerHTML = `
 <div class="flex flex-col items-start justify-start w-full h-full space-y-1 lg:space-y-5">
-	<button type="button" onclick="closeModal()" class="flex items-center justify-center w-16 h-16 mb-1 lg:mb-8 text-3xl lg:text-5xl font-black h-[10%]">x</button>
+	<button type="button" onclick="closeModal()" class="flex items-center justify-center w-16 h-16 mb-1 lg:mb-8 text-xl font-black h-[10%]">
+			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="90" viewBox="0 0 121 122" fill="none">
+<path d="M95.7904 32.5835L88.6816 25.416L60.4987 53.8319L32.3158 25.416L25.207 32.5835L53.3899 60.9994L25.207 89.4152L32.3158 96.5827L60.4987 68.1669L88.6816 96.5827L95.7904 89.4152L67.6074 60.9994L95.7904 32.5835Z" fill="#212121"/>
+</svg>
+	</button>
 	<div class="grid w-full grid-cols-1 lg:grid-cols-2 gap-5 px-2 py-0.5 lg:px-5 lg:py-2 h-[90%]">
 		<div class="flex flex-col items-start justify-start w-full h-full">
 			<div class="w-full  md:h-[500px] flex flex-col space-y-2 lg:space-y-4 items-center justify-start px-3 py-2 lg:px-7 lg:py-5">
@@ -206,8 +218,9 @@ modalContent.innerHTML = `
 			<p class="w-full overflow-auto text-ellipsis text-[#00000096] text-base lg:text-xl text-right">
 				${product.description}
 			</p>
-			<div class="flex items-center justify-start w-full gap-2">
-				<p class="text-base font-bold">${product.price}</p>
+			<div class="flex items-center justify-start w-full gap-1">
+			<img width="30" height="30" src="https://img.icons8.com/emoji/48/fire.png" alt="fire"/>
+				<p class="text-base font-bold">${getPriceFormat(product.price)}</p>
 			</div>
 			<div class="flex items-center justify-start w-full gap-2">
 				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="30" viewBox="0 0 89 70" fill="none">
@@ -229,8 +242,8 @@ modalContent.innerHTML = `
 				<p class="text-base">${product.quantity ? product.quantity :"0" } المتبقى
 				</p>
 			</div>
-			<div class="flex items-center justify-start w-full space-x-2">
-				<p class="text-base"></p>
+			<div class="flex items-center justify-between w-full space-x-2">
+				<p class="text-base">الكمية</p>
 				<salla-quantity-input max="28" value="1" name="quantity" class="flex justify-end border-gray-200 s-quantity-input hydrated"></salla-quantity-input>
 			</div>
 			<div class="w-full rounded-md bg-[#334155] flex items-center justify-center">
