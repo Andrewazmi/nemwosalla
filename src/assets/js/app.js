@@ -984,7 +984,7 @@ ${iframeElement}
               </div>
 							<div class="flex w-full flex-col items-center justify-center">
 							<p class="category-name text-xl mt-4">${product.name}</p>
-              <div class="flex w-[60%] justify-between items-center">
+              <div class=" justify-center items-center">
               <h4 class="text-lg font-extrabold">${this.getPriceFormat(
                   product.price
                 )}</h4>
