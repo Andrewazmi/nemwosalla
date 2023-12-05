@@ -13,6 +13,7 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
+    this.productCategoryPage();
     this.navLinksCategory();
     this.doneSubscribe();
     this.featureProductSlider();
@@ -948,6 +949,23 @@ ${iframeElement}
             }
           });
       }
+    }
+  }
+
+  async productCategoryPage(){
+    const productsIDs = Array.from(
+      document.getElementsByClassName("nav-product")
+    ).map((v) => +v.innerHTML.trim());
+
+    for (let i = 0; i < productsIDs.length; i++) {
+      const response = await salla.product.getDetails(productsIDs, [
+        "images",
+        "sold_quantity",
+        "category",
+      ]);
+      const product = response.data
+      console.log({product})
+      
     }
   }
 
