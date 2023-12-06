@@ -55,9 +55,9 @@
 </section> 
 		{% endif %}
 		{% if theme.settings.get("gif_image") %}
-		
-			<img class="s-block my-8 mb-16  w-[80%] h-[120px] rounded " src="{{ theme.settings.get("gif_image") }}" />
-		
+		<div class="container">
+			<img class="s-block my-8 mb-16 w-full max-h-[100px] rounded-lg" src="{{ theme.settings.get("gif_image") }}" />
+		</div>
 		{% endif %}
 
 		<div class="flex flex-col w-full items-center md:flex-row">

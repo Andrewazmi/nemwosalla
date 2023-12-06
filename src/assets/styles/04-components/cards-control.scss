@@ -602,7 +602,9 @@ salla-search input {
   border-radius: 10px;
 }
 
-
+#blog-home-slider .swiper-autoheight, .swiper-autoheight .swiper-slide {
+  max-height: 450px;
+}
 
 
 
