@@ -105,29 +105,35 @@
                                 <div class="swiper-slide blog-slider__slide h-[300px] md:h-[400px] relative bg-border-color flex justify-center {{ article.has_image ? '' : 'no-thumb' }}">
                                     <img class="{{ article.image.url|is_placeholder?'sm:h-full w-20 object-contain opacity-50':'object-cover h-full w-full' }}"
                                          src="{{ article.image.url }}" alt="{{ article.image.alt }}">
-                                    {# <div class="absolute z-10 bottom-0 rtl:right-0 ltr:left-0 p-4 pb-10 rtl:lg:pr-10 ltr:lg:pl-10 lg:pb-20">
+                                    <div class="absolute z-10 top-44 rtl:right-0 ltr:left-0 p-4 pb-10 rtl:lg:pr-10 ltr:lg:pl-10 lg:pb-20">
                                         <div class="blog-slider__content relative">
-                                            <div class="z-20 w-full md:w-5/6 lg:w-6/12 text-white">
+                                            <div class="z-20 w-full md:w-5/6 lg:w-6/12">
                                                 <div data-swiper-parallax="-500"  class="block-slide-anime">
-                                                    <div class="mb-2.5 rounded-md inline-flex text-sm rtl:space-x-reverse space-x-5">
+                                                    <div class="mb-2.5 rounded-md inline-flex text-xl rtl:space-x-reverse space-x-5">
                                                         <div class="flex items-center">
-                                                            <i class="sicon-calendar-date rtl:ml-1 ltr:mr-1"></i>
-                                                            <span class="whitespace-nowrap">{{ article.created_at|date }}</span>
+                                                            {# <i class="sicon-calendar-date"></i> #}
+                                                            <svg class="rtl:ml-1 ltr:mr-1" xmlns="http://www.w3.org/2000/svg" width="40" height="35" viewBox="0 0 70 66" fill="none">
+                                                                <path d="M58.1133 8.903H55.2383V3.48633H49.4883V8.903H20.7383V3.48633H14.9883V8.903H12.1133C8.95078 8.903 6.36328 11.3405 6.36328 14.3197V57.653C6.36328 60.6322 8.95078 63.0697 12.1133 63.0697H58.1133C61.2758 63.0697 63.8633 60.6322 63.8633 57.653V14.3197C63.8633 11.3405 61.2758 8.903 58.1133 8.903ZM58.1133 57.653H12.1133V27.8613H58.1133V57.653ZM58.1133 22.4447H12.1133V14.3197H58.1133V22.4447Z" fill="#212121"/>
+                                                            </svg>
+                                                            <span class="whitespace-nowrap font-bold">{{ article.created_at|date }}</span>
                                                         </div>
                                                         <a href="{{ article.author.url }}"
                                                            class=" flex items-center hover:underline">
-                                                            <i class="sicon-user rtl:ml-1 ltr:mr-1"></i>
-                                                            <span class="whitespace-nowrap">{{ article.author.name }}</span>
+                                                            {# <i class="sicon-user rtl:ml-1 ltr:mr-1"></i> #}
+                                                            <svg class="rtl:ml-1 ltr:mr-1" xmlns="http://www.w3.org/2000/svg" width="50" height="45" viewBox="0 0 88 84" fill="none">
+                                                                <path d="M43.9102 14.8853C44.9098 14.8853 45.8997 15.0731 46.8233 15.4381C47.7469 15.8031 48.5861 16.338 49.293 17.0124C49.9999 17.6868 50.5606 18.4874 50.9432 19.3685C51.3258 20.2497 51.5227 21.1941 51.5227 22.1478C51.5227 23.1015 51.3258 24.0459 50.9432 24.927C50.5606 25.8082 49.9999 26.6088 49.293 27.2831C48.5861 27.9575 47.7469 28.4925 46.8233 28.8575C45.8997 29.2224 44.9098 29.4103 43.9102 29.4103C41.8912 29.4103 39.9549 28.6451 38.5273 27.2831C37.0997 25.9212 36.2977 24.0739 36.2977 22.1478C36.2977 20.2217 37.0997 18.3744 38.5273 17.0124C39.9549 15.6504 41.8912 14.8853 43.9102 14.8853ZM43.9102 46.0103C54.6764 46.0103 66.0227 51.0594 66.0227 53.2728V57.077H21.7977V53.2728C21.7977 51.0594 33.1439 46.0103 43.9102 46.0103ZM43.9102 8.31445C35.8989 8.31445 29.4102 14.5049 29.4102 22.1478C29.4102 29.7907 35.8989 35.9811 43.9102 35.9811C51.9214 35.9811 58.4102 29.7907 58.4102 22.1478C58.4102 14.5049 51.9214 8.31445 43.9102 8.31445ZM43.9102 39.4394C34.2314 39.4394 14.9102 44.0736 14.9102 53.2728V63.6478H72.9102V53.2728C72.9102 44.0736 53.5889 39.4394 43.9102 39.4394Z" fill="#212121"/>
+                                                            </svg>
+                                                            <span class="whitespace-nowrap font-bold">{{ article.author.name }}</span>
                                                         </a>
                                                     </div>
                                                     <h3 class="text-sm font-bold leading-normal mb-4">
                                                         <a href="{{ article.url }}">{{ article.title }}</a>
                                                     </h3>
                                                 </div>
-                                                <p data-swiper-parallax="-300"  class="line-clamp-2 block-slide-anime description">{{ article.summary }}</p>
+                                                <p data-swiper-parallax="-300" class="line-clamp-2 block-slide-anime description text-xl">{{ article.summary }}</p>
                                             </div>
                                         </div>
-                                    </div> #}
+                                    </div>
                                 </div>
                             {% endfor %}
                         </div>
