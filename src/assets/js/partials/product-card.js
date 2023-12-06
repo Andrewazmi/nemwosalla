@@ -210,7 +210,7 @@ class ProductCard extends HTMLElement {
 
     this.innerHTML = `
         <div class="relative flex flex-col justify-center items-center p-4" style="background-color: transparent">
-        <div class=" absolute flex flex-col " style=" top:10px ;right:5px ;z-index:44  ">
+        <div class=" absolute flex flex-col " style=" top:10px ;right:5px ;z-index:11">
          
         <div class="wishlist" data-title="إضافة للسلة">
         <salla-button onclick="salla.wishlist.toggle(${
@@ -235,11 +235,7 @@ class ProductCard extends HTMLElement {
         </div>
     <div class=" flex justify-center items-center">
         <a href="${this.product?.url}">
-          <img class="s-product-card-image-${
-          
-               "contain"
-              
-          } lazy "
+          <img class="s-product-card-image-${"contain"} lazy "
             src=${this.placeholder}
             alt=${this.product?.image?.alt}
             data-src=${this.product?.image?.url || this.product?.thumbnail}
