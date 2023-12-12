@@ -116,7 +116,9 @@
                             <span class="absolute top-1.5 rtl:left-1.5 ltr:right-1.5 rtl:xs:left-5 ltr:xs:right-5 xs:top-5">
                                 <salla-button type="button" shape="icon" size="small" color="danger" class="btn--delete"
                                               onclick="salla.cart.deleteItem({{ item.id }}).then(() => document.querySelector('#item-{{ item.id }}').remove())">
-                                    <i class="sicon-cancel"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="68" height="34" viewBox="0 0 68 34" fill="none">
+  <path d="M8.01772 26.0453C8.01772 27.5859 9.2782 28.8463 10.8188 28.8463H22.0231C23.5637 28.8463 24.8241 27.5859 24.8241 26.0453V9.23885H8.01772V26.0453ZM10.8188 12.0399H22.0231V26.0453H10.8188V12.0399ZM21.3228 5.03725L19.9223 3.63672H12.9196L11.5191 5.03725H6.61719V7.83832H26.2247V5.03725H21.3228Z" fill="#334155"/>
+</svg>
                                 </salla-button>
                             </span>
                         </section>
@@ -124,10 +126,11 @@
 
                 {% else %}
                     <div class="no-content-placeholder">
-                        <i class="sicon-shopping-bag icon"></i>
-                        <p>{{ trans('pages.cart.empty_cart') }}</p>
-                        <a href="{{ link('/') }}"
-                           class="btn btn--outline-primary btn--rounded-full">{{ trans('common.elements.back_home') }}</a>
+                        <img class=" md:w-[40%]" src="{{ 'images/cart-iamge.png' | asset }}" />
+                        <h4 class=" opacity-100">عربة التسوق فارغة</h4>
+                        <p>تسجيل الدخول لعرض عربة التسوق الخاصة بك وبدء التسوق</p>
+                        <a href="{{ store.url}}"
+                           class="btn btn--outline-primary px-8 py-4">تسوق الان</a>
                     </div>
                 {% endfor %}
 

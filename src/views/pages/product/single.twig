@@ -400,7 +400,12 @@
 
     {% component 'comments' %}
     <div class="container">
-        <salla-products-slider source="related" source-value="{{product.id}}" block-title="{{trans('pages.products.similar_products')}}" display-all-url></salla-products-slider>
+    <div class="text-center mb-2 flex flex-col justify-center items-center">
+			<h1 class="mb-3">منتجات مشابهة</h1>
+			<div class="line"></div>
+
+    </div>
+        <salla-products-list source="related" source-value="{{product.id}}" ></salla-products-list>
     </div>
 {% endblock %}
 
