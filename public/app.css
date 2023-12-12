@@ -8687,13 +8687,13 @@ button.swiper-pagination-bullet {
 .md\:w-7\/12{width:58.333333%}
 .md\:w-72{width:18rem}
 .md\:w-9{width:2.25rem}
+.md\:w-\[40\%\]{width:40%}
 .md\:w-\[50\%\]{width:50%}
 .md\:w-\[60\%\]{width:60%}
 .md\:w-\[70\%\]{width:70%}
 .md\:w-\[80\%\]{width:80%}
 .md\:w-\[95\%\]{width:95%}
 .md\:w-auto{width:auto}
-.md\:w-\[40\%\]{width:40%}
 .md\:max-w-\[270px\]{max-width:270px}
 .md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}
 .md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}
