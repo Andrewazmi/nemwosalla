@@ -191,12 +191,15 @@
                     </div>
                 {% endif %}
 
-                {# {% if product.is_taxable %} #}
-                    <p class="color-grey text-lg mb-2">{{ trans('pages.products.tax_included') }}</p>
-                {# {% endif %} #}
+                
             
                 <div class="flex justify-between items-center">
-                    <h1 class="text-xl md:text-2xl leading-10 font-medium mb-3 text-gray-800">{{ product.name }}</h1>
+                    {% if product.is_taxable %}
+                    <p class="color-grey text-lg mb-2">{{ trans('pages.products.tax_included') }}</p>
+                {% else %}
+                    <p class="color-grey text-lg mb-2">السعر غير شامل الضريبة</p>
+
+                {% endif %}
                     <div class="flex justify-center items-center gap-1">
                         <salla-social-share class="inline-flex"></salla-social-share>
 
@@ -213,6 +216,8 @@
                         </salla-button>
                     </div>
                 </div>
+                    <h1 class="text-xl md:text-2xl leading-10 font-medium mb-3 text-gray-800">{{ product.name }}</h1>
+
 
                 {% if product.subtitle %}
                     <h3 class="product-entry__sub-title text-sm text-gray-400 leading-6 mb-2.5">
@@ -229,7 +234,7 @@
                 <div class="flex whitespace-nowrap gap-4 items-center">
                   {% if product.is_on_sale %}
                     <div class="flex items-center space-x-2 rtl:space-x-reverse whitespace-nowrap">
-                      <h4 class="text-red-400 font-bold text-xl inline-block">{{product.sale_price|money}}</h4>
+                      <h4 class="text-[#334155] font-bold text-xl inline-block">{{product.sale_price|money}}</h4>
                       <span class="text-gray-400 line-through opacity-70">{{product.regular_price|money}}</span>
                     </div>
                   {% elseif product.starting_price %}
@@ -270,11 +275,11 @@
                     </svg>
                     <p class="text-base">{{product.status == "sale" ? "متوفر" : "غير متوفر"}}</p>
                 </div>
-
                 <div class="flex items-center justify-start w-full gap-2 mt-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="40" viewBox="0 0 57 73" fill="none">
                         <path d="M4.05556 64.8889C4.05556 69.35 7.70556 73 12.1667 73H44.6111C49.0722 73 52.7222 69.35 52.7222 64.8889V16.2222H4.05556V64.8889ZM12.1667 24.3333H44.6111V64.8889H12.1667V24.3333ZM42.5833 4.05556L38.5278 0H18.25L14.1944 4.05556H0V12.1667H56.7778V4.05556H42.5833Z" fill="#334155"/>
                     </svg>
+                    
                     <p class="text-base">{{product.quantity ? product.quantity : "0" }} المتبقى</p>
                 </div>
 
@@ -367,7 +372,7 @@
                     {% hook 'product:single.form.end' %}
 
 
-                    <section class="flex bg-white p-5 sm:pb-0 rounded-md rounded-b-none">
+                    {# <section class="flex bg-white p-5 sm:pb-0 rounded-md rounded-b-none">
                         <div class="center-between w-full">
                             <label class="form-label">
                                 <b class="block">
@@ -388,7 +393,7 @@
                               {% endif %} 
                             </div>
                         </div>
-                    </section>
+                    </section> #}
                     <section class="sticky-product-bar bg-white p-5 rounded-md rounded-b-none">
                         {# Quantity #}
                         {% if product.is_hidden_quantity or product.type == 'booking' %}
