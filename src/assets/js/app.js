@@ -13,22 +13,22 @@ class App extends AppHelpers {
   }
 
   loadTheApp() {
-    this.productCategoryPage();
-    this.navLinksCategory();
-    this.doneSubscribe();
-    this.featureProductSlider();
-    this.handleDropdown();
-    this.scrollToTop();
-    this.timeStamp();
-    this.productBelongThree();
-    this.navLinks();
-    this.prodBelongToCat();
-    this.productCategory();
-    this.map();
-    this.getAllCategory();
-    this.elanSldier();
-    this.commonThings();
-    this.removeElan();
+    // this.productCategoryPage();
+    // this.navLinksCategory();
+    // this.doneSubscribe();
+    // this.featureProductSlider();
+    // this.handleDropdown();
+    // this.scrollToTop();
+    // this.timeStamp();
+    // this.productBelongThree();
+    // this.navLinks();
+    // this.prodBelongToCat();
+    // this.productCategory();
+    // this.map();
+    // this.getAllCategory();
+    // this.elanSldier();
+    // this.commonThings();
+    // this.removeElan();
     this.initiateNotifier();
     this.initiateMobileMenu();
     // this.toggleProductFilterMenu();
