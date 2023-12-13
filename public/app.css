@@ -7548,18 +7548,18 @@ salla-search input {
 .main-nav-container.fixed-pinned .inner {
   z-index: 99;
 }
-#modalProduct .s-quantity-input-container {
+.s-quantity-input-container {
   border: none;
   gap: 0.5rem;
 }
-#modalProduct .s-quantity-input-button {
+.s-quantity-input-button {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
   border: 1px solid #ccc;
   background-color: #fff;
 }
-#modalProduct .s-quantity-input-input {
+.s-quantity-input-input {
   width: 3.5rem;
   height: 2rem;
   background-color: #fff;

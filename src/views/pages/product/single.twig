@@ -409,7 +409,7 @@
                         {% endif %}
                         {# Add to cart #}
                         <salla-add-product-button
-                                quick-buy
+                           
                                 support-sticky-bar
                                 amount="{{ product.base_currency_price }}"
                                 class="mt-5 w-full sticky-product-bar__btn"
@@ -426,7 +426,7 @@
                                     subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
                                     {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
                                 {% endif %}>
-                            {{ product.add_to_cart_label }}
+                            أضف إلي عربة التسوق بنجاح
                         </salla-add-product-button>
                     </section>
                     {% if product.is_giftable %}
@@ -441,7 +441,7 @@
         {% component 'product.offer' %}
     </div>
 
-    {% component 'comments' %}
+    {% component 'comments' %
     <div class="container">
     <div class="text-center mb-2 flex flex-col justify-center items-center">
 			<h1 class="mb-3">منتجات مشابهة</h1>
