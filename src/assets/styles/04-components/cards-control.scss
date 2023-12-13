@@ -409,7 +409,7 @@ svg {
   margin-right: 1rem;
 }
 
-salla-add-product-button button:not(.new-design-product button) {
+salla-add-product-button button:not(.new-design-product button , .product-single button) {
   width: 100%;
   height: 100%;
   background: red;
@@ -608,10 +608,9 @@ salla-search input {
 
 
 
-
-
-
-
+salla-add-product-button .s-button-text{
+ width:100%
+}
 
 
 
@@ -675,6 +674,43 @@ salla-search input {
     height: 500px;
   }
 }
+
+@media (min-width: 768px){
+  .product-single .s-slider-container{
+    height: 600px;
+  }
+  
+  // .product-single salla-slider{
+  //   display: flex;
+  //   flex-direction: row-reverse;
+  //   gap: 4px;
+  // }
+  
+  .product-single .s-slider-thumbs{
+    
+  
+    height: 600px !important;
+  }
+  
+  
+  .product-single .s-slider-thumbs .s-slider-thumbs-container .swiper-slide:after {
+    border: none !important;
+    border-radius: 0px !important;
+  }
+  
+  
+  .product-single .s-slider-thumbs .s-slider-thumbs-container .swiper-slide{
+    border: none !important;
+    border-radius: 0px !important; 
+  }
+  
+  
+  .product-single .s-slider-thumbs .s-slider-thumbs-container .swiper-slide.swiper-slide-thumb-active:after {
+    --tw-ring-color: none;
+  }
+}
+
+
 @media (max-width: 768px) {
   body {
     padding-bottom: 64px;
