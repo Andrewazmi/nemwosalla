@@ -918,6 +918,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .\!text-primary{color:#414042 !important;color:var(--color-primary) !important}
 .\!text-white{--tw-text-opacity:1 !important;color:rgba(255, 255, 255, 1) !important;color:rgba(255, 255, 255, var(--tw-text-opacity)) !important}
 .text-\[\#00000096\]{color:rgba(0,0,0,0.58824)}
+.text-\[\#334155\]{--tw-text-opacity:1;color:rgba(51, 65, 85, 1);color:rgba(51, 65, 85, var(--tw-text-opacity))}
 .text-\[\#404553\]{--tw-text-opacity:1;color:rgba(64, 69, 83, 1);color:rgba(64, 69, 83, var(--tw-text-opacity))}
 .text-\[\#707070\]{--tw-text-opacity:1;color:rgba(112, 112, 112, 1);color:rgba(112, 112, 112, var(--tw-text-opacity))}
 .text-\[\#999999\]{--tw-text-opacity:1;color:rgba(153, 153, 153, 1);color:rgba(153, 153, 153, var(--tw-text-opacity))}
@@ -940,7 +941,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .text-red-500{--tw-text-opacity:1;color:rgba(239, 68, 68, 1);color:rgba(239, 68, 68, var(--tw-text-opacity))}
 .text-red-700{--tw-text-opacity:1;color:rgba(185, 28, 28, 1);color:rgba(185, 28, 28, var(--tw-text-opacity))}
 .text-white{--tw-text-opacity:1;color:rgba(255, 255, 255, 1);color:rgba(255, 255, 255, var(--tw-text-opacity))}
-.text-\[\#334155\]{--tw-text-opacity:1;color:rgba(51, 65, 85, 1);color:rgba(51, 65, 85, var(--tw-text-opacity))}
 .underline{text-decoration-line:underline}
 .line-through{text-decoration-line:line-through}
 .opacity-0{opacity:0}

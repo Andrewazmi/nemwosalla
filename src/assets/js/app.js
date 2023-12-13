@@ -70,9 +70,12 @@ class App extends AppHelpers {
   handleDropdown() {
     const dropdownButton = document.getElementById("dropdownButton");
     const dropdownMenu = document.getElementById("dropdownMenu");
-    dropdownButton.addEventListener("click", () => {
-      dropdownMenu.classList.toggle("show");
-    });
+    if(dropdownButton){
+      dropdownButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("show");
+      });
+    }
+    
   }
 
   //// feature product slider
@@ -224,7 +227,8 @@ class App extends AppHelpers {
   scrollToTop() {
     let calcScrollValue = () => {
       let scrollProgress = document.getElementById("scrollToTopBtn");
-      let pos = window.scrollY;
+      if(scrollProgress){
+        let pos = window.scrollY;
       if (pos > 100) {
         scrollProgress.style.display = "flex";
       } else {
@@ -234,6 +238,8 @@ class App extends AppHelpers {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     };
+      }
+      
 
     window.onload = calcScrollValue;
     window.onscroll = calcScrollValue;
