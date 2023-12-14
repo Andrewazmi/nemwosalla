@@ -82,13 +82,44 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    <div class="container">
+    <div class="container ">
         {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
         <nav class="breadcrumbs w-full py-5">
             {% component 'header.breadcrumbs' %}
         </nav>
         <div class="flex flex-col items-start md:flex-row" id="product-{{ product.id }}">
-            <div class="sidebar md:sticky top-24 w-full md:!w-2/4 rtl:ml-8 ltr:mr-8 pb-8 md:pb-16 overflow-hidden shrink-0">
+
+        <div class=" flex flex-col justify-center items-center md:block hidden">
+            <div class=" mb-10">
+                <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="85" viewBox="0 0 96 85" fill="none">
+                    <g clip-path="url(#clip0_1200_297)">
+                        <path d="M64.0645 11.6074V28.1777L83.7324 33.8379V66.8965H77.4238C76.9909 69.4121 75.6921 71.4902 73.5273 73.1309C71.3626 74.7715 68.8423 75.5918 65.9663 75.5918C63.0903 75.5918 60.57 74.7715 58.4053 73.1309C56.2406 71.4902 54.9417 69.4121 54.5088 66.8965H36.0469C35.6139 69.4121 34.3151 71.4902 32.1504 73.1309C29.9857 74.7715 27.4653 75.5918 24.5894 75.5918C21.7134 75.5918 19.193 74.7715 17.0283 73.1309C14.8636 71.4902 13.5648 69.4121 13.1318 66.8965H5.52441V52.9512H13.1318V60.1699H56.457V18.334H13.1318V27.1934H28.9033V33.9199H5.52441V11.6074H64.0645ZM28.1611 66.8965H21.0176C21.3268 67.498 21.8062 67.9766 22.4556 68.332C23.105 68.6875 23.8162 68.8652 24.5894 68.8652C25.3625 68.8652 26.0737 68.6875 26.7231 68.332C27.3726 67.9766 27.8519 67.498 28.1611 66.8965ZM69.5381 66.8965H62.3945C62.7038 67.498 63.1831 67.9766 63.8325 68.332C64.4819 68.6875 65.1932 68.8652 65.9663 68.8652C66.7394 68.8652 67.4507 68.6875 68.1001 68.332C68.7495 67.9766 69.2288 67.498 69.5381 66.8965ZM64.0645 35.2324V60.1699H76.125V38.6777L64.0645 35.2324ZM18.1416 39.334V46.0605H0.421875V39.334H18.1416Z" fill="#334155"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1200_297">
+                        <rect width="95" height="84" fill="white" transform="matrix(1 0 0 -1 0.421875 84.6973)"/>
+                        </clipPath>
+                    </defs>
+                    </svg>
+                    <h2>شحن مجاني</h2>
+                </div>
+                <div>
+                    <p>شحن سريع مجاني للطلبات
+أكثر من00. 334 SR<p>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-center items-center">
+                    <svg fill="#334155" height="80px" width="80px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 214.27 214.27" xml:space="preserve" stroke="#334155"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M196.926,55.171c-0.11-5.785-0.215-11.25-0.215-16.537c0-4.142-3.357-7.5-7.5-7.5c-32.075,0-56.496-9.218-76.852-29.01 c-2.912-2.832-7.546-2.831-10.457,0c-20.354,19.792-44.771,29.01-76.844,29.01c-4.142,0-7.5,3.358-7.5,7.5 c0,5.288-0.104,10.755-0.215,16.541c-1.028,53.836-2.436,127.567,87.331,158.682c0.796,0.276,1.626,0.414,2.456,0.414 c0.83,0,1.661-0.138,2.456-0.414C199.36,182.741,197.954,109.008,196.926,55.171z M107.131,198.812 c-76.987-27.967-75.823-89.232-74.79-143.351c0.062-3.248,0.122-6.396,0.164-9.482c30.04-1.268,54.062-10.371,74.626-28.285 c20.566,17.914,44.592,27.018,74.634,28.285c0.042,3.085,0.102,6.231,0.164,9.477C182.961,109.577,184.124,170.844,107.131,198.812 z"></path> <path d="M132.958,81.082l-36.199,36.197l-15.447-15.447c-2.929-2.928-7.678-2.928-10.606,0c-2.929,2.93-2.929,7.678,0,10.607 l20.75,20.75c1.464,1.464,3.384,2.196,5.303,2.196c1.919,0,3.839-0.732,5.303-2.196l41.501-41.5 c2.93-2.929,2.93-7.678,0.001-10.606C140.636,78.154,135.887,78.153,132.958,81.082z"></path> </g> </g></svg>
+                    <h2>دفع آمن</h2>
+                </div>
+                <div>
+                    <p>تأمين معلومات الدفع <p>
+                </div>
+            </div>
+        </div>
+            <div class="sidebar md:sticky top-24 w-full md:!w-2/4 rtl:ml-8 ltr:mr-8 pb-8 md:pb-16 overflow-hidden shrink-0 single-product-edit-slider">
                 {% set has_many_images = product.images|length > 1 %}
                 <salla-slider
                         vertical-thumbs="true"
@@ -361,6 +392,38 @@
                     </section>
                 {% endif %}
 
+                <div class=" w-full flex flex-col justify-center items-center   gap-4">
+
+                 <button class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2" onclick="onclickModalTamaraTaby('tamara' , {{product.price}} )">
+                           <div class=" flex">
+                                <p class=" text-end">
+                                أو قسمها علي 3 دفعات شهرية 
+فقط مع تابي   اعرف المزيد 
+                         <span class=" font-bold">المزيد</span> 
+                                </p>
+                                      
+                                    <img  src="{{ 'images/tamara2.png' | asset }}" />
+
+                            </div>
+
+</button>
+                           <button class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2" onclick="onclickModalTamaraTaby('taby' , {{product.price}} )">
+                           <div class=" flex">
+                                <p class=" text-end">
+                                أو قسمها علي 4 دفعات شهرية بقيمة 
+فقط مع تابي   اعرف 
+                         <span class=" font-bold">المزيد</span> 
+                                </p>
+                                      
+                                    <img  src="{{ 'images/tabby-logo-1.png' | asset }}" />
+
+                            </div>
+
+</button>
+                            
+                                
+                        </div>
+
                 <form class="form product-form" enctype="multipart/form-data" method="post"
                       onchange="salla.product.getPrice(new FormData(event.currentTarget))"
                       onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
@@ -372,6 +435,34 @@
                     {% include 'pages.partials.product.options' %}
 
                     {% hook 'product:single.form.end' %}
+
+                    {# <div class=" w-full flex flex-col justify-center items-center gap-4 md:hidden block">
+                            <div class="flex justify-between gap-4 items-center w-full bg-[#F8EFEF] rounded p-2">
+                                <div class=" flex">
+                                <p>
+                                  أو قسمها علي 4 دفعات شهرية بقيمة 33.75 د.إ
+                                    فقط مع تابي   اعرف <span class=" font-bold">المزيد</span> 
+                                <p>
+                                      
+                                    <img class="" src="{{ 'images/tamara2.png' | asset }}" />
+
+                                </div>
+                            
+                            </div>
+                            <div class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2">
+                                <div class=" flex">
+                                <p>
+                                أو قسمها علي 4 دفعات شهرية بقيمة 24.75 د.إ
+فقط مع تابي   اعرف 
+                         <span class=" font-bold">المزيد</span> 
+                                <p>
+                                      
+                                    <img class="" src="{{ 'images/tabby-logo-1.png' | asset }}" />
+
+                                </div>
+                            
+                            </div>
+                        </div> #}
 
 
                     {# <section class="flex bg-white p-5 sm:pb-0 rounded-md rounded-b-none">
@@ -396,7 +487,16 @@
                             </div>
                         </div>
                     </section> #}
-                    <section class="sticky-product-bar bg-white p-5 rounded-md rounded-b-none">
+
+
+
+
+
+
+
+
+
+                    <section class=" bg-white  rounded-md rounded-b-none " style="bottom: 50px !important ;z-index:45 !important">
                         {# Quantity #}
                         {% if product.is_hidden_quantity or product.type == 'booking' %}
                             <input type="hidden" value="1" name="quantity"/>
@@ -410,6 +510,9 @@
                             </div>
                         {% endif %}
                         {# Add to cart #}
+                        
+                        
+                        
                         <salla-add-product-button
                            
                                 support-sticky-bar
@@ -428,7 +531,8 @@
                                     subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
                                     {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
                                 {% endif %}>
-                            أضف إلي عربة التسوق بنجاح
+                                <p class=" py-2">
+                            أضف إلي عربة التسوق بنجاح<p>
                         </salla-add-product-button>
                     </section>
                     {% if product.is_giftable %}
@@ -443,6 +547,10 @@
         {% component 'product.offer' %}
     </div>
 
+
+
+
+
     {% component 'comments' %}
     <div class="container">
     <div class="text-center mb-2 flex flex-col justify-center items-center">
@@ -452,12 +560,117 @@
     </div>
         <salla-products-list source="related" source-value="{{product.id}}" ></salla-products-list>
     </div>
+
+    {# model tamara #}
+
+        <div class="hidden bg-[rgba(0, 0, 0, 0.5)] fixed top-0 left-0 z-40 h-screen w-screen items-center justify-center"  id="TabyTamaraModal">
+            <div class="md:w-[50%] w-[90%] h-[75%] lg:h-[80%]  overflow-y-auto rounded-3xl py-4 px-4 lg:py-16 lg:px-20 " style=" background-color: #F8F4F4" id="ModalTabyTamara">
+                
+            </div>
+        </div>
 {% endblock %}
 
 {% block scripts %}
+
     <script defer src="{{ 'product.js' | asset }}"></script>
+    <script>
+     console.log("heeeeelllllllllllo")
+    const displayModal = document.getElementById("TabyTamaraModal")
+
+    function getPriceFormat(price) {
+    if (!price || price == 0) {
+      return salla.config.get("store.settings.product.show_price_as_dash")
+        ? "-"
+        : "";
+    }
+
+    return salla.money(price);
+
+  }
+
+
+
+     function  onclickModalTamaraTaby(type , price){
+
+    const insert = document.getElementById("ModalTabyTamara")
+    const priceEdit = type == "tamara" ? parseFloat(price) / 3 : parseFloat(price) / 4;
+    console.log({priceEdit})
+            insert.innerHTML = `
+                        <div class="flex flex-col items-start justify-start w-full h-full space-y-1 lg:space-y-5">
+                    <button type="button" onclick="closeModalTamara()" class="flex items-center justify-center w-16 h-16 mb-1 lg:mb-8 text-xl font-black h-[10%]">
+			            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 121 122" fill="none">
+                        <path d="M95.7904 32.5835L88.6816 25.416L60.4987 53.8319L32.3158 25.416L25.207 32.5835L53.3899 60.9994L25.207 89.4152L32.3158 96.5827L60.4987 68.1669L88.6816 96.5827L95.7904 89.4152L67.6074 60.9994L95.7904 32.5835Z" fill="#212121"/>
+                        </svg>
+	                </button>
+                    <div class=" w-full flex justify-center items-center">
+                    ${
+                        type === "tamara" ? '<img class=" md:w-[30%]  w-[50%]" src="{{ 'images/tamara3.png' | asset }}" />' : '<img class=" md:w-[30%]  w-[50%]" src="{{ 'images/tabby-logo-1.png' | asset }}" />' 
+                    }
+                        
+                    </div>
+                    <h4 class=" md:text-start text-center">قسمها علي 3 دفعات بقيمة 33.00  د.إ بدون أية فوائد</h4>
+
+                    <div class=" w-full flex flex-col justify-center items-center gap-4 md:gap-6">
+                        <h4 class="  opacity-80">اطلب الي بخاطرك وقسط المبلغ بدون رسوم </h4>
+                        <div class="svgs">
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex flex-col justify-center items-center">
+                                    
+                                <h5>24.75د.إ</h5>   
+                                    
+                                 <h5 class=" opacity-80">اليوم</h5>    
+                                
+                            </div>
+                            <div class="flex flex-col justify-center items-center">
+                                    <h5>24.75د.إ</h5>   
+                                    
+                                 <h5 class=" opacity-80">اليوم</h5>    
+                            </div>
+                            <div class="flex flex-col justify-center items-center">
+                                    <h5>24.75د.إ</h5>   
+
+
+                                 <h5 class=" opacity-80">اليوم</h5>    
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>طريقة التقسيط مع تمارا:</h4>
+                    <h4 class="opacity-80">1. اضف المنتج للسلة</h4>
+                    <h4 class="opacity-80">2.  اضغط علي زر  [اكمل الشراء]</h4>
+                    <h4 class="opacity-80">3.  قم بتعبئة معلومات التوصيل</h4>
+                    <h4 class="opacity-80">4.  اختر الدفع من خلال تمارا</h4>
+
+                    <h4>طرق الدفع المدعومة :</h4>
+
+                    <div class=" w-full flex justify-end items-center">
+                        <img class=" md:w-[20%]  w-[30%]" src="{{ 'images/VISA-logo.png' | asset }}" />
+
+                        <img class=" md:w-[20%]  w-[30%]" src="{{ 'images/MasterCard_early_1990s_logo.png' | asset }}" />
+
+
+                    </div>
+
+                    <a href="{{store.url}}" class=" w-full flex justify-center items-center ">
+                        <button  class=" text-xl md:py-4 py-2 px-6 font-bold bg-[#404553] text-white rounded">
+                        تابع التسوق
+                        </button>
+                    </a>
+                </div>
+            `
+            displayModal.classList.replace('hidden', 'flex');
+  
+        }
+        function closeModalTamara() {
+displayModal.classList.replace('flex', 'hidden');
+
+}
+    
+    </script>
     {% if product.has_3d_image %}
         <script type="module" defer src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     {% endif %}
+   
 {% endblock %}
 

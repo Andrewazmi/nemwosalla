@@ -55,6 +55,7 @@ class App extends AppHelpers {
     salla.log(`ThemeApp(Raed)::${message}`);
     return this;
   }
+  
 
   doneSubscribe() {
     const subscribeBtn = document.getElementById("subscribe-btn");
@@ -225,7 +226,9 @@ class App extends AppHelpers {
 
   // Scroll to top function
   scrollToTop() {
+    
     let calcScrollValue = () => {
+      
       let scrollProgress = document.getElementById("scrollToTopBtn");
       if(scrollProgress){
         let pos = window.scrollY;
