@@ -579,8 +579,26 @@ salla-add-product-button .s-button-text{
  width:100%
 }
 
+.single-product-edit-slider .s-slider-container{
+  height: 400px;
+}
 
 
+.single-product-edit-slider .s-slider-thumbs .s-slider-thumbs-container .swiper-slide:after {
+  border: none !important;
+  border-radius: 0px !important;
+}
+
+
+.single-product-edit-slider .s-slider-thumbs .s-slider-thumbs-container .swiper-slide{
+  border: none !important;
+  border-radius: 0px !important; 
+}
+
+
+.single-product-edit-slider .s-slider-thumbs .s-slider-thumbs-container .swiper-slide.swiper-slide-thumb-active:after {
+  --tw-ring-color: none;
+}
 
 
 

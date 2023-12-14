@@ -58,6 +58,7 @@ class App extends AppHelpers {
   
 
   doneSubscribe() {
+    
     const subscribeBtn = document.getElementById("subscribe-btn");
     const subscribeAlert = document.getElementById("subscribe-alert");
     subscribeBtn.addEventListener("click", () => {

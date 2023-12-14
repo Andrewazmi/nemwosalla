@@ -135,7 +135,7 @@
                     {% endif %}
 
                     <salla-button
-                            class="btn--wishlist animated sws"
+                            class="btn--wishlist animated hidden sws"
                             data-id="{{ product.id }}"
                             onclick="salla.wishlist.toggle({{ product.id }})"
                             shape="icon"
@@ -189,7 +189,7 @@
                     {% if has_many_images %}
                         <div slot="thumbs">
                             {% for image in product.images %}
-                                <div class="slide--one-fourth {{ image.video_url?'video-entry':'' }} {{ image.three_d_image_url?'model-entry':'' }} !w-full">
+                                <div class="slide--one-fourth {{ image.video_url?'video-entry':'' }} {{ image.three_d_image_url?'model-entry':'' }} md:!w-full ">
                                     {% if loop.index < 5 %}
                                         <img src="{{ image.url }}"
                                              loading="eager"
@@ -237,7 +237,7 @@
                         <salla-social-share class="inline-flex"></salla-social-share>
 
                         <salla-button
-                                class="btn--wishlist animated hidden sm:inline-flex"
+                                class="btn--wishlist animated  sm:inline-flex"
                                 data-id="{{ product.id }}"
                                 onclick="salla.wishlist.toggle({{ product.id }})"
                                 shape="icon"
@@ -398,7 +398,7 @@
                            <div class=" flex">
                                 <p class=" text-end">
                                 أو قسمها علي 3 دفعات شهرية 
-فقط مع تابي   اعرف المزيد 
+فقط مع تمارا   اعرف المزيد 
                          <span class=" font-bold">المزيد</span> 
                                 </p>
                                       
@@ -423,6 +423,20 @@
                             
                                 
                         </div>
+
+<div class="md:hidden block w-full py-3 space-y-6 ">
+<p class="  opacity-80"> {{product.description}}</p>
+<div>
+<h4 >رمز المنتج :</h4>
+<p>{{product.sku}}</p>
+</div>
+
+<div>
+<h4 >الوزن:</h4>
+<p>{{product.weight}}</p>
+</div>
+</div>
+
 
                 <form class="form product-form" enctype="multipart/form-data" method="post"
                       onchange="salla.product.getPrice(new FormData(event.currentTarget))"
@@ -593,7 +607,7 @@
      function  onclickModalTamaraTaby(type , price){
 
     const insert = document.getElementById("ModalTabyTamara")
-    const priceEdit = type == "tamara" ? parseFloat(price) / 3 : parseFloat(price) / 4;
+    const priceEdit = type == "tamara" ? (parseFloat(price) / 3).toFixed(2) :( parseFloat(price) / 4).toFixed(2);
     console.log({priceEdit})
             insert.innerHTML = `
                         <div class="flex flex-col items-start justify-start w-full h-full space-y-1 lg:space-y-5">
@@ -608,7 +622,7 @@
                     }
                         
                     </div>
-                    <h4 class=" md:text-start text-center">قسمها علي 3 دفعات بقيمة 33.00  د.إ بدون أية فوائد</h4>
+                    <h4 class=" md:text-start text-center">قسمها علي 3 دفعات بقيمة${getPriceFormat(priceEdit)} بدون أية فوائد</h4>
 
                     <div class=" w-full flex flex-col justify-center items-center gap-4 md:gap-6">
                         <h4 class="  opacity-80">اطلب الي بخاطرك وقسط المبلغ بدون رسوم </h4>
@@ -617,22 +631,32 @@
                         <div class="flex gap-4">
                             <div class="flex flex-col justify-center items-center">
                                     
-                                <h5>24.75د.إ</h5>   
+                                <h5>${getPriceFormat(priceEdit)}</h5>   
                                     
                                  <h5 class=" opacity-80">اليوم</h5>    
                                 
                             </div>
                             <div class="flex flex-col justify-center items-center">
-                                    <h5>24.75د.إ</h5>   
+                                <h5>${getPriceFormat(priceEdit)}</h5>   
                                     
-                                 <h5 class=" opacity-80">اليوم</h5>    
+                                 <h5 class=" opacity-80">بعد شهر</h5>    
                             </div>
                             <div class="flex flex-col justify-center items-center">
-                                    <h5>24.75د.إ</h5>   
+                                <h5>${getPriceFormat(priceEdit)}</h5>   
 
 
-                                 <h5 class=" opacity-80">اليوم</h5>    
+                                 <h5 class=" opacity-80">بعد شهرين</h5>    
                             </div>
+                            ${
+                                type != 'tamara' ? `
+                                        <div class="flex flex-col justify-center items-center">
+                                <h5>${getPriceFormat(priceEdit)}</h5>   
+
+
+                                 <h5 class=" opacity-80">بعد 3 أشهر</h5>    
+                            </div>
+                                `:""
+                            }
                         </div>
                     </div>
 
