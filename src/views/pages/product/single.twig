@@ -82,19 +82,52 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-    <div class="container">
+    <div class="container ">
         {# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
         <nav class="breadcrumbs w-full py-5">
             {% component 'header.breadcrumbs' %}
         </nav>
         <div class="flex flex-col items-start md:flex-row" id="product-{{ product.id }}">
-            <div class="sidebar md:sticky top-24 w-full md:!w-2/4 rtl:ml-8 ltr:mr-8 pb-8 md:pb-16 overflow-hidden shrink-0">
+
+        <div class=" flex flex-col justify-center items-center md:block hidden">
+            <div class=" mb-10">
+                <div class="flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="85" viewBox="0 0 96 85" fill="none">
+                    <g clip-path="url(#clip0_1200_297)">
+                        <path d="M64.0645 11.6074V28.1777L83.7324 33.8379V66.8965H77.4238C76.9909 69.4121 75.6921 71.4902 73.5273 73.1309C71.3626 74.7715 68.8423 75.5918 65.9663 75.5918C63.0903 75.5918 60.57 74.7715 58.4053 73.1309C56.2406 71.4902 54.9417 69.4121 54.5088 66.8965H36.0469C35.6139 69.4121 34.3151 71.4902 32.1504 73.1309C29.9857 74.7715 27.4653 75.5918 24.5894 75.5918C21.7134 75.5918 19.193 74.7715 17.0283 73.1309C14.8636 71.4902 13.5648 69.4121 13.1318 66.8965H5.52441V52.9512H13.1318V60.1699H56.457V18.334H13.1318V27.1934H28.9033V33.9199H5.52441V11.6074H64.0645ZM28.1611 66.8965H21.0176C21.3268 67.498 21.8062 67.9766 22.4556 68.332C23.105 68.6875 23.8162 68.8652 24.5894 68.8652C25.3625 68.8652 26.0737 68.6875 26.7231 68.332C27.3726 67.9766 27.8519 67.498 28.1611 66.8965ZM69.5381 66.8965H62.3945C62.7038 67.498 63.1831 67.9766 63.8325 68.332C64.4819 68.6875 65.1932 68.8652 65.9663 68.8652C66.7394 68.8652 67.4507 68.6875 68.1001 68.332C68.7495 67.9766 69.2288 67.498 69.5381 66.8965ZM64.0645 35.2324V60.1699H76.125V38.6777L64.0645 35.2324ZM18.1416 39.334V46.0605H0.421875V39.334H18.1416Z" fill="#334155"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_1200_297">
+                        <rect width="95" height="84" fill="white" transform="matrix(1 0 0 -1 0.421875 84.6973)"/>
+                        </clipPath>
+                    </defs>
+                    </svg>
+                    <h2>شحن مجاني</h2>
+                </div>
+                <div>
+                    <p>شحن سريع مجاني للطلبات
+أكثر من00. 334 SR<p>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-center items-center">
+                    <svg fill="#334155" height="80px" width="80px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 214.27 214.27" xml:space="preserve" stroke="#334155"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M196.926,55.171c-0.11-5.785-0.215-11.25-0.215-16.537c0-4.142-3.357-7.5-7.5-7.5c-32.075,0-56.496-9.218-76.852-29.01 c-2.912-2.832-7.546-2.831-10.457,0c-20.354,19.792-44.771,29.01-76.844,29.01c-4.142,0-7.5,3.358-7.5,7.5 c0,5.288-0.104,10.755-0.215,16.541c-1.028,53.836-2.436,127.567,87.331,158.682c0.796,0.276,1.626,0.414,2.456,0.414 c0.83,0,1.661-0.138,2.456-0.414C199.36,182.741,197.954,109.008,196.926,55.171z M107.131,198.812 c-76.987-27.967-75.823-89.232-74.79-143.351c0.062-3.248,0.122-6.396,0.164-9.482c30.04-1.268,54.062-10.371,74.626-28.285 c20.566,17.914,44.592,27.018,74.634,28.285c0.042,3.085,0.102,6.231,0.164,9.477C182.961,109.577,184.124,170.844,107.131,198.812 z"></path> <path d="M132.958,81.082l-36.199,36.197l-15.447-15.447c-2.929-2.928-7.678-2.928-10.606,0c-2.929,2.93-2.929,7.678,0,10.607 l20.75,20.75c1.464,1.464,3.384,2.196,5.303,2.196c1.919,0,3.839-0.732,5.303-2.196l41.501-41.5 c2.93-2.929,2.93-7.678,0.001-10.606C140.636,78.154,135.887,78.153,132.958,81.082z"></path> </g> </g></svg>
+                    <h2>دفع آمن</h2>
+                </div>
+                <div>
+                    <p>تأمين معلومات الدفع <p>
+                </div>
+            </div>
+        </div>
+            <div class="sidebar md:sticky top-24 w-full md:!w-2/4 rtl:ml-8 ltr:mr-8 pb-8 md:pb-16 overflow-hidden shrink-0 single-product-edit-slider">
                 {% set has_many_images = product.images|length > 1 %}
                 <salla-slider
+                        vertical-thumbs="true"
                         id="details-slider-{{ product.id }}"
-                        class="details-slider rounded-md"
+                        class="details-slider rounded-md flex-row-reverse gap-2"
                         type="thumbs"
                         loop="false"
+                         show-controls="false"
                         listen-to-thumbnails-option
                         show-thumbs-controls="false">
                     {% if product.promotion_title %}
@@ -102,7 +135,7 @@
                     {% endif %}
 
                     <salla-button
-                            class="btn--wishlist animated sws"
+                            class="btn--wishlist animated hidden sws"
                             data-id="{{ product.id }}"
                             onclick="salla.wishlist.toggle({{ product.id }})"
                             shape="icon"
@@ -156,16 +189,16 @@
                     {% if has_many_images %}
                         <div slot="thumbs">
                             {% for image in product.images %}
-                                <div class="slide--one-fourth {{ image.video_url?'video-entry':'' }} {{ image.three_d_image_url?'model-entry':'' }}">
+                                <div class="slide--one-fourth {{ image.video_url?'video-entry':'' }} {{ image.three_d_image_url?'model-entry':'' }} md:!w-full ">
                                     {% if loop.index < 5 %}
                                         <img src="{{ image.url }}"
                                              loading="eager"
-                                             class="object-cover w-full h-full bg-gray-100 rounded-md overflow-hidden"
+                                             class="object-contain w-full h-full bg-gray-100 "
                                              title="{{ image.alt }}"
                                              alt="{{ image.alt }}"/>
                                     {% else %}
                                         <img data-src="{{ image.url }}" src="{{ 'images/s-empty.png' | asset }}"
-                                             class="object-cover w-full h-full lazy bg-gray-100 rounded-md overflow-hidden"
+                                             class="object-contain w-full h-full lazy bg-gray-100 "
                                              title="{{ image.alt }}"
                                              alt="{{ image.alt }}"/>
                                     {% endif %}
@@ -191,11 +224,33 @@
                     </div>
                 {% endif %}
 
-                {% if product.is_taxable %}
-                    <small class="color-grey">{{ trans('pages.products.tax_included') }}</small>
-                {% endif %}
+                
+            
+                <div class="flex justify-between items-center">
+                    {% if product.is_taxable %}
+                    <p class="color-grey text-lg mb-2">{{ trans('pages.products.tax_included') }}</p>
+                {% else %}
+                    <p class="color-grey text-lg mb-2">السعر غير شامل الضريبة</p>
 
-                <h1 class="text-xl md:text-2xl leading-10 font-bold mb-6 text-gray-800">{{ product.name }}</h1>
+                {% endif %}
+                    <div class="flex justify-center items-center gap-1">
+                        <salla-social-share class="inline-flex"></salla-social-share>
+
+                        <salla-button
+                                class="btn--wishlist animated  sm:inline-flex"
+                                data-id="{{ product.id }}"
+                                onclick="salla.wishlist.toggle({{ product.id }})"
+                                shape="icon"
+                                fill="outline"
+                                color="light">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 62 68" fill="none">
+                                <path d="M31.1319 59.7198L27.4232 56.0595C14.2509 43.1097 5.55469 34.569 5.55469 24.0872C5.55469 15.5465 11.7444 8.83594 19.6222 8.83594C24.0726 8.83594 28.344 11.082 31.1319 14.6314C33.9198 11.082 38.1912 8.83594 42.6417 8.83594C50.5195 8.83594 56.7092 15.5465 56.7092 24.0872C56.7092 34.569 48.0129 43.1097 34.8406 56.0872L31.1319 59.7198Z" fill="#212121"/>
+                              </svg>
+                        </salla-button>
+                    </div>
+                </div>
+                    <h1 class="text-xl md:text-2xl leading-10 font-medium mb-3 text-gray-800">{{ product.name }}</h1>
+
 
                 {% if product.subtitle %}
                     <h3 class="product-entry__sub-title text-sm text-gray-400 leading-6 mb-2.5">
@@ -212,32 +267,53 @@
                 <div class="flex whitespace-nowrap gap-4 items-center">
                   {% if product.is_on_sale %}
                     <div class="flex items-center space-x-2 rtl:space-x-reverse whitespace-nowrap">
-                      <h4 class="text-red-400 font-bold text-xl inline-block">{{product.sale_price|money}}</h4>
+                      <h4 class="text-[#334155] font-bold text-xl inline-block">{{product.sale_price|money}}</h4>
                       <span class="text-gray-400 line-through opacity-70">{{product.regular_price|money}}</span>
                     </div>
                   {% elseif product.starting_price %}
                     <span>{{ trans('pages.products.starting_price') }}</span> <h4 class="font-bold text-xl inline-block"> {{product.starting_price|money}}</h4>
                   {% else %}
-                    <h4 class="font-bold text-xl inline-block">{{product.price|money}}</h4>
+                    <h4 class="font-medium text-xl inline-block">{{product.price|money}}</h4>
                   {% endif %} 
                 </div>
 
                 <div class="product__description p-2 px-5 sm:p-1 leading-7 mb-3">
                     {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
-                    {% if product.has_read_more %}
+                    {# {% if product.has_read_more %}
                         <article
                                 class="article article--main relative overflow-hidden transition-all max-h-0 duration-300 p-4"
                                 id="more-content" style="max-height:5.25rem">
                             {{ product_desc|raw }}
                         </article>
 
-                        {# Read More Button #}
+                        Read More Button
                         <a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer">
                             {{ trans('pages.products.read_more') }}
                         </a>
                     {% else %}
                         <p class="pb-1">{{ product_desc|raw }}</p>
-                    {% endif %}
+                    {% endif %} #}
+                </div>
+
+                <div class="flex items-center justify-start w-full gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="30" viewBox="0 0 89 70" fill="none">
+                    <g clip-path="url(#clip0_1072_446)">
+                        <path d="M53.3991 72.3887C62.8984 72.3887 72.0086 68.6584 78.7256 62.0184C85.4426 55.3785 89.2162 46.3727 89.2162 36.9824C89.2162 27.5921 85.4426 18.5864 78.7256 11.9464C72.0086 5.30646 62.8984 1.57617 53.3991 1.57617C43.8998 1.57617 34.7896 5.30646 28.0726 11.9464C21.3556 18.5864 17.582 27.5921 17.582 36.9824C17.582 46.3727 21.3556 55.3785 28.0726 62.0184C34.7896 68.6584 43.8998 72.3887 53.3991 72.3887ZM68.4709 30.6376L52.3532 46.5704C52.0205 46.9002 51.6253 47.1618 51.1902 47.3403C50.755 47.5187 50.2885 47.6106 49.8174 47.6106C49.3463 47.6106 48.8798 47.5187 48.4446 47.3403C48.0095 47.1618 47.6143 46.9002 47.2815 46.5704L40.1181 39.4892C39.4456 38.8244 39.0678 37.9226 39.0678 36.9824C39.0678 36.0422 39.4456 35.1405 40.1181 34.4757C40.7907 33.8108 41.7029 33.4373 42.654 33.4373C43.6051 33.4373 44.5173 33.8108 45.1898 34.4757L49.8174 39.0572L63.3992 25.6241C63.7322 25.2949 64.1276 25.0338 64.5627 24.8556C64.9978 24.6775 65.4641 24.5858 65.9351 24.5858C66.406 24.5858 66.8724 24.6775 67.3075 24.8556C67.7426 25.0338 68.1379 25.2949 68.4709 25.6241C68.8039 25.9533 69.0681 26.3441 69.2483 26.7742C69.4286 27.2043 69.5213 27.6653 69.5213 28.1309C69.5213 28.5964 69.4286 29.0574 69.2483 29.4875C69.0681 29.9176 68.8039 30.3084 68.4709 30.6376Z" fill="#0FA958"/>
+                    </g>
+                        <defs>
+                        <clipPath id="clip0_1072_446">
+                        <rect width="89" height="103" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                    <p class="text-base">{{product.status == "sale" ? "متوفر" : "غير متوفر"}}</p>
+                </div>
+                <div class="flex items-center justify-start w-full gap-2 mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="40" viewBox="0 0 57 73" fill="none">
+                        <path d="M4.05556 64.8889C4.05556 69.35 7.70556 73 12.1667 73H44.6111C49.0722 73 52.7222 69.35 52.7222 64.8889V16.2222H4.05556V64.8889ZM12.1667 24.3333H44.6111V64.8889H12.1667V24.3333ZM42.5833 4.05556L38.5278 0H18.25L14.1944 4.05556H0V12.1667H56.7778V4.05556H42.5833Z" fill="#334155"/>
+                    </svg>
+                    
+                    <p class="text-base">{{product.quantity ? product.quantity : "0" }} المتبقى</p>
                 </div>
 
                 {% if product.tags|length and theme.settings.get('show_tags', true) %}
@@ -250,7 +326,7 @@
                     </div>
                 {% endif %}
 
-                <div class="flex rtl:space-x-reverse space-x-3">
+                {# <div class="flex rtl:space-x-reverse space-x-3">
                     <salla-social-share class="inline-flex mb-5"></salla-social-share>
 
                     <salla-button
@@ -262,7 +338,7 @@
                             color="light">
                         <i class="sicon-heart"></i>
                     </salla-button>
-                </div>
+                </div> #}
 
                 {% if product.sold_quantity or product.can_show_remained_quantity %}
                     <div class="bg-white py-2.5 mb-5 rounded-md inline-flex text-sm">
@@ -281,7 +357,7 @@
                         {% endif %}
                     </div>
                 {% endif %}
-                {% if product.sku %}
+                {# {% if product.sku %}
                     <div class="mb-4 flex justify-between sm:grid sm:grid-cols-3 bg-white rounded-md px-4 py-2">
                         <div class="flex items-center">
                             <i class="sicon-barcode mx-1"></i>
@@ -289,7 +365,7 @@
                         </div>
                         <div class="text-unicode">{{ product.sku }}</div>
                     </div>
-                {% endif %}
+                {% endif %} #}
                 {% hook 'product:single.description' %}
 
                 {# Installment Methods #}
@@ -316,6 +392,52 @@
                     </section>
                 {% endif %}
 
+                <div class=" w-full flex flex-col justify-center items-center   gap-4">
+
+                 <button class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2" onclick="onclickModalTamaraTaby('tamara' , {{product.price}} )">
+                           <div class=" flex">
+                                <p class=" text-end">
+                                أو قسمها علي 3 دفعات شهرية 
+فقط مع تمارا   اعرف المزيد 
+                         <span class=" font-bold">المزيد</span> 
+                                </p>
+                                      
+                                    <img  src="{{ 'images/tamara2.png' | asset }}" />
+
+                            </div>
+
+</button>
+                           <button class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2" onclick="onclickModalTamaraTaby('taby' , {{product.price}} )">
+                           <div class=" flex">
+                                <p class=" text-end">
+                                أو قسمها علي 4 دفعات شهرية بقيمة 
+فقط مع تابي   اعرف 
+                         <span class=" font-bold">المزيد</span> 
+                                </p>
+                                      
+                                    <img  src="{{ 'images/tabby-logo-1.png' | asset }}" />
+
+                            </div>
+
+</button>
+                            
+                                
+                        </div>
+
+<div class="md:hidden block w-full py-3 space-y-6 ">
+<p class="  opacity-80"> {{product.description}}</p>
+<div>
+<h4 >رمز المنتج :</h4>
+<p>{{product.sku}}</p>
+</div>
+
+<div>
+<h4 >الوزن:</h4>
+<p>{{product.weight}}</p>
+</div>
+</div>
+
+
                 <form class="form product-form" enctype="multipart/form-data" method="post"
                       onchange="salla.product.getPrice(new FormData(event.currentTarget))"
                       onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
@@ -328,8 +450,36 @@
 
                     {% hook 'product:single.form.end' %}
 
+                    {# <div class=" w-full flex flex-col justify-center items-center gap-4 md:hidden block">
+                            <div class="flex justify-between gap-4 items-center w-full bg-[#F8EFEF] rounded p-2">
+                                <div class=" flex">
+                                <p>
+                                  أو قسمها علي 4 دفعات شهرية بقيمة 33.75 د.إ
+                                    فقط مع تابي   اعرف <span class=" font-bold">المزيد</span> 
+                                <p>
+                                      
+                                    <img class="" src="{{ 'images/tamara2.png' | asset }}" />
 
-                    <section class="flex bg-white p-5 sm:pb-0 rounded-md rounded-b-none">
+                                </div>
+                            
+                            </div>
+                            <div class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2">
+                                <div class=" flex">
+                                <p>
+                                أو قسمها علي 4 دفعات شهرية بقيمة 24.75 د.إ
+فقط مع تابي   اعرف 
+                         <span class=" font-bold">المزيد</span> 
+                                <p>
+                                      
+                                    <img class="" src="{{ 'images/tabby-logo-1.png' | asset }}" />
+
+                                </div>
+                            
+                            </div>
+                        </div> #}
+
+
+                    {# <section class="flex bg-white p-5 sm:pb-0 rounded-md rounded-b-none">
                         <div class="center-between w-full">
                             <label class="form-label">
                                 <b class="block">
@@ -350,8 +500,17 @@
                               {% endif %} 
                             </div>
                         </div>
-                    </section>
-                    <section class="sticky-product-bar bg-white p-5 rounded-md rounded-b-none">
+                    </section> #}
+
+
+
+
+
+
+
+
+
+                    <section class=" bg-white  rounded-md rounded-b-none " style="bottom: 50px !important ;z-index:45 !important">
                         {# Quantity #}
                         {% if product.is_hidden_quantity or product.type == 'booking' %}
                             <input type="hidden" value="1" name="quantity"/>
@@ -365,8 +524,11 @@
                             </div>
                         {% endif %}
                         {# Add to cart #}
+                        
+                        
+                        
                         <salla-add-product-button
-                                quick-buy
+                           
                                 support-sticky-bar
                                 amount="{{ product.base_currency_price }}"
                                 class="mt-5 w-full sticky-product-bar__btn"
@@ -383,7 +545,8 @@
                                     subscribed-options="{{ product.notify_availability.subscribed_options|json_encode }}"
                                     {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
                                 {% endif %}>
-                            {{ product.add_to_cart_label }}
+                                <p class=" py-2">
+                            أضف إلي عربة التسوق بنجاح<p>
                         </salla-add-product-button>
                     </section>
                     {% if product.is_giftable %}
@@ -398,16 +561,140 @@
         {% component 'product.offer' %}
     </div>
 
+
+
+
+
     {% component 'comments' %}
     <div class="container">
-        <salla-products-slider source="related" source-value="{{product.id}}" block-title="{{trans('pages.products.similar_products')}}" display-all-url></salla-products-slider>
+    <div class="text-center mb-2 flex flex-col justify-center items-center">
+			<h1 class="mb-3">منتجات مشابهة</h1>
+			<div class="line"></div>
+
     </div>
+        <salla-products-list source="related" source-value="{{product.id}}" ></salla-products-list>
+    </div>
+
+    {# model tamara #}
+
+        <div class="hidden bg-[rgba(0, 0, 0, 0.5)] fixed top-0 left-0 z-40 h-screen w-screen items-center justify-center"  id="TabyTamaraModal">
+            <div class="md:w-[50%] w-[90%] h-[75%] lg:h-[80%]  overflow-y-auto rounded-3xl py-4 px-4 lg:py-16 lg:px-20 " style=" background-color: #F8F4F4" id="ModalTabyTamara">
+                
+            </div>
+        </div>
 {% endblock %}
 
 {% block scripts %}
+
     <script defer src="{{ 'product.js' | asset }}"></script>
+    <script>
+     console.log("heeeeelllllllllllo")
+    const displayModal = document.getElementById("TabyTamaraModal")
+
+    function getPriceFormat(price) {
+    if (!price || price == 0) {
+      return salla.config.get("store.settings.product.show_price_as_dash")
+        ? "-"
+        : "";
+    }
+
+    return salla.money(price);
+
+  }
+
+
+
+     function  onclickModalTamaraTaby(type , price){
+
+    const insert = document.getElementById("ModalTabyTamara")
+    const priceEdit = type == "tamara" ? (parseFloat(price) / 3).toFixed(2) :( parseFloat(price) / 4).toFixed(2);
+    console.log({priceEdit})
+            insert.innerHTML = `
+                        <div class="flex flex-col items-start justify-start w-full h-full space-y-1 lg:space-y-5">
+                    <button type="button" onclick="closeModalTamara()" class="flex items-center justify-center w-16 h-16 mb-1 lg:mb-8 text-xl font-black h-[10%]">
+			            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 121 122" fill="none">
+                        <path d="M95.7904 32.5835L88.6816 25.416L60.4987 53.8319L32.3158 25.416L25.207 32.5835L53.3899 60.9994L25.207 89.4152L32.3158 96.5827L60.4987 68.1669L88.6816 96.5827L95.7904 89.4152L67.6074 60.9994L95.7904 32.5835Z" fill="#212121"/>
+                        </svg>
+	                </button>
+                    <div class=" w-full flex justify-center items-center">
+                    ${
+                        type === "tamara" ? '<img class=" md:w-[30%]  w-[50%]" src="{{ 'images/tamara3.png' | asset }}" />' : '<img class=" md:w-[30%]  w-[50%]" src="{{ 'images/tabby-logo-1.png' | asset }}" />' 
+                    }
+                        
+                    </div>
+                    <h4 class=" md:text-start text-center">قسمها علي 3 دفعات بقيمة${getPriceFormat(priceEdit)} بدون أية فوائد</h4>
+
+                    <div class=" w-full flex flex-col justify-center items-center gap-4 md:gap-6">
+                        <h4 class="  opacity-80">اطلب الي بخاطرك وقسط المبلغ بدون رسوم </h4>
+                        <div class="svgs">
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex flex-col justify-center items-center">
+                                    
+                                <h5>${getPriceFormat(priceEdit)}</h5>   
+                                    
+                                 <h5 class=" opacity-80">اليوم</h5>    
+                                
+                            </div>
+                            <div class="flex flex-col justify-center items-center">
+                                <h5>${getPriceFormat(priceEdit)}</h5>   
+                                    
+                                 <h5 class=" opacity-80">بعد شهر</h5>    
+                            </div>
+                            <div class="flex flex-col justify-center items-center">
+                                <h5>${getPriceFormat(priceEdit)}</h5>   
+
+
+                                 <h5 class=" opacity-80">بعد شهرين</h5>    
+                            </div>
+                            ${
+                                type != 'tamara' ? `
+                                        <div class="flex flex-col justify-center items-center">
+                                <h5>${getPriceFormat(priceEdit)}</h5>   
+
+
+                                 <h5 class=" opacity-80">بعد 3 أشهر</h5>    
+                            </div>
+                                `:""
+                            }
+                        </div>
+                    </div>
+
+                    <h4>طريقة التقسيط مع تمارا:</h4>
+                    <h4 class="opacity-80">1. اضف المنتج للسلة</h4>
+                    <h4 class="opacity-80">2.  اضغط علي زر  [اكمل الشراء]</h4>
+                    <h4 class="opacity-80">3.  قم بتعبئة معلومات التوصيل</h4>
+                    <h4 class="opacity-80">4.  اختر الدفع من خلال تمارا</h4>
+
+                    <h4>طرق الدفع المدعومة :</h4>
+
+                    <div class=" w-full flex justify-end items-center">
+                        <img class=" md:w-[20%]  w-[30%]" src="{{ 'images/VISA-logo.png' | asset }}" />
+
+                        <img class=" md:w-[20%]  w-[30%]" src="{{ 'images/MasterCard_early_1990s_logo.png' | asset }}" />
+
+
+                    </div>
+
+                    <a href="{{store.url}}" class=" w-full flex justify-center items-center ">
+                        <button  class=" text-xl md:py-4 py-2 px-6 font-bold bg-[#404553] text-white rounded">
+                        تابع التسوق
+                        </button>
+                    </a>
+                </div>
+            `
+            displayModal.classList.replace('hidden', 'flex');
+  
+        }
+        function closeModalTamara() {
+displayModal.classList.replace('flex', 'hidden');
+
+}
+    
+    </script>
     {% if product.has_3d_image %}
         <script type="module" defer src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     {% endif %}
+   
 {% endblock %}
 

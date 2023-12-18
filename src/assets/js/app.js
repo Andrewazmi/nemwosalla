@@ -55,8 +55,10 @@ class App extends AppHelpers {
     salla.log(`ThemeApp(Raed)::${message}`);
     return this;
   }
+  
 
   doneSubscribe() {
+    
     const subscribeBtn = document.getElementById("subscribe-btn");
     const subscribeAlert = document.getElementById("subscribe-alert");
     subscribeBtn.addEventListener("click", () => {
@@ -70,9 +72,12 @@ class App extends AppHelpers {
   handleDropdown() {
     const dropdownButton = document.getElementById("dropdownButton");
     const dropdownMenu = document.getElementById("dropdownMenu");
-    dropdownButton.addEventListener("click", () => {
-      dropdownMenu.classList.toggle("show");
-    });
+    if(dropdownButton){
+      dropdownButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("show");
+      });
+    }
+    
   }
 
   //// feature product slider
@@ -90,7 +95,6 @@ class App extends AppHelpers {
       ]);
 
       const product = response.data;
-      console.log({ productTest: product });
       const images = product.images.map((img) => img.url);
       products.push({
         images,
@@ -215,14 +219,20 @@ class App extends AppHelpers {
             ${datas}
         </div>
   </salla-slider>`;
+  if(insert){
     insert.innerHTML += slider;
+
+  }
   }
 
   // Scroll to top function
   scrollToTop() {
+    
     let calcScrollValue = () => {
+      
       let scrollProgress = document.getElementById("scrollToTopBtn");
-      let pos = window.scrollY;
+      if(scrollProgress){
+        let pos = window.scrollY;
       if (pos > 100) {
         scrollProgress.style.display = "flex";
       } else {
@@ -232,6 +242,8 @@ class App extends AppHelpers {
         window.scrollTo({ top: 0, behavior: "smooth" });
       });
     };
+      }
+      
 
     window.onload = calcScrollValue;
     window.onscroll = calcScrollValue;
@@ -692,10 +704,7 @@ ${products[0].sale_price < products[0].regular_price &&
       newDesignProduct[i].children[1].setAttribute("id", id);
       const insert = document.getElementById(id);
       const lop = newDesignProduct[i]?.children[0]?.children;
-      console.log(
-        newDesignProduct[i]?.children[0]?.children[0],
-        newDesignProduct[i]?.children[0]?.children[1]
-      );
+      
 
       for (let j = 0; j < 2; j++) {
         const categoryId =
@@ -935,7 +944,7 @@ ${iframeElement}
                 : response.data.length;
             for (let i = 0; i < response.data.length; i++) {
               const product = response.data[i];
-              // console.log({product})
+            
               const data = `
 
 						
@@ -1022,8 +1031,7 @@ ${iframeElement}
 
     const products = [];
     const offerDate = document.getElementById("offer-date");
-    console.log({ offerDate: offerDate.innerText });
-    this._makeCountDown(offerDate.innerText);
+    this._makeCountDown(offerDate?.innerText);
 
     for (let i = 0; i < productsIDs.length; i++) {
       const response = await salla.product.getDetails(productsIDs[i], [
@@ -1054,7 +1062,7 @@ ${iframeElement}
     let allData = ``;
 
     for (let i = 0; i < products.length; i++) {
-      console.log({ i });
+     
       const data = `<a href="${products[i].url
         }" class="relative flex flex-col items-start justify-start ml-16" style="width:12rem;">
                   ${products[i].discount &&
@@ -1098,8 +1106,10 @@ ${iframeElement}
     </div>
   </salla-slider>
     `;
+if(insert){
+  insert.innerHTML += dep;
 
-    insert.innerHTML += dep;
+}
   }
   _makeCountDown(inputDateTimeStr) {
     let timerId = setInterval(() => {
@@ -1122,10 +1132,12 @@ ${iframeElement}
         let remainingSeconds = secondsDifference % 3600;
         let minutes = Math.floor(remainingSeconds / 60);
         let seconds = Math.floor(remainingSeconds % 60);
-
-        hrsEl.innerText = hours < 10 ? `0${hours}` : hours;
-        minEl.innerText = minutes < 10 ? `0${minutes}` : minutes;
-        secEl.innerText = seconds < 10 ? `0${seconds}` : seconds;
+if(hrsEl){
+  hrsEl.innerText = hours < 10 ? `0${hours}` : hours;
+  minEl.innerText = minutes < 10 ? `0${minutes}` : minutes;
+  secEl.innerText = seconds < 10 ? `0${seconds}` : seconds;
+}
+        
       }
     }, 900);
   }
@@ -1154,9 +1166,7 @@ ${iframeElement}
         const anchor = anchors[i];
         const img = image[i];
         if (category) {
-          console.log({ category });
           salla.product.categories(category).then((response) => {
-            console.log(response);
             if (name) name.innerText = response.data.name;
             anchor.href = response.data.url;
             // img.setAttribute("src" , response.data.image)
