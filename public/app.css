@@ -7578,6 +7578,9 @@ salla-add-product-button .s-button-text {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 }
+.mm-spn.mm-spn--navbar:after {
+  text-align: center;
+}
 /* responsive */
 @media (max-width: 1024px) {
   .menu-style {
