@@ -144,7 +144,7 @@
 	{% endif %}
 	{% block scripts %}{% endblock %}
 	<div id="productModal" class="hidden bg-[rgba(0, 0, 0, 0.5)] fixed top-0 left-0 z-[200] h-screen w-screen items-center justify-center">
-		<div class="md:w-[70%] w-[90%] h-[80%] lg:h-[80%] bg-[#EFEFEF] rounded-3xl py-3 px-4 lg:py-16 lg:px-20" id="modalProduct"></div>
+		<div class="md:w-[70%] w-[90%] h-[80%] lg:h-[80%] bg-[#EFEFEF] overflow-y-scroll rounded-3xl py-3 px-4 lg:py-16 lg:px-20" id="modalProduct"></div>
 	</div>
 </body>
 <script>
@@ -185,7 +185,7 @@ console.log({productImages: product});
 modalContent.innerHTML = `
 <div class="flex flex-col items-start justify-start w-full h-full space-y-1 lg:space-y-5">
 	<button type="button" onclick="closeModal()" class="flex items-center justify-center w-16 h-16 mb-1 lg:mb-8 text-xl font-black h-[10%]">
-			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="90" viewBox="0 0 121 122" fill="none">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 121 122" fill="none">
 <path d="M95.7904 32.5835L88.6816 25.416L60.4987 53.8319L32.3158 25.416L25.207 32.5835L53.3899 60.9994L25.207 89.4152L32.3158 96.5827L60.4987 68.1669L88.6816 96.5827L95.7904 89.4152L67.6074 60.9994L95.7904 32.5835Z" fill="#212121"/>
 </svg>
 	</button>
@@ -217,7 +217,7 @@ modalContent.innerHTML = `
 				</salla-slider>
 			</div>
 		</div>
-		<div class="flex flex-col items-start justify-start w-full h-full space-y-2 lg:space-y-5">
+		<div class="flex flex-col items-start justify-start w-full h-full space-y-2 lg:space-y-5 mb-6 lg:mb-0">
 			<div class="flex items-center justify-between w-full">
 				<p class="text-[#707070] text-lg lg:text-2xl text-right">السعر شامل الضريبة</p>
 				<div class="flex items-center justify-end space-x-2">
@@ -235,7 +235,7 @@ modalContent.innerHTML = `
 			<p class="w-full overflow-auto text-ellipsis text-[#00000096] text-base lg:text-xl text-right">
 				${product.description}
 			</p>
-			<div class="flex items-center justify-start w-full gap-1">
+			<div class="flex items-center justify-start w-full gap-1 -mr-1">
 			<img width="30" height="30" src="https://img.icons8.com/emoji/48/fire.png" alt="fire"/>
 				<p class="text-base font-bold">${getPriceFormat(product.price)}</p>
 			</div>
@@ -263,10 +263,12 @@ modalContent.innerHTML = `
 				<salla-quantity-input max="28" value="1" name="quantity" class="flex justify-end border-gray-200 s-quantity-input hydrated"></salla-quantity-input>
 			</div>
 			<div class="w-full rounded-md bg-[#334155] flex items-center justify-center">
-				<salla-add-product-button quick-buy="" class="btn--add-to-cart hydrated" fill="outline" width="wide" type="submit" product-id="${product.id}" product-status="sale" product-type="product">
+				
+				<salla-add-product-button width="wide" product-id="${product.id}">
 					<i class="text-[16px] sicon-shopping"></i>
+					
 					أضف إلي عربة التسوق بنجاح
-				</salla-add-product-button>
+</salla-add-product-button>
 			</div>
 		</div>
 	</div>

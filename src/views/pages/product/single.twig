@@ -577,8 +577,9 @@
 
     {# model tamara #}
 
-        <div class="hidden bg-[rgba(0, 0, 0, 0.5)] fixed top-0 left-0 z-40 h-screen w-screen items-center justify-center"  id="TabyTamaraModal">
-            <div class="md:w-[50%] w-[90%] h-[75%] lg:h-[80%]  overflow-y-auto rounded-3xl py-4 px-4 lg:py-16 lg:px-20 " style=" background-color: #F8F4F4" id="ModalTabyTamara">
+        <div class="hidden bg-[rgba(0, 0, 0, 0.5)] fixed top-0 left-0 z-[200] h-screen w-screen items-center justify-center"  id="TabyTamaraModal">
+                
+            <div class="md:w-[40%] w-[90%] h-[75%] lg:h-[80%] scroll-modal-tamara overflow-y-auto rounded-3xl py-4 px-4 lg:py-16 lg:px-20 " style=" background-color: #F8F4F4" id="ModalTabyTamara">
                 
             </div>
         </div>
@@ -588,7 +589,7 @@
 
     <script defer src="{{ 'product.js' | asset }}"></script>
     <script>
-     console.log("heeeeelllllllllllo")
+
     const displayModal = document.getElementById("TabyTamaraModal")
 
     function getPriceFormat(price) {
@@ -628,6 +629,12 @@
                         <h4 class="  opacity-80">اطلب الي بخاطرك وقسط المبلغ بدون رسوم </h4>
                         <div class="svgs">
                         </div>
+                        <div class=" w-full flex justify-center items-center">
+                    ${
+                        type === "tamara" ? '<img class=" md:w-[30%]  w-[50%]" src="{{ 'images/Tamara4.png' | asset }}" />' : '<img class=" md:w-[30%]  w-[50%]" src="{{ 'images/4Circle.png' | asset }}" />' 
+                    }
+                        
+                    </div>
                         <div class="flex gap-4">
                             <div class="flex flex-col justify-center items-center">
                                     

@@ -602,6 +602,20 @@ salla-add-product-button .s-button-text{
 
 
 
+.scroll-modal-tamara::-webkit-scrollbar {
+  width: 6px;
+  height: 80% !important;
+}
+
+.scroll-modal-tamara::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.scroll-modal-tamara::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
 
 
 
