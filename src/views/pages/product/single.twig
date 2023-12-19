@@ -89,14 +89,13 @@
         </nav>
         <div class="flex flex-col items-start md:flex-row" id="product-{{ product.id }}">
 
-feature_product_des
-feature_product_des_switch
+
 {% if theme.settings.get("feature_product_des_switch") %}
         <div class="  flex-col h-[400px] justify-center items-center space-y-6 md:flex hidden">
         {% for item in theme.settings.get("feature_product_des") %}
                 <div>
                 <div class="flex justify-center items-center">
-                    <img src="{{items.image}}" />
+                    <img class=" h-16 w-16" src="{{item.image}}" />
                     <h2> {{item.title}}</h2>
                 </div>
                 <div>
@@ -104,9 +103,6 @@ feature_product_des_switch
                 </div>
             </div>
         {% endfor %}
-            
-          
-            
             
         </div>
 {% endif %}
