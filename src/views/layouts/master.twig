@@ -144,8 +144,11 @@
 	{% endif %}
 	{% block scripts %}{% endblock %}
 	<div id="productModal" class="hidden bg-[rgba(0, 0, 0, 0.5)] fixed top-0 left-0 z-[200] h-screen w-screen items-center justify-center">
-		<div class="md:w-[70%] w-[90%] h-[80%] lg:h-[80%] bg-[#EFEFEF] overflow-y-scroll rounded-3xl py-3 px-4 lg:py-16 lg:px-20" id="modalProduct"></div>
+		<div class=" md:w-[70%] w-[90%] h-[78%] lg:h-[80%] bg-[#EFEFEF] overflow-hidden rounded-3xl">
+		<div class=" w-full h-full overflow-y-auto scroll-modal-tamara py-3 px-4 lg:py-16 lg:px-20" id="modalProduct"></div>
 	</div>
+		</div>
+		
 </body>
 <script>
 

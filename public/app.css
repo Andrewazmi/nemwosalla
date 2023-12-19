@@ -618,7 +618,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-\[300px\]{height:300px}
 .h-\[34px\]{height:34px}
 .h-\[50px\]{height:50px}
-.h-\[75\%\]{height:75%}
+.h-\[78\%\]{height:78%}
 .h-\[80\%\]{height:80%}
 .h-\[90\%\]{height:90%}
 .h-auto{height:auto}
@@ -627,6 +627,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-lg-banner{height:428px}
 .h-px{height:1px}
 .h-screen{height:100vh}
+.h-\[400px\]{height:400px}
 .max-h-0{max-height:0px}
 .max-h-100{max-height:28rem}
 .max-h-8{max-height:2rem}
@@ -667,7 +668,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .w-8{width:2rem}
 .w-9{width:2.25rem}
 .w-96{width:24rem}
-.w-\[30\%\]{width:30%}
+.w-\[15\%\]{width:15%}
+.w-\[40\%\]{width:40%}
 .w-\[50\%\]{width:50%}
 .w-\[50px\]{width:50px}
 .w-\[89\%\]{width:89%}
@@ -752,7 +754,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .overflow-hidden{overflow:hidden}
 .overflow-y-auto{overflow-y:auto}
 .overflow-x-hidden{overflow-x:hidden}
-.overflow-y-scroll{overflow-y:scroll}
 .text-ellipsis{text-overflow:ellipsis}
 .whitespace-nowrap{white-space:nowrap}
 .break-all{word-break:break-all}
@@ -813,6 +814,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .bg-red-400{--tw-bg-opacity:1;background-color:rgba(248, 113, 113, 1);background-color:rgba(248, 113, 113, var(--tw-bg-opacity))}
 .bg-transparent{background-color:transparent}
 .bg-white{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity))}
+.bg-\[\#D9D9D98F\]{background-color:rgba(217,217,217,0.56078)}
 .bg-cover{background-size:cover}
 .bg-center{background-position:center}
 .bg-no-repeat{background-repeat:no-repeat}
@@ -7389,7 +7391,6 @@ svg {
 salla-add-product-button button:not(.new-design-product button):not(.single-product-edit-slider button) {
   width: 100%;
   height: 100%;
-  background: red;
   padding: 10px;
   border: none;
 }
@@ -8722,8 +8723,9 @@ button.swiper-pagination-bullet {
 .md\:w-7\/12{width:58.333333%}
 .md\:w-72{width:18rem}
 .md\:w-9{width:2.25rem}
-.md\:w-\[20\%\]{width:20%}
+.md\:w-\[10\%\]{width:10%}
 .md\:w-\[30\%\]{width:30%}
+.md\:w-\[37\%\]{width:37%}
 .md\:w-\[40\%\]{width:40%}
 .md\:w-\[50\%\]{width:50%}
 .md\:w-\[60\%\]{width:60%}
@@ -8748,6 +8750,7 @@ button.swiper-pagination-bullet {
 .md\:space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * (1 - 0));margin-top:calc(2rem * (1 - var(--tw-space-y-reverse)));margin-top:calc(2rem * calc(1 - 0));margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * 0);margin-bottom:calc(2rem * var(--tw-space-y-reverse))}
 .md\:border-none{border-style:none}
 .md\:p-0{padding:0px}
+.md\:p-4{padding:1rem}
 .md\:p-8{padding:2rem}
 .md\:px-10{padding-left:2.5rem;padding-right:2.5rem}
 .md\:px-6{padding-left:1.5rem;padding-right:1.5rem}
@@ -8782,6 +8785,7 @@ button.swiper-pagination-bullet {
 .lg\:my-0{margin-top:0px;margin-bottom:0px}
 .lg\:-mt-28{margin-top:-7rem}
 .lg\:mb-0{margin-bottom:0px}
+.lg\:mb-2{margin-bottom:0.5rem}
 .lg\:mb-24{margin-bottom:6rem}
 .lg\:mb-8{margin-bottom:2rem}
 .lg\:mt-12{margin-top:3rem}
@@ -8793,6 +8797,7 @@ button.swiper-pagination-bullet {
 .lg\:\!h-\[600px\]{height:600px !important}
 .lg\:\!h-\[800px\]{height:800px !important}
 .lg\:h-\[80\%\]{height:80%}
+.lg\:h-\[95\%\]{height:95%}
 .lg\:max-h-\[700px\]{max-height:700px}
 .lg\:min-h-\[500px\]{min-height:500px}
 .lg\:min-h-\[528px\]{min-height:528px}
@@ -8826,6 +8831,7 @@ button.swiper-pagination-bullet {
 .lg\:overflow-hidden{overflow:hidden}
 .lg\:bg-white{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, 1);background-color:rgba(255, 255, 255, var(--tw-bg-opacity))}
 .lg\:object-cover{-o-object-fit:cover;object-fit:cover}
+.lg\:p-10{padding:2.5rem}
 .lg\:p-8{padding:2rem}
 .lg\:px-0{padding-left:0px;padding-right:0px}
 .lg\:px-20{padding-left:5rem;padding-right:5rem}

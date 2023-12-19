@@ -89,8 +89,8 @@
         </nav>
         <div class="flex flex-col items-start md:flex-row" id="product-{{ product.id }}">
 
-        <div class=" flex flex-col justify-center items-center md:block hidden">
-            <div class=" mb-10">
+        <div class="  flex-col h-[400px] justify-center items-center space-y-6 md:flex hidden">
+            <div >
                 <div class="flex justify-center items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="96" height="85" viewBox="0 0 96 85" fill="none">
                     <g clip-path="url(#clip0_1200_297)">
@@ -118,6 +118,8 @@
                     <p>تأمين معلومات الدفع <p>
                 </div>
             </div>
+            
+            
         </div>
             <div class="sidebar md:sticky top-24 w-full md:!w-2/4 rtl:ml-8 ltr:mr-8 pb-8 md:pb-16 overflow-hidden shrink-0 single-product-edit-slider">
                 {% set has_many_images = product.images|length > 1 %}
@@ -250,6 +252,7 @@
                     </div>
                 </div>
                     <h1 class="text-xl md:text-2xl leading-10 font-medium mb-3 text-gray-800">{{ product.name }}</h1>
+                    <h1 class="text-xl md:block hidden md:text-xl leading-10 font-medium mb-3 text-gray-800">{{ product.description }}</h1>
 
 
                 {% if product.subtitle %}
@@ -394,7 +397,7 @@
 
                 <div class=" w-full flex flex-col justify-center items-center   gap-4">
 
-                 <button class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2" onclick="onclickModalTamaraTaby('tamara' , {{product.price}} )">
+                 <button class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2" onclick="onclickModalTamaraTaby('tamara' , {{product.price}} , {{product.id}} )">
                            <div class=" flex">
                                 <p class=" text-end">
                                 أو قسمها علي 3 دفعات شهرية 
@@ -407,7 +410,7 @@
                             </div>
 
 </button>
-                           <button class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2" onclick="onclickModalTamaraTaby('taby' , {{product.price}} )">
+                           <button class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2" onclick="onclickModalTamaraTaby('taby' , {{product.price}},{{product.id}} )">
                            <div class=" flex">
                                 <p class=" text-end">
                                 أو قسمها علي 4 دفعات شهرية بقيمة 
@@ -425,16 +428,45 @@
                         </div>
 
 <div class="md:hidden block w-full py-3 space-y-6 ">
+{% if product.description %}
 <p class="  opacity-80"> {{product.description}}</p>
-<div>
-<h4 >رمز المنتج :</h4>
-<p>{{product.sku}}</p>
-</div>
+    
+{% endif %}
 
+
+
+{% if product.sku %}
 <div>
-<h4 >الوزن:</h4>
-<p>{{product.weight}}</p>
+   <h4 >رمز المنتج :</h4>
+<p>{{product.sku}}</p>
+</div> 
+{% endif %}
+
+
+
+{% if product.weight %}
+<div>
+    <h4 >الوزن:</h4>
+<p>{{product.weight}}</p>  
 </div>
+{% endif %}
+
+{% if theme.settings.get("feature_product_mob") %}
+<div class=" grid md:hidden grid-cols-2 gap-2">
+{% for feature in feature_product_mob %}
+    <div class=" flex justify-center items-center p-2 rounded bg-[#D9D9D98F] gap-2">
+            <img src="{{feature.image}}"/>
+            <p>{{feature.des}}</p>
+    </div>
+{% endfor %}
+    </div>
+{% endif %}
+
+
+    
+
+
+
 </div>
 
 
@@ -546,7 +578,7 @@
                                     {{ product.notify_availability.options ? 'notify-options-availability' : '' }}
                                 {% endif %}>
                                 <p class=" py-2">
-                            أضف إلي عربة التسوق بنجاح<p>
+                    أضف إلي السلة <p>
                         </salla-add-product-button>
                     </section>
                     {% if product.is_giftable %}
@@ -566,6 +598,8 @@
 
 
     {% component 'comments' %}
+
+
     <div class="container">
     <div class="text-center mb-2 flex flex-col justify-center items-center">
 			<h1 class="mb-3">منتجات مشابهة</h1>
@@ -575,11 +609,13 @@
         <salla-products-list source="related" source-value="{{product.id}}" ></salla-products-list>
     </div>
 
+    
+
     {# model tamara #}
 
         <div class="hidden bg-[rgba(0, 0, 0, 0.5)] fixed top-0 left-0 z-[200] h-screen w-screen items-center justify-center"  id="TabyTamaraModal">
-                <div class=" md:w-[40%] w-[90%] h-[75%] lg:h-[80%] rounded-3xl  " style=" background-color: #F8F4F4">
-                <div class=" w-full h-full scroll-modal-tamara overflow-y-auto  py-4 px-4 lg:py-16 lg:px-20 " id="ModalTabyTamara">
+                <div class=" md:w-[37%] w-[90%] h-[80%] lg:h-[95%] rounded-3xl overflow-hidden " style=" background-color: #F8F4F4">
+                <div class=" w-full h-full scroll-modal-tamara overflow-y-auto  py-4 px-4 lg:p-10  " id="ModalTabyTamara">
                 
             </div>
                 </div>
@@ -604,17 +640,18 @@
     return salla.money(price);
 
   }
+  
 
 
 
-     function  onclickModalTamaraTaby(type , price){
-
+     function  onclickModalTamaraTaby(type , price , product){
+        
     const insert = document.getElementById("ModalTabyTamara")
     const priceEdit = type == "tamara" ? (parseFloat(price) / 3).toFixed(2) :( parseFloat(price) / 4).toFixed(2);
     console.log({priceEdit})
             insert.innerHTML = `
                         <div class="flex flex-col items-start justify-start w-full h-full space-y-1 lg:space-y-5">
-                    <button type="button" onclick="closeModalTamara()" class="flex items-center justify-center w-16 h-16 mb-1 lg:mb-8 text-xl font-black h-[10%]">
+                    <button type="button" onclick="closeModalTamara()" class="flex items-center justify-center w-12 h-12 mb-1 lg:mb-2 text-xl font-black ">
 			            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 121 122" fill="none">
                         <path d="M95.7904 32.5835L88.6816 25.416L60.4987 53.8319L32.3158 25.416L25.207 32.5835L53.3899 60.9994L25.207 89.4152L32.3158 96.5827L60.4987 68.1669L88.6816 96.5827L95.7904 89.4152L67.6074 60.9994L95.7904 32.5835Z" fill="#212121"/>
                         </svg>
@@ -629,8 +666,7 @@
 
                     <div class=" w-full flex flex-col justify-center items-center gap-4 md:gap-6">
                         <h4 class="  opacity-80">اطلب الي بخاطرك وقسط المبلغ بدون رسوم </h4>
-                        <div class="svgs">
-                        </div>
+                       
                         <div class=" w-full flex justify-center items-center">
                     ${
                         type === "tamara" ? '<img class=" md:w-[30%]  w-[50%]" src="{{ 'images/Tamara4.png' | asset }}" />' : '<img class=" md:w-[30%]  w-[50%]" src="{{ 'images/4Circle.png' | asset }}" />' 
@@ -673,23 +709,26 @@
                     <h4 class="opacity-80">1. اضف المنتج للسلة</h4>
                     <h4 class="opacity-80">2.  اضغط علي زر  [اكمل الشراء]</h4>
                     <h4 class="opacity-80">3.  قم بتعبئة معلومات التوصيل</h4>
-                    <h4 class="opacity-80">4.  اختر الدفع من خلال تمارا</h4>
+                    
+                    <h4 class="opacity-80">4. ${ type == "tamara" ?" اختر الدفع من خلال تمارا" : " اختر الدفع من خلال تابى" } </h4>
 
-                    <h4>طرق الدفع المدعومة :</h4>
+                   
 
-                    <div class=" w-full flex justify-end items-center">
-                        <img class=" md:w-[20%]  w-[30%]" src="{{ 'images/VISA-logo.png' | asset }}" />
+                    
+                    <div  class=" w-full flex justify-between items-center ">
+                    
+                        <salla-add-product-button product-id="${product}"  class=" text-md  py-2  bg-[#404553] text-white rounded">
+                    أضف الى السلة
+                        </salla-add-product-button>
+                        <div class=" w-full flex justify-end items-center">
+                        <img class=" md:w-[10%]  w-[15%]" src="{{ 'images/VISA-logo.png' | asset }}" />
 
-                        <img class=" md:w-[20%]  w-[30%]" src="{{ 'images/MasterCard_early_1990s_logo.png' | asset }}" />
+                        <img class=" md:w-[10%]  w-[15%]" src="{{ 'images/MasterCard_early_1990s_logo.png' | asset }}" />
 
 
                     </div>
 
-                    <a href="{{store.url}}" class=" w-full flex justify-center items-center ">
-                        <button  class=" text-xl md:py-4 py-2 px-6 font-bold bg-[#404553] text-white rounded">
-                        تابع التسوق
-                        </button>
-                    </a>
+                    </div>
                 </div>
             `
             displayModal.classList.replace('hidden', 'flex');
