@@ -452,11 +452,20 @@
 {% endif %}
 
 {% if theme.settings.get("feature_product_mob") %}
+
+
 <div class=" grid md:hidden grid-cols-2 gap-2">
-{% for feature in feature_product_mob %}
-    <div class=" flex justify-center items-center p-2 rounded bg-[#D9D9D98F] gap-2">
-            <img src="{{feature.image}}"/>
-            <p>{{feature.des}}</p>
+{% for feature in theme.settings.get("feature_product_mob") %}
+
+    <div class=" flex justify-start items-center p-2 rounded bg-[#D9D9D98F] gap-2">
+				<img class="object-fit w-10 h-10" src="{{feature.image}}" />
+        {% if user.language_code == "ar" %}
+            <p>{{feature.des.ar}}</p>
+
+            {% else %}
+            <p>{{feature.des.en}}</p>
+
+        {% endif %}
     </div>
 {% endfor %}
     </div>
