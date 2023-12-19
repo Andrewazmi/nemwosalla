@@ -541,6 +541,49 @@
             "required": false,
             "minLength": 1,
             "maxLength": 5
+        },
+        {
+            "id": "feature_product_mob",
+            "type": "collection",
+            "format": "collection",
+            "label": "feature_product_mob",
+            "description": null,
+            "labelHTML": null,
+            "item_label": null,
+            "icon": "sicon-list-add",
+            "fields": [
+                {
+                    "id": "feature_product_mob.image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "feature_product_mob.des",
+                    "type": "string",
+                    "format": "text",
+                    "label": "des",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": true,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                }
+            ],
+            "value": [],
+            "required": false,
+            "minLength": "2",
+            "maxLength": "4"
         }
     ],
     "components": [
