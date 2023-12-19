@@ -543,6 +543,18 @@
             "maxLength": 5
         },
         {
+            "id": "feature_product_mob_switch",
+            "type": "boolean",
+            "format": "switch",
+            "label": "feature_product_mob_switch",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-toggle-off",
+            "value": true,
+            "selected": false,
+            "required": false
+        },
+        {
             "id": "feature_product_mob",
             "type": "collection",
             "format": "collection",
@@ -584,6 +596,76 @@
             "required": false,
             "minLength": "2",
             "maxLength": "4"
+        },
+        {
+            "id": "feature_product_des_switch",
+            "type": "boolean",
+            "format": "switch",
+            "label": "feature_product_des_switch",
+            "description": null,
+            "labelHTML": null,
+            "icon": "sicon-toggle-off",
+            "value": true,
+            "selected": false,
+            "required": false
+        },
+        {
+            "id": "feature_product_des",
+            "type": "collection",
+            "format": "collection",
+            "label": "feature_product_des",
+            "description": null,
+            "labelHTML": null,
+            "item_label": null,
+            "icon": "sicon-list-add",
+            "fields": [
+                {
+                    "id": "feature_product_des.image",
+                    "type": "string",
+                    "format": "image",
+                    "label": "Image",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "feature_product_des.title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "title",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "feature_product_des.subtitle",
+                    "type": "string",
+                    "format": "text",
+                    "label": "subtitle",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": null,
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": 6,
+                    "maxLength": 30
+                }
+            ],
+            "value": [],
+            "required": false,
+            "minLength": 1,
+            "maxLength": "3"
         }
     ],
     "components": [
