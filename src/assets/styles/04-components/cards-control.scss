@@ -220,6 +220,23 @@ svg {
   transition: all ease 0.7s;
 }
 
+html[dir="ltr"] {
+  .animated-ads {
+    left: calc(-59vw + 50px);
+  }
+  .animated-ads.open {
+    left: 0;
+    
+  }
+
+  .animated-ads.open .arrow{
+    transform: rotate(0);
+  }
+  .animated-ads .arrow {
+    transform: rotate(180deg);
+  }
+}
+
 .animated-ads.open {
   right: 0;
 }

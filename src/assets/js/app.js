@@ -101,7 +101,7 @@ class App extends AppHelpers {
         name: product.name,
         discount:
           product.sale_price < product.regular_price
-            ? Math.floor((product.price / product.regular_price) * 100)
+            ? Math.floor(100 -(product.price / product.regular_price) * 100)
             : "",
         priceDiscount:
           product.sale_price < product.regular_price
@@ -391,10 +391,12 @@ class App extends AppHelpers {
             }" style=" color : black ; font-size : 22px">${products[0].name
             }</a>
                 </h1>
-                <div class=" flex text-2xl justify-center items-center gap-2" >
-               <h4>${this.getPriceFormat(products[0].price)}</h4>
-                <span class="before-sale text-center font-bold line-through text-[#404553]">
-              ${this.getPriceFormat(products[0].regular_price)}</span>
+                <div class="flex text-2xl justify-center items-center gap-2">
+                  <h4>${this.getPriceFormat(products[0].price)}</h4>
+                <span class="before-sale text-center font-bold text-[#404553] relative">
+                <span class="w-4 h-px bg-[#f00] rotate-45 absolute top-0 left-0" style="z-index: 1;"></span>
+                  ${this.getPriceFormat(products[0].regular_price)}
+                </span>
 
           
                 
@@ -403,7 +405,7 @@ class App extends AppHelpers {
 
 ${products[0].sale_price < products[0].regular_price &&
             `<div class="absolute top-0 lg:top-12 left-0 py-1 px-6" style="background-color:#334155">
-<p class="text-white">خصم علي هذا المنتج ${Math.floor(
+<p class="text-white">خصم علي هذا المنتج ${ 100- Math.floor(
               (products[0].price / products[0].regular_price) * 100
             )}%</p>
 </div>`
@@ -955,6 +957,7 @@ ${iframeElement}
                 }" alt="${product.image.alt}" />
               </div>
 							<div class="flex flex-col items-center justify-center">
+  
 							<p class="category-name text-xl mt-4">${product.name}</p>
               <div class="flex justify-center items-center">
               <h4 class="text-lg font-extrabold">${this.getPriceFormat(
@@ -1047,7 +1050,7 @@ ${iframeElement}
         name: product.name,
         discount:
           product.sale_price < product.regular_price
-            ? Math.floor((product.price / product.regular_price) * 100)
+            ?  Math.floor(100 - ((product.price / product.regular_price) * 100))
             : "",
         priceDiscount:
           product.sale_price < product.regular_price
@@ -1068,7 +1071,7 @@ ${iframeElement}
                   ${products[i].discount &&
         `
                         <div class="absolute top-0 right-0  w-14 h-19 bg-[#FCDB3D] flex flex-col items-start justify-between">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewbox="0 0 42 38" fill="none">
+                        <svg class="mx-auto" style="transform:translate(6px, -3px);" xmlns="http://www.w3.org/2000/svg" width="35" height="30" viewbox="0 0 42 38" fill="none">
                           <g clip-path="url(#clip0_177_18631)">
                             <path d="M7.96631 4.56543V24.3266H13.6494V40.4949L26.9099 18.9372H19.3324L25.0155 4.56543H7.96631Z" fill="#212121"/>
                           </g>
