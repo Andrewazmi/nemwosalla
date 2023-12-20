@@ -384,7 +384,12 @@ html[dir="ltr"] {
 }
 
 .active-design {
-  background-color: #d7cece;
+  background-color: #334155;
+  color: white !important;
+}
+
+.navlink-design salla-products-slider .s-product-card-content-footer {
+  margin-top: 1rem;
 }
 
 .s-product-card-sale-price {
@@ -638,12 +643,9 @@ salla-add-product-button .s-button-text{
   text-align: center;
 }
 
-
-
-
-
-
-
+.s-slider-v-centered .s-slider-block__title-nav {
+  top: 40% !important;
+}
 
 /* responsive */
 @media (max-width: 1024px) {
@@ -794,6 +796,9 @@ salla-add-product-button .s-button-text{
     width: 100vw;
     height: 250px;
     right: calc(-100vw + 40px);
+  }
+  html[dir="ltr"] .animated-ads {
+    left: calc(-100vw + 40px);
   }
   .animated-ads .content {
     width: calc(100vw - 40px);

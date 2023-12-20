@@ -1,6 +1,6 @@
-<section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider photo-slider-hero mb-5">
+<section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider photo-slider-hero mb-5 overflow-hidden">
 	<div class="container mx-auto">
-        <a class="w-full max-h-[640px] relative" href="{{component.url}}">
+        <a class="w-full max-h-[640px] relative block" href="{{component.url}}">
             <img src="{{ component.image }}" class="w-full"/>
             <div class="absolute flex items-center w-full px-3 bottom-3" style="justify-content : {{component.button_position|json_encode()|split('"')[1]}}">
                 <button class="py-3 lg:py-6 px-3 text-sm text-white bg-white font-bold text-center rounded-none w-fit lg:w-62 lg:text-lg" style="color:{{component.text_color_button}} ; background-color : {{component.background_button_color}}">
