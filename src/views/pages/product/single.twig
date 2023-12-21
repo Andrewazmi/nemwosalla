@@ -255,13 +255,20 @@
                 {% endif %}
 
                 {# Price #}
-                <div class="flex whitespace-nowrap gap-4 items-center">
+                <div class="flex whitespace-nowrap gap-1 items-center -mr-1">
+			<img width="30" height="30" src="https://img.icons8.com/emoji/48/fire.png" alt="fire"/>
+
                   {% if product.is_on_sale %}
                     <div class="flex items-center space-x-2 rtl:space-x-reverse whitespace-nowrap">
                       <h4 class="text-[#334155] font-bold text-xl inline-block">{{product.sale_price|money}}</h4>
-                      <span class="text-gray-400 line-through opacity-70">{{product.regular_price|money}}</span>
+                      <span class="before-sale text-center font-bold text-[#404553] relative">
+                <span class="w-10 h-1 bg-[#D9D9D9D1] absolute top-[65%] left-[20%] rotate-[-25deg]" style="z-index: 1;"></span>
+                  {{product.regular_price|money}}
+                </span>
+                      
                     </div>
                   {% elseif product.starting_price %}
+                  
                     <span>{{ trans('pages.products.starting_price') }}</span> <h4 class="font-bold text-xl inline-block"> {{product.starting_price|money}}</h4>
                   {% else %}
                     <h4 class="font-medium text-xl inline-block">{{product.price|money}}</h4>
@@ -298,7 +305,7 @@
                     </svg>
                     <p class="text-base">{{product.status == "sale" ? "متوفر" : "غير متوفر"}}</p>
                 </div>
-                <div class="flex items-center justify-start w-full gap-2 mt-3">
+                <div class="flex items-center justify-start w-full gap-2 mt-3 mb-4" >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="40" viewBox="0 0 57 73" fill="none">
                         <path d="M4.05556 64.8889C4.05556 69.35 7.70556 73 12.1667 73H44.6111C49.0722 73 52.7222 69.35 52.7222 64.8889V16.2222H4.05556V64.8889ZM12.1667 24.3333H44.6111V64.8889H12.1667V24.3333ZM42.5833 4.05556L38.5278 0H18.25L14.1944 4.05556H0V12.1667H56.7778V4.05556H42.5833Z" fill="#334155"/>
                     </svg>

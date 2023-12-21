@@ -113,9 +113,11 @@ class ProductCard extends HTMLElement {
     if (this.product.is_on_sale) {
       price = `<div class="">
                   <h4>${this.getPriceFormat(this.product.sale_price)}</h4>
-                  <span class="before-sale text-center text-sm font-bold  line-through">
-              ${this.getPriceFormat(this.product.regular_price)}</span>
-               
+                  <span class="before-sale text-center font-bold text-[#404553] relative">
+                <span class="w-10 h-1 bg-[#D9D9D9D1] absolute top-[65%] left-[20%] rotate-[-25deg]" style="z-index: 1;"></span>
+                ${this.getPriceFormat(this.product.regular_price)}
+                </span>
+                  
                 </div>`;
     } else if (this.product.starting_price) {
       price = `<div class="s-product-card-starting-price">

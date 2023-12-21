@@ -647,6 +647,15 @@ salla-add-product-button .s-button-text{
   top: 40% !important;
 }
 
+.product-single .s-product-options-wrapper{
+  padding: 2px 0px;
+  margin-top: 24px !important;
+}
+
+.product-single .s-product-options-option span{
+  display: none;
+}
+
 /* responsive */
 @media (max-width: 1024px) {
   .menu-style {

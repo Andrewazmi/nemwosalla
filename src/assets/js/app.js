@@ -750,10 +750,7 @@ ${
 
         let name = "";
         if (categoryId) {
-          salla.product.categories(categoryId).then((response) => {
-            name = response.data.name;
-          });
-
+          
           const queryParams = {
             source: "categories",
             source_value: [categoryId],
@@ -767,9 +764,9 @@ ${
 
               const data = `
         <div>
-        <div class="mb-4 px-6">
+        <div class="mb-4 ">
           <div>
-            <h2 class="w-fit mb-8 !text-3xl !font-extrabold relative pb-2 after:absolute after:-bottom-4 after:right-0 after:w-full after:h-[10px] after:rounded-lg after:bg-[#404553]">أحدث ${name}</h2>
+            <h2 class="w-fit mb-8 !text-3xl !font-extrabold relative pb-2 after:absolute after:-bottom-4 after:right-0 after:w-full after:h-[10px] after:rounded-lg after:bg-[#404553]">أحدث ${products[0].category.name}</h2>
           </div>
         </div>
         <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
