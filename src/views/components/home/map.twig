@@ -3,9 +3,9 @@
     <h2 class="text-4xl">{{component.title}}</h2>
     <h4 class="text-4xl mt-2 opacity-80 md:w-[50%] text-center">{{component.subtitle}}</h4>
   </div>
-    
-  <div id="map-content">
-    <div id="map-new">{{component.map}}</div>
+    {% set map = component.map|replace({"&nbsp;":"\n"}) %}
+  <div>
+    <div >{{component.map|raw}}</div>
   </div>
 </div>
 

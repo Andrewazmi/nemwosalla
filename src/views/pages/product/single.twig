@@ -237,8 +237,10 @@
                         </salla-button>
                     </div>
                 </div>
+                    {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
+
                     <h1 class="text-xl md:text-2xl leading-10 font-medium mb-3 text-gray-800">{{ product.name }}</h1>
-                    <h1 class="text-xl md:block hidden md:text-xl leading-10 font-medium mb-3 text-gray-800">{{ product.description }}</h1>
+                    <h1 class="text-xl md:block hidden md:text-xl leading-10 font-medium mb-3 text-gray-800">{{ product_desc|raw }}</h1>
 
 
                 {% if product.subtitle %}
@@ -267,7 +269,6 @@
                 </div>
 
                 <div class="product__description p-2 px-5 sm:p-1 leading-7 mb-3">
-                    {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
                     {# {% if product.has_read_more %}
                         <article
                                 class="article article--main relative overflow-hidden transition-all max-h-0 duration-300 p-4"
@@ -386,8 +387,8 @@
                  <button class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2" onclick="onclickModalTamaraTaby('tamara' , {{product.price}} , {{product.id}} )">
                            <div class=" flex">
                                 <p class=" text-end">
-                                أو قسمها علي 3 دفعات شهرية 
-فقط مع تمارا   اعرف المزيد 
+                                أو قسمها علي 3 دفعات شهرية بقيمة
+فقط مع تمارا   اعرف  
                          <span class=" font-bold">المزيد</span> 
                                 </p>
                                       
@@ -415,7 +416,7 @@
 
 <div class="md:hidden block w-full py-3 space-y-6 ">
 {% if product.description %}
-<p class="  opacity-80"> {{product.description}}</p>
+        <p class="  opacity-80"> {{ product_desc|raw }}</p>
     
 {% endif %}
 
@@ -477,57 +478,6 @@
 
                     {% hook 'product:single.form.end' %}
 
-                    {# <div class=" w-full flex flex-col justify-center items-center gap-4 md:hidden block">
-                            <div class="flex justify-between gap-4 items-center w-full bg-[#F8EFEF] rounded p-2">
-                                <div class=" flex">
-                                <p>
-                                  أو قسمها علي 4 دفعات شهرية بقيمة 33.75 د.إ
-                                    فقط مع تابي   اعرف <span class=" font-bold">المزيد</span> 
-                                <p>
-                                      
-                                    <img class="" src="{{ 'images/tamara2.png' | asset }}" />
-
-                                </div>
-                            
-                            </div>
-                            <div class="flex justify-between gap-4 items-center w-full bg-[#F1FCF0] rounded p-2">
-                                <div class=" flex">
-                                <p>
-                                أو قسمها علي 4 دفعات شهرية بقيمة 24.75 د.إ
-فقط مع تابي   اعرف 
-                         <span class=" font-bold">المزيد</span> 
-                                <p>
-                                      
-                                    <img class="" src="{{ 'images/tabby-logo-1.png' | asset }}" />
-
-                                </div>
-                            
-                            </div>
-                        </div> #}
-
-
-                    {# <section class="flex bg-white p-5 sm:pb-0 rounded-md rounded-b-none">
-                        <div class="center-between w-full">
-                            <label class="form-label">
-                                <b class="block">
-                                    {{ trans('pages.products.price') }}
-                                </b>
-                            </label>
-
-                            <div class="flex whitespace-nowrap gap-4 items-center">
-                              {% if product.is_on_sale %}
-                                <div class="flex items-center space-x-2 rtl:space-x-reverse whitespace-nowrap">
-                                  <h4 class="total-price text-red-400 font-bold text-xl inline-block">{{product.sale_price|money}}</h4>
-                                  <span class="before-price text-gray-400 line-through opacity-70">{{product.regular_price|money}}</span>
-                                </div>
-                              {% elseif product.starting_price %}
-                                <span class="starting-price-title">{{ trans('pages.products.starting_price') }}</span> <h4 class="total-price font-bold text-xl inline-block"> {{product.starting_price|money}}</h4>
-                              {% else %}
-                                <h4 class="total-price font-bold text-xl inline-block">{{product.price|money}}</h4>`
-                              {% endif %} 
-                            </div>
-                        </div>
-                    </section> #}
 
 
 
