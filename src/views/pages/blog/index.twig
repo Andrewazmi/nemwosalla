@@ -103,6 +103,8 @@
                         <div slot="items">
                             {% for article in slides %} {# has-overlay #}
                                 <div class="swiper-slide blog-slider__slide h-[300px] md:h-[400px] relative bg-border-color flex justify-center {{ article.has_image ? '' : 'no-thumb' }}">
+                                <a href=" {{article.url}}" class=" w-full h-full">
+                                
                                     <img class="{{ article.image.url|is_placeholder?'sm:h-full w-20 object-contain opacity-50':'object-cover h-full w-full' }}"
                                          src="{{ article.image.url }}" alt="{{ article.image.alt }}">
                                     <div class="absolute z-10 top-44 rtl:right-0 ltr:left-0 p-4 pb-10 rtl:lg:pr-10 ltr:lg:pl-10 lg:pb-20">
@@ -134,6 +136,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                </a>
                                 </div>
                             {% endfor %}
                         </div>
