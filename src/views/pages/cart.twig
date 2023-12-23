@@ -116,10 +116,13 @@
                             <span class="absolute top-1.5 rtl:left-1.5 ltr:right-1.5 rtl:xs:left-5 ltr:xs:right-5 xs:top-5">
                                 <salla-button type="button" shape="icon" size="small" color="danger" class="btn--delete"
                                               onclick="salla.cart.deleteItem({{ item.id }}).then(() => document.querySelector('#item-{{ item.id }}').remove())">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="68" height="34" viewBox="0 0 68 34" fill="none">
-  <path d="M8.01772 26.0453C8.01772 27.5859 9.2782 28.8463 10.8188 28.8463H22.0231C23.5637 28.8463 24.8241 27.5859 24.8241 26.0453V9.23885H8.01772V26.0453ZM10.8188 12.0399H22.0231V26.0453H10.8188V12.0399ZM21.3228 5.03725L19.9223 3.63672H12.9196L11.5191 5.03725H6.61719V7.83832H26.2247V5.03725H21.3228Z" fill="#334155"/>
+                                <div class=" w-6 h-6 rounded-full bg-[#334155] p -2 flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 63 72" fill="none">
+  <path d="M70.7904 7.58352L63.6816 0.416016L35.4987 28.8319L7.31578 0.416016L0.207031 7.58352L28.3899 35.9994L0.207031 64.4152L7.31578 71.5827L35.4987 43.1669L63.6816 71.5827L70.7904 64.4152L42.6074 35.9994L70.7904 7.58352Z" fill="#fff"/>
 </svg>
-                                </salla-button>
+                                </div>
+                        
+                                 </salla-button>
                             </span>
                         </section>
                     </form>
@@ -228,8 +231,15 @@
                                 </small>
                             </div>
                         {% endif %}
+                        <hr>
+                        <br>
+                        <h4> هل لديك كود خصم</h4>
+                        <form name="coupon_form" action="#" class="form form--payment form--coupon active mb-8" style="display: block;"><fieldset class="form-group flex justify-center items-center"> <input id="coupon_field" type="text" placeholder="أدخل رمز الكوبون" class="form-control !rounded-r-md !rounded-l-none !outline-none !m-0"> <button id="coupon_form_submit" disabled="disabled" type="button" class="btn btn--primary !rounded-r-none !m-0 !rounded-l-xl !bg-[#334155]"><span>اضافة</span> <!----> <!----></button> <!----> <!----></fieldset></form>
+                       
+                        <br>
+                        
 
-                        <div class="cart-submit-wrap">
+                        <div class="cart-submit-wrap bg-[#334155] p-2 rounded ">
                             {% hook 'cart:submit.start' %}
                             <salla-button id="cart-submit" loader-position="center" width="wide">
                                 {{ trans('pages.cart.complete_order') }}
