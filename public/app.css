@@ -7164,7 +7164,7 @@ body {
   margin-left: 0.15rem;
 }
 .header-buttons.second .down-drop {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 .header-buttons.second {
   color: #334155;
