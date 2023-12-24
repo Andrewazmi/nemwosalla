@@ -2457,10 +2457,10 @@
             "fields": [
                 {
                     "id": "background_image",
-                    "key": "94ec9d1d-aaa5-4f41-af64-3e7c0006be2d",
+                    "key": "a93ca4dc-1e59-445c-8e4c-03dff8e9271c",
                     "type": "string",
                     "format": "image",
-                    "label": "background_image",
+                    "label": "صورة التصنيف",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "e.g. https://hostname.com/image.png",
@@ -2470,10 +2470,10 @@
                 },
                 {
                     "id": "title",
-                    "key": "09f076c5-3295-4644-8d41-00e6cc4808d8",
+                    "key": "78ce84ab-4be0-48a6-b78e-6495623e96d2",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "عنوان التصنيف",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -2486,10 +2486,10 @@
                 },
                 {
                     "id": "description",
-                    "key": "8ef7a9c8-2a36-4917-843d-b92062aadee3",
+                    "key": "b973fc43-b558-4734-bc0f-863c1eaec747",
                     "type": "string",
                     "format": "text",
-                    "label": "description",
+                    "label": "الوصف",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -2502,10 +2502,10 @@
                 },
                 {
                     "id": "header_category",
-                    "key": "deb28142-56e1-4b28-ba6e-b24f6954efe4",
+                    "key": "acdcc95b-fb2f-4e90-8517-8a39cb584021",
                     "type": "collection",
                     "format": "collection",
-                    "label": "header_category",
+                    "label": "أختار التصنيفات",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -2513,10 +2513,10 @@
                     "fields": [
                         {
                             "id": "category",
-                            "key": "611ffde8-fd88-4031-a998-b3ae48aefd36",
+                            "key": "2aece907-dbdb-4b8a-bff5-9adf6690f4dc",
                             "type": "items",
                             "format": "dropdown-list",
-                            "label": "category",
+                            "label": "التصنيف",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-keyboard_arrow_down",
@@ -2528,18 +2528,17 @@
                             "required": false
                         },
                         {
-                            "id": "image",
-                            "key": "a9becae9-6ac9-407e-9347-300510ef0688",
+                            "id": "sort_altsnef",
+                            "key": "249809c6-4e0e-4323-9342-af43ed2dee82",
                             "type": "string",
                             "format": "image",
-                            "label": "Image",
+                            "label": "صورة التصنيف",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false,
-                            "defaulted": true
+                            "required": false
                         }
                     ],
                     "value": [],
