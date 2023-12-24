@@ -2248,7 +2248,7 @@
         },
         {
             "key": "7469fee9-498d-44b3-9cfa-d2eb8c46ea66",
-            "title": "map",
+            "title": "موقعك على خرائط قوقل",
             "icon": "sicon-store",
             "path": "home.map",
             "fields": [
