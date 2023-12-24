@@ -2554,10 +2554,10 @@
             "fields": [
                 {
                     "id": "categories",
-                    "key": "a258b673-36a6-4c42-98bf-ae9f2e8f973f",
+                    "key": "4cb1d44d-1a3f-4fd4-9ac9-6e9b1fde94d1",
                     "type": "collection",
                     "format": "collection",
-                    "label": "categories",
+                    "label": "التصنيفات",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -2565,10 +2565,10 @@
                     "fields": [
                         {
                             "id": "category_id",
-                            "key": "2294dd8a-5132-40b3-8f38-8e1edd014c97",
+                            "key": "beb82cf3-eb7b-4835-9a88-6aaabd576373",
                             "type": "items",
                             "format": "dropdown-list",
-                            "label": "category_id",
+                            "label": "اختار التصنيف",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-keyboard_arrow_down",
