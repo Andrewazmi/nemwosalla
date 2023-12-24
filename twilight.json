@@ -2130,10 +2130,10 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "500a1f95-1577-46bc-891e-177fdd8b73a3",
+                    "key": "b1d4ff7c-bc55-4a93-a0eb-16896003aa41",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "العنوان الرئيسي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -2146,28 +2146,27 @@
                 },
                 {
                     "id": "brand",
-                    "key": "596b7260-895c-4d06-89de-4600bea974e9",
+                    "key": "af36d364-bf1c-4e27-9e6e-b97089c98bed",
                     "type": "collection",
                     "format": "collection",
-                    "label": "brand",
+                    "label": "العلامة التجارية",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "image",
-                            "key": "d03b9be1-61dd-474c-b891-0398841ece81",
+                            "id": "alsort",
+                            "key": "4590a324-c711-4e93-8a3d-31725d5d7f2c",
                             "type": "string",
                             "format": "image",
-                            "label": "Image",
+                            "label": "الصورة",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false,
-                            "defaulted": true
+                            "required": false
                         }
                     ],
                     "value": [],
