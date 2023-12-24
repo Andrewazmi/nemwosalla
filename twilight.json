@@ -2762,7 +2762,7 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "c86687d9-ae6e-44f0-92b0-e0aef5e2a739",
+                    "key": "ae8bf1ba-01bd-4b76-961b-d73fdfbd4ed7",
                     "type": "string",
                     "format": "text",
                     "label": "عنوان رئيسي",
@@ -2778,7 +2778,7 @@
                 },
                 {
                     "id": "banner_payment",
-                    "key": "ca375f5b-0945-46a4-83c1-c8be53380bde",
+                    "key": "3f66e7e8-f294-4ed1-a522-4780d8b38060",
                     "type": "collection",
                     "format": "collection",
                     "label": "بانر وسائل الدفع",
@@ -2789,7 +2789,7 @@
                     "fields": [
                         {
                             "id": "sort",
-                            "key": "de9047b6-16f3-4db9-9e4a-092fe4f28455",
+                            "key": "e3b988e7-c27d-481c-96cd-dfbc105dc50e",
                             "type": "string",
                             "format": "image",
                             "label": "صورة",
@@ -2799,22 +2799,6 @@
                             "icon": "sicon-image",
                             "value": null,
                             "required": false
-                        },
-                        {
-                            "id": "rabt",
-                            "key": "81e11dd6-fcf4-4305-8dd8-f695dfaaa00d",
-                            "type": "string",
-                            "format": "url",
-                            "inputType": "url",
-                            "label": "رابط",
-                            "description": null,
-                            "labelHTML": null,
-                            "placeholder": "e.g. https://salla.sa",
-                            "icon": "sicon-link",
-                            "value": null,
-                            "required": false,
-                            "minLength": 6,
-                            "maxLength": 30
                         }
                     ],
                     "value": [],
