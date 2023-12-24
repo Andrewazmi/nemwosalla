@@ -3408,7 +3408,7 @@
             "fields": [
                 {
                     "id": "alaanoan_alreese",
-                    "key": "624a7f3b-4630-46dc-885a-4334bd8016a9",
+                    "key": "b1fef28f-2a70-4905-949f-5acd803efb51",
                     "type": "string",
                     "format": "text",
                     "label": "العنوان الرئيسي",
@@ -3424,7 +3424,7 @@
                 },
                 {
                     "id": "prodcuts",
-                    "key": "cf9cd8fe-bc0d-4f0d-9033-9cbd7ab2b0b9",
+                    "key": "0ee1e871-bf14-4ea4-b7b7-b75b711e82aa",
                     "type": "collection",
                     "format": "collection",
                     "label": "المنتجات",
@@ -3435,7 +3435,7 @@
                     "fields": [
                         {
                             "id": "product_id",
-                            "key": "9c4b7f3b-f692-4568-8f37-a7d4a8167c97",
+                            "key": "13403ea8-1eef-49a3-9442-58530a0520bc",
                             "type": "items",
                             "format": "dropdown-list",
                             "label": "اختار المنتج",
@@ -3457,12 +3457,12 @@
                 },
                 {
                     "id": "date",
-                    "key": "d63ffcd9-9b55-4f65-a2dd-d30df6ebb1aa",
+                    "key": "96a75545-3aa5-4840-830d-4c237365e6da",
                     "type": "string",
                     "format": "datetime",
                     "inputType": "datetime-local",
                     "label": "تاريخ وموعد نهاية العرض",
-                    "description": null,
+                    "description": "اختار من هنا موعد وتاريخ إنتهاء العرض",
                     "labelHTML": null,
                     "icon": "sicon-calendar-time",
                     "value": "2021-10-01T15:23",
