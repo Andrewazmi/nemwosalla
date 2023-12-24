@@ -2593,10 +2593,10 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "c74bc837-5998-4d51-a50a-5a115c0d6f55",
+                    "key": "f1229f7f-d710-47e5-91f5-5dc52de03e3f",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "العنوان الرئيسي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -2609,10 +2609,10 @@
                 },
                 {
                     "id": "list_nav_category",
-                    "key": "a833edae-b347-4233-b0ac-7042d44c042f",
+                    "key": "0ce3b657-7de8-4570-b3d1-45edd77b870d",
                     "type": "collection",
                     "format": "collection",
-                    "label": "list_nav_category",
+                    "label": "الأقسام",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -2620,10 +2620,10 @@
                     "fields": [
                         {
                             "id": "category",
-                            "key": "da367e16-7ed5-4fa2-ab63-84572a680e16",
+                            "key": "2e1d4fbc-576f-467d-9a61-12418f2740c1",
                             "type": "items",
                             "format": "dropdown-list",
-                            "label": "category",
+                            "label": "التصنيف",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-keyboard_arrow_down",
