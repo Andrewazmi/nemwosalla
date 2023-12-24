@@ -3478,10 +3478,10 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "9b212053-17bc-43e9-a2bd-46e1c02e3730",
+                    "key": "13a924d6-4e32-4678-9e7d-90b13f08481e",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "عنوان رئيسي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -3494,10 +3494,10 @@
                 },
                 {
                     "id": "subtitle",
-                    "key": "fe609e57-3e47-4e84-a102-cbc404715cb9",
+                    "key": "c2daae7a-cf25-4f58-879b-bfc9be08618f",
                     "type": "string",
                     "format": "text",
-                    "label": "subtitle",
+                    "label": "عنوان فرعي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -3510,10 +3510,10 @@
                 },
                 {
                     "id": "slider",
-                    "key": "2b270e9c-5256-42cd-a0db-da38a1c49db5",
+                    "key": "71616656-204e-47d2-acea-a8bd1998d6c7",
                     "type": "collection",
                     "format": "collection",
-                    "label": "slider",
+                    "label": "سلايدر المنتجات",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -3521,10 +3521,10 @@
                     "fields": [
                         {
                             "id": "product_id",
-                            "key": "1fa8dee7-ed47-4e3a-a47e-d057d57ac4f2",
+                            "key": "3ff3b485-021d-4250-95a9-ace0ef31bb50",
                             "type": "items",
                             "format": "dropdown-list",
-                            "label": "product_id",
+                            "label": "اختار المنتج",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-keyboard_arrow_down",
