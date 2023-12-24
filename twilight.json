@@ -2845,7 +2845,7 @@
         },
         {
             "key": "ec2dbaf8-b905-42e1-bafb-f775505b2a19",
-            "title": "blogs",
+            "title": "المدونة",
             "icon": "sicon-store",
             "path": "home.blog",
             "fields": [
