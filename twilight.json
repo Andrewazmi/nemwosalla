@@ -1697,36 +1697,35 @@
             "fields": [
                 {
                     "id": "add_two_card",
-                    "key": "9011fe74-fd16-46aa-b038-5e0775b0eb22",
+                    "key": "90e882fc-f7b9-4b7c-9b1b-b92b5d78e9fd",
                     "type": "collection",
                     "format": "collection",
-                    "label": "add_two_card",
+                    "label": "عرض صورتان في صف واحد",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "image",
-                            "key": "5b5804e5-cd10-4689-bfda-f939be527aeb",
+                            "id": "alsort",
+                            "key": "14bacb55-0d9d-47b5-be39-99a39431cf48",
                             "type": "string",
                             "format": "image",
-                            "label": "Image",
+                            "label": "الصورة",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false,
-                            "defaulted": true
+                            "required": false
                         },
                         {
-                            "id": "url",
-                            "key": "c310fcd8-a283-462f-ab91-dedc9161d56d",
+                            "id": "rabt_alaard",
+                            "key": "1eaba7c5-4521-4f37-ae80-4b55995ff006",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
-                            "label": "URL",
+                            "label": "رابط العرض",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://salla.sa",
@@ -1734,16 +1733,15 @@
                             "value": null,
                             "required": false,
                             "minLength": 6,
-                            "maxLength": 30,
-                            "defaulted": true
+                            "maxLength": 30
                         },
                         {
                             "id": "background_button_color",
-                            "key": "b34253b8-fb1d-4dad-a2f2-6d065157ccc5",
+                            "key": "9a080c08-4dd3-429c-bd9a-7d8b2b40622d",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
-                            "label": "background_button_color",
+                            "label": "لون خلفية الزر",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-format-fill",
@@ -1752,11 +1750,11 @@
                         },
                         {
                             "id": "text_color_button",
-                            "key": "6275c870-8322-4d45-9e23-7fe35e0f7782",
+                            "key": "6746eab8-ef5f-4cb3-b1e4-9192be7b7484",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
-                            "label": "text_color_button",
+                            "label": "لون نص الزر",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-format-fill",
@@ -1765,10 +1763,10 @@
                         },
                         {
                             "id": "button",
-                            "key": "6b650732-ff88-4d40-a8df-a80d2350fa79",
+                            "key": "8971deea-de0a-4e1d-8943-478f51c13b2f",
                             "type": "string",
                             "format": "text",
-                            "label": "button",
+                            "label": "نص الزر",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
@@ -1781,27 +1779,27 @@
                         },
                         {
                             "id": "button_posistion",
-                            "key": "53696997-6642-4a33-b255-e7ebc37cc9d6",
+                            "key": "89b4239d-e790-4d43-81d2-f495d6ad2fb9",
                             "type": "items",
                             "format": "dropdown-list",
-                            "label": "button_position",
+                            "label": "تموضع الزر",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-keyboard_arrow_down",
                             "selected": [],
                             "options": [
                                 {
-                                    "label": "right",
+                                    "label": "يمين",
                                     "value": "start",
                                     "key": "d9ab7516-7a81-47b6-aac1-56a4a357199e"
                                 },
                                 {
-                                    "label": "left",
+                                    "label": "يسار",
                                     "value": "end",
                                     "key": "780ba7d8-a6c6-4d34-b3b0-beca4211b283"
                                 },
                                 {
-                                    "label": "center",
+                                    "label": "بالمنتصف",
                                     "value": "center",
                                     "key": "18699bd0-ac71-4869-9eda-7cda7e84d194"
                                 }
