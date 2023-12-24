@@ -3208,36 +3208,35 @@
             "fields": [
                 {
                     "id": "slider",
-                    "key": "ee114518-69be-4ac1-a292-2d77cee47a38",
+                    "key": "2aa726e4-7789-4075-8042-b53b731dbed4",
                     "type": "collection",
                     "format": "collection",
-                    "label": "items",
+                    "label": "سلايدر الصور",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "image",
-                            "key": "700f95c9-513b-438b-8c6c-87bb30282191",
+                            "id": "alsort",
+                            "key": "adbe200c-7ef4-4f71-b148-2c49b92cbed2",
                             "type": "string",
                             "format": "image",
-                            "label": "Image",
+                            "label": "الصورة",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false,
-                            "defaulted": true
+                            "required": false
                         },
                         {
                             "id": "background_button_color",
-                            "key": "f2f6ae88-71b6-46aa-a661-367187c4df7d",
+                            "key": "bf971f83-6961-4d8b-9c86-849fb295b027",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
-                            "label": "background_button_color",
+                            "label": "لون خلفية الزر",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-format-fill",
@@ -3246,11 +3245,11 @@
                         },
                         {
                             "id": "text_color_button",
-                            "key": "dae7e71a-df3f-4114-9843-ed9e970d8080",
+                            "key": "4787feee-839b-41f0-b859-931d2b522e56",
                             "type": "string",
                             "format": "color",
                             "inputType": "color",
-                            "label": "text_color_button",
+                            "label": "لون نص الزر",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-format-fill",
@@ -3259,27 +3258,27 @@
                         },
                         {
                             "id": "button_position",
-                            "key": "97081bac-ac97-48dd-babe-37419944d913",
+                            "key": "f0fdd50a-3933-4700-9adc-afaf39057c7a",
                             "type": "items",
                             "format": "dropdown-list",
-                            "label": "button_position",
+                            "label": "تموضع الزر",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-keyboard_arrow_down",
                             "selected": [],
                             "options": [
                                 {
-                                    "label": "right",
+                                    "label": "يمين",
                                     "value": "start",
                                     "key": "a56f9d15-9aae-4d87-86c0-9c7ca6bf7a66"
                                 },
                                 {
-                                    "label": "left",
+                                    "label": "يسار",
                                     "value": "end",
                                     "key": "7a43a6b2-014d-493a-8d63-686df5954144"
                                 },
                                 {
-                                    "label": "center",
+                                    "label": "بالمنتصف",
                                     "value": "center",
                                     "key": "dd3083cd-74d3-41eb-8a9c-9b06b888301b"
                                 }
@@ -3291,10 +3290,10 @@
                         },
                         {
                             "id": "button",
-                            "key": "78aefe49-c38e-4d76-9d4a-e196dd8b1486",
+                            "key": "8bb04b3a-6978-41c3-a1df-f90ee13b451f",
                             "type": "string",
                             "format": "text",
-                            "label": "button",
+                            "label": "نص الزر",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
