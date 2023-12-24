@@ -2689,10 +2689,10 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "b19e9a0f-4495-49ca-bd1a-d3fbc2aae962",
+                    "key": "4a8bf57b-45f3-4e3c-8c0d-e7cf8ec354f0",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "عنوان رئيسي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -2705,10 +2705,10 @@
                 },
                 {
                     "id": "subtitle",
-                    "key": "952470eb-2ad7-42cd-bd66-7f66dee48a57",
+                    "key": "405831f7-8ef0-400a-8815-cd74f26e3cc5",
                     "type": "string",
                     "format": "text",
-                    "label": "subtitle",
+                    "label": "عنوان فرعي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -2721,10 +2721,10 @@
                 },
                 {
                     "id": "category_id",
-                    "key": "8a794c9d-c233-411c-ab8b-706c3130a951",
+                    "key": "afba60a3-7217-4bab-a8d3-23b970a90142",
                     "type": "collection",
                     "format": "collection",
-                    "label": "category",
+                    "label": "التصنيف",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -2732,10 +2732,10 @@
                     "fields": [
                         {
                             "id": "dropdown_list",
-                            "key": "9660cdd1-7fcb-4ff9-9281-33764a319624",
+                            "key": "f5dbf3f3-9e02-4ad6-a435-aac3c303a82b",
                             "type": "items",
                             "format": "dropdown-list",
-                            "label": "category_id",
+                            "label": "أختار التصنيف",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-keyboard_arrow_down",
