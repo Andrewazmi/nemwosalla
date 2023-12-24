@@ -3027,25 +3027,24 @@
             "path": "home.banner-offer-2",
             "fields": [
                 {
-                    "id": "image",
-                    "key": "5da7d3cb-e715-4467-87c2-91a175b49292",
+                    "id": "sort_alaard",
+                    "key": "c8cfebd4-6365-4f2e-bd07-ef3becd9aa64",
                     "type": "string",
                     "format": "image",
-                    "label": "Image",
+                    "label": "صورة العرض",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "e.g. https://hostname.com/image.png",
                     "icon": "sicon-image",
                     "value": null,
-                    "required": false,
-                    "defaulted": true
+                    "required": false
                 },
                 {
                     "id": "title",
-                    "key": "0c5f7315-72c2-440d-aef7-fe75e43a3407",
+                    "key": "e9ca4c02-7fea-4201-a47c-b9a5bb8b4f85",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "عنوان رئيسي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -3058,10 +3057,10 @@
                 },
                 {
                     "id": "subtitle",
-                    "key": "c94e810e-1966-43f7-981b-7b493a8098cd",
+                    "key": "e0095b1e-e396-4b3b-b967-0e1e130ec588",
                     "type": "string",
                     "format": "text",
-                    "label": "subtitle",
+                    "label": "عنوان فرعي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -3074,10 +3073,10 @@
                 },
                 {
                     "id": "button",
-                    "key": "84143748-c560-452c-803e-6e7bc843c051",
+                    "key": "4eeacac8-49e6-4e27-b359-e66342f78295",
                     "type": "string",
                     "format": "text",
-                    "label": "button",
+                    "label": "نص الزر",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -3089,12 +3088,12 @@
                     "maxLength": 30
                 },
                 {
-                    "id": "url",
-                    "key": "38b91c08-7db2-4cea-9194-e0892b941159",
+                    "id": "rabt_alzr",
+                    "key": "35cd912d-9f48-4250-851b-422af9e6359b",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
-                    "label": "URL",
+                    "label": "رابط الزر",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "e.g. https://salla.sa",
@@ -3102,8 +3101,7 @@
                     "value": null,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30,
-                    "defaulted": true
+                    "maxLength": 30
                 }
             ]
         },
