@@ -1521,10 +1521,10 @@
             "fields": [
                 {
                     "id": "offer",
-                    "key": "c4be32e5-aae2-49bf-b8fa-d355f913fe42",
+                    "key": "688a3d4d-fe22-4855-9ea1-9090c2ef2002",
                     "type": "string",
                     "format": "text",
-                    "label": "عرض الخصم",
+                    "label": "نص زر الجانبي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -1537,7 +1537,7 @@
                 },
                 {
                     "id": "url",
-                    "key": "752c13d7-3f35-45dc-88c9-54c7377fa9f3",
+                    "key": "15dd6815-8db3-4a9d-a612-ee35a286a08f",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
@@ -1553,7 +1553,7 @@
                 },
                 {
                     "id": "image",
-                    "key": "3f8514ad-eaab-4383-aff2-f044810479a7",
+                    "key": "d32c2d07-175c-461d-8be8-752dc91bc7bb",
                     "type": "string",
                     "format": "image",
                     "label": "الصورة",
