@@ -353,6 +353,26 @@ class App extends AppHelpers {
       }
     }
   }
+  ratingProduct(rating){
+console.log({rating});
+    let rate = ""
+     
+      for (let i = 0; i < 5; i++) {
+        if( i <= (rating - 1)){
+            rate += `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M10.9577 2.47119C6.05909 2.47119 2.09229 6.26095 2.09229 10.9305C2.09229 15.6 6.05909 19.3898 10.9577 19.3898C15.8652 19.3898 19.8409 15.6 19.8409 10.9305C19.8409 6.26095 15.8652 2.47119 10.9577 2.47119ZM14.7204 16.0061L10.9666 13.8489L7.21275 16.0061L8.20667 11.9371L4.89656 9.20479L9.26271 8.8495L10.9666 5.00898L12.6704 8.84104L17.0366 9.19633L13.7265 11.9287L14.7204 16.0061Z" fill="#FFAC0D"/>
+          </svg>`
+        }else{
+          rate += `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M10.6657 2.47119C5.7671 2.47119 1.80029 6.26095 1.80029 10.9305C1.80029 15.6 5.7671 19.3898 10.6657 19.3898C15.5732 19.3898 19.5489 15.6 19.5489 10.9305C19.5489 6.26095 15.5732 2.47119 10.6657 2.47119ZM14.4284 16.0061L10.6746 13.8489L6.92076 16.0061L7.91468 11.9371L4.60457 9.20479L8.97072 8.8495L10.6746 5.00898L12.3784 8.84104L16.7446 9.19633L13.4345 11.9287L14.4284 16.0061Z" fill="#404553"/>
+        </svg>`
+        }
+
+        
+      }
+
+      return rate
+  }
 
   async productBelongThree() {
     const section = document.getElementsByClassName("category-three");
@@ -369,6 +389,8 @@ class App extends AppHelpers {
         .fetch(queryParams)
         .then((response) => {
           const products = response.data.slice(0, 5);
+
+          
           const data = `
         <div>
         <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
@@ -473,7 +495,7 @@ ${
               <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
               </svg>
             </salla-button>
-          </div>
+          </div class=" svg-wish-rev">
           
                   <div class="quickview-btn eye-icon" onclick="clickModal(${
                     products[1].id
@@ -502,6 +524,11 @@ ${
             products[1].name
           }</a>
               </h3>
+              <div class="s-product-card-rating">
+
+            ${this.ratingProduct(products[1].rating.stars)}
+            </div>
+
               <div class="w-full  flex justify-center items-center">
                 <h4 class="text-sm font-bold text-store-text-secondary ${
                   products[1].discount_ends ? "text-red-400" : ""
@@ -694,7 +721,7 @@ ${
             <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
               <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
                 <a href="${products[4].id}" class=" text-4xl">${
-            products[1].name
+            products[4].name
           }</a>
               </h3>
               <div class="w-full  flex justify-center items-center">
@@ -761,6 +788,9 @@ ${
             .fetch(queryParams)
             .then((response) => {
               const products = response.data.slice(0, 3);
+
+
+             
 
               const data = `
         <div>
@@ -1039,6 +1069,9 @@ ${iframeElement}
         "category",
       ]);
       const product = response.data;
+
+
+      
       const data = `
 						<a class=" flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="${
               product.url

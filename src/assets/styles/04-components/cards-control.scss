@@ -340,7 +340,7 @@ html[dir="ltr"] {
   margin: 0 !important;
 }
 .new-design-product svg,
-.category-three svg {
+.category-three .svg-wish-rev svg {
   height: 24px;
   width: 3rem;
 }
@@ -732,6 +732,33 @@ salla-add-product-button .s-button-text{
   .offer-style .img-box {
     height: 500px;
   }
+}
+
+.s-login-modal input{
+    border: none;
+    outline: none;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: none;
+}
+
+.s-login-modal .s-login-modal-enter-button {
+
+  border-radius: 5px !important;
+    background-color: #334155;
+    color: white;
+}
+.s-login-modal salla-button{
+  margin: 1rem 0;
+}
+
+.s-login-modal button{
+  
+  padding:.6rem 0 !important;
+  margin: 0;
+}
+
+.s-login-modal input:focus{
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
 }
 
 @media (min-width: 768px){

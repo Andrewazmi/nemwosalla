@@ -537,6 +537,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .\!mb-20{margin-bottom:5rem !important}
 .\!mt-3{margin-top:0.75rem !important}
 .-mb-52{margin-bottom:-13rem}
+.-ml-10{margin-left:-2.5rem}
 .-mr-1{margin-right:-0.25rem}
 .-mt-1{margin-top:-0.25rem}
 .-mt-62{margin-top:-248px}
@@ -580,8 +581,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mt-6{margin-top:1.5rem}
 .mt-8{margin-top:2rem}
 .mt-auto{margin-top:auto}
-.-ml-10{margin-left:-2.5rem}
-.-ml-24{margin-left:-6rem}
 .line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}
 .line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .block{display:block}
@@ -614,6 +613,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-52{height:13rem}
 .h-56{height:14rem}
 .h-6{height:1.5rem}
+.h-60{height:15rem}
 .h-62{height:248px}
 .h-7{height:1.75rem}
 .h-8{height:2rem}
@@ -634,8 +634,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-lg-banner{height:428px}
 .h-px{height:1px}
 .h-screen{height:100vh}
-.h-\[40\%\]{height:40%}
-.h-60{height:15rem}
 .max-h-0{max-height:0px}
 .max-h-100{max-height:28rem}
 .max-h-8{max-height:2rem}
@@ -671,6 +669,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .w-5{width:1.25rem}
 .w-56{width:14rem}
 .w-6{width:1.5rem}
+.w-60{width:15rem}
 .w-7{width:1.75rem}
 .w-72{width:18rem}
 .w-8{width:2rem}
@@ -685,9 +684,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .w-full{width:100%}
 .w-max{width:-moz-max-content;width:max-content}
 .w-screen{width:100vw}
-.w-80{width:20rem}
-.w-\[40\%\]{width:40%}
-.w-60{width:15rem}
 .min-w-0{min-width:0px}
 .min-w-full{min-width:100%}
 .max-w-3xl{max-width:48rem}
@@ -7376,7 +7372,7 @@ html[dir=ltr] .animated-ads .arrow {
   margin: 0 !important;
 }
 .new-design-product svg,
-.category-three svg {
+.category-three .svg-wish-rev svg {
   height: 24px;
   width: 3rem;
 }
@@ -7693,6 +7689,31 @@ salla-add-product-button .s-button-text {
   .offer-style .img-box {
     height: 500px;
   }
+}
+.s-login-modal input {
+  border: none;
+  outline: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: none;
+}
+.s-login-modal .s-login-modal-enter-button {
+  border-radius: 5px !important;
+}
+.s-login-modal .s-login-modal-enter-button {
+  background-color: #334155;
+  color: white;
+}
+.s-login-modal salla-button {
+  margin: 1rem 0;
+}
+.s-login-modal button {
+  padding: 0.6rem 0 !important;
+}
+.s-login-modal button {
+  margin: 0;
+}
+.s-login-modal input:focus {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 768px) {
   .single-product-edit-slider .s-slider-container {

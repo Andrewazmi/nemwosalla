@@ -250,8 +250,15 @@
                 {% endif %}
 
                 {% if product.rating %}
-                    <salla-rating-stars value="{{ product.rating.stars }}"
-                                        reviews="{{ product.rating.count }}"></salla-rating-stars>
+            <div class=" flex my-4 gap-1 items-center">
+    
+                    {% for i in 1..product.rating.stars %}
+                    
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 33 30" fill="none">
+                                    <path d="M16.819 23.5923L26.6047 29.2917L24.0079 18.55L32.6535 11.3226L21.2685 10.3905L16.819 0.26001L12.3694 10.3905L0.984375 11.3226L9.63006 18.55L7.03319 29.2917L16.819 23.5923Z" fill="#FFAC0D"/>
+                                </svg>
+                            {% endfor %}
+                            </div>
                 {% endif %}
 
                 {# Price #}
@@ -340,13 +347,13 @@
                 {% if product.sold_quantity or product.can_show_remained_quantity %}
                     <div class="bg-white py-2.5 mb-5 rounded-md inline-flex text-sm">
                         {% if product.sold_quantity %}
-                            <div class="px-4 text-red-400">
+                            <div class="px-1 text-red-400">
                                 <i class="sicon-fire rtl:ml-1.5 ltr:mr-1.5"></i> {{ trans('pages.products.sold') }}
                                 <span>{{ pluralize('pages.products.sold_times', product.sold_quantity)|raw }}</span>
                             </div>
                         {% endif %}
                         {% if product.can_show_remained_quantity %}
-                            <div class="px-4 rtl:even:border-r ltr:even:border-l even:border-gray-200">
+                            <div class="px-1 rtl:even:border-r ltr:even:border-l even:border-gray-200">
                                 <i class="text-red-400 sicon-box-bankers rtl:ml-1.5 ltr:mr-1.5"></i>
                                 {{ trans('pages.products.remained') }}
                                 <span>{{ product.quantity }}</span>

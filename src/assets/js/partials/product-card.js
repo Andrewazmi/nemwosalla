@@ -152,6 +152,27 @@ class ProductCard extends HTMLElement {
     return salla.lang.get("pages.products.donation_exceed");
   }
 
+  ratingProduct(){
+  
+    let rate = ""
+     
+      for (let i = 0; i < 5; i++) {
+        if( i <= (this.product?.rating?.stars - 1)){
+            rate += `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M10.9577 2.47119C6.05909 2.47119 2.09229 6.26095 2.09229 10.9305C2.09229 15.6 6.05909 19.3898 10.9577 19.3898C15.8652 19.3898 19.8409 15.6 19.8409 10.9305C19.8409 6.26095 15.8652 2.47119 10.9577 2.47119ZM14.7204 16.0061L10.9666 13.8489L7.21275 16.0061L8.20667 11.9371L4.89656 9.20479L9.26271 8.8495L10.9666 5.00898L12.6704 8.84104L17.0366 9.19633L13.7265 11.9287L14.7204 16.0061Z" fill="#FFAC0D"/>
+          </svg>`
+        }else{
+          rate += `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M10.6657 2.47119C5.7671 2.47119 1.80029 6.26095 1.80029 10.9305C1.80029 15.6 5.7671 19.3898 10.6657 19.3898C15.5732 19.3898 19.5489 15.6 19.5489 10.9305C19.5489 6.26095 15.5732 2.47119 10.6657 2.47119ZM14.4284 16.0061L10.6746 13.8489L6.92076 16.0061L7.91468 11.9371L4.60457 9.20479L8.97072 8.8495L10.6746 5.00898L12.3784 8.84104L16.7446 9.19633L13.4345 11.9287L14.4284 16.0061Z" fill="#404553"/>
+        </svg>`
+        }
+
+        
+      }
+
+      return rate
+  }
+
   getProps() {
     /**
      *  Horizontal card.
@@ -303,16 +324,12 @@ class ProductCard extends HTMLElement {
           </div>
           <div class="s-product-card-content-sub ${
             this.isSpecial ? "s-product-card-content-extra-padding" : ""
-          } flex justify-center items-center" style="justify-content : center !important ; margin:0px !important">
-          ${
-            this.product?.rating?.stars && !this.minimal
-              ? `<div class="s-product-card-rating">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <path d="M10.9577 2.47119C6.05909 2.47119 2.09229 6.26095 2.09229 10.9305C2.09229 15.6 6.05909 19.3898 10.9577 19.3898C15.8652 19.3898 19.8409 15.6 19.8409 10.9305C19.8409 6.26095 15.8652 2.47119 10.9577 2.47119ZM14.7204 16.0061L10.9666 13.8489L7.21275 16.0061L8.20667 11.9371L4.89656 9.20479L9.26271 8.8495L10.9666 5.00898L12.6704 8.84104L17.0366 9.19633L13.7265 11.9287L14.7204 16.0061Z" fill="#FFAC0D"/>
-          </svg>
-            </div>`
-              : ``
-          }
+          } flex flex-col justify-center items-center" style="justify-content : center !important ; margin:0px !important">
+          <div class="s-product-card-rating">
+
+            ${this.ratingProduct()}
+            </div>
+             
           ${this.getProductPrice()}
             
           </div>
