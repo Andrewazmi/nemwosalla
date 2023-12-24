@@ -761,6 +761,34 @@ salla-add-product-button .s-button-text{
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
 }
 
+[type="radio"]:checked {
+  background-color:#505B6C !important;
+
+}
+
+[type="radio"]:focus {
+  --tw-ring-color: transparent !important
+}
+
+.s-localization-modal-inner salla-button{
+  border-radius: 5px !important;
+    
+  margin: 1rem 0;
+  padding:.6rem 0 !important;
+}
+
+.s-localization-modal-inner button{
+  padding: 2px 0;
+  background-color: #334155 !important;
+    color: white !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
 @media (min-width: 768px){
   .single-product-edit-slider .s-slider-container{
     height: 600px;
@@ -795,6 +823,7 @@ salla-add-product-button .s-button-text{
     --tw-ring-color: none;
   }
 }
+
 
 
 @media (max-width: 768px) {

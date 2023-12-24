@@ -7715,6 +7715,29 @@ salla-add-product-button .s-button-text {
 .s-login-modal input:focus {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
+[type=radio]:checked {
+  background-color: #505B6C !important;
+}
+[type=radio]:focus {
+  --tw-ring-color: transparent !important ;
+}
+.s-localization-modal-inner salla-button {
+  border-radius: 5px !important;
+  padding: 0.6rem 0 !important;
+}
+.s-localization-modal-inner salla-button {
+  margin: 1rem 0;
+}
+.s-localization-modal-inner button {
+  background-color: #334155 !important;
+  color: white !important;
+}
+.s-localization-modal-inner button {
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (min-width: 768px) {
   .single-product-edit-slider .s-slider-container {
     height: 600px;
