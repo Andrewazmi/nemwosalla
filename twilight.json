@@ -1568,7 +1568,7 @@
         },
         {
             "key": "7ff7e031-3b02-45dd-89e4-a782cf5bf0b9",
-            "title": "offers-slider",
+            "title": "سلايدر العروض",
             "icon": "sicon-store",
             "path": "home.offers-slider",
             "fields": [
