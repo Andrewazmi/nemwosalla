@@ -3407,11 +3407,11 @@
             "path": "home.limited-offer-product",
             "fields": [
                 {
-                    "id": "string",
-                    "key": "003c721d-eef5-48e3-b2bd-a19a0569b0f7",
+                    "id": "alaanoan_alreese",
+                    "key": "624a7f3b-4630-46dc-885a-4334bd8016a9",
                     "type": "string",
                     "format": "text",
-                    "label": "String",
+                    "label": "العنوان الرئيسي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -3420,15 +3420,14 @@
                     "multilanguage": false,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30,
-                    "defaulted": true
+                    "maxLength": 30
                 },
                 {
                     "id": "prodcuts",
-                    "key": "2135f75b-dc3f-4d3c-a1fa-382e60336455",
+                    "key": "cf9cd8fe-bc0d-4f0d-9033-9cbd7ab2b0b9",
                     "type": "collection",
                     "format": "collection",
-                    "label": "prodcuts",
+                    "label": "المنتجات",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -3436,10 +3435,10 @@
                     "fields": [
                         {
                             "id": "product_id",
-                            "key": "3fd2308e-0754-45fa-8341-2d72aabba1ad",
+                            "key": "9c4b7f3b-f692-4568-8f37-a7d4a8167c97",
                             "type": "items",
                             "format": "dropdown-list",
-                            "label": "product_id",
+                            "label": "اختار المنتج",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-keyboard_arrow_down",
@@ -3458,11 +3457,11 @@
                 },
                 {
                     "id": "date",
-                    "key": "7ec480f6-cead-4f34-b5a0-2d580ef908ff",
+                    "key": "d63ffcd9-9b55-4f65-a2dd-d30df6ebb1aa",
                     "type": "string",
                     "format": "datetime",
                     "inputType": "datetime-local",
-                    "label": "date",
+                    "label": "تاريخ وموعد نهاية العرض",
                     "description": null,
                     "labelHTML": null,
                     "icon": "sicon-calendar-time",
