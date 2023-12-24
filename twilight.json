@@ -2651,26 +2651,25 @@
             "path": "home.banner-with-no-contaainer",
             "fields": [
                 {
-                    "id": "image",
-                    "key": "06d5736d-7582-4fe9-a43d-d66d391061ba",
+                    "id": "sort_albanr",
+                    "key": "7496d366-89ee-4b4f-838f-dccfaa37c611",
                     "type": "string",
                     "format": "image",
-                    "label": "Image",
+                    "label": "صورة البانر",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "e.g. https://hostname.com/image.png",
                     "icon": "sicon-image",
                     "value": null,
-                    "required": false,
-                    "defaulted": true
+                    "required": false
                 },
                 {
-                    "id": "url",
-                    "key": "f96f0411-7d27-4487-82ed-3f536c20490e",
+                    "id": "alrabt",
+                    "key": "c726cb1a-f7f9-4b89-a3de-2f6759b5fdc3",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
-                    "label": "URL",
+                    "label": "الرابط",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "e.g. https://salla.sa",
@@ -2678,8 +2677,7 @@
                     "value": null,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30,
-                    "defaulted": true
+                    "maxLength": 30
                 }
             ]
         },
