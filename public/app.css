@@ -915,7 +915,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .text-5xl{font-size:3rem;line-height:1}
 .text-6xl{font-size:3.75rem;line-height:1}
 .text-7xl{font-size:4.5rem;line-height:1}
-.text-\[16px\]{font-size:16px}
 .text-base{font-size:1rem;line-height:1.5rem}
 .text-lg{font-size:1.125rem;line-height:1.75rem}
 .text-sm{font-size:0.875rem;line-height:1.25rem}
@@ -1221,7 +1220,7 @@ input[type=radio].sr-only:checked ~ div.s-button-loader-start .s-button-loader {
 }
 .blog-index .s-button-loader-start .s-button-loader .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1249,7 +1248,7 @@ input[type=radio].sr-only:checked ~ div.s-button-loader-end .s-button-loader {
 }
 .blog-index .s-button-loader-end .s-button-loader .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1276,7 +1275,7 @@ input[type=radio].sr-only:checked ~ div.s-button-loader-center .s-button-loader 
 }
 .blog-index .s-button-loader-center .s-button-loader .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1303,7 +1302,7 @@ input[type=radio].sr-only:checked ~ div.s-cart-summary-count {
 }
 .blog-index .s-cart-summary-count .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1442,7 +1441,7 @@ input[type=radio].sr-only:checked ~ div.s-count-down-end-text {
 }
 .blog-index .s-count-down-end-text .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1496,7 +1495,7 @@ input[type=radio].sr-only:checked ~ div.s-file-upload-wrapper .filepond--file-po
 }
 .blog-index .s-file-upload-wrapper .filepond--file-poster-wrapper .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1520,7 +1519,7 @@ input[type=radio].sr-only:checked ~ div.s-file-upload-wrapper .filepond--file-po
 }
 .blog-index .s-file-upload-wrapper .filepond--file-poster .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1544,7 +1543,7 @@ input[type=radio].sr-only:checked ~ div.s-file-upload-wrapper .filepond--file-po
 }
 .blog-index .s-file-upload-wrapper .filepond--file-poster-overlay .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1604,7 +1603,7 @@ input[type=radio].sr-only:checked ~ div.s-file-upload-profile-image .s-file-uplo
 }
 .blog-index .s-file-upload-profile-image .s-file-upload-has-error .filepond--file-status .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1715,7 +1714,7 @@ input[type=radio].sr-only:checked ~ div.s-gifting-step-two {
 }
 .blog-index .s-gifting-step-two .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1745,7 +1744,7 @@ input[type=radio].sr-only:checked ~ div.s-gifting-step-one .filepond-bg {
 }
 .blog-index .s-gifting-step-one .filepond-bg .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1793,7 +1792,7 @@ input[type=radio].sr-only:checked ~ div.s-gifting-remove-preview {
 }
 .blog-index .s-gifting-remove-preview .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -1937,7 +1936,7 @@ input[type=radio].sr-only:checked ~ div.s-loyalty-prize-item-check {
 }
 .blog-index .s-loyalty-prize-item-check .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2013,7 +2012,7 @@ input[type=radio].sr-only:checked ~ div.s-maintenance-alert-close {
 }
 .blog-index .s-maintenance-alert-close .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2071,7 +2070,7 @@ input[type=radio].sr-only:checked ~ div.s-map-search-wrapper {
 }
 .blog-index .s-map-search-wrapper .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2098,7 +2097,7 @@ input[type=radio].sr-only:checked ~ div.s-map-modal-body .s-loading-container {
 }
 .blog-index .s-map-modal-body .s-loading-container .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2122,7 +2121,7 @@ input[type=radio].sr-only:checked ~ div.s-map-my-location-button {
 }
 .blog-index .s-map-my-location-button .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2186,7 +2185,7 @@ input[type=radio].sr-only:checked ~ div.s-modal-close {
 }
 .blog-index .s-modal-close .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2431,7 +2430,7 @@ input[type=radio].sr-only:checked ~ div.s-price-range-input {
 }
 .blog-index .s-price-range-input .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2455,7 +2454,7 @@ input[type=radio].sr-only:checked ~ div.s-price-range-bar {
 }
 .blog-index .s-price-range-bar .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2480,7 +2479,7 @@ input[type=radio].sr-only:checked ~ div.s-price-range-active-bar {
 }
 .blog-index .s-price-range-active-bar .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2507,7 +2506,7 @@ input[type=radio].sr-only:checked ~ div.s-price-range-left-handle {
 }
 .blog-index .s-price-range-left-handle .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2534,7 +2533,7 @@ input[type=radio].sr-only:checked ~ div.s-price-range-right-handle {
 }
 .blog-index .s-price-range-right-handle .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2562,7 +2561,7 @@ input[type=radio].sr-only:checked ~ div.s-price-range-currency {
 }
 .blog-index .s-price-range-currency .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2617,7 +2616,7 @@ input[type=radio].sr-only:checked ~ div.s-product-card-overlay {
 }
 .blog-index .s-product-card-overlay .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2644,7 +2643,7 @@ input[type=radio].sr-only:checked ~ div.s-product-card-vertical .s-product-card-
 }
 .blog-index .s-product-card-vertical .s-product-card-wishlist-btn .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2673,7 +2672,7 @@ input[type=radio].sr-only:checked ~ div.s-product-card-minimal .s-product-card-w
 }
 .blog-index .s-product-card-minimal .s-product-card-wishlist-btn .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2715,7 +2714,7 @@ input[type=radio].sr-only:checked ~ div.s-product-card-quantity {
 }
 .blog-index .s-product-card-quantity .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2741,7 +2740,7 @@ input[type=radio].sr-only:checked ~ div.s-product-card-promotion-title {
 }
 .blog-index .s-product-card-promotion-title .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2768,7 +2767,7 @@ input[type=radio].sr-only:checked ~ div.s-product-card-out-badge {
 }
 .blog-index .s-product-card-out-badge .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2827,7 +2826,7 @@ input[type=radio].sr-only:checked ~ div.s-product-card-content-pie {
 }
 .blog-index .s-product-card-content-pie .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2852,7 +2851,7 @@ input[type=radio].sr-only:checked ~ div.s-product-card-content-pie span {
 }
 .blog-index .s-product-card-content-pie span .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2893,7 +2892,7 @@ input[type=radio].sr-only:checked ~ div.s-product-card-full-image .s-product-car
 }
 .blog-index .s-product-card-full-image .s-product-card-content .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -2986,7 +2985,7 @@ input[type=radio].sr-only:checked ~ div.s-product-options-donation-amount-currun
 }
 .blog-index .s-product-options-donation-amount-curruncy .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3036,7 +3035,7 @@ input[type=radio].sr-only:checked ~ div.s-product-options-thumbnails-stock-badge
 }
 .blog-index .s-product-options-thumbnails-stock-badge .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3060,7 +3059,7 @@ input[type=radio].sr-only:checked ~ div.s-product-options-thumbnails-badge-overl
 }
 .blog-index .s-product-options-thumbnails-badge-overlay .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3084,7 +3083,7 @@ input[type=radio].sr-only:checked ~ div.s-product-options-thumbnails-icon {
 }
 .blog-index .s-product-options-thumbnails-icon .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3127,7 +3126,7 @@ input[type=radio].sr-only:checked ~ div.s-product-options-donation-amount-curren
 }
 .blog-index .s-product-options-donation-amount-currency .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3251,7 +3250,7 @@ input[type=radio].sr-only:checked ~ div.s-quick-order-expandable .s-form-group >
 }
 .blog-index .s-quick-order-expandable .s-form-group > span .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3403,7 +3402,7 @@ input[type=radio].sr-only:checked ~ div.s-scopes-search-icon {
 }
 .blog-index .s-scopes-search-icon .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3487,7 +3486,7 @@ input[type=radio].sr-only:checked ~ div.s-search-icon-wrap {
 }
 .blog-index .s-search-icon-wrap .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3518,7 +3517,7 @@ input[type=radio].sr-only:checked ~ div.s-search-results {
 }
 .blog-index .s-search-results .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3562,7 +3561,7 @@ input[type=radio].sr-only:checked ~ div.s-search-action {
 }
 .blog-index .s-search-action .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3639,7 +3638,7 @@ input[type=radio].sr-only:checked ~ div.s-slider-v-centered .s-slider-block__tit
 }
 .blog-index .s-slider-v-centered .s-slider-block__title-nav .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3676,7 +3675,7 @@ input[type=radio].sr-only:checked ~ div.s-slider-thumbs-nav {
 }
 .blog-index .s-slider-thumbs-nav .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3746,7 +3745,7 @@ input[type=radio].sr-only:checked ~ div.s-slider-vertical .s-slider-thumbs-prev 
 }
 .blog-index .s-slider-vertical .s-slider-thumbs-prev .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3774,7 +3773,7 @@ input[type=radio].sr-only:checked ~ div.s-slider-vertical .s-slider-thumbs-next 
 }
 .blog-index .s-slider-vertical .s-slider-thumbs-next .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3819,7 +3818,7 @@ input[type=radio].sr-only:checked ~ div.s-slider-thumbs .s-slider-thumbs-contain
 }
 .blog-index .s-slider-thumbs .s-slider-thumbs-container .swiper-slide .footer-list:after {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3850,7 +3849,7 @@ input[type=radio].sr-only:checked ~ divsalla-slider .video-entry:before,input[ty
 }
 .blog-index salla-slider .video-entry .footer-list:before,.blog-index  salla-slider .model-entry .footer-list:before {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -3893,7 +3892,7 @@ input[type=radio].sr-only:checked ~ div.s-social-share-list {
 }
 .blog-index .s-social-share-list .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -4000,7 +3999,7 @@ input[type=radio].sr-only:checked ~ div.s-user-menu-dropdown-header-close {
 }
 .blog-index .s-user-menu-dropdown-header-close .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -4026,7 +4025,7 @@ input[type=radio].sr-only:checked ~ div.s-user-menu-dropdown-item-badge {
 }
 .blog-index .s-user-menu-dropdown-item-badge .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -4052,7 +4051,7 @@ input[type=radio].sr-only:checked ~ div.s-user-menu-red-dot .s-user-menu-avatar-
 }
 .blog-index .s-user-menu-red-dot .s-user-menu-avatar-wrap .footer-list:after {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -4149,7 +4148,7 @@ input[type=radio].sr-only:checked ~ div.s-verify-back {
 }
 .blog-index .s-verify-back .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -4614,7 +4613,7 @@ input[type=radio].sr-only:checked ~ div.swiper-lazy {
 }
 .blog-index .swiper-lazy .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -4639,7 +4638,7 @@ input[type=radio].sr-only:checked ~ div.lazy__bg {
 }
 .blog-index .lazy__bg .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -4806,7 +4805,7 @@ input[type=radio].sr-only:checked ~ div.btn--close {
 }
 .blog-index .btn--close .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -4857,7 +4856,7 @@ input[type=radio].sr-only:checked ~ divbutton.btn--coupon {
 }
 .blog-index button.btn--coupon .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -4984,7 +4983,7 @@ input[type=radio].sr-only:checked ~ div.radio-images__badge {
 }
 .blog-index .radio-images__badge .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -5188,7 +5187,7 @@ input[type=radio].sr-only:checked ~ div#nav-cart span {
 }
 .blog-index #nav-cart span .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -5278,7 +5277,7 @@ input[type=radio].sr-only:checked ~ div.main-menu .sub-menu {
 }
 .blog-index .main-menu .sub-menu .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -5400,7 +5399,7 @@ input[type=radio].sr-only:checked ~ div.dropdown__menu {
 }
 .blog-index .dropdown__menu .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -5523,7 +5522,7 @@ input[type=radio].sr-only:checked ~ div.s-table tbody tr a {
 }
 .blog-index .s-table tbody tr a .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -5644,7 +5643,7 @@ input[type=radio].sr-only:checked ~ div.s-block--hero-slider .swiper-slide .swip
 }
 .blog-index .s-block--hero-slider .swiper-slide .swiper-lazy .footer-list:after {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -5709,7 +5708,7 @@ input[type=radio].sr-only:checked ~ div.has-overlay:after {
 }
 .blog-index .has-overlay .footer-list:after {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -5866,7 +5865,7 @@ input[type=radio].sr-only:checked ~ div.s-block--slider-with-bg .slider-bg:befor
 }
 .blog-index .s-block--slider-with-bg .slider-bg .footer-list:before {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -5985,7 +5984,7 @@ input[type=radio].sr-only:checked ~ divsalla-slider.details-slider salla-button.
 }
 .blog-index salla-slider.details-slider salla-button.btn--wishlist .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6034,7 +6033,7 @@ input[type=radio].sr-only:checked ~ div.promotion-title {
 }
 .blog-index .promotion-title .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6129,7 +6128,7 @@ input[type=radio].sr-only:checked ~ div.testimonials-slider .testimonial__icon {
 }
 .blog-index .testimonials-slider .testimonial__icon .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6248,7 +6247,7 @@ input[type=radio].sr-only:checked ~ div.offer-slider .s-slider-block__title:befo
 }
 .blog-index .offer-slider .s-slider-block__title .footer-list:before {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6309,7 +6308,7 @@ input[type=radio].sr-only:checked ~ div.product-entry__image::before {
 }
 .blog-index .product-entry__image .footer-list::before {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6340,7 +6339,7 @@ input[type=radio].sr-only:checked ~ div.product-entry--minimal .btn--wishlist {
 }
 .blog-index .product-entry--minimal .btn--wishlist .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6370,7 +6369,7 @@ input[type=radio].sr-only:checked ~ div.product-entry--minimal .product-rating,i
 }
 .blog-index .product-entry--minimal .product-rating .footer-list,.blog-index  .product-entry--special .product-rating .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6408,7 +6407,7 @@ input[type=radio].sr-only:checked ~ div.product-entry--vertical salla-button.btn
 }
 .blog-index .product-entry--vertical salla-button.btn--wishlist .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6442,7 +6441,7 @@ input[type=radio].sr-only:checked ~ div.product-entry--vertical .product-rating 
 }
 .blog-index .product-entry--vertical .product-rating .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6473,7 +6472,7 @@ input[type=radio].sr-only:checked ~ div.product-entry--special .product-rating {
 }
 .blog-index .product-entry--special .product-rating .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6533,7 +6532,7 @@ input[type=radio].sr-only:checked ~ div.share-btns-list {
 }
 .blog-index .share-btns-list .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6561,7 +6560,7 @@ input[type=radio].sr-only:checked ~ div.pie-wrapper {
 }
 .blog-index .pie-wrapper .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6647,7 +6646,7 @@ input[type=radio].sr-only:checked ~ div.switcher-3d-view {
 }
 .blog-index .switcher-3d-view .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6674,7 +6673,7 @@ input[type=radio].sr-only:checked ~ div.model-viewer__poster {
 }
 .blog-index .model-viewer__poster .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6829,7 +6828,7 @@ input[type=radio].sr-only:checked ~ div.loyalty-star {
 }
 .blog-index .loyalty-star .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -6869,7 +6868,7 @@ input[type=radio].sr-only:checked ~ div.points-ways__list .way-item__icon span {
 }
 .blog-index .points-ways__list .way-item__icon span .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -7015,7 +7014,7 @@ input[type=radio].sr-only:checked ~ div.landing-page > header:before {
 }
 .blog-index .landing-page > header .footer-list:before {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;
@@ -7119,7 +7118,7 @@ body {
 }
 .blog-index .absolute .footer-list {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
   margin-right: 5rem;

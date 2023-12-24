@@ -390,361 +390,192 @@ console.log({rating});
         .then((response) => {
           const products = response.data.slice(0, 5);
 
+          let firstProd = ''
+          let secondProd = ''
+          for (let i = 0; i < products.length; i++) {
+            const product = products[i]
+            if( i == 0){
+                  firstProd += `<div id="product-${
+                    product.id
+                  }" class="product-entry product-entry--full-image overflow-hidden !justify-center !p-4 flex-col justify-center align-center" style="border-radius:40px;height:673px;background-color:#EAE9E9;">
+                    <a href="${
+                      product.url
+                    }" class="relative w-full h-[80%] overflow-hidden rounded-md hover:opacity-90 block mt-6">
+                      <img class="object-contain w-full h-full lazy loaded" src="${
+                        product.image.url
+                      }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
+                    </a>
+                    <a class="block" href="${
+                      product.url
+                    }" class="absolute top-0 bottom-0 left-0 right-0 transition-opacity duration-700  rounded-2xl" ></a>
+                    <div class="flex justify-center items-end">
+                      <div class="flex flex-col justify-center items-center mb-10">
           
-          const data = `
-        <div>
-        <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
-          <div id="product-${
-            products[0].id
-          }" class="product-entry product-entry--full-image overflow-hidden !justify-center !p-4 flex-col justify-center align-center" style="border-radius:40px;height:600px;background-color:#EAE9E9;">
-            <a href="${
-              products[0].url
-            }" class="relative w-full h-[80%] overflow-hidden rounded-md hover:opacity-90 block mt-6">
-              <img class="object-contain w-full h-full lazy loaded" src="${
-                products[0].image.url
-              }" data-src="https://cdn.salla.sa/gzRDg/SPa3pW2JutxuRHUTAtxjtCewpWd5HrYELAV0XX9G.jpg" alt="حقيبة دافل فاشيتا صحارى" loading="lazy" data-ll-status="loaded">
-            </a>
-            <a class="block" href="${
-              products[0].url
-            }" class="absolute top-0 bottom-0 left-0 right-0 transition-opacity duration-700  rounded-2xl" ></a>
-            <div class="flex justify-center items-end">
-              <div class="flex flex-col justify-center items-center mb-10">
+                        <h1 class="text-sm font-bold leading-6 text-black product-entry__title">
+                          <a  href="${
+                            product.url
+                          }" style=" color : black ; font-size : 22px">${
+                    product.name
+                  }</a>
+                        </h1>
+                        <div class="flex text-2xl justify-center items-center gap-2">
+                          <h4>${this.getPriceFormat(product.price)}</h4>
+                        <span class="before-sale text-center font-bold text-[#404553] relative">
+                        <span class="w-10 h-1 bg-[#D9D9D9D1] absolute top-[65%] left-[20%] rotate-[-25deg]" style="z-index: 1;"></span>
+                          ${this.getPriceFormat(product.regular_price)}
+                        </span>
+        
+                  
+                        
+                      </div>
+                      </div>
+        
+        ${
+          product.sale_price < product.regular_price &&
+          `<div class="absolute top-0 lg:top-12 left-0 py-1 px-6" style="background-color:#334155">
+        <p class="text-white">خصم علي هذا المنتج ${
+            100 - Math.floor((product.price / product.regular_price) * 100)
+          }%</p>
+        </div>`
+        }
+                    
+        
+                  <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
+                    
+                    <div class="wishlist" data-title="إضافة للسلة">
+                    <salla-button onclick="salla.wishlist.toggle(${
+                      product.id
+                    })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
+                      <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
+                      </svg>
+                    </salla-button>
+                  </div>
+                  
+                          <div class="quickview-btn eye-icon" onclick="clickModal(${
+                            product.id
+                          })" data-title="عرض سريع" data-product-id="${product.id}">
+                              <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
+        
+                              <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
+                              <path d="M21.6507 8.90039C12.6924 8.90039 5.04197 14.6021 1.94238 22.6504C5.04197 30.6987 12.6924 36.4004 21.6507 36.4004C30.6091 36.4004 38.2595 30.6987 41.3591 22.6504C38.2595 14.6021 30.6091 8.90039 21.6507 8.90039ZM21.6507 31.8171C16.7057 31.8171 12.6924 27.7104 12.6924 22.6504C12.6924 17.5904 16.7057 13.4837 21.6507 13.4837C26.5957 13.4837 30.6091 17.5904 30.6091 22.6504C30.6091 27.7104 26.5957 31.8171 21.6507 31.8171ZM21.6507 17.1504C18.6765 17.1504 16.2757 19.6071 16.2757 22.6504C16.2757 25.6937 18.6765 28.1504 21.6507 28.1504C24.6249 28.1504 27.0257 25.6937 27.0257 22.6504C27.0257 19.6071 24.6249 17.1504 21.6507 17.1504Z" fill="#212121"/>
+                              </svg>
+        
+                              </salla-button>
+                          </div>
+                        <div class="addToCart" data-title="إضافة للسلة">
+                          <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
+                            product.id
+                          }" product-status="sale" fill="outline" product-type="product">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
+                          <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
+                        </svg>
+                          </salla-add-product-button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>`
+            }else{
+              secondProd += `
+              <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4 py-6" style=" border-radius : 40px ; background-color : #EAE9E9">
+              <div style="height:150px;width:90%">
+                <a href="${product.id}">
+                  <img class="object-contain w-full h-full lazy loaded" src="${
+                    product.image.url
+                  }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
+                </a>
+              </div>
+              <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
+              
+              <div class="wishlist" data-title="إضافة للسلة">
+              <salla-button onclick="salla.wishlist.toggle(${
+                product.id
+              })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
+                <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
+                <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
+                </svg>
+              </salla-button>
+            </div class=" svg-wish-rev">
+            
+                    <div class="quickview-btn eye-icon" onclick="clickModal(${
+                      product.id
+                    })" data-title="عرض سريع" data-product-id="${product.id}">
+                        <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
   
-                <h1 class="text-sm font-bold leading-6 text-black product-entry__title">
-                  <a  href="${
-                    products[0].url
-                  }" style=" color : black ; font-size : 22px">${
-            products[0].name
-          }</a>
-                </h1>
-                <div class="flex text-2xl justify-center items-center gap-2">
-                  <h4>${this.getPriceFormat(products[0].price)}</h4>
-                <span class="before-sale text-center font-bold text-[#404553] relative">
-                <span class="w-10 h-1 bg-[#D9D9D9D1] absolute top-[65%] left-[20%] rotate-[-25deg]" style="z-index: 1;"></span>
-                  ${this.getPriceFormat(products[0].regular_price)}
-                </span>
-
-          
+                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
+                        <path d="M21.6507 8.90039C12.6924 8.90039 5.04197 14.6021 1.94238 22.6504C5.04197 30.6987 12.6924 36.4004 21.6507 36.4004C30.6091 36.4004 38.2595 30.6987 41.3591 22.6504C38.2595 14.6021 30.6091 8.90039 21.6507 8.90039ZM21.6507 31.8171C16.7057 31.8171 12.6924 27.7104 12.6924 22.6504C12.6924 17.5904 16.7057 13.4837 21.6507 13.4837C26.5957 13.4837 30.6091 17.5904 30.6091 22.6504C30.6091 27.7104 26.5957 31.8171 21.6507 31.8171ZM21.6507 17.1504C18.6765 17.1504 16.2757 19.6071 16.2757 22.6504C16.2757 25.6937 18.6765 28.1504 21.6507 28.1504C24.6249 28.1504 27.0257 25.6937 27.0257 22.6504C27.0257 19.6071 24.6249 17.1504 21.6507 17.1504Z" fill="#212121"/>
+                        </svg>
+  
+                        </salla-button>
+                    </div>
+                  <div class="addToCart" data-title="إضافة للسلة">
+                    <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
+                      product.id
+                    }" product-status="sale" fill="outline" product-type="product">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
+                    <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
+                  </svg>
+                    </salla-add-product-button>
+                  </div>
+                </div>
+              <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center gap-1">
+              <div class="w-full rounded-md bg-[#334155] flex items-center justify-center">
+				
+              <salla-add-product-button width="wide" product-id="${product.id}">
+              
+                
+          إضافة للسلة</salla-add-product-button>
+            </div>
+              
+              <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
+                  <a href="${product.id}" class=" text-4xl">${
+              product.name
+            }</a>
+            
+                </h3>
+                <div class="s-product-card-rating">
+  
+              ${this.ratingProduct(product.rating.stars)}
+              </div>
+  
+                <div class="w-full  flex justify-center items-center">
+                  <h4 class="text-sm font-bold text-store-text-secondary ${
+                    product.discount_ends ? "text-red-400" : ""
+                  }">${this.getPriceFormat(product.price)} </h4>
+                  
+                    <span class="text-sm line-through text-store-text-secondary">${
+                      product.discount_ends
+                        ? product.discount_ends + product.currency
+                        : ""
+                    }</span>
+                    
+                </div>
+                
                 
               </div>
-              </div>
-
-${
-  products[0].sale_price < products[0].regular_price &&
-  `<div class="absolute top-0 lg:top-12 left-0 py-1 px-6" style="background-color:#334155">
-<p class="text-white">خصم علي هذا المنتج ${
-    100 - Math.floor((products[0].price / products[0].regular_price) * 100)
-  }%</p>
-</div>`
-}
-            
-
-          <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
-            
-            <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${
-              products[0].id
-            })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
-              <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
-              <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
-              </svg>
-            </salla-button>
-          </div>
-          
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${
-                    products[0].id
-                  })" data-title="عرض سريع" data-product-id="${products[0].id}">
-                      <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
-
-                      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
-                      <path d="M21.6507 8.90039C12.6924 8.90039 5.04197 14.6021 1.94238 22.6504C5.04197 30.6987 12.6924 36.4004 21.6507 36.4004C30.6091 36.4004 38.2595 30.6987 41.3591 22.6504C38.2595 14.6021 30.6091 8.90039 21.6507 8.90039ZM21.6507 31.8171C16.7057 31.8171 12.6924 27.7104 12.6924 22.6504C12.6924 17.5904 16.7057 13.4837 21.6507 13.4837C26.5957 13.4837 30.6091 17.5904 30.6091 22.6504C30.6091 27.7104 26.5957 31.8171 21.6507 31.8171ZM21.6507 17.1504C18.6765 17.1504 16.2757 19.6071 16.2757 22.6504C16.2757 25.6937 18.6765 28.1504 21.6507 28.1504C24.6249 28.1504 27.0257 25.6937 27.0257 22.6504C27.0257 19.6071 24.6249 17.1504 21.6507 17.1504Z" fill="#212121"/>
-                      </svg>
-
-                      </salla-button>
-                  </div>
-                <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
-                    products[0].id
-                  }" product-status="sale" fill="outline" product-type="product">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
-                  <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
-                </svg>
-                  </salla-add-product-button>
-                </div>
-              </div>
             </div>
-          </div>
-
+              `
+            }
+            
+            
+          }
+        
+          const data = `
+   
+        <div class="grid flex-1 gap-4 lg:grid-cols-2 sm:gap-8">
+          
+              ${firstProd}
           <div class="grid gap-4 sm:gap-8 relative" style="grid-template-columns:repeat(2, 1fr);">
           
-          <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4 py-6" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div style="height:150px;width:90%">
-              <a href="${products[1].id}">
-                <img class="object-cover w-full h-full lazy loaded" src="${
-                  products[1].image.url
-                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
-              </a>
-            </div>
-            <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
-            
-            <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${
-              products[1].id
-            })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
-              <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
-              <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
-              </svg>
-            </salla-button>
-          </div class=" svg-wish-rev">
           
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${
-                    products[1].id
-                  })" data-title="عرض سريع" data-product-id="${products[1].id}">
-                      <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
 
-                      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
-                      <path d="M21.6507 8.90039C12.6924 8.90039 5.04197 14.6021 1.94238 22.6504C5.04197 30.6987 12.6924 36.4004 21.6507 36.4004C30.6091 36.4004 38.2595 30.6987 41.3591 22.6504C38.2595 14.6021 30.6091 8.90039 21.6507 8.90039ZM21.6507 31.8171C16.7057 31.8171 12.6924 27.7104 12.6924 22.6504C12.6924 17.5904 16.7057 13.4837 21.6507 13.4837C26.5957 13.4837 30.6091 17.5904 30.6091 22.6504C30.6091 27.7104 26.5957 31.8171 21.6507 31.8171ZM21.6507 17.1504C18.6765 17.1504 16.2757 19.6071 16.2757 22.6504C16.2757 25.6937 18.6765 28.1504 21.6507 28.1504C24.6249 28.1504 27.0257 25.6937 27.0257 22.6504C27.0257 19.6071 24.6249 17.1504 21.6507 17.1504Z" fill="#212121"/>
-                      </svg>
-
-                      </salla-button>
-                  </div>
-                <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
-                    products[1].id
-                  }" product-status="sale" fill="outline" product-type="product">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
-                  <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
-                </svg>
-                  </salla-add-product-button>
-                </div>
-              </div>
-            <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
-              <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-                <a href="${products[1].id}" class=" text-4xl">${
-            products[1].name
-          }</a>
-              </h3>
-              <div class="s-product-card-rating">
-
-            ${this.ratingProduct(products[1].rating.stars)}
-            </div>
-
-              <div class="w-full  flex justify-center items-center">
-                <h4 class="text-sm font-bold text-store-text-secondary ${
-                  products[1].discount_ends ? "text-red-400" : ""
-                }">${this.getPriceFormat(products[1].price)} </h4>
-                
-                  <span class="text-sm line-through text-store-text-secondary">${
-                    products[1].discount_ends
-                      ? products[1].discount_ends + products[1].currency
-                      : ""
-                  }</span>
-                  
-              </div>
-              
-              
-            </div>
-          </div>
-
-          <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div style="height:150px;width:90%">
-              <a href="${products[2].id}">
-                <img class="object-contain w-full h-full lazy loaded" src="${
-                  products[2].image.url
-                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
-              </a>
-            </div>
-            <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
-            
-            <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${
-              products[2].id
-            })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
-              <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
-              <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
-              </svg>
-            </salla-button>
-          </div>
-          
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${
-                    products[2].id
-                  })" data-title="عرض سريع" data-product-id="${products[2].id}">
-                      <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
-
-                      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
-                      <path d="M21.6507 8.90039C12.6924 8.90039 5.04197 14.6021 1.94238 22.6504C5.04197 30.6987 12.6924 36.4004 21.6507 36.4004C30.6091 36.4004 38.2595 30.6987 41.3591 22.6504C38.2595 14.6021 30.6091 8.90039 21.6507 8.90039ZM21.6507 31.8171C16.7057 31.8171 12.6924 27.7104 12.6924 22.6504C12.6924 17.5904 16.7057 13.4837 21.6507 13.4837C26.5957 13.4837 30.6091 17.5904 30.6091 22.6504C30.6091 27.7104 26.5957 31.8171 21.6507 31.8171ZM21.6507 17.1504C18.6765 17.1504 16.2757 19.6071 16.2757 22.6504C16.2757 25.6937 18.6765 28.1504 21.6507 28.1504C24.6249 28.1504 27.0257 25.6937 27.0257 22.6504C27.0257 19.6071 24.6249 17.1504 21.6507 17.1504Z" fill="#212121"/>
-                      </svg>
-
-                      </salla-button>
-                  </div>
-                <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
-                    products[2].id
-                  }" product-status="sale" fill="outline" product-type="product">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
-                  <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
-                </svg>
-                  </salla-add-product-button>
-                </div>
-              </div>
-            <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
-              <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-                <a href="${products[2].id}" class=" text-4xl">${
-            products[2].name
-          }</a>
-              </h3>
-              <div class="w-full  flex justify-center items-center">
-                <h4 class="text-sm font-bold text-store-text-secondary ${
-                  products[2].discount_ends ? "text-red-400" : ""
-                }">${this.getPriceFormat(products[2].price)} </h4>
-                
-                  <span class="text-sm line-through text-store-text-secondary">${
-                    products[2].discount_ends
-                      ? products[2].discount_ends + products[2].currency
-                      : ""
-                  }</span>
-                  
-              </div>
-              
-              
-            </div>
-          </div>
-
-
-
-
-          
-          <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div style="height:150px;width:90%">
-              <a href="${products[3].id}">
-                <img class="object-contain w-full h-full lazy loaded" src="${
-                  products[3].image.url
-                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">
-              </a>
-            </div>
-            <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
-            
-            <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${
-              products[3].id
-            })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
-              <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
-              <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
-              </svg>
-            </salla-button>
-          </div>
-          
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${
-                    products[3].id
-                  })" data-title="عرض سريع" data-product-id="${products[3].id}">
-                      <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
-
-                      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
-                      <path d="M21.6507 8.90039C12.6924 8.90039 5.04197 14.6021 1.94238 22.6504C5.04197 30.6987 12.6924 36.4004 21.6507 36.4004C30.6091 36.4004 38.2595 30.6987 41.3591 22.6504C38.2595 14.6021 30.6091 8.90039 21.6507 8.90039ZM21.6507 31.8171C16.7057 31.8171 12.6924 27.7104 12.6924 22.6504C12.6924 17.5904 16.7057 13.4837 21.6507 13.4837C26.5957 13.4837 30.6091 17.5904 30.6091 22.6504C30.6091 27.7104 26.5957 31.8171 21.6507 31.8171ZM21.6507 17.1504C18.6765 17.1504 16.2757 19.6071 16.2757 22.6504C16.2757 25.6937 18.6765 28.1504 21.6507 28.1504C24.6249 28.1504 27.0257 25.6937 27.0257 22.6504C27.0257 19.6071 24.6249 17.1504 21.6507 17.1504Z" fill="#212121"/>
-                      </svg>
-
-                      </salla-button>
-                  </div>
-                <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
-                    products[3].id
-                  }" product-status="sale" fill="outline" product-type="product">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
-                  <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
-                </svg>
-                  </salla-add-product-button>
-                </div>
-              </div>
-            <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
-              <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-                <a href="${products[3].id}" class=" text-4xl">${
-            products[3].name
-          }</a>
-              </h3>
-              <div class="w-full  flex justify-center items-center">
-                <h4 class="text-sm font-bold text-store-text-secondary ${
-                  products[3].discount_ends ? "text-red-400" : ""
-                }">${this.getPriceFormat(products[3].price)} </h4>
-                
-                  <span class="text-sm line-through text-store-text-secondary">${
-                    products[3].discount_ends
-                      ? products[3].discount_ends + products[3].currency
-                      : ""
-                  }</span>
-              </div>
-            </div>
-          </div>
-
-          <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4" style=" border-radius : 40px ; background-color : #EAE9E9">
-            <div style="height:150px;width:90%">
-              <a href="${products[4].id}">
-                <img class="object-contain w-full h-full lazy loaded" src="${
-                  products[4].image.url
-                }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="${
-            products[4].name
-          }" loading="lazy" data-ll-status="loaded">
-              </a>
-            </div>
-            <div class="flex flex-col items-center justify-center  mt-auto absolute" style=" top: 18px ; right:7px">
-            
-            <div class="wishlist" data-title="إضافة للسلة">
-            <salla-button onclick="salla.wishlist.toggle(${
-              products[4].id
-            })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
-              <svg xmlns="http://www.w3.org/2000/svg" width="47" height="48" viewBox="0 0 47 48" fill="none">
-              <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
-              </svg>
-            </salla-button>
-          </div>
-          
-                  <div class="quickview-btn eye-icon" onclick="clickModal(${
-                    products[4].id
-                  })" data-title="عرض سريع" data-product-id="${products[4].id}">
-                      <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
-
-                      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
-                      <path d="M21.6507 8.90039C12.6924 8.90039 5.04197 14.6021 1.94238 22.6504C5.04197 30.6987 12.6924 36.4004 21.6507 36.4004C30.6091 36.4004 38.2595 30.6987 41.3591 22.6504C38.2595 14.6021 30.6091 8.90039 21.6507 8.90039ZM21.6507 31.8171C16.7057 31.8171 12.6924 27.7104 12.6924 22.6504C12.6924 17.5904 16.7057 13.4837 21.6507 13.4837C26.5957 13.4837 30.6091 17.5904 30.6091 22.6504C30.6091 27.7104 26.5957 31.8171 21.6507 31.8171ZM21.6507 17.1504C18.6765 17.1504 16.2757 19.6071 16.2757 22.6504C16.2757 25.6937 18.6765 28.1504 21.6507 28.1504C24.6249 28.1504 27.0257 25.6937 27.0257 22.6504C27.0257 19.6071 24.6249 17.1504 21.6507 17.1504Z" fill="#212121"/>
-                      </svg>
-
-                      </salla-button>
-                  </div>
-                <div class="addToCart" data-title="إضافة للسلة">
-                  <salla-add-product-button shape="icon" class="addToCart__btn hydrated" product-id="${
-                    products[4].id
-                  }" product-status="sale" fill="outline" product-type="product">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="59" viewBox="0 0 65 59" fill="none">
-                  <path d="M31.7114 29.1459H34.7285V24.3429H39.2541V21.1409H34.7285V16.3379H31.7114V21.1409H27.1858V24.3429H31.7114V29.1459ZM25.6772 43.5548C24.0178 43.5548 22.6752 44.9957 22.6752 46.7568C22.6752 48.5179 24.0178 49.9588 25.6772 49.9588C27.3366 49.9588 28.6943 48.5179 28.6943 46.7568C28.6943 44.9957 27.3366 43.5548 25.6772 43.5548ZM40.7626 43.5548C39.1032 43.5548 37.7606 44.9957 37.7606 46.7568C37.7606 48.5179 39.1032 49.9588 40.7626 49.9588C42.422 49.9588 43.7797 48.5179 43.7797 46.7568C43.7797 44.9957 42.422 43.5548 40.7626 43.5548ZM27.3366 35.5499H38.5753C39.7067 35.5499 40.7023 34.8934 41.2152 33.9008L47.0382 22.6778L44.4133 21.1409L38.5753 32.3479H27.9853L21.5589 17.9389H16.626V21.1409H19.6431L25.0738 33.2924L23.0373 37.1989C21.936 39.3442 23.3842 41.9538 25.6772 41.9538H43.7797V38.7518H25.6772L27.3366 35.5499Z" fill="black"/>
-                </svg>
-                  </salla-add-product-button>
-                </div>
-              </div>
-            <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
-              <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
-                <a href="${products[4].id}" class=" text-4xl">${
-            products[4].name
-          }</a>
-              </h3>
-              <div class="w-full  flex justify-center items-center">
-                <h4 class="text-sm font-bold text-store-text-secondary ${
-                  products[4].discount_ends ? "text-red-400" : ""
-                }">${this.getPriceFormat(products[4].price)} </h4>
-                
-                  <span class="text-sm line-through text-store-text-secondary">${
-                    products[4].discount_ends
-                      ? products[4].discount_ends + products[4].currency
-                      : ""
-                  }</span>
-                  
-              </div>
-              
-              
-            </div>
+          ${secondProd}
           </div>
         
           </div>
           
         
-      </div>
+      
         
         `;
           insert.innerHTML += data;
@@ -775,7 +606,7 @@ ${
         const categoryId =
           newDesignProduct[i]?.children[0]?.children[j]?.innerText;
 
-        let name = "";
+      
         if (categoryId) {
           
           const queryParams = {
@@ -867,8 +698,16 @@ ${
                   </salla-add-product-button>
                 </div>
               </div>
-            <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
-              <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
+            <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center gap-1">
+            <div class="w-full rounded-md bg-[#334155] flex items-center justify-center">
+				
+            <salla-add-product-button width="wide" product-id="${products[1].id}">
+            
+              
+        إضافة للسلة</salla-add-product-button>
+          </div>
+            <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
+              
                 <a href="${products[1].id}" class=" font-bold text-2xl">${
                 products[1].name
               }</a>
@@ -930,8 +769,15 @@ ${
                 </salla-add-product-button>
               </div>
             </div>
-          <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center">
-            <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
+          <div class="flex flex-col flex-1 p-2 overflow-hidden product-entry__content justify-center items-center gap-1">
+          <div class="w-full rounded-md bg-[#334155] flex items-center justify-center">
+				
+          <salla-add-product-button width="wide" product-id="${products[2].id}">
+          
+            
+      إضافة للسلة</salla-add-product-button>
+        </div>
+          <h3 class="product-entry__title leading-6 mb-1.5 max-w-full">
               <a href="${products[2].id}" class=" font-extrabold text-2xl">${
                 products[2].name
               }</a>
