@@ -3104,11 +3104,11 @@
             "fields": [
                 {
                     "id": "video_banner",
-                    "key": "e609efc0-1d20-4b4a-9f22-8ac0e041dca3",
+                    "key": "538c0dc9-b83a-48f8-980c-54c87d14caef",
                     "type": "string",
                     "format": "text",
-                    "label": "video_banner",
-                    "description": null,
+                    "label": "رابط فيديو اليوتيوب",
+                    "description": "رابط مثال لفيديو يوتيوب: https://www.youtube.com/watch?v=YcWv7QEF5T8&pp=ygUZcGVyZnVtZSBiYWNrZ3JvdW5kIHZpZGVvIA%3D%3D",
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
                     "icon": "sicon-format-text-alt",
@@ -3120,10 +3120,10 @@
                 },
                 {
                     "id": "title",
-                    "key": "b59d4fe5-d5a2-4cf5-a9f6-fb93dae9c360",
+                    "key": "a6289d71-2653-4832-87af-88a2ef0b6068",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "عنوان رئيسي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -3136,27 +3136,27 @@
                 },
                 {
                     "id": "button_posistion",
-                    "key": "efc3e16e-bd40-4fbb-b1c2-84ebdd783b42",
+                    "key": "e0637a32-73ef-43b0-9148-4f73556068e9",
                     "type": "items",
                     "format": "dropdown-list",
-                    "label": "button_posistion",
+                    "label": "تموضع الزر",
                     "description": null,
                     "labelHTML": null,
                     "icon": "sicon-keyboard_arrow_down",
                     "selected": [],
                     "options": [
                         {
-                            "label": "left",
+                            "label": "يسار",
                             "value": "start",
                             "key": "3b3e07bb-6bad-4d43-b400-a534e6670717"
                         },
                         {
-                            "label": "right",
+                            "label": "يمين",
                             "value": "end",
                             "key": "8f3b1f0e-c596-4139-ad07-ee883d009b00"
                         },
                         {
-                            "label": "center",
+                            "label": "بالمنتصف",
                             "value": "center",
                             "key": "439da345-951c-47cf-86a0-7964aa4ba880"
                         }
@@ -3168,11 +3168,11 @@
                 },
                 {
                     "id": "text_color_button",
-                    "key": "b310de99-ce6d-44f6-86f9-465b967bda36",
+                    "key": "d3813d6d-2764-48fa-94bc-bd79caa2e9f8",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
-                    "label": "text_color_button",
+                    "label": "لون نص الزر",
                     "description": null,
                     "labelHTML": null,
                     "icon": "sicon-format-fill",
@@ -3181,11 +3181,11 @@
                 },
                 {
                     "id": "background_button_color",
-                    "key": "2c58cbbf-cdc0-4005-8b95-eee87a1319bd",
+                    "key": "96de97d6-251b-430d-b3bc-7f4abc22643a",
                     "type": "string",
                     "format": "color",
                     "inputType": "color",
-                    "label": "background_button_color",
+                    "label": "لون خلفية الزر",
                     "description": null,
                     "labelHTML": null,
                     "icon": "sicon-format-fill",
@@ -3194,10 +3194,10 @@
                 },
                 {
                     "id": "button",
-                    "key": "6cb817ac-2af0-471a-8a8e-1df5b4d1bad5",
+                    "key": "bc9288db-d48e-4d07-839e-b4a9674c3513",
                     "type": "string",
                     "format": "text",
-                    "label": "button",
+                    "label": "نص الزر",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -3209,12 +3209,12 @@
                     "maxLength": 30
                 },
                 {
-                    "id": "url",
-                    "key": "23ea33c2-3a89-43ca-a9e3-97ea4a35eec9",
+                    "id": "alrabt",
+                    "key": "2d5670ab-1042-423c-946d-f1272ae72906",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
-                    "label": "URL",
+                    "label": "الرابط",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "e.g. https://salla.sa",
@@ -3222,8 +3222,7 @@
                     "value": null,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30,
-                    "defaulted": true
+                    "maxLength": 30
                 }
             ]
         },
