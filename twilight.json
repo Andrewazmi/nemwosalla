@@ -2587,7 +2587,7 @@
         },
         {
             "key": "00c7b67f-1e49-4524-8c90-944c3e3b7972",
-            "title": "list-nav-category",
+            "title": "سلايدر المنتجات المميزة",
             "icon": "sicon-store",
             "path": "home.list-nav-category",
             "fields": [
