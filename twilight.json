@@ -2762,10 +2762,10 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "84d35286-1697-4ef2-ae79-e6e4a2280812",
+                    "key": "c86687d9-ae6e-44f0-92b0-e0aef5e2a739",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "عنوان رئيسي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -2778,36 +2778,35 @@
                 },
                 {
                     "id": "banner_payment",
-                    "key": "08874c71-ba1d-4288-a3d4-2fdad9cc7e50",
+                    "key": "ca375f5b-0945-46a4-83c1-c8be53380bde",
                     "type": "collection",
                     "format": "collection",
-                    "label": "banner_payment",
+                    "label": "بانر وسائل الدفع",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "image",
-                            "key": "1155ff6e-0a72-4392-9691-d9a38c07d243",
+                            "id": "sort",
+                            "key": "de9047b6-16f3-4db9-9e4a-092fe4f28455",
                             "type": "string",
                             "format": "image",
-                            "label": "Image",
+                            "label": "صورة",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": false,
-                            "defaulted": true
+                            "required": false
                         },
                         {
-                            "id": "url",
-                            "key": "c894897c-7ad3-4f16-994a-5aafe7439b03",
+                            "id": "rabt",
+                            "key": "81e11dd6-fcf4-4305-8dd8-f695dfaaa00d",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
-                            "label": "URL",
+                            "label": "رابط",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://salla.sa",
@@ -2815,8 +2814,7 @@
                             "value": null,
                             "required": false,
                             "minLength": 6,
-                            "maxLength": 30,
-                            "defaulted": true
+                            "maxLength": 30
                         }
                     ],
                     "value": [],
