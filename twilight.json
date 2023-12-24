@@ -2254,10 +2254,10 @@
             "fields": [
                 {
                     "id": "title",
-                    "key": "be842cfc-4be7-447f-91ad-388b840ad0e2",
+                    "key": "fc9601ec-c239-4dda-8259-a3fb9b242ddd",
                     "type": "string",
                     "format": "text",
-                    "label": "title",
+                    "label": "عنوان رئيسي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -2270,10 +2270,10 @@
                 },
                 {
                     "id": "subtitle",
-                    "key": "c1b5f829-6d65-4a8a-8bf5-b47072d8d44c",
+                    "key": "80f6292d-c9ef-48b5-b72a-063ba8909008",
                     "type": "string",
                     "format": "text",
-                    "label": "subtitle",
+                    "label": "عنوان فرعي",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
@@ -2286,17 +2286,17 @@
                 },
                 {
                     "id": "map",
-                    "key": "128fe267-f4f5-45f5-9115-897392d92f8d",
+                    "key": "0b3f2538-1bcf-4dac-abe4-09028653c862",
                     "type": "string",
                     "format": "text",
-                    "label": "map",
-                    "description": null,
+                    "label": "موقعك على خرائط قوقل",
+                    "description": "توجه إلى خرائط جوجل وحدد موقعك، من ثم اضغط مشاركة الموقع واختار تضمين الخريطة من ثم اضغط نسخ محتوى  HTML وضفه هنا",
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
                     "icon": "sicon-format-text-alt",
                     "value": null,
                     "multilanguage": false,
-                    "required": false,
+                    "required": true,
                     "minLength": 6,
                     "maxLength": "3000"
                 }
