@@ -1659,26 +1659,25 @@
             "path": "home.one-card-offer",
             "fields": [
                 {
-                    "id": "image",
-                    "key": "e392840c-aeba-4f10-9ccf-a9d6128172cd",
+                    "id": "alsort",
+                    "key": "b837726c-ff5d-48df-8f45-dba3853ba0f3",
                     "type": "string",
                     "format": "image",
-                    "label": "Image",
-                    "description": null,
+                    "label": "الصورة",
+                    "description": "أبعاد الصورة الموصي به أن تكون 1335*390",
                     "labelHTML": null,
                     "placeholder": "e.g. https://hostname.com/image.png",
                     "icon": "sicon-image",
                     "value": null,
-                    "required": false,
-                    "defaulted": true
+                    "required": false
                 },
                 {
-                    "id": "url",
-                    "key": "f765421c-4078-4c59-9daf-8e907b43c9c9",
+                    "id": "rabt_alaard",
+                    "key": "6392c427-9377-460e-901f-f82b1f7967ca",
                     "type": "string",
                     "format": "url",
                     "inputType": "url",
-                    "label": "URL",
+                    "label": "رابط العرض",
                     "description": null,
                     "labelHTML": null,
                     "placeholder": "e.g. https://salla.sa",
@@ -1686,8 +1685,7 @@
                     "value": null,
                     "required": false,
                     "minLength": 6,
-                    "maxLength": 30,
-                    "defaulted": true
+                    "maxLength": 30
                 }
             ]
         },
