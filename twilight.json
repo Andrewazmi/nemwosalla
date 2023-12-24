@@ -2756,7 +2756,7 @@
         },
         {
             "key": "6a202c4b-d15f-4d7a-835f-b09fe074daad",
-            "title": "banner-payment",
+            "title": "بانر وسائل الدفع",
             "icon": "sicon-store",
             "path": "home.banner-payment",
             "fields": [
