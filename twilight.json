@@ -3318,10 +3318,10 @@
             "fields": [
                 {
                     "id": "rates",
-                    "key": "0ddb724b-a6c1-4291-9f92-60157a5195e2",
+                    "key": "2c49144e-c39e-4d3c-8032-c0099d2fbed0",
                     "type": "collection",
                     "format": "collection",
-                    "label": "rates",
+                    "label": "آراء العملاء",
                     "description": null,
                     "labelHTML": null,
                     "item_label": null,
@@ -3329,10 +3329,10 @@
                     "fields": [
                         {
                             "id": "title",
-                            "key": "d2d798d3-79f3-41d7-99f4-89c7fb696d9f",
+                            "key": "7841e93f-8d03-4805-b980-f5135a83bf9f",
                             "type": "string",
                             "format": "text",
-                            "label": "title",
+                            "label": "نص التقييم",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
@@ -3345,10 +3345,10 @@
                         },
                         {
                             "id": "name",
-                            "key": "4ac6fde2-cad7-4eeb-9f8b-8c4088ca81b9",
+                            "key": "b41ce1a0-a5b1-4272-9f2a-07bcdae36cfe",
                             "type": "string",
                             "format": "text",
-                            "label": "name",
+                            "label": "اسم العميل",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "Placeholder text ..",
@@ -3361,12 +3361,12 @@
                         },
                         {
                             "id": "star",
-                            "key": "a2af87fe-23d7-42dc-8631-e93e30320835",
+                            "key": "691d8591-7a70-437a-9320-74686d95e751",
                             "type": "number",
                             "format": "float",
                             "inputType": "number",
-                            "label": "stars",
-                            "description": null,
+                            "label": "درجة التقييم",
+                            "description": "اختار هنا من 1 إلى 5",
                             "labelHTML": null,
                             "placeholder": "Input a number between -10.10 and 100.",
                             "icon": "sicon-hashtag",
@@ -3377,18 +3377,17 @@
                             "maximum": "5"
                         },
                         {
-                            "id": "date",
-                            "key": "439b9587-b47d-4de5-aa73-7187005b4a49",
+                            "id": "tarekh_altqeem",
+                            "key": "4bc8c68d-9257-4e4d-96b2-662bf16ac51d",
                             "type": "string",
                             "format": "date",
                             "inputType": "date",
-                            "label": "Date",
+                            "label": "تاريخ التقييم",
                             "description": null,
                             "labelHTML": null,
                             "icon": "sicon-calendar-date",
                             "value": "2020-10-01",
-                            "required": false,
-                            "defaulted": true
+                            "required": false
                         }
                     ],
                     "value": [],
