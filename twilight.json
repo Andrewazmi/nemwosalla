@@ -2646,7 +2646,7 @@
         },
         {
             "key": "2852a8fb-b967-454a-92b2-711911f71ebc",
-            "title": "banner-with-no-container",
+            "title": "بانر رئيسي بدون إطار",
             "icon": "sicon-store",
             "path": "home.banner-with-no-contaainer",
             "fields": [
