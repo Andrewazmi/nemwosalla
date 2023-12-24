@@ -2972,7 +2972,7 @@
             "fields": [
                 {
                     "id": "brands",
-                    "key": "93b2195d-bc50-41b2-8488-f770ac9d964a",
+                    "key": "c80aff46-cddc-4616-9421-ee6ac1162b48",
                     "type": "collection",
                     "format": "collection",
                     "label": "علامات تجارية",
@@ -2982,26 +2982,25 @@
                     "icon": "sicon-list-add",
                     "fields": [
                         {
-                            "id": "image",
-                            "key": "d75c69e4-7a04-4229-b2f9-2ea3fffa469e",
+                            "id": "sort_alaalamt_altgaret",
+                            "key": "e910a1f2-f518-47e0-9380-e6cfcce7bb59",
                             "type": "string",
                             "format": "image",
-                            "label": "Image",
-                            "description": null,
+                            "label": "صورة العلامة التجارية",
+                            "description": "نوصي ان تكون ابعاد صورة العلامة التجارية 225*130",
                             "labelHTML": null,
                             "placeholder": "e.g. https://hostname.com/image.png",
                             "icon": "sicon-image",
                             "value": null,
-                            "required": true,
-                            "defaulted": true
+                            "required": true
                         },
                         {
-                            "id": "url",
-                            "key": "86f2af9c-6efe-4032-a7fe-a8b53e309d9a",
+                            "id": "rabt_qsm_alaalamt_altgaret",
+                            "key": "7c30f364-e0a2-4466-8904-547a92655c52",
                             "type": "string",
                             "format": "url",
                             "inputType": "url",
-                            "label": "URL",
+                            "label": "رابط قسم العلامة التجارية",
                             "description": null,
                             "labelHTML": null,
                             "placeholder": "e.g. https://salla.sa",
@@ -3009,8 +3008,7 @@
                             "value": null,
                             "required": true,
                             "minLength": 6,
-                            "maxLength": 30,
-                            "defaulted": true
+                            "maxLength": 30
                         }
                     ],
                     "value": [],
