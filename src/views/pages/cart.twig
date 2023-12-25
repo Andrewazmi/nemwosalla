@@ -116,18 +116,24 @@
                             <span class="absolute top-1.5 rtl:left-1.5 ltr:right-1.5 rtl:xs:left-5 ltr:xs:right-5 xs:top-5">
                                 <salla-button type="button" shape="icon" size="small" color="danger" class="btn--delete"
                                               onclick="salla.cart.deleteItem({{ item.id }}).then(() => document.querySelector('#item-{{ item.id }}').remove())">
-                                    <i class="sicon-cancel"></i>
-                                </salla-button>
+                                <div class=" w-6 h-6 rounded-full bg-[#334155] p -2 flex justify-center items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="61" height="61" viewBox="0 0 63 72" fill="none">
+  <path d="M70.7904 7.58352L63.6816 0.416016L35.4987 28.8319L7.31578 0.416016L0.207031 7.58352L28.3899 35.9994L0.207031 64.4152L7.31578 71.5827L35.4987 43.1669L63.6816 71.5827L70.7904 64.4152L42.6074 35.9994L70.7904 7.58352Z" fill="#fff"/>
+</svg>
+                                </div>
+                        
+                                 </salla-button>
                             </span>
                         </section>
                     </form>
 
                 {% else %}
                     <div class="no-content-placeholder">
-                        <i class="sicon-shopping-bag icon"></i>
-                        <p>{{ trans('pages.cart.empty_cart') }}</p>
-                        <a href="{{ link('/') }}"
-                           class="btn btn--outline-primary btn--rounded-full">{{ trans('common.elements.back_home') }}</a>
+                        <img class=" md:w-[40%]" src="{{ 'images/cart-image.png' | asset }}" />
+                        <h4 class=" opacity-100">عربة التسوق فارغة</h4>
+                        <p>تسجيل الدخول لعرض عربة التسوق الخاصة بك وبدء التسوق</p>
+                        <a href="{{ store.url}}"
+                           class="btn btn--outline-primary px-8 py-4">تسوق الان</a>
                     </div>
                 {% endfor %}
 
@@ -225,8 +231,15 @@
                                 </small>
                             </div>
                         {% endif %}
+                        <hr>
+                        <br>
+                        <h4> هل لديك كود خصم</h4>
+                        <form name="coupon_form" action="#" class="form form--payment form--coupon active mb-8" style="display: block;"><fieldset class="form-group flex justify-center items-center"> <input id="coupon_field" type="text" placeholder="أدخل رمز الكوبون" class="form-control !rounded-r-md !rounded-l-none !outline-none !m-0"> <button id="coupon_form_submit" disabled="disabled" type="button" class="btn btn--primary !rounded-r-none !m-0 !rounded-l-xl !bg-[#334155]"><span>اضافة</span> <!----> <!----></button> <!----> <!----></fieldset></form>
+                       
+                        <br>
+                        
 
-                        <div class="cart-submit-wrap">
+                        <div class="cart-submit-wrap bg-[#334155] p-2 rounded ">
                             {% hook 'cart:submit.start' %}
                             <salla-button id="cart-submit" loader-position="center" width="wide">
                                 {{ trans('pages.cart.complete_order') }}

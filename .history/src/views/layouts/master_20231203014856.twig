@@ -1,0 +1,334 @@
+{# ############## Shared Variables in all views ################
+| Variable                                           | Type     | Description                                                                                              |
+|----------------------------------------------------|----------|----------------------------------------------------------------------------------------------------------|
+| store                                              | Store    |                                                                                                          |
+| store.id                                           | int      |                                                                                                          |
+| store.name                                         | string   |                                                                                                          |
+| store.username                                     | string   |                                                                                                          |
+| store.description                                  | string   |                                                                                                          |
+| store.slogan                                       | ?string  | * if feature in twilight.json                                                                            |
+| store.logo                                         | string   |                                                                                                          |
+| store.url                                          | string   |                                                                                                          |
+| store.api                                          | string   | the api url for current store                                                                            |
+| store.icon                                         | string   | *fav icon url                                                                                            |
+| store.contacts                                     | object   | [mobile, phone, email, whatsapp, telegram], ex. store.contacts.email                                     |
+| store.social                                       | object   | [instagram, snapchat, twitter, youtube, facebook, pinterest, maroof, whatsapp], ex. store.social.twitter |
+| store.settings                                     | object   |                                                                                                          |
+| store.settings.auth.email_allowed                  | bool     |                                                                                                          |
+| store.settings.auth.mobile_allowed                 | bool     |                                                                                                          |
+| store.settings.auth.is_email_required              | bool     |                                                                                                          |
+| store.settings.cart.apply_coupon_enabled           | bool     | Does visitor allowed to applay coupon in cart page                                                       |
+| store.settings.product.total_sold_enabled          | bool     |                                                                                                          |
+| store.settings.product.fit_type                    | ?string  | null when equal product card size is off, or ['cover', 'contain']                                        |
+| store.settings.category.testimonial_enabled        | bool     | Show random testimonials in category page                                                                |
+| store.settings.tax.number                          | ?string  |                                                                                                          |
+| store.settings.tax.certificate                     | ?string  | certificate image url                                                                                    |
+| store.settings.tax.taxable_prices_enabled          | bool     | Does tax included in the prices ex product_price 100 & tax is 15, price will be 115                      |
+| store.settings.rating_enabled                      | bool     | Is one of: store_enabled or shipping_enabled or products_enabled                                         |
+| store.settings.arabic_numbers_enabled              | bool     | Does the merchant wants the numbers to be shown as Arabic format                                         |
+| store.settings.is_multilingual                     | bool     |                                                                                                          |
+| store.settings.currencies_enabled                  | bool     |     
+| theme                                              | Theme    |                                                                                                          |
+| theme.id                                           | int      |                                                                                                          |
+| theme.name                                         | string   |                                                                                                          |
+| theme.mode                                         | string   | `live`, `preview`                                                                                        |
+| theme.is_rtl                                       | bool     |                                                                                                          |
+| theme.translations_hash                            | int      | to be used in case merchant updated frontend store translations                                          |
+| theme.color                                        | object   |                                                                                                          |
+| theme.color.primary                                | string   |                                                                                                          |
+| theme.color.text                                   | string   | suitable text color comparing to `theme.primary.color`, #000000, #FFFFFF                                 |
+| theme.color.reverse_primary                        | string   |                                                                                                          |
+| theme.color.reverse_text                           | string   | if `theme.text_color=#000000` means that `theme.reverse_text_color=#FFFFFF`                              |
+| theme.color.is_dark                                | bool     | Does main store color `theme.primary.color` considered as dim color?                                     |
+| theme.color.darker(float alpha, ?string hexColor)  | string   | get darker color from `theme.primary.color` or from passed color, `alpha` range from 0.0-1.0             |
+| theme.color.lighter(float alpha, ?string hexColor) | string   | get lighter color from `theme.primary.color` or from passed color, `alpha` range from 0.0-1.0            |
+| theme.font                                         | ?object  | Salla predefined font, null when the theme doesn't have `fonts` feature                                  |
+| theme.font.name                                    | string   | DINNextLTArabic-Regular, Amazon-Ember, Apple, Dubai, Estedad                                             |
+| theme.font.url                                     | string   | css full url ex: 'https://my_store.test/dist/fonts/default.css'                                          |
+| theme.settings                                     | object   | dynamic object with values of the `settings` in twilight.json ex. `theme.settings.topnav_is_dark`        |
+| theme.settings.set(settingName, value)             | string   | set global var, then get it {{theme.settings.get('my_var','fallback') }}                                 |
+| theme.settings.get(settingName, default=null)      | mixed    | get theme setting ex `theme.settings.get('my_var', 'fallback')`                                          |
+| user                                               | User     | Current user/Guest                                                                                       |
+| user.first_name                                    | string   |                                                                                                          |
+| user.last_name                                     | string   |                                                                                                          |
+| user.avatar                                        | string   |                                                                                                          |
+| user.city                                          | ?string  |                                                                                                          |
+| user.country                                       | ?string  |                                                                                                          |
+| user.full_name                                     | string   | link:`first_name` `last_name`                                                                            |
+| user.mobile                                        | string   |                                                                                                          |
+| user.email                                         | string   |                                                                                                          |
+| user.gender                                        | ?string  | 'male', 'female'                                                                                         |
+| user.birthday                                      | ?data    |                                                                                                          |
+| user.type                                          | string   | `user`, `guest`                                                                                          |
+| user.country_code                                  | string   | ex: "SA" for user or guest                                                                               |
+| user.currency_code                                 | string   | ex: "SAR"                                                                                                |
+| user.currency                                      | object   |                                                                                                          |
+| user.currency.code                                 | string   | ex: "SAR"                                                                                                |
+| user.currency.name                                 | string   | ex: "ريال سعودي"                                                                                             |
+| user.currency.symbol                               | string   | ex: "ر.س"                                                                                                |
+| user.currency.amount                               | string   | ex: "1.0"                                                                                                |
+| user.currency.country_code                         | string   | lower first two letters from currency code ex: "sa"                                                      |
+| user.language_code                                 | string   |                                                                                                          |
+| user.language                                      | Language | Current user language                                                                                    |
+| user.language.name                                 | string   |                                                                                                          |
+| user.language.is_rtl                               | bool     |                                                                                                          |
+| user.language.code                                 | string   | ex: ar, en                                                                                               |
+| user.language.url                                  | string   | Current url in this lang                                                                                 |
+| user.language.flag                                 | string   | Url of flag for the language                                                                             |
+| user.language.country_code                         | string   | ex: Arabic=>sa, English=>gb                                                                              |
+| user.language.order                                | int      | Sort language in menu                                                                                    |
+#}
+<!DOCTYPE html>
+<html
+	lang="{{ user.language.code }}" dir="{{ user.language.dir }}">
+	<!-- بسم الله الرحمن الرحيم -->
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		{{ theme.settings.set('placeholder', 'images/placeholder.png') }}
+		<script type="text/javascript" src="{{ asset ('product-card.js') }}"></script>
+		{# <script defer src="{{ 'product-card.js'|asset }}"></script> #}
+
+		<script data-cfasync="false">
+			window.header_is_sticky = "{{ theme.settings.get('header_is_sticky', 'Default Value') }}"
+		</script>
+
+		{% hook 'head:start' %}
+		{% hook head %}
+		{% block styles %}{% endblock %}
+		<link rel="stylesheet" href="{{ 'app.css' | asset }}">
+		<link rel="stylesheet" href="{{ theme.font.path|cdn }}"/>
+		<link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}"/>
+
+		<style>:root
+		{
+			--font-main: '{{theme.font.name}}';
+			--color-primary: {{theme.color.primary}}
+			;
+			--color-primary-dark: {{theme.color.darker(0.15)}}
+			;
+			--color-primary-light: {{theme.color.lighter(0.15)}}
+			;
+			--color-primary-reverse: {{theme.color.reverse_text}}
+			;
+		}
+	</style>
+	{# tracking services, custom css feature. #}
+	{% hook 'head:end' %}
+</head> 
+<body id="app" class="overflow-x-hidden w-screen {% hook 'body:classes' %} bg-gray-50
+						  {{ theme.settings.get('footer_is_dark') ? ' footer-is-dark' : ' footer-is-light' }}
+						  {{ theme.settings.get('topnav_is_dark') ? ' topnav-is-dark' : '' }}
+						  {{ theme.settings.get('sticky_add_to_cart') ? ' is-sticky-product-bar' : '' }}
+						  ">
+	<noscript>
+		To get full functionality of this site you need to enable JavaScript. Here is how
+		<a href="https://www.enable-javascript.com/" rel="noreferrer" target="_blank">To enable JavaScript on webpage</a>.
+	</noscript>
+	<div class="flex flex-col min-h-full app-inner">
+		{% hook 'body:start' %}
+		{% component 'header.header' %}
+		{% block content %}{% endblock %}
+		{% component 'footer.footer' %}
+	</div>
+	{% hook 'body:end' %}
+	<script defer src="{{ 'app.js' | asset }}"></script>
+
+	{# Twilight Components #}
+	<salla-offer-modal></salla-offer-modal> 
+	<salla-search></salla-search>
+
+	{% if user.type=='guest' %}
+		<salla-login-modal></salla-login-modal>
+	{% endif %}
+	{% block scripts %}{% endblock %}
+	<div id="productModal" class="modal">
+		<div class="modal-content" id="modalProduct"></div>
+	</div>
+</body>
+<script>
+	const modal = document.getElementById("productModal")
+	
+	function clickModal(event) {
+	const modalContent = document.getElementById("modalProduct")
+	salla.product.getDetails(event).then((response) => {
+	console.log({data: response.data})
+	const product = response.data
+	modalContent.innerHTML = `
+	<div class="quickview__content circle">
+                       <div class="quickview__content circle relative">
+                        <button type="button" onclick="closeModal()" class="quickview__btn-close mb-8">x</button>
+                        <div class="">
+                        <div>
+                            <div class="product-quickview">
+                                <div class="flex lg:flex-row flex-col">
+                                    <div class="img-quickview">
+                                        <div class="product-quickview__images">
+                                            <div class="quickview-images">
+                                            <img src="${product.image.url}"> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="quickview-single-info">
+                                        <div class="content_product_detail">
+                                        <div class="quickview__header flex justify-between">
+                                        
+                                        <div class="quickview-actions rtl:mr-auto ltr:ml-auto">
+                                    	 <salla-button class="btn--wishlist s-button-wrap hydrated" id="popup-wishlist-btn-${product.id}" data-id="${product.id}" onclick="salla.wishlist.toggle(${product.id})" shape="icon" fill="outline" loader-position="center" color="light" size="medium" width="normal"><i class="sicon-heart"></i></salla-button>
+                                        
+                                    <salla-social-share url="${product.url}" url-name="${product.name}" platforms="facebook,twitter,whatsapp,email,copy_link"></salla-social-share>
+                                      </div>
+                                        </div>
+                                            <a href="${product.url}" class="hover:text-primary text-store-text-primary">
+                                                <h2 class="product-quickview_title ">  ${product.name}</h2>
+                                            </a>
+                                            
+                 <small class="product-quickview__taxable text-store-text-secondary">  ${product.is_taxable ? 'السعر شامل الضريبة' : 'السعر غير شامل الضريبة'}</small>
+                                            <div class="product-quickview__price">
+                                            <div class="price-container">
+                                            <h4 class="total-price text-store-text-secondary font-bold text-lg  ml-8 ${
+product.sale_price<product.regular_price ? 'text-red-500 !important' :''}"> ${
+product.price + product.currency
+} </h4>
+<span class="line-through text-sm"> ${product.sale_price < product.regular_price ?  product.regular_price + product.currency : ''} </span>
+                                
+                                        </div>
+                                  </div>
+                                            <div class="quickview__stats flex flex-col space-y-5 mb-5">
+                                              <div class="inventory-content flex-grow shrink-0">
+                                                <div id="variant-inventory" class="">
+                                               
+                                                  <i class="sicon-check-circle rtl:ml-1.5 ltr:mr-1.5"></i> ${
+product.is_available ? 'متوفر' : 'غير متوفر'
+} </div>
+                                              </div>
+                
+                                              
+                                                
+                                                
+                                                  <div class="flex items-center flex-grow shrink-0 text-store-text-primary"> 
+												  <img src ="https://cdn.assets.salla.network/themes/581928698/1.47.0/images/box.gif" width = "20" height = "20" /> 
+												  <span class="mx-1.5"> المتبقي </span>
+                                                    ${product.max_quantity}
+                                                  </div>
+                                              
+                                            </div>
+                
+                                           
+                                            
+                                          
+                                          
+                                          
+                                        
+                                  <div class="quickview-description text-store-text-secondary">
+                                                
+                                                <div class ="quickview-description text-store-text-secondary" >${product.description} </div>
+                                                    <a href="${product.url}" class="link--primary" >المزيد</a >
+                                                
+                                                    
+                                                <form class="product-options space-y-2.5 sm:space-y-5" id="single-product-form" enctype="multipart/form-data" method="post" onchange="salla.product.getPrice(new FormData(event.currentTarget))" onsubmit="return salla.form.onSubmit('cart.addItem', event)">
+                                      
+                                               
+                                     
+                                                    
+                                                      <div class="text-sm"> 
+                                                          <div class="option-item options-wrap w-full">
+                                                            <salla-product-options product-id="${product.id}" options="[]" class="hydrated"></salla-product-options>
+                                                          </div>  
+                                                      </div>
+                                                    
+                              
+                              
+                                                    
+                                                      <section class="attachments">
+                                                        <div>
+                                                          <label class="form-label">
+                                                            <b class="block">
+                                                              المرفقات
+                                                            </b>
+                                                          </label>
+                                                          <div class="text-end mt-4">
+                                                              <div class="flex rtl:space-x-reverse space-x-3">
+                                                                   
+                                                                      <button class="btn-tab btn btn--collapse" type="button" data-show="note_${product.id}">
+                                                                          <i class="font-medium sicon-chat-conversation-alt rtl:ml-1 ltr:mr-1.5 "></i>
+                                                                          <span>إضافة ملاحظة </span>
+                                                                      </button>
+                                                                  
+                                                                  
+                                                                      <button class="btn-tab btn btn--collapse" data-show="file_${product.id}" type="button">
+                                                                          <i class="font-medium sicon-paperclip rtl:ml-1 ltr:mr-1.5 "></i>
+                                                                          <span>إرفاق ملف</span>
+                                                                      </button>
+                                                                  
+                                                              </div>
+                              
+                                                              
+                                                                  <div class="overflow-hidden h-0 opacity-0 is-closed" id="note_${product.id}">
+                                                                      <div class="pt-2.5 sm:pt-5">
+                                                                        <textarea class="animated animatedfadeInDown fadeInDown form-input h-16 bg-store-bg-secondary text-store-text-primary block" placeholder="أضف ملاحظات" name="notes" cols="30" rows="10"></textarea>
+                                                                      </div>
+                                                                  </div>
+                                                              
+                              
+                                                              
+                                                                  <div class="overflow-hidden h-0 opacity-0 is-closed" id="file_${product.id}">
+                                                                      <div class="pt-2.5 sm:pt-4 min-h-[120px]">
+                                                                          <salla-file-upload class="product-option-uploader s-file-upload hydrated" height="120px" name="file" accept="image/png, image/jpeg, image/jpg, image/gif"><div class="filepond--root s-file-upload-wrapper s-file-upload-input filepond--hopper" data-style-button-remove-item-position="left" data-style-button-process-item-position="right" data-style-load-indicator-position="right" data-style-progress-indicator-position="right" data-style-button-remove-item-align="false" data-style-image-edit-button-edit-item-position="bottom center" style="height: 120px;"><input class="filepond--browser" type="file" id="filepond--browser-l3pznpmt0" name="file" aria-controls="filepond--assistant-l3pznpmt0" aria-labelledby="filepond--drop-label-l3pznpmt0" accept="image/png,image/jpeg,image/jpg,image/gif"><div class="filepond--drop-label" style="transform: translate3d(0px, 0px, 0px); opacity: 1;"><label for="filepond--browser-l3pznpmt0" id="filepond--drop-label-l3pznpmt0" aria-hidden="true">
+                                                                              <div class="product-option-uploader-placholder">
+                                                                                  <span class="product-option-uploader-placholder-icon">
+                                                                                      <i class="sicon-camera"></i>
+                                                                                  </span>
+                                                                                  <p class="profile-filepond-placholder-text">اسحب و افلت الملف هنا</p>
+                                                                                  <span class="filepond--label-action" tabindex="0">استعراض</span>
+                                                                              </div>
+                                                                          </label></div><div class="filepond--list-scroller" style="transform: translate3d(0px, 0px, 0px);"><ul class="filepond--list" role="list"></ul></div><div class="filepond--panel filepond--panel-root" data-scalable="true"><div class="filepond--panel-top filepond--panel-root"></div><div class="filepond--panel-center filepond--panel-root" style="transform: translate3d(0px, 8px, 0px) scale3d(1, 1.04, 1);"></div><div class="filepond--panel-bottom filepond--panel-root" style="transform: translate3d(0px, 112px, 0px);"></div></div><span class="filepond--assistant" id="filepond--assistant-l3pznpmt0" role="status" aria-live="polite" aria-relevant="additions"></span><fieldset class="filepond--data"></fieldset><div class="filepond--drip"></div></div><input class="s-hidden" name="hidden-file"></salla-file-upload> 
+                                                                      </div>
+                                                                  </div> 
+                                                              
+                                                          </div>
+                                                        </div>
+                                                      </section>
+                                                    
+                                    
+                                    
+                                                    
+                                                    <div class="flex md:flex-row items-start flex-col ">
+                                                    
+                                                    
+                                                    
+                                                        <div class="flex items-start flex-col rtl:mr-[10px] ltr:ml-[10px]">
+                                            
+                                                          <input type="hidden" name="id" value="${product.id}">
+                                                          
+                                                            <salla-quantity-input max="28" value="1" name="quantity" class="border-gray-200 flex justify-end s-quantity-input hydrated"></salla-quantity-input>
+                                                          
+                                                        </div>
+                                                        
+                                                        <div class="w-full">
+                                                      <salla-add-product-button quick-buy="" class="btn--add-to-cart hydrated" fill="outline" width="wide" type="submit" product-id="${product.id}" product-status="sale" product-type="product"><i class="text-[16px] sicon-shopping"></i>
+                                                        إضافة للسلة
+                                                      </salla-add-product-button>
+                                                      </div>
+                                                      </div>
+                                                  </form>
+                                            </div>
+                
+                                        </div>
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+				`
+				
+				});
+				modal.style.display = "block";
+				}
+	function closeModal() {
+		modal.style.display = "none";
+	}
+		
+	</script>
+		</html>

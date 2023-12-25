@@ -1,0 +1,19 @@
+<section class="s-block s-block--categories mt-10  !bg-white">
+	<span class="hidden" id="category-id-product">{{component.category_id[0].category.value[0]|json_encode()}}</span>
+	<div class="container px-4 category-1 flex flex-col justify-center items-center">
+		<div class="text-center mb-2 flex flex-col justify-center items-center">
+			<h1 class="mb-3">{{component.title}}</h1>
+			<div class="line"></div>
+
+		</div>
+		<div class="w-full flex items-center justify-center m-auto mb-2">
+			<div class="grid-feattures-pro !gap-8" id="all-pro-by-cat"></div>
+		</div>
+
+		<a class="flex justify-center items-center w-fit px-4 h-16 text-white text-3xl font-bold rounded-2xl more" style="background-color : #404553">
+			<span>المزيد</span>
+		</a>
+	</div>
+
+
+</section>

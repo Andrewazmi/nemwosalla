@@ -1,0 +1,81 @@
+{#
+| Variable                   | Type        | Description                                                          |
+|----------------------------|-------------|----------------------------------------------------------------------|
+| page                       | object      |                                                                      |
+| page.title                 | string      | *could be html                                                       |
+| page.slug                  | string      | ex: "cat.show"                                                       |
+| category                   | ?Category   |                                                                      |
+| category.name              | string      |                                                                      |
+| category.url               | string      |                                                                      |
+| category.sub_categories    | ?Category[] |                                                                      |
+| category.image             | ?string     |                                                                      |
+| filters                    | bool        | is filters allowed here or not                                       |
+| sort_options[]             | SortList[]  |                                                                      |
+| sort_options[].id          | string      | ourSuggest, bestSell, topRated, priceFromTopToLow, priceFromLowToTop |
+| sort_options[].name        | string      |                                                                      |
+| sort_options[].is_selected | bool        | Is current page sorted by it                                         |
+| search_query               | ?string     |                                                                      |
+#}
+{% extends "layouts.master" %}
+{% block content %}
+	<div
+		class="container px-2.5 ms:px-5 mb-10">
+		{# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
+		<nav class="w-full py-5 breadcrumbs">
+			{% component 'header.breadcrumbs' %}
+		</nav>
+
+		<div class="flex flex-col items-start md:flex-row">
+			{% if filters %}
+				<button class="hidden btn--close-sm close-filters sicon-cancel"></button>
+				<salla-filters class="flex-none md:w-72" id="filters-menu"></salla-filters>
+			{% endif %}
+			<div class="main-content flex-1 w-full {{ filters ? 'ltr:lg:ml-8 rtl:lg:mr-8' : '' }}">
+				<div class="flex items-center justify-between mb-4 sm:mb-6">
+					<h1 class="text-xl font-bold rtl:pl-3 ltr:pr-3" id="page-main-title">{{ page.title|raw }}</h1>
+					<div class="flex items-center space-x-2 rtl:space-x-reverse">
+						{% if filters %}
+							<a href="#filters-menu" class="mt-2 filters-trigger bg-border-color text-primary lg:hidden">
+								<i class="sicon-filter text-gray-text text-2xl me-2.5"></i>
+							</a>
+						{% endif %}
+						{% if sort_options|length and products|length %}
+							<div class="flex items-center">
+								<label class="hidden sm:block rtl:ml-3 ltr:mr-3 whitespace-nowrap" for="product-filter">{{ trans('pages.categories.sorting') }}</label>
+								<button id="product-filter" class="pt-0 pb-1 form-input rtl:md:pl-10 ltr:md:pr-10">
+									<svg width="38" height="42" viewbox="0 0 38 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.828125 32.5339V37.1177H13.0066V32.5339H0.828125ZM0.828125 5.03107V9.61487H21.1255V5.03107H0.828125ZM21.1255 41.7015V37.1177H37.3634V32.5339H21.1255V27.9501H17.066V41.7015H21.1255ZM8.94708 14.1987V18.7825H0.828125V23.3663H8.94708V27.9501H13.0066V14.1987H8.94708ZM37.3634 23.3663V18.7825H17.066V23.3663H37.3634ZM25.185 14.1987H29.2445V9.61487H37.3634V5.03107H29.2445V0.447266H25.185V14.1987Z" fill="white"/>
+									</svg>
+								</button>
+							</div>
+						{% endif %}
+						<div class="items-center hidden rtl:mr-2 ltr:ml-2">
+							<a href="#" data-type="grid" class="grid-trigger bg-border-color text-primary">
+								<i class="sicon-grid"></i>
+							</a>
+							<a href="#" data-type="list" class="grid-trigger">
+								<i class="sicon-list"></i>
+							</a>
+						</div>
+					</div>
+
+				</div>
+
+				{% hook 'product:index.items.start' %}
+				<div class="flex min-h-screen">
+					<salla-products-list class="flex-1 min-w-0 overflow-auto " source="{{ page.slug }}" source-value="{{ page.id }}" {{ filters?'filters-Results':'' }}></salla-products-list>
+				</div>
+				{% hook 'product:index.items.end' %}
+			</div>
+		</div>
+	</div>
+
+
+	{% if store.settings.category.testimonial_enabled %}
+		{% component 'home.testimonials' %}
+	{% endif %}
+{% endblock %}
+
+{% block scripts %}
+	<script defer src="{{ 'product.js' | asset }}"></script>
+{% endblock %}

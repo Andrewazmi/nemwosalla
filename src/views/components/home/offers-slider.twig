@@ -1,0 +1,19 @@
+<section class="w-full lg:w-10.5/12 s-block">
+	<salla-slider type="carousel" controls-outer show-controls="false" class="w-full">
+		<div slot="items">
+			{% for slide in component.offer_slider %}
+				<div class="flex flex-col items-center justify-center space-y-4 offer-style border ml-2 pb-3  !px-0">
+					<div class="w-full img-box">
+						<img src="{{slide.image}}" class="w-full h-full"/>
+					</div>
+					<h2 style="font-weight:  800">
+						{{slide.title}}
+					</h2>
+					<a href="{{slide.url}}" class="text-white btn" style="background-color: #334155 ; width:40% ; font-size:20px ; font-weight : 600">
+						{{slide.button}}
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</salla-slider>
+</section>

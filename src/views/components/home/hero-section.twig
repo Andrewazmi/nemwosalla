@@ -1,0 +1,35 @@
+{#
+| Variable                       | Type     | Description                                                                  |
+|--------------------------------|----------|------------------------------------------------------------------------------|
+| component                      | object   | Contains merchant settings for fields from twilight.json `component` section |
+| component.slides[].image       | string   | Image url                                                                    |
+| component.slides[].title       | ?string  |                                                                              |
+| component.slides[].description | ?string  |                                                                              |
+| component.slides               | object[] | list of slides                                                               |
+| position                       | int      | Sorting number start from zero                                               |
+#}
+<section class="s-block head-edit s-block--hero-slider s-block--full-bg wide-placeholder home-slider">
+	<salla-slider id="main-slider-{{ position }}" class="home-slider main-slider" show-controls="false" auto-play loop type="fullwidth">
+		<div slot="items">
+			{% for slide in component.hero_slider %}
+				<div class="swiper-lazy-wrap w-full min-h-[500px]">
+					<div data-background="{{ slide.image }}" class="swiper-lazy"></div>
+					<div class="container relative flex items-center w-full h-full px-3 pb-28 md:px-10 md:pb-16 home-slider__content" style="justify-content : {{slide.content_direction|json_encode()|split('" ')[1] }}" >
+																																															{# <div class="flex flex-col items-start w-full gap-4 text-white hero-content" style="text-align : {{slide.content_direction|json_encode()|split(' "')[1] }}"></div>
+					#}
+					<div class="flex-1 text-right">
+						<h3 data-swiper-parallax="-500" class="text-3xl font-bold leading-tight text-white mb-7 lg:text-title-size">{{ slide.title }}</h3>
+						<p data-swiper-parallax="-300" class="mb-4 text-xl text-right text-gray-100 lg:text-4xl description">{{ slide.subtitle }}</p>
+					</div>
+					{% if slide.button %}
+						<button class="absolute bottom-10 left-10">
+							<a href="{{slide.url}}" class="btn py-5 px-5 !text-2xl" style="border-radius: 50px;background-color: {{slide.background_color_button}}; color: {{slide.text_color_button}}; align-self: end;">
+								{{slide.button}}
+							</a>
+						</button>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div></salla-slider></section>

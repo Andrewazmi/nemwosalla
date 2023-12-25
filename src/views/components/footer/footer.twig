@@ -1,6 +1,47 @@
 <footer class="store-footer">
-  <div aria-label="footer" class="store-footer__inner">
-    <div class="container grid grid-col-1 lg:grid-cols-6 gap-8 lg:gap-6">
+  <div class="container w-full  mb-8 relative">
+    <div
+      class="flex flex-col lg:flex-row justify-between items-center gap-6 py-8 px-6 bg-[#505256] rounded-xl text-white"
+    >
+      <p class="text-xl">
+        اشترك في نشرتنا البريدية وأنتظر مفاجأة على بريدك 😉
+      </p>
+      <form action=" {{ theme.settings.get("mailchimp") }}" class="flex flex-col lg:flex-row justify-center items-center gap-4">
+        <div class="flex justify-center items-center gap-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              viewBox="0 0 45 45"
+              fill="none"
+            >
+              <path
+                d="M37.5 15L22.5 24.375L7.5 15V11.25L22.5 20.625L37.5 11.25M37.5 7.5H7.5C5.41875 7.5 3.75 9.16875 3.75 11.25V33.75C3.75 34.7446 4.14509 35.6984 4.84835 36.4016C5.55161 37.1049 6.50544 37.5 7.5 37.5H37.5C38.4946 37.5 39.4484 37.1049 40.1516 36.4016C40.8549 35.6984 41.25 34.7446 41.25 33.75V11.25C41.25 10.2554 40.8549 9.30161 40.1516 8.59835C39.4484 7.89509 38.4946 7.5 37.5 7.5Z"
+                fill="white"
+              />
+            </svg>
+            <input
+              type="text"
+              placeholder="البريد الإلكتروني"
+              class="text-white bg-[#EAE2E299] py-2 placeholder:text-white px-4"
+            />
+          </div>
+          <button type="submit" class="bg-[#404553] text-white py-2 px-4" id="subscribe-btn">
+            اشترك الآن
+          </button>
+      </form>
+    </div>
+    <div class="absolute -top-14 flex justify-center h-10 items-center gap-3 text-white rounded-lg bg-[#00D26A] px-4 text-lg subscribe-alert" id="subscribe-alert">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32" fill="none">
+            <path d="M2 6C2 4.93913 2.42143 3.92172 3.17157 3.17157C3.92172 2.42143 4.93913 2 6 2H26C27.0609 2 28.0783 2.42143 28.8284 3.17157C29.5786 3.92172 30 4.93913 30 6V26C30 27.0609 29.5786 28.0783 28.8284 28.8284C28.0783 29.5786 27.0609 30 26 30H6C4.93913 30 3.92172 29.5786 3.17157 28.8284C2.42143 28.0783 2 27.0609 2 26V6Z" fill="#00D26A"/>
+            <path d="M13.2423 23.0001C12.8593 23.0001 12.4763 22.8571 12.1833 22.5701L6.43928 16.9281C6.30055 16.7927 6.1903 16.631 6.11503 16.4523C6.03975 16.2737 6.00098 16.0819 6.00098 15.8881C6.00098 15.6942 6.03975 15.5024 6.11503 15.3238C6.1903 15.1452 6.30055 14.9834 6.43928 14.8481C6.72259 14.5718 7.1026 14.4172 7.49828 14.4172C7.89396 14.4172 8.27397 14.5718 8.55728 14.8481L13.2423 19.4491L23.4433 9.43105C23.7266 9.15484 24.1066 9.00024 24.5023 9.00024C24.898 9.00024 25.278 9.15484 25.5613 9.43105C25.7001 9.56634 25.8105 9.72806 25.8858 9.90668C25.9612 10.0853 26 10.2772 26 10.4711C26 10.6649 25.9612 10.8568 25.8858 11.0354C25.8105 11.214 25.7001 11.3758 25.5613 11.5111L14.3013 22.5691C14.0188 22.8466 13.6383 23.0015 13.2423 23.0001Z" fill="#F4F4F4"/>
+          </svg>
+            <span>تم الاشتراك في النشرة البريدية بنجاح</span>
+          </div>
+  </div>
+  <div aria-label="footer" class="store-footer__inner !border-none">
+  <div class="container">
+    <div class="grid grid-col-1 lg:grid-cols-6 gap-8 lg:gap-6">
         <div class="lg:col-span-2 rtl:lg:pl-20 ltr:lg:pr-20">
           <a href="{{ link('/') }}" class="flex items-center m-0">
             <h3>{{store.name}}</h3>
@@ -10,11 +51,14 @@
               {{ store.description|raw }}
             </p>
           {% endif %}
-
-          <div class="hidden lg:block">
-            {% component 'footer.social' %}
+          {# custom vat #}
+          <div class="flex justify-start items-center gap-1">
+            <div class="w-16 h-16">
+              <img src="{{ 'images/img-payment/pic-vat.png' | asset }}" class="w-full" />
+            </div>
+            <p class="text-lg font-bold">الرقم الضريبي</p>
+            <p class="text-lg font-bold">6675348891235078</p>
           </div>
-
           {# vat #}
           {% if store.settings.tax.number %}
             <div class="flex rtl:space-x-reverse space-x-2 items-end">
@@ -44,22 +88,31 @@
 
         {% component 'footer.menu' %}
 
-        <div>
-          {% component 'footer.contacts' %}
-
+        {# <div>
           <div class="lg:hidden contact-social">
             {% component 'footer.social' %}
           </div>
-        </div>
+        </div> #}
 
         {% component 'footer.mobile-apps' %}
     </div>
+    {% component 'footer.contacts' %}
+
+    <div class="hidden lg:block">
+        {% component 'footer.social' %}
+        {# <img src="{{ 'images/placeholder.png' | asset }}"/> #}
+    </div>
+  </div>
   </div>
 
-  <div class="md:flex items-center justify-between py-4 container text-center">
-    <span class="text-sm opacity-75">{% hook copyright %}</span>
-    {% component 'footer.payment-methods' %}
+  <div class="py-8 bg-[#505256]">
+    <div class="container">
+      <div class="flex flex-col lg:flex-row justify-between items-center">
+        {# <span class="text-xl text-white mb-4 lg:mb-0">{% hook copyright %}</span> #}
+        <span class="text-xl text-white mb-4 lg:mb-0">الحقوق محفوظة | 2023 متجر تجريبي</span>
+        {% component 'footer.payment-methods' %}
+        <span class="hidden bottom-2 rtl:pl-24 ltr:pr-24 md:grid-cols-3"></span>
+      </div>
+    </div>
   </div>
-
-  <span class="hidden bottom-2 rtl:pl-24 ltr:pr-24 md:grid-cols-3"></span>
 </footer>

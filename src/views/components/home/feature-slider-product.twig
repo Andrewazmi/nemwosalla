@@ -1,0 +1,16 @@
+<section class="s-block">
+{% for item in component.slider %}
+    <span class=" hidden feature-product-slider">{{item.product_id.value[0]|json_encode()}} </span>
+{% endfor %}
+
+<div class="w-full flex flex-col justify-center items-center text-center">
+  <h1>{{component.title}}</h1>
+  <h3>{{component.subtitle}}</h3>
+</div>
+
+
+
+  <div class="container mx-auto px-4 mt-8" id="slider-feature-product">
+    
+  </div>
+</section>

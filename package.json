@@ -14,13 +14,19 @@
     "development": "webpack --mode development",
     "watch": "webpack --mode development --watch"
   },
+  "engines": {
+    "node": "20.9.0"
+  },
   "author": "Salla",
   "dependencies": {
     "@salla.sa/twilight": "^2.12.45",
     "@salla.sa/twilight-tailwind-theme": "^2.12.45",
     "animejs": "^3.2.1",
     "fslightbox": "^3.3.0-2",
+
     "lite-youtube-embed": "^0.3.0",
+    "luxon": "^3.4.4",
+
     "mmenu-light": "^3.0.9",
     "sweetalert2": "^11.3.3"
   },
@@ -32,6 +38,7 @@
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/line-clamp": "^0.4.0",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "@types/luxon": "^3.3.5",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^9.1.2",
     "babel-loader-exclude-node-modules-except": "^1.2.1",
@@ -42,7 +49,7 @@
     "postcss": "^8.4.14",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.0.0",
-    "postcss-preset-env": "^8.0.1",
+    "postcss-preset-env": "^9.3.0",
     "sass": "^1.43.4",
     "sass-loader": "^13.2.0",
     "tailwindcss": "^3.3.3",

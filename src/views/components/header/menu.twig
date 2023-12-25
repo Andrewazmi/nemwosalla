@@ -11,13 +11,52 @@
 | menus[].products     | ?Product[] *Collection | List of selected products or null                  |
 #}
 
-<nav id="mobile-menu" class="mobile-menu">
-    <ul class="main-menu">
-        {% for menu_id, menu in menus %}
-            {% include 'components.header._menu-item' with {is_root_menu:true} %}
-        {% endfor %}
-    </ul>
-    <button class="btn--close close-mobile-menu sicon-cancel lg:hidden"></button>
+<nav id="mobile-menu" class="mobile-menu flex justify-start items-center gap-8">
+	
+	<ul class="main-menu flex justify-start item-center gap-4 !mx-0">
+	<div class="w-full mb-4 lg:hidden brand-nav">
+		<div class="w-full text-end mb-4">أفضل الماركات</div>
+<div class=" w-full grid grid-cols-3 gap-4">
+		{% for item in theme.settings.get("barands_slider") %}
+			<a class=" flex items-center justify-center" style="width:100% ; height:100%" href="{{item.url}}">
+				<img class="object-fit w-full h-full" src="{{item.image}}" />
+			</a>
+			
+			
+		{% endfor %}
+		</div>
+	</div>
+		{% for menu_id, menu in menus|slice(0, 12) %}
+			{% include 'components.header._menu-item' with {is_root_menu:true} %}
+		{% endfor %}
+		<div class=" lg:hidden block">
+			{% component 'footer.menu' %}
+		</div>
+	</ul>
+
+	{% if menus|length > 12 %}
+		<div class="relative">
+			<button id="dropdownButton" type="button">
+				<svg style="fill:#fff !important" xmlns="http://www.w3.org/2000/svg" fill="#000000" width="17px" height="13px" viewbox="0 0 24 24">
+					<path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z">
+				</svg>
+			</button>
+		
+			<!-- Dropdown menu -->
+			<div id="dropdownMenu" class="absolute top-6 left-0 z-10 bg-[#334155] rounded-xl shadow-inner" style="width: max-content">
+					<ul class="!py-4 text-sm flex flex-col items-start" aria-labelledby="dropdownHoverButton">
+						{% for menu_id, menu in menus|slice (12) %}
+							<div class="px-4 py-2 hover:bg-[#435570] w-full">
+								{% include 'components.header._menu-item' with {is_root_menu:true} %}
+							</div>
+						{% endfor %}
+					</ul>
+			</div>
+		</div>
+	{% endif %}
+
+
+
+	<button class="btn--close close-mobile-menu sicon-cancel !hidden"></button>
 </nav>
 <button class="btn--close-sm close-mobile-menu sicon-cancel hidden"></button>
-

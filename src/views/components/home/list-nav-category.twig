@@ -1,0 +1,36 @@
+<section class="s-block s-block--categories mt-10 navlink-design">
+	
+	<div>
+		{% for navlink in component.list_nav_category %}
+			<div class="nav-links hidden">{{navlink.category.value[0]|json_encode()}}</div>
+		{% endfor %}
+
+		
+	</div>
+	<div class="text-center mb-2 flex flex-col justify-center items-center">
+		<h1 class="mb-2">{{component.title}}</h1>
+	</div>
+	
+	<div id="list-cattegory" class="flex justify-center items-center gap-4 w-full mb-3"></div>
+	<div id="list-product" class="container"></div>
+
+</section>
+<script>
+
+	
+function getlistProduct(event, element , id) {
+	const listProduct = document.getElementById(`${id}-product`)
+const activelinks = document.getElementsByClassName("navLink-show")
+const data = `<salla-products-slider
+  source="categories"
+ source-value=[${event}]
+</salla-product-slider>`
+listProduct.innerHTML = data
+
+
+for (let i = 0; i < activelinks.length; i++) {
+activelinks[i].classList.remove("active-design")
+}
+element.classList.add("active-design");
+}
+</script>

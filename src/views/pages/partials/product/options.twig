@@ -29,8 +29,23 @@
 | product.options[].details[].is_out              | bool                       | Does current option out of stock?                                                                           |
 #}
 {% if product.options|length %}
-    <salla-product-options options="{{ product.options }}" product-id="{{ product.id }}"></salla-product-options>
+    <salla-product-options options="{{ product.options }}" product-id="{{ product.id }} " ></salla-product-options>
 {% endif %}
+{% for detail in option.details %}
+<div>
+    <input type="radio"
+           {{ detail.is_selected?'checked':'' }} 
+           {{ detail.is_out?"disabled":"" }} 
+           name="options[{{ option.id }}]"
+           value="{{ detail.id }}" ... />
+
+    <p>{{ detail.name }}</p>
+    
+    {% if detail.is_out %}
+    <small>Out of stock</small>
+    {% endif %}
+</div>
+{% endfor %}
 
 {% if product.weight or product.has_size_guide %}
     <section class="bg-white p-5 rounded-md mb-5">
