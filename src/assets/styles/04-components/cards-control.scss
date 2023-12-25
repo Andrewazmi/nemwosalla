@@ -670,8 +670,10 @@ salla-add-product-button .s-button-text{
   border-color : #334155 !important;
 }
 
-
-
+#all-pro-by-cat .s-button-wrap svg  , #all-pro-by-cat-page .s-button-wrap svg{
+  height: 1.5rem !important;
+  width: 1.5rem !important;
+}
 
 
 
@@ -780,7 +782,7 @@ salla-add-product-button .s-button-text{
 }
 
 .s-localization-modal-inner button{
-  padding: 2px 0;
+  padding: 10px 0 !important;
   background-color: #334155 !important;
     color: white !important;
   display: flex;

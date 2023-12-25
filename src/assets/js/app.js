@@ -276,12 +276,21 @@ class App extends AppHelpers {
 
         if (category) {
           salla.product.categories(category).then((response) => {
-            const data = `
-                  <div class="navLink-show cursor-pointer font-bold" onclick="getlistProduct(${category} , this , ${id})">
+            if (i == 0) {
+              const data = `
+                  <div class="navLink-show active-design py-2 px-3 rounded-2xl cursor-pointer font-bold" onclick="getlistProductCategory(${category} , this , ${id})">
                     ${response.data.name}
                   </div>
                   `;
-            listCategory1.innerHTML += data;
+              listCategory1.innerHTML += data;
+            } else {
+              const data = `
+              <div class="navLink-show py-2 px-3 rounded-2xl cursor-pointer font-bold" onclick="getlistProductCategory(${category} , this , ${id})">
+                ${response.data.name}
+              </div>
+              `;
+              listCategory1.innerHTML += data;
+            }
           });
           const data = `<salla-products-slider
                 source="categories"
@@ -874,7 +883,7 @@ ${iframeElement}
               const data = `
 
 						
-						<a class=" flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="${
+						<a class=" relative flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="${
               product.url
             }">
               <div class="w-full h-[150px] sm:h-[200px] bg-[#D9D9D980] rounded-xl !p-4">
@@ -882,9 +891,26 @@ ${iframeElement}
                   product.image.url
                 }" alt="${product.image.alt}" />
               </div>
-							<div class="flex flex-col items-center justify-center">
-  
-							<p class="category-name text-xl mt-4">${product.name}</p>
+              <div class="absolute top-4 right-3 flex flex-col gap-1 z-10">
+                <div class="wishlist" data-title="إضافة للسلة">
+                <salla-button onclick="salla.wishlist.toggle(${
+                  product.id
+                })" shape="icon" fill="outline" color="primary" aria-label="wishlist button" class=" s-button-wrap hydrated">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 47 48" fill="none">
+                  <path d="M23.1506 42.4608L20.3714 39.8758C10.5006 30.7304 3.98389 24.6987 3.98389 17.2962C3.98389 11.2646 8.62222 6.52539 14.5256 6.52539C17.8606 6.52539 21.0614 8.11164 23.1506 10.6183C25.2397 8.11164 28.4406 6.52539 31.7756 6.52539C37.6789 6.52539 42.3172 11.2646 42.3172 17.2962C42.3172 24.6987 35.8006 30.7304 25.9297 39.8954L23.1506 42.4608Z" fill="#212121"/>
+                  </svg>
+                </salla-button>
+              </div>
+             </div>
+							<div class="flex flex-col items-center justify-center mt-4 w-full">
+  <div class="w-full rounded-md bg-[#334155] flex items-center justify-center ">
+				
+            <salla-add-product-button width="wide" product-id="${product.id}">
+            
+              
+        إضافة للسلة</salla-add-product-button>
+          </div>
+							<p class="category-name text-xl">${product.name}</p>
               <div class="flex justify-center items-center">
               <h4 class="text-lg font-extrabold">${this.getPriceFormat(
                 product.price
@@ -927,7 +953,9 @@ ${iframeElement}
                   product.image.url
                 }" alt="${product.image.alt}" />
               </div>
+              
 							<div class="flex w-full flex-col items-center justify-center">
+              
 							<p class="category-name text-xl mt-4">${product.name}</p>
               <div class=" justify-center items-center">
               <h4 class="text-lg font-extrabold">${this.getPriceFormat(

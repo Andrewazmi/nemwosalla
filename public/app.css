@@ -498,6 +498,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .left-5{left:1.25rem}
 .left-\[20\%\]{left:20%}
 .right-0{right:0px}
+.right-3{right:0.75rem}
 .right-4{right:1rem}
 .right-5{right:1.25rem}
 .top-0{top:0px}
@@ -7635,6 +7636,10 @@ salla-add-product-button .s-button-text {
 .has-notify .btn--shipping-option.active {
   border-color: #334155 !important;
 }
+#all-pro-by-cat .s-button-wrap svg, #all-pro-by-cat-page .s-button-wrap svg {
+  height: 1.5rem !important;
+  width: 1.5rem !important;
+}
 /* responsive */
 @media (max-width: 1024px) {
   .menu-style {
@@ -7728,11 +7733,11 @@ salla-add-product-button .s-button-text {
   margin: 1rem 0;
 }
 .s-localization-modal-inner button {
+  padding: 10px 0 !important;
   background-color: #334155 !important;
   color: white !important;
 }
 .s-localization-modal-inner button {
-  padding: 2px 0;
   display: flex;
   align-items: center;
   justify-content: center;
