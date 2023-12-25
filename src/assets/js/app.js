@@ -278,14 +278,14 @@ class App extends AppHelpers {
           salla.product.categories(category).then((response) => {
             if (i == 0) {
               const data = `
-                  <div class="navLink-show active-design py-2 px-3 rounded-2xl cursor-pointer font-bold" onclick="getlistProductCategory(${category} , this , ${id})">
+                  <div class="navLink-show active-design py-2 px-3 rounded-2xl cursor-pointer font-bold" onclick="getlistProduct(${category} , this , ${id})">
                     ${response.data.name}
                   </div>
                   `;
               listCategory1.innerHTML += data;
             } else {
               const data = `
-              <div class="navLink-show py-2 px-3 rounded-2xl cursor-pointer font-bold" onclick="getlistProductCategory(${category} , this , ${id})">
+              <div class="navLink-show py-2 px-3 rounded-2xl cursor-pointer font-bold" onclick="getlistProduct(${category} , this , ${id})">
                 ${response.data.name}
               </div>
               `;
