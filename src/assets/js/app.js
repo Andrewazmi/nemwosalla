@@ -901,6 +901,17 @@ ${iframeElement}
                   </svg>
                 </salla-button>
               </div>
+              <div class="quickview-btn eye-icon flex justify-center items-center" onclick="clickModal(${
+                product.id
+              })" data-title="عرض سريع" data-product-id="${product.id}">
+                  <salla-button  fill="outline"  class="s-button-wrap hydrated " shape="btn" color="primary" size="medium" width="normal">
+          
+                  <svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
+                  <path d="M21.6507 8.90039C12.6924 8.90039 5.04197 14.6021 1.94238 22.6504C5.04197 30.6987 12.6924 36.4004 21.6507 36.4004C30.6091 36.4004 38.2595 30.6987 41.3591 22.6504C38.2595 14.6021 30.6091 8.90039 21.6507 8.90039ZM21.6507 31.8171C16.7057 31.8171 12.6924 27.7104 12.6924 22.6504C12.6924 17.5904 16.7057 13.4837 21.6507 13.4837C26.5957 13.4837 30.6091 17.5904 30.6091 22.6504C30.6091 27.7104 26.5957 31.8171 21.6507 31.8171ZM21.6507 17.1504C18.6765 17.1504 16.2757 19.6071 16.2757 22.6504C16.2757 25.6937 18.6765 28.1504 21.6507 28.1504C24.6249 28.1504 27.0257 25.6937 27.0257 22.6504C27.0257 19.6071 24.6249 17.1504 21.6507 17.1504Z" fill="#212121"/>
+                  </svg>
+          
+                  </salla-button>
+              </div>
              </div>
 							<div class="flex flex-col items-center justify-center mt-4 w-full">
   <div class="w-full rounded-md bg-[#334155] flex items-center justify-center ">
