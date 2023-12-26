@@ -622,8 +622,7 @@ console.log({rating});
             source: "categories",
             source_value: [categoryId],
           };
-
-          // Call the fetch method
+                // Call the fetch method
           salla.product
             .fetch(queryParams)
             .then((response) => {
@@ -883,14 +882,14 @@ ${iframeElement}
               const data = `
 
 						
-						<a class=" relative flex flex-col justify-center items-center api-set-category" data-emergence="hidden" href="${
-              product.url
-            }">
-              <div class="w-full h-[150px] sm:h-[200px] bg-[#D9D9D980] rounded-xl !p-4">
+						<div class=" relative flex flex-col justify-center items-center api-set-category" data-emergence="hidden" >
+              <a href="${
+                product.url
+              }" class="w-full h-[150px] sm:h-[200px] bg-[#D9D9D980] rounded-xl !p-4">
                 <img class="rounded bg-cover object-contain w-full h-full"  src="${
                   product.image.url
                 }" alt="${product.image.alt}" />
-              </div>
+              </a>
               <div class="absolute top-4 right-3 flex flex-col gap-1 z-10">
                 <div class="wishlist" data-title="إضافة للسلة">
                 <salla-button onclick="salla.wishlist.toggle(${
@@ -930,7 +929,7 @@ ${iframeElement}
 							
 							</div>
               </div>
-		</a>
+		</div>
     `;
               insertElement.innerHTML += data;
             }

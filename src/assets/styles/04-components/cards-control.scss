@@ -766,12 +766,22 @@ salla-add-product-button .s-button-text{
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1)
 }
 
-[type="radio"]:checked {
+.s-filters-footer button{
+  background-color:#505B6C !important;
+  color: white !important;
+  padding: 8px 0 !important;
+}
+
+.rating-header{
+  color: #fff !important;
+}
+
+[type="radio"]:checked , [type="checkbox"]:checked {
   background-color:#505B6C !important;
 
 }
 
-[type="radio"]:focus {
+[type="radio"]:focus , [type="checkbox"]:focus{
   --tw-ring-color: transparent !important
 }
 

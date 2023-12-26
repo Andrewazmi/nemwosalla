@@ -261,10 +261,18 @@ modalContent.innerHTML = `
 				</svg>
 				<p class="text-base">${product.quantity ? product.quantity :"0" } المتبقى</p>
 			</div>
+			${
+			product.sold_quantity && `<div class="px-1 text-red-400">
+<i class="sicon-fire rtl:ml-1.5 ltr:mr-1.5"></i> تم شراءه
+<span><span>${product.sold_quantity}</span> مرة</span>
+</div>`
+							}
 			<div class="flex items-center justify-between w-full space-x-2">
 				<p class="text-base">الكمية</p>
 				<salla-quantity-input max="28" value="1" name="quantity" class="flex justify-end border-gray-200 s-quantity-input hydrated"></salla-quantity-input>
 			</div>
+			
+			
 			<div class="w-full rounded-md bg-[#334155] flex items-center justify-center">
 				
 				<salla-add-product-button width="wide" product-id="${product.id}">

@@ -92,6 +92,21 @@
 							<a class="block lg:hidden mburger mburger--collapse leading-none" href="#mobile-menu">
 								<i class="{{theme.settings.get("sidebar_icon")}} text-primary text-2xl rtl:ml-2.5 ltr:mr-2.5"></i>
 							</a>
+							<div  class="md:hidden block">
+							{% if user.type=='user' %}
+    <salla-user-menu avatar-only show-header></salla-user-menu>
+    {% else %}
+    <button
+      onclick="salla.event.dispatch('login::open')"
+      class="header-btn inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group"
+    >
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+				<path d="M12 5.93613C12.2758 5.93613 12.5489 5.99045 12.8036 6.09599C13.0584 6.20152 13.2899 6.35621 13.4849 6.55121C13.6799 6.74621 13.8346 6.97771 13.9401 7.2325C14.0457 7.48728 14.1 7.76036 14.1 8.03613C14.1 8.31191 14.0457 8.58498 13.9401 8.83977C13.8346 9.09455 13.6799 9.32605 13.4849 9.52106C13.2899 9.71606 13.0584 9.87075 12.8036 9.97628C12.5489 10.0818 12.2758 10.1361 12 10.1361C11.443 10.1361 10.9089 9.91488 10.5151 9.52106C10.1212 9.12723 9.9 8.59309 9.9 8.03613C9.9 7.47918 10.1212 6.94503 10.5151 6.55121C10.9089 6.15738 11.443 5.93613 12 5.93613ZM12 14.9361C14.97 14.9361 18.1 16.3961 18.1 17.0361V18.1361H5.9V17.0361C5.9 16.3961 9.03 14.9361 12 14.9361ZM12 4.03613C9.79 4.03613 8 5.82613 8 8.03613C8 10.2461 9.79 12.0361 12 12.0361C14.21 12.0361 16 10.2461 16 8.03613C16 5.82613 14.21 4.03613 12 4.03613ZM12 13.0361C9.33 13.0361 4 14.3761 4 17.0361V20.0361H20V17.0361C20 14.3761 14.67 13.0361 12 13.0361Z" fill="#212121"/>
+			</svg>
+      <span class="text-sm">حسابي</span>
+    </button>
+    {% endif %}
+							</div>
 							<a
 								class="navbar-brand" href="{{ store.url }}">
 								<img fetchpriority="high" width="100%" height="100%" loading="eager" src="{{ store.logo }}" alt="{{ store.name }}">
@@ -224,19 +239,7 @@
       </salla-cart-summary>
       <span class="text-sm">العربة</span>
     </button>
-    {% if user.type=='user' %}
-    <salla-user-menu avatar-only show-header></salla-user-menu>
-    {% else %}
-    <button
-      onclick="salla.event.dispatch('login::open')"
-      class="header-btn inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 group"
-    >
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-				<path d="M12 5.93613C12.2758 5.93613 12.5489 5.99045 12.8036 6.09599C13.0584 6.20152 13.2899 6.35621 13.4849 6.55121C13.6799 6.74621 13.8346 6.97771 13.9401 7.2325C14.0457 7.48728 14.1 7.76036 14.1 8.03613C14.1 8.31191 14.0457 8.58498 13.9401 8.83977C13.8346 9.09455 13.6799 9.32605 13.4849 9.52106C13.2899 9.71606 13.0584 9.87075 12.8036 9.97628C12.5489 10.0818 12.2758 10.1361 12 10.1361C11.443 10.1361 10.9089 9.91488 10.5151 9.52106C10.1212 9.12723 9.9 8.59309 9.9 8.03613C9.9 7.47918 10.1212 6.94503 10.5151 6.55121C10.9089 6.15738 11.443 5.93613 12 5.93613ZM12 14.9361C14.97 14.9361 18.1 16.3961 18.1 17.0361V18.1361H5.9V17.0361C5.9 16.3961 9.03 14.9361 12 14.9361ZM12 4.03613C9.79 4.03613 8 5.82613 8 8.03613C8 10.2461 9.79 12.0361 12 12.0361C14.21 12.0361 16 10.2461 16 8.03613C16 5.82613 14.21 4.03613 12 4.03613ZM12 13.0361C9.33 13.0361 4 14.3761 4 17.0361V20.0361H20V17.0361C20 14.3761 14.67 13.0361 12 13.0361Z" fill="#212121"/>
-			</svg>
-      <span class="text-sm">حسابي</span>
-    </button>
-    {% endif %}
+    
   </div>
 </div>
 
