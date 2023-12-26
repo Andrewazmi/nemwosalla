@@ -60,7 +60,7 @@
 		</div>
 		{% endif %}
 
-		<div class="flex flex-col w-full items-center md:flex-row">
+		<div class="flex flex-col w-full items-start md:flex-row">
 		
 			{% if filters %}
 				<button class="hidden btn--close-sm close-filters sicon-cancel"></button>
@@ -138,7 +138,7 @@
 {% endif %}
 
 {% if theme.settings.get("category_choose_product") %}
-<section class="s-block s-block--categories mt-10  !bg-white">
+<section class="s-block s-block--categories mt-10  w-full !bg-white">
 	<div>
 		{% for navlink in theme.settings.get("category_choose_product") %}
 			<div class="nav-product hidden">{{navlink.product[0].value|json_encode()}}</div>

@@ -452,13 +452,22 @@
 </div>
 {% endif %}
 
+
+
+
+    
+
+
+
+</div>
+
 {% if theme.settings.get("feature_product_mob_switch") %}
 
 
-<div class=" grid md:hidden grid-cols-2 gap-2">
+<div class=" grid grid-cols-2 gap-2 my-4">
 {% for feature in theme.settings.get("feature_product_mob") %}
 
-    <div class=" flex justify-start items-center p-2 rounded bg-[#D9D9D98F] gap-2">
+    <div class=" flex justify-start items-center p-2 rounded bg-[#D9D9D98F] gap-2 h-16">
 				<img class="object-fit w-10 h-10" src="{{feature.image}}" />
         {% if user.language_code == "ar" %}
             <p class=" font-semibold">{{feature.des.ar}}</p>
@@ -471,15 +480,6 @@
 {% endfor %}
     </div>
 {% endif %}
-
-
-    
-
-
-
-</div>
-
-
                 <form class="form product-form" enctype="multipart/form-data" method="post"
                       onchange="salla.product.getPrice(new FormData(event.currentTarget))"
                       onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
@@ -697,6 +697,11 @@
 displayModal.classList.replace('flex', 'hidden');
 
 }
+document.addEventListener("click", (e) => {
+	if (e.target.getAttribute("id", "TabyTamaraModal")) {
+		closeModalTamara();
+	}
+})
     
     </script>
     {% if product.has_3d_image %}
