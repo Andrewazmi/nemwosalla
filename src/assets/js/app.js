@@ -547,14 +547,12 @@ console.log({rating});
               ${this.ratingProduct(product.rating.stars)}
               </div>
   
-                <div class="w-full  flex justify-center items-center">
-                  <h4 class="text-sm font-bold text-store-text-secondary ${
-                    product.discount_ends ? "text-red-400" : ""
-                  }">${this.getPriceFormat(product.price)} </h4>
+                <div class="w-full  flex justify-center items-center gap-2">
+                  <h4 class="text-sm font-bold text-store-text-secondary ">${this.getPriceFormat(product.price)} </h4>
                   
                     <span class="text-sm line-through text-store-text-secondary">${
-                      product.discount_ends
-                        ? product.discount_ends + product.currency
+                      product.regular_price
+                        ? this.getPriceFormat(product.regular_price)
                         : ""
                     }</span>
                     
