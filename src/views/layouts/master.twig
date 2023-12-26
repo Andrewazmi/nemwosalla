@@ -262,10 +262,10 @@ modalContent.innerHTML = `
 				<p class="text-base">${product.quantity ? product.quantity :"0" } المتبقى</p>
 			</div>
 			${
-			product.sold_quantity && `<div class="px-1 text-red-400">
+			product.sold_quantity ? `<div class="px-1 text-red-400">
 <i class="sicon-fire rtl:ml-1.5 ltr:mr-1.5"></i> تم شراءه
 <span><span>${product.sold_quantity}</span> مرة</span>
-</div>`
+</div>`:""
 							}
 			<div class="flex items-center justify-between w-full space-x-2">
 				<p class="text-base">الكمية</p>
