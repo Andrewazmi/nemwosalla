@@ -852,6 +852,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .\!py-1\.5{padding-top:0.375rem !important;padding-bottom:0.375rem !important}
 .\!py-4{padding-top:1rem !important;padding-bottom:1rem !important}
 .\!py-6{padding-top:1.5rem !important;padding-bottom:1.5rem !important}
+.\!py-\[15px\]{padding-top:15px !important;padding-bottom:15px !important}
 .px-0{padding-left:0px;padding-right:0px}
 .px-1{padding-left:0.25rem;padding-right:0.25rem}
 .px-10{padding-left:2.5rem;padding-right:2.5rem}
@@ -874,11 +875,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .py-5{padding-top:1.25rem;padding-bottom:1.25rem}
 .py-6{padding-top:1.5rem;padding-bottom:1.5rem}
 .py-8{padding-top:2rem;padding-bottom:2rem}
-.py-\[10px\]{padding-top:10px;padding-bottom:10px}
-.py-\[20px\]{padding-top:20px;padding-bottom:20px}
-.\!py-\[20px\]{padding-top:20px !important;padding-bottom:20px !important}
-.\!py-\[18px\]{padding-top:18px !important;padding-bottom:18px !important}
-.\!py-\[15px\]{padding-top:15px !important;padding-bottom:15px !important}
+.\!py-\[14px\]{padding-top:14px !important;padding-bottom:14px !important}
+.\!py-\[13px\]{padding-top:13px !important;padding-bottom:13px !important}
 .\!pt-1{padding-top:0.25rem !important}
 .pb-0{padding-bottom:0px}
 .pb-1{padding-bottom:0.25rem}
@@ -8824,7 +8822,6 @@ button.swiper-pagination-bullet {
 .md\:mb-8{margin-bottom:2rem}
 .md\:mb-9{margin-bottom:2.25rem}
 .md\:mt-0{margin-top:0px}
-.md\:block{display:block}
 .md\:inline-block{display:inline-block}
 .md\:\!flex{display:flex !important}
 .md\:flex{display:flex}

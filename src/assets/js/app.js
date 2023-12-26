@@ -4,7 +4,7 @@ import Anime from "./partials/anime";
 import initTootTip from "./partials/tooltip";
 import AppHelpers from "./app-helpers";
 
-import { DateTime } from "luxon";
+
 
 class App extends AppHelpers {
   constructor() {
@@ -406,7 +406,7 @@ console.log({rating});
             if( i == 0){
                   firstProd += `<div id="product-${
                     product.id
-                  }" class="product-entry product-entry--full-image overflow-hidden !justify-center !p-4 flex-col justify-center align-center" style="border-radius:40px;height:673px;background-color:#EAE9E9;">
+                  }" class="product-entry gap-2 product-entry--full-image overflow-hidden !justify-center !p-4 flex-col justify-center align-center" style="border-radius:40px;height:673px;background-color:#EAE9E9;">
                     <a href="${
                       product.url
                     }" class="relative w-full h-[80%] overflow-hidden rounded-md hover:opacity-90 block mt-6">
@@ -418,7 +418,7 @@ console.log({rating});
                       product.url
                     }" class="absolute top-0 bottom-0 left-0 right-0 transition-opacity duration-700  rounded-2xl" ></a>
                     <div class="flex justify-center items-end">
-                      <div class="flex flex-col justify-center items-center mb-10">
+                      <div class="flex flex-col justify-center items-center mb-10 gap-2">
           
                         <h1 class="text-sm font-bold leading-6 text-black product-entry__title">
                           <a  href="${
