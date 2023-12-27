@@ -488,7 +488,7 @@ console.log({rating});
               secondProd += `
               <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4 py-6" style=" border-radius : 40px ; background-color : #EAE9E9">
               <div style="height:150px;width:90%">
-                <a href="${product.id}">
+                <a href="${product.url}">
                   <img class="object-contain w-full h-full lazy loaded" src="${
                     product.image.url
                   }" data-src="https://cdn.salla.sa/gzRDg/F3jJv4Iu3qhNIq6cTJ0wlGTA2YuwgJlngtGFDo2p.jpg" alt="حقيبة يد كبيرة" loading="lazy" data-ll-status="loaded">

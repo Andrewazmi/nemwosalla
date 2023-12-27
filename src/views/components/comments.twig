@@ -18,7 +18,7 @@
 
 
 
-{% if (comments|length or user.can_comment) and show_comments  %}
+{# {% if (comments|length or user.can_comment) and show_comments  %} #}
 <div class="s-comments s-comments-{{ type }}">
 
     <div class="container {{ type == 'page' ? 'px-0':'' }}">
@@ -43,4 +43,4 @@
         {% endif %}
     </div>
 </div>
-{% endif %}
+{# {% endif %} #}
