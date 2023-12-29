@@ -226,6 +226,10 @@ html[dir="ltr"] {
   .animated-ads {
     left: calc(-59vw + 50px);
   }
+
+#btn-open{
+  flex-direction: row-reverse;
+  }
   .animated-ads.open {
     left: 0;
     
@@ -799,6 +803,11 @@ salla-add-product-button .s-button-text{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.sub-menu{
+  z-index: 30 !important
+  ;
 }
 
 

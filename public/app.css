@@ -7267,6 +7267,9 @@ svg {
 html[dir=ltr] .animated-ads {
   left: calc(-59vw + 50px);
 }
+html[dir=ltr] #btn-open {
+  flex-direction: row-reverse;
+}
 html[dir=ltr] .animated-ads.open {
   left: 0;
 }
@@ -7751,6 +7754,9 @@ salla-add-product-button .s-button-text {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.sub-menu {
+  z-index: 30 !important;
 }
 @media (min-width: 768px) {
   .single-product-edit-slider .s-slider-container {
@@ -8897,7 +8903,6 @@ button.swiper-pagination-bullet {
 .lg\:not-sr-only{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}
 .lg\:sticky{position:sticky}
 .lg\:top-12{top:3rem}
-.lg\:col-span-2{grid-column:span 2 / span 2}
 .lg\:col-span-6{grid-column:span 6 / span 6}
 .lg\:my-0{margin-top:0px;margin-bottom:0px}
 .lg\:-mt-28{margin-top:-7rem}

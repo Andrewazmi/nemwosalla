@@ -240,7 +240,6 @@
                     {% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
 
                     <h1 class="text-xl md:text-2xl leading-10 font-medium mb-3 text-gray-800">{{ product.name }}</h1>
-                    <h1 class="text-xl md:text-xl leading-10 font-medium mb-3 text-gray-800">{{ product_desc|raw }}</h1>
 
 
                 {% if product.subtitle %}
@@ -410,6 +409,12 @@
                         </div>
                     </section>
                 {% endif %}
+
+
+
+
+                    <h1 class="text-xl md:text-xl leading-10 font-medium mb-3 text-gray-800">{{ product_desc|raw }}</h1>
+
 
                 <div class=" w-full flex flex-col justify-center items-center   gap-4">
 

@@ -384,10 +384,11 @@ console.log({rating});
   }
 
   async productBelongThree() {
-    const section = document.getElementsByClassName("category-three");
-
+    const section = document.getElementsByClassName("category-three")
+    
     for (let i = 0; i < section.length; i++) {
       const categoryId = section[i]?.children[1]?.innerText;
+      
       const insert = section[i]?.children[2];
       const queryParams = {
         source: "categories",
@@ -398,15 +399,16 @@ console.log({rating});
         .fetch(queryParams)
         .then((response) => {
           const products = response.data.slice(0, 5);
-
+console.log({productsss : products});
           let firstProd = ''
           let secondProd = ''
           for (let i = 0; i < products.length; i++) {
+          
             const product = products[i]
             if( i == 0){
                   firstProd += `<div id="product-${
                     product.id
-                  }" class="product-entry gap-2 product-entry--full-image overflow-hidden !justify-center !p-4 flex-col justify-center align-center" style="border-radius:40px;height:673px;background-color:#EAE9E9;">
+                  }" class="product-entry gap-2 product-entry--full-image overflow-hidden !justify-center !p-4 flex-col justify-center align-center" style="border-radius:40px;height:665px;background-color:#EAE9E9;">
                     <a href="${
                       product.url
                     }" class="relative w-full h-[80%] overflow-hidden rounded-md hover:opacity-90 block mt-6">
@@ -418,8 +420,8 @@ console.log({rating});
                       product.url
                     }" class="absolute top-0 bottom-0 left-0 right-0 transition-opacity duration-700  rounded-2xl" ></a>
                     <div class="flex justify-center items-end">
-                      <div class="flex flex-col justify-center items-center mb-10 gap-2">
-          
+                      <div class="flex flex-col justify-center w-full items-center mb-10 gap-2">
+                      
                         <h1 class="text-sm font-bold leading-6 text-black product-entry__title">
                           <a  href="${
                             product.url
@@ -437,6 +439,13 @@ console.log({rating});
                   
                         
                       </div>
+                      <div class="w-full rounded-md bg-[#334155] flex items-center justify-center">
+				
+              <salla-add-product-button width="wide" class=" py-2" product-id="${product.id}">
+              
+                
+          إضافة للسلة</salla-add-product-button>
+            </div>
                       </div>
         
         ${
@@ -484,6 +493,9 @@ console.log({rating});
                       </div>
                     </div>
                   </div>`
+
+
+
             }else{
               secondProd += `
               <div  class="product-entry product-entry--minimal flex flex-col items-center justify-center overflow-hidden p-4 py-6" style=" border-radius : 40px ; background-color : #EAE9E9">
@@ -544,7 +556,8 @@ console.log({rating});
                 </h3>
                 <div class="s-product-card-rating">
   
-              ${this.ratingProduct(product.rating.stars)}
+              ${  this.ratingProduct(product?.rating?.stars)}
+              
               </div>
   
                 <div class="w-full  flex justify-center items-center gap-2">
@@ -563,9 +576,12 @@ console.log({rating});
             </div>
               `
             }
+
             
             
           }
+          console.log({productss : firstProd});
+
         
           const data = `
    
@@ -584,7 +600,8 @@ console.log({rating});
         
       
         
-        `;
+        `
+  
           insert.innerHTML += data;
         })
         .catch((error) => {
